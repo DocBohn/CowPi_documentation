@@ -1,0 +1,89 @@
+..  |power|                             replace:: power (**+**) rail
+..  |ground|                            replace:: ground (**–**) rail
+..  |developmentBoard|                  replace:: Arduino Nano
+..  |microcontroller|                   replace:: ATmega328P
+..  |microcontrollerReference|          replace:: Atmel ATmega328P
+..  _microcontrollerReference: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf
+..  |icspDescription|                   replace:: The six upward-pointing pins are used to program the |developmentBoard| without using a host computer; we will not use these.
+..  |usartDescription|                  replace:: ``RX0`` and ``TX1`` are used for asynchronous serial communication; as the USB interface also uses the same corresponding pins on the |microcontroller|, we will not use these two pins (you will notice that when the |developmentBoard| communicates with the host computer, the ``RX`` and ``TX`` LEDs will illuminate).
+..  |microcontrollerProcessorAndMemory| replace:: an 8-bit processor with 32KB of flash memory for the program and 2KB of RAM for data
+..  |microcontrollerIntegerTiming|      replace:: While 8-bit logical operations, as well as 8-bit addition and subtraction, can be completed in one clock cycle, multiplication requires two clock cycles (16-bit operations require additional clock cycles).
+..  |microcontrollerDivisionAndFloats|  replace:: There is no hardware divider, and there is no floating point hardware, so integer division (to include the modulo operation) and all floating point operations are performed in software, requiring hundreds of clock cycles.
+..  |memoryModelDescription|            replace:: If you have already read the first half of Chapter 8, the |microcontroller| has separate instruction and data memory, similar to the simple processor design described in the first half of Chapter 8.
+..  |pipelineDescription|               replace:: If you have already read the second half of Chapter 8, the |microcontroller| has a 2-stage pipeline (with *Fetch* and *Execute* stages).
+..  |resetDescription|                  replace:: Finally, the ``RESET`` pins will reset the |developmentBoard| if grounded (pressing the button in the middle of the |developmentBoard| will also reset it).
+..  |analogPinDescription|              replace:: Pins ``A0``-``A7`` are analog input pins; however, ``A0``-``A5`` can also be used as digital input/output pins ``D14``-``D19``. ``AREF`` (analog reference) is used to provide a reference voltage for the ADC (we will not use this pin).
+..  |pinDescription|                    replace:: It has thirty downward-pointing pins.
+..  |digitalPinDescription|             replace:: Pins ``D2``-``D13`` are digital input/output pins.
+..  |unregulatedVoltageDescription|     replace:: ``VIN`` can be used to power the |developmentBoard| if connected to an unregulated power supply, such as a 9V battery; the |developmentBoard|'s onboard voltage regulator will then provide regulated voltages needed.
+..  |regulatedVoltageDescription|       replace:: Pins ``3V3`` and ``5V`` provide regulated 3.3 volts and 5 volts for external circuitry; ``5V`` can also be used to power the |developmentBoard| if connected to a regulated 5V power supply.
+..  |mcuUpperLeft|                      replace:: g1
+..  |mcuUpperRight|                     replace:: g15
+..  |mcuLowerLeft|                      replace:: c1
+..  |mcuLowerRight|                     replace:: c15
+..  |mcuUpperLeftPin|                   replace:: ``D12``
+..  |mcuUpperRightPin|                  replace:: ``TX1``
+..  |mcuLowerLeftPin|                   replace:: ``D13``
+..  |mcuLowerRightPin|                  replace:: ``VIN``
+..  |mcuUpperRow|                       replace:: |mcuUpperLeft|-|mcuUpperRight|
+..  |mcuLowerRow|                       replace:: |mcuLowerLeft|-|mcuLowerRight|
+..  |mcuFiveVolt|                       replace:: c12
+..  |mcuFiveVoltContactPoint|           replace:: a12
+..  |mcuUpperGround|                    replace:: g12
+..  |mcuUpperGroundContactPoint|        replace:: j12
+..  |mcuLowerGround|                    replace:: c14
+..  |mcuLowerGroundContactPoint|        replace:: a14
+..  |resistorContactPointOne|           replace:: i1
+..  |resistorContactPointTwo|           replace:: i16
+..  |ledAnodeContactPoint|              replace:: j16
+..  |ledPin|                            replace:: ``D12``
+..  |ledPinContactPoint|                replace:: g12
+..  |leftSwitchRange|                   replace:: a27-a29
+..  |leftSwitchLeftPin|                 replace:: e27
+..  |leftSwitchCenterPin|               replace:: e28
+..  |mcuLeftSwitchPin|                  replace:: ``D11``
+..  |mcuLeftSwitchPoint|                replace:: j2
+..  |rightSwitchRange|                  replace:: a32-a34
+..  |rightSwitchLeftPin|                replace:: e32
+..  |rightSwitchCenterPin|              replace:: e33
+..  |mcuRightSwitchPin|                 replace:: ``D10``
+..  |mcuRightSwitchPoint|               replace:: j3
+..  |leftButton2Lead|                   replace:: a37 and a39
+..  |leftButton4Prong|                  replace:: a37, d37, a39, and d39
+..  |leftButtonLeftPin|                 replace:: e37
+..  |leftButtonRightPin|                replace:: e39
+..  |mcuLeftButtonPin|                  replace:: ``D8``
+..  |mcuLeftButtonPoint|                replace:: j5
+..  |rightButton2Lead|                  replace:: a41 and a43
+..  |rightButton4Prong|                 replace:: a41, d41, a43, and d43
+..  |rightButtonLeftPin|                replace:: e41
+..  |rightButtonRightPin|               replace:: e43
+..  |mcuRightButtonPin|                 replace:: ``D9``
+..  |mcuRightButtonPoint|               replace:: j4
+..  |keypadRowRange|                    replace:: h26-h29
+..  |mcuKeypadRowContacts|              replace:: j9-j6
+..  |mcuRow1Pin|                        replace:: ``D4``
+..  |mcuRow4Pin|                        replace:: ``D5``
+..  |mcuRow7Pin|                        replace:: ``D6``
+..  |mcuRowStarPin|                     replace:: ``D7``
+..  |keypadRow1Insertion|               replace:: j26
+..  |keypadColumnAInsertion|            replace:: j33
+..  |keypadColumnRange|                 replace:: h30-h33
+..  |mcuKeypadColumnContacts|           replace:: a4-a7
+..  |mcuColumnPinRange|                 replace:: ``D14/A0``-``D17/A3``
+..  |mcuColumn1Pin|                     replace:: ``D14/A0``
+..  |mcuColumn2Pin|                     replace:: ``D15/A1``
+..  |mcuColumn3Pin|                     replace:: ``D16/A2``
+..  |mcuColumnAPin|                     replace:: ``D17/A3``
+..  |keypadExcessInsertions|            replace:: j34, j35, etc.
+..  |numberOfSerialPins|                replace:: 4
+..  |serialPins|                        replace:: ``GND`` (ground), ``SDA`` (serial data), and ``SCL`` (serial clock)
+..  |serialAdapterRange|                replace:: i48-i63
+..  |lcd1602Range|                      replace:: g48-g63
+..  |serialClockPin|                    replace:: ``SCL``
+..  |mcuClockPoint|                     replace:: a9
+..  |mcuClockPin|                       replace:: ``D19/A5``
+..  |serialDataPin|                     replace:: ``SDA``
+..  |mcuDataPoint|                      replace:: a8
+..  |mcuDataPin|                        replace:: ``D18/A4``
+..  |displayModuleHelloWorld|           replace:: *lcd1602_hello_world*
