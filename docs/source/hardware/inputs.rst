@@ -1,5 +1,3 @@
-.. |i2c| replace:: :math:`\mathrm{I}^2\mathrm{C}`
-
 Input Devices
 =============
 
