@@ -10,8 +10,8 @@ project = 'Cow Pi'
 copyright = '2021-2023, Christopher Bohn'
 author = 'Christopher Bohn'
 
-release = '0.1'
-version = '0.1.0'
+release = '2023.07'
+version = '2023.07.10'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -28,6 +28,7 @@ extensions = [
     # 'sphinx.ext.autosectionlabel',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'sphinxcontrib.tikz'
 ]
 
 intersphinx_mapping = {
@@ -42,8 +43,22 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+# html_theme = 'alabaster'
+# html_static_path = ['_static']
 
-# html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'logo_only': True,
+    'style_nav_header_background': '#FF2400'
+}
+html_context = {}
+html_static_path = ['_static']
+html_logo = '_static/CowPiLogo.png'
 epub_show_urls = 'footnote'
+
+# TIKZ
+# https://sphinxcontrib-tikz.readthedocs.io/en/latest/
+
+tikz_proc_suite = 'GhostScript'
+tikz_tikzlibraries = 'shapes.geometric'
+# tikz_latex_preamble = 'x=.1in, y=.1in'
