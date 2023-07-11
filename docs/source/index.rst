@@ -11,7 +11,6 @@ using the Cow Pi development board is your best option.
 .. toctree::
     :maxdepth: 3
 
-    hardware
     library
     stdio
     microcontroller
