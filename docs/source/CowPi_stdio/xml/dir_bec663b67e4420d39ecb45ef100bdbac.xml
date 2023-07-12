@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="dir_bec663b67e4420d39ecb45ef100bdbac" kind="dir">
+    <compoundname>src/fonts</compoundname>
+    <innerfile refid="font__7segment_8h">font_7segment.h</innerfile>
+    <innerfile refid="font__7segment__internalfonts_8h">font_7segment_internalfonts.h</innerfile>
+    <innerfile refid="font__dotmatrix_8h">font_dotmatrix.h</innerfile>
+    <innerfile refid="font__dotmatrix__internalfonts_8h">font_dotmatrix_internalfonts.h</innerfile>
+    <innerfile refid="font__morse__code_8h">font_morse_code.h</innerfile>
+    <innerfile refid="font__morse__code__internalfonts_8h">font_morse_code_internalfonts.h</innerfile>
+    <innerfile refid="fonts_8c">fonts.c</innerfile>
+    <innerfile refid="fonts_8h">fonts.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/fonts/"/>
+  </compounddef>
+</doxygen>

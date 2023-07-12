@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="structcowpi__pininterrupt__t" kind="struct" language="C++" prot="public">
+    <compoundname>cowpi_pininterrupt_t</compoundname>
+    <includes refid="cowpi__atmega328p_8h" local="no">cowpi_atmega328p.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcowpi__pininterrupt__t_1ae08e48d3e5028282b0a96f91d93593c1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_pininterrupt_t::pci_flags</definition>
+        <argsstring></argsstring>
+        <name>pci_flags</name>
+        <qualifiedname>cowpi_pininterrupt_t::pci_flags</qualifiedname>
+        <briefdescription>
+<para>Pin change interrupt flag register (PCIFR) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="165" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__pininterrupt__t_1a96a3385644120e743b8ada8d7e8edf97" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_pininterrupt_t::ei_flags</definition>
+        <argsstring></argsstring>
+        <name>ei_flags</name>
+        <qualifiedname>cowpi_pininterrupt_t::ei_flags</qualifiedname>
+        <briefdescription>
+<para>External interrupt flag register (EIFR) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="166" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__pininterrupt__t_1a7747d4a0c6a0abf8a5b9e88e25a859d0" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_pininterrupt_t::ei_mask</definition>
+        <argsstring></argsstring>
+        <name>ei_mask</name>
+        <qualifiedname>cowpi_pininterrupt_t::ei_mask</qualifiedname>
+        <briefdescription>
+<para>External interrupt mask register (EIMSK) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="167" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__pininterrupt__t_1a7a28c6d8a6d5dec3c2cae780c8a50f0b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_pininterrupt_t::DO_NOT_TOUCH[0x2A]</definition>
+        <argsstring>[0x2A]</argsstring>
+        <name>DO_NOT_TOUCH</name>
+        <qualifiedname>cowpi_pininterrupt_t::DO_NOT_TOUCH</qualifiedname>
+        <briefdescription>
+<para>padding </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="168" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__pininterrupt__t_1a443b22b16fff1ea8069eed24eae0941b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_pininterrupt_t::pci_control</definition>
+        <argsstring></argsstring>
+        <name>pci_control</name>
+        <qualifiedname>cowpi_pininterrupt_t::pci_control</qualifiedname>
+        <briefdescription>
+<para>Pin change interrupt control register (PCICR) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="169" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__pininterrupt__t_1a2d090d1a28c71a53a5b6c8828130d72d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_pininterrupt_t::ei_control</definition>
+        <argsstring></argsstring>
+        <name>ei_control</name>
+        <qualifiedname>cowpi_pininterrupt_t::ei_control</qualifiedname>
+        <briefdescription>
+<para>External interrupt control register (EICRA) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="170" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__pininterrupt__t_1a5193fbe9abb3a21307a00b28b248b2b0" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_pininterrupt_t::__pad0__</definition>
+        <argsstring></argsstring>
+        <name>__pad0__</name>
+        <qualifiedname>cowpi_pininterrupt_t::__pad0__</qualifiedname>
+        <bitfield>8</bitfield>
+        <briefdescription>
+<para>padding </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="171" column="5" bodyfile="src/cowpi_atmega328p.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__pininterrupt__t_1ae3199073cd21783dfaf60e35a3c025ab" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_pininterrupt_t::pci_mask[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>pci_mask</name>
+        <qualifiedname>cowpi_pininterrupt_t::pci_mask</qualifiedname>
+        <briefdescription>
+<para>Pin change mask registers <ndash/> index array using named constants (COWPI_PB, etc) (PCMSKx) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="172" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure for pin-based interrupts: pin change interrupts and external interrupts. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/cowpi_atmega328p.h" line="164" column="1" bodyfile="src/cowpi_atmega328p.h" bodystart="164" bodyend="173"/>
+    <listofallmembers>
+      <member refid="structcowpi__pininterrupt__t_1a5193fbe9abb3a21307a00b28b248b2b0" prot="public" virt="non-virtual"><scope>cowpi_pininterrupt_t</scope><name>__pad0__</name></member>
+      <member refid="structcowpi__pininterrupt__t_1a7a28c6d8a6d5dec3c2cae780c8a50f0b" prot="public" virt="non-virtual"><scope>cowpi_pininterrupt_t</scope><name>DO_NOT_TOUCH</name></member>
+      <member refid="structcowpi__pininterrupt__t_1a2d090d1a28c71a53a5b6c8828130d72d" prot="public" virt="non-virtual"><scope>cowpi_pininterrupt_t</scope><name>ei_control</name></member>
+      <member refid="structcowpi__pininterrupt__t_1a96a3385644120e743b8ada8d7e8edf97" prot="public" virt="non-virtual"><scope>cowpi_pininterrupt_t</scope><name>ei_flags</name></member>
+      <member refid="structcowpi__pininterrupt__t_1a7747d4a0c6a0abf8a5b9e88e25a859d0" prot="public" virt="non-virtual"><scope>cowpi_pininterrupt_t</scope><name>ei_mask</name></member>
+      <member refid="structcowpi__pininterrupt__t_1a443b22b16fff1ea8069eed24eae0941b" prot="public" virt="non-virtual"><scope>cowpi_pininterrupt_t</scope><name>pci_control</name></member>
+      <member refid="structcowpi__pininterrupt__t_1ae08e48d3e5028282b0a96f91d93593c1" prot="public" virt="non-virtual"><scope>cowpi_pininterrupt_t</scope><name>pci_flags</name></member>
+      <member refid="structcowpi__pininterrupt__t_1ae3199073cd21783dfaf60e35a3c025ab" prot="public" virt="non-virtual"><scope>cowpi_pininterrupt_t</scope><name>pci_mask</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

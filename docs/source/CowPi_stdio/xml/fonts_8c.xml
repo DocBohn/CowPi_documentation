@@ -1,0 +1,706 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="fonts_8c" kind="file" language="C++">
+    <compoundname>fonts.c</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="font__7segment_8h" local="yes">font_7segment.h</includes>
+    <includes refid="font__7segment__internalfonts_8h" local="yes">font_7segment_internalfonts.h</includes>
+    <includes refid="font__dotmatrix_8h" local="yes">font_dotmatrix.h</includes>
+    <includes refid="font__dotmatrix__internalfonts_8h" local="yes">font_dotmatrix_internalfonts.h</includes>
+    <includes refid="font__morse__code__internalfonts_8h" local="yes">font_morse_code_internalfonts.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>font_7segment.h</label>
+        <link refid="font__7segment_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>font_7segment_internalfonts.h</label>
+        <link refid="font__7segment__internalfonts_8h"/>
+      </node>
+      <node id="7">
+        <label>font_dotmatrix.h</label>
+        <link refid="font__dotmatrix_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>font_dotmatrix_internalfonts.h</label>
+        <link refid="font__dotmatrix__internalfonts_8h"/>
+      </node>
+      <node id="9">
+        <label>font_morse_code_internalfonts.h</label>
+        <link refid="font__morse__code__internalfonts_8h"/>
+      </node>
+      <node id="1">
+        <label>src/fonts/fonts.c</label>
+        <link refid="fonts_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="fonts_8c_1aee2c69d1aadaeefc41d77834dac0242e" prot="public" static="no">
+        <name>COWPI_STDIO_FONTS_INTERNAL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="24" column="9" bodyfile="src/fonts/fonts.c" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fonts_8c_1af3e0e343bc6b8fc3eae5c269ce9ccd43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_font_ascii_to_7segment</definition>
+        <argsstring>(char c)</argsstring>
+        <name>cowpi_font_ascii_to_7segment</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Provides the 7-segment bit vector for an ASCII character or for a hexadecimal numeral. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For hexadecimal numerals 0x0-0xF, returns a bit vector to display that numeral on a 7-segment display. For the printable ASCII characters 0x20-0x7E, returns a bit vector to display an approximation of that character on a 7-segment display. Values in the range 0x10-0x1F, and 0x7F (DEL) return 0xFF, which will illuminate all segments.</para>
+<para>The bit vector is guaranteed to work for a 7-segment display whose segments are mapped to bits in the manner specified in the MAX7219/MAX7221 datasheet (MSB DP-A-B-C-D-E-F-G LSB).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ASCII character whose 7-segment bit vector is to be provided </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a 7-segment bit vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="43" column="9" bodyfile="src/fonts/fonts.c" bodystart="43" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="fonts_8c_1a961311a015eda71844339d0247941c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * cowpi_font_string_to_7segment</definition>
+        <argsstring>(uint8_t *destination, const char *s)</argsstring>
+        <name>cowpi_font_string_to_7segment</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Provides an array of 7-segment bit vectors for an ASCII character string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The source string, <computeroutput>s</computeroutput>, is assumed to be NUL-terminated.</para>
+<para>The <computeroutput>destination</computeroutput> array is assumed to point to a block of memory with <computeroutput>strlen(s)</computeroutput> bytes allocated; that is, it must have enough space to hold the array of bit vectors.</para>
+<para><simplesect kind="note"><para>The array of bit vectors will <emphasis>not</emphasis> be NUL-terminated.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an empty array of sufficient size to hold the bit vectors </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string to be converted into 7-segment bit vectors </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>destination</computeroutput>, with the requested bit vectors </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="51" column="9" bodyfile="src/fonts/fonts.c" bodystart="51" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="fonts_8c_1ad1402c894475056760e935559eea4756" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t cowpi_font_get_dotmatrix_width</definition>
+        <argsstring>(char c)</argsstring>
+        <name>cowpi_font_get_dotmatrix_width</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Provides the minimum number of columns needed to represent a character in the dot matrix font. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the character whose width is to be determined </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the dot matrix width of the character </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="61" column="8" bodyfile="src/fonts/fonts.c" bodystart="61" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="fonts_8c_1a2540146dfc7fae258609b0180b92ddaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * cowpi_font_ascii_to_narrow_dotmatrix</definition>
+        <argsstring>(uint8_t *destination, char c)</argsstring>
+        <name>cowpi_font_ascii_to_narrow_dotmatrix</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Provides the dot matrix representation of an ASCII character with no blank columns to the right of the character. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each byte of the destination array stores one row of the character&apos;s dot matrix representation, with element 0 being the top of the character. Each bit position in an array element represents a column.</para>
+<para>The <computeroutput>destination</computeroutput> array is assumed to point to a block of memory with 8 bytes allocated; that is, it must have enough space to hold the character&apos;s dot matrix representation.</para>
+<para><simplesect kind="see"><para><ref refid="font__dotmatrix_8h_1a9837280ea0856025839af606efaf8fac" kindref="member">cowpi_font_ascii_to_5wide_dotmatrix</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="font__dotmatrix_8h_1a6ce3c98c676cc39fbb50e9aa72475189" kindref="member">cowpi_font_ascii_to_8wide_dotmatrix</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an empty 8-byte array </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ASCII character whose dot matrix representation is to be provided </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>destination</computeroutput>, with the requested dot matrix character </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="69" column="9" bodyfile="src/fonts/fonts.c" bodystart="69" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="fonts_8c_1a9837280ea0856025839af606efaf8fac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * cowpi_font_ascii_to_5wide_dotmatrix</definition>
+        <argsstring>(uint8_t *destination, char c)</argsstring>
+        <name>cowpi_font_ascii_to_5wide_dotmatrix</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Provides the dot matrix representation of an ASCII character centered horizontally in the five columns used for a 5x8 dot matrix character (the five right-most columns of the 8x8 matrix). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each byte of the destination array stores one row of the character&apos;s dot matrix representation, with element 0 being the top of the character.</para>
+<para>The <computeroutput>destination</computeroutput> array is assumed to point to a block of memory with 8 bytes allocated; that is, it must have enough space to hold the character&apos;s dot matrix representation.</para>
+<para><simplesect kind="see"><para><ref refid="font__dotmatrix_8h_1a2540146dfc7fae258609b0180b92ddaf" kindref="member">cowpi_font_ascii_to_narrow_dotmatrix</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="font__dotmatrix_8h_1a6ce3c98c676cc39fbb50e9aa72475189" kindref="member">cowpi_font_ascii_to_8wide_dotmatrix</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an empty 8-byte array </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ASCII character whose dot matrix representation is to be provided </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>destination</computeroutput>, with the requested dot matrix character </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="78" column="9" bodyfile="src/fonts/fonts.c" bodystart="78" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="fonts_8c_1a6ce3c98c676cc39fbb50e9aa72475189" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * cowpi_font_ascii_to_8wide_dotmatrix</definition>
+        <argsstring>(uint8_t *destination, char c)</argsstring>
+        <name>cowpi_font_ascii_to_8wide_dotmatrix</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Provides the dot matrix representation of an ASCII character centered horizontally in the eight columns of the 8x8 matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each byte of the destination array stores one row of the character&apos;s dot matrix representation, with element 0 being the top of the character.</para>
+<para>The <computeroutput>destination</computeroutput> array is assumed to point to a block of memory with 8 bytes allocated; that is, it must have enough space to hold the character&apos;s dot matrix representation.</para>
+<para><simplesect kind="see"><para><ref refid="font__dotmatrix_8h_1a2540146dfc7fae258609b0180b92ddaf" kindref="member">cowpi_font_ascii_to_narrow_dotmatrix</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="font__dotmatrix_8h_1a9837280ea0856025839af606efaf8fac" kindref="member">cowpi_font_ascii_to_5wide_dotmatrix</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an empty 8-byte array </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ASCII character whose dot matrix representation is to be provided </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>destination</computeroutput>, with the requested dot matrix character </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="86" column="9" bodyfile="src/fonts/fonts.c" bodystart="86" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="fonts_8c_1a9cd394cdd812539e35d3967e4735a7cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * cowpi_font_transpose_dotmatrix</definition>
+        <argsstring>(uint8_t *matrix)</argsstring>
+        <name>cowpi_font_transpose_dotmatrix</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+<para>Transposes an 8x8 dot matrix representation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>After the transposition, each element of the <computeroutput>matrix</computeroutput> array represents a column, and each bit position of an array element represents a row.</para>
+<para>This is an in-place transposition; that is, the original matrix is overwritten.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the dot matrix to be transposed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>matrix</computeroutput> after the transposition </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="94" column="9" bodyfile="src/fonts/fonts.c" bodystart="94" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="fonts_8c_1a9536ecd91698c7a43aa8c28dd7556836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cowpi_font_string_to_horizontal_dotmatrix</definition>
+        <argsstring>(uint8_t *destination, const char *s, bool kerned)</argsstring>
+        <name>cowpi_font_string_to_horizontal_dotmatrix</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>kerned</declname>
+        </param>
+        <briefdescription>
+<para>Provides a single dot matrix representation of an ASCII character string suitable for scrolling horizontally. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each byte of the destination array stores one column of the string&apos;s dot matrix representation, with element 0 being the leftmost column of the first character.</para>
+<para>The <computeroutput>destination</computeroutput> array is assumed to point to a block of memory with sufficient space allocated to hold the full string&apos;s dot matrix representation; <computeroutput>6 * strlen(s)</computeroutput> is guaranteed to be sufficient.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an empty array to hold the dot matrix representation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ASCII string whose dot matrix representation is to be provided </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kerned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicates whether to use minimal space between characters or to use a fixed 5 columns per character </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of columns in the string&apos;s dot matrix representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="110" column="5" bodyfile="src/fonts/fonts.c" bodystart="110" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="fonts_8c_1a54a586042e47b1a9551f72ecd2276e2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cowpi_font_string_to_vertical_dotmatrix</definition>
+        <argsstring>(uint8_t *destination, const char *s, bool kerned)</argsstring>
+        <name>cowpi_font_string_to_vertical_dotmatrix</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>kerned</declname>
+        </param>
+        <briefdescription>
+<para>Provides a single dot matrix representation of an ASCII character string suitable for scrolling vertically. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each byte of the destination array stores one row of the string&apos;s dot matrix representation, with element 0 being the top row of the first character.</para>
+<para>The <computeroutput>destination</computeroutput> array is assumed to point to a block of memory with sufficient space allocated to hold the full string&apos;s dot matrix representation; <computeroutput>9 * strlen(s)</computeroutput> is guaranteed to be sufficient.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an empty array to hold the dot matrix representation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ASCII string whose dot matrix representation is to be provided </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kerned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicates whether to use minimal space between characters or to use a fixed 8 rows per character </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of rows in the string&apos;s dot matrix representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="143" column="5" bodyfile="src/fonts/fonts.c" bodystart="143" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="fonts_8c_1a5139b1f0fa5bece1659db4572c1f848b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * cowpi_font_ascii_to_morse_code</definition>
+        <argsstring>(uint8_t *destination, char c)</argsstring>
+        <name>cowpi_font_ascii_to_morse_code</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Provides the series of DITs and DAHs to represent an ASCII character in Morse Code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each byte of the destination array stores a DIT, a DAH, a SYMBOL_SPACE (the pause between dits/dahs), a CHARACTER_SPACE (the pause between letters), a WORD_SPACE (the pause between words), or an END_OF_CHARACTER (a terminating NUL).</para>
+<para>In most cases, a 9-byte <computeroutput>destination</computeroutput> array will be sufficient; however, if <computeroutput>c</computeroutput> is a percent sign (<lsquo/><rsquo/>%&apos;<computeroutput>) then 18 bytes will be required for the </computeroutput>destination` array.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an empty 8-byte array </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ASCII character whose Morse Code representation is to be provided </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>destination</computeroutput>, with the requested series of Morse symbols </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/fonts/fonts.c" line="173" column="9" bodyfile="src/fonts/fonts.c" bodystart="173" bodyend="182"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Functions to display printable ASCII characters on display modules.   </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Christopher A. Bohn</para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/**************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CowPi_stdio<sp/>(c)<sp/>2022-23<sp/>Christopher<sp/>A.<sp/>Bohn</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COWPI_STDIO_FONTS_INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="font__7segment_8h" kindref="compound">font_7segment.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="font__7segment__internalfonts_8h" kindref="compound">font_7segment_internalfonts.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="font__dotmatrix_8h" kindref="compound">font_dotmatrix.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="font__dotmatrix__internalfonts_8h" kindref="compound">font_dotmatrix_internalfonts.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="font__morse__code__internalfonts_8h" kindref="compound">font_morse_code_internalfonts.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avr/pgmspace.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>7-Segment<sp/>Functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">uint8_t<sp/><ref refid="fonts_8c_1af3e0e343bc6b8fc3eae5c269ce9ccd43" kindref="member">cowpi_font_ascii_to_7segment</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pgm_read_byte(cowpi_font_7segment<sp/>+<sp/>c);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cowpi_font_7segment[(int)<sp/>c];</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">uint8_t<sp/>*<ref refid="fonts_8c_1a961311a015eda71844339d0247941c1a" kindref="member">cowpi_font_string_to_7segment</ref>(uint8_t<sp/>*destination,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*character_destination<sp/>=<sp/>destination;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*s)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*character_destination++<sp/>=<sp/><ref refid="fonts_8c_1af3e0e343bc6b8fc3eae5c269ce9ccd43" kindref="member">cowpi_font_ascii_to_7segment</ref>(*s++);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>destination;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Dot<sp/>Matrix<sp/>Functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">int8_t<sp/><ref refid="fonts_8c_1ad1402c894475056760e935559eea4756" kindref="member">cowpi_font_get_dotmatrix_width</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pgm_read_byte(cowpi_font_dotmatrix_widths<sp/>+<sp/>c);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cowpi_font_dotmatrix_widths[(int)<sp/>c];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">uint8_t<sp/>*<ref refid="fonts_8c_1a2540146dfc7fae258609b0180b92ddaf" kindref="member">cowpi_font_ascii_to_narrow_dotmatrix</ref>(uint8_t<sp/>*destination,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy_P(destination,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*)<sp/>pgm_read_word(cowpi_font_dotmatrix<sp/>+<sp/>c),<sp/>8);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(destination,<sp/>cowpi_font_dotmatrix[(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>c],<sp/>8);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>destination;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">uint8_t<sp/>*<ref refid="fonts_8c_1a9837280ea0856025839af606efaf8fac" kindref="member">cowpi_font_ascii_to_5wide_dotmatrix</ref>(uint8_t<sp/>*destination,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>destination<sp/>=<sp/><ref refid="fonts_8c_1a2540146dfc7fae258609b0180b92ddaf" kindref="member">cowpi_font_ascii_to_narrow_dotmatrix</ref>(destination,<sp/>c);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>8;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[i]<sp/>&lt;&lt;=<sp/>(5<sp/>-<sp/><ref refid="fonts_8c_1ad1402c894475056760e935559eea4756" kindref="member">cowpi_font_get_dotmatrix_width</ref>(c)<sp/>+<sp/>1)<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>destination;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">uint8_t<sp/>*<ref refid="fonts_8c_1a6ce3c98c676cc39fbb50e9aa72475189" kindref="member">cowpi_font_ascii_to_8wide_dotmatrix</ref>(uint8_t<sp/>*destination,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>destination<sp/>=<sp/><ref refid="fonts_8c_1a9837280ea0856025839af606efaf8fac" kindref="member">cowpi_font_ascii_to_5wide_dotmatrix</ref>(destination,<sp/>c);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>8;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[i]<sp/>&lt;&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>destination;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">uint8_t<sp/>*<ref refid="fonts_8c_1a9cd394cdd812539e35d3967e4735a7cf" kindref="member">cowpi_font_transpose_dotmatrix</ref>(uint8_t<sp/>*matrix)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>new_matrix[8]<sp/>=<sp/>{0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>7;<sp/>i<sp/>&gt;=<sp/>0;<sp/>i--)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>original_row<sp/>=<sp/>matrix[i];</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>7;<sp/>j<sp/>&gt;=<sp/>0;<sp/>j--)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_matrix[j]<sp/>|=<sp/>original_row<sp/>&amp;<sp/>0x1;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>original_row<sp/>&gt;&gt;=<sp/>1;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_matrix[j]<sp/>&lt;&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(matrix,<sp/>new_matrix,<sp/>8);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>matrix;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fonts_8c_1a9536ecd91698c7a43aa8c28dd7556836" kindref="member">cowpi_font_string_to_horizontal_dotmatrix</ref>(uint8_t<sp/>*destination,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>kerned)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>letter[8];</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*s)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(kerned)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*s<sp/>==<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>last_character<sp/>=<sp/>*(s<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(last_character<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal"><sp/>||<sp/>last_character<sp/>==<sp/></highlight><highlight class="charliteral">&apos;!&apos;</highlight><highlight class="normal"><sp/>||<sp/>last_character<sp/>==<sp/></highlight><highlight class="charliteral">&apos;?&apos;</highlight><highlight class="normal"><sp/>||<sp/>last_character<sp/>==<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fonts_8c_1a9cd394cdd812539e35d3967e4735a7cf" kindref="member">cowpi_font_transpose_dotmatrix</ref>(<ref refid="fonts_8c_1a2540146dfc7fae258609b0180b92ddaf" kindref="member">cowpi_font_ascii_to_narrow_dotmatrix</ref>(letter,<sp/>*s));</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>8;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(letter[i])<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>letter[i];</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fonts_8c_1a9cd394cdd812539e35d3967e4735a7cf" kindref="member">cowpi_font_transpose_dotmatrix</ref>(<ref refid="fonts_8c_1a9837280ea0856025839af606efaf8fac" kindref="member">cowpi_font_ascii_to_5wide_dotmatrix</ref>(letter,<sp/>*s));</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>3;<sp/>i<sp/>&lt;<sp/>8;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>letter[i];</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s++;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>length;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fonts_8c_1a54a586042e47b1a9551f72ecd2276e2d" kindref="member">cowpi_font_string_to_vertical_dotmatrix</ref>(uint8_t<sp/>*destination,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>kerned)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>letter[8];</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*s)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fonts_8c_1a6ce3c98c676cc39fbb50e9aa72475189" kindref="member">cowpi_font_ascii_to_8wide_dotmatrix</ref>(letter,<sp/>*s);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(kerned<sp/>&amp;&amp;<sp/>(*s<sp/>==<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>last_character<sp/>=<sp/>*(s<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(last_character<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal"><sp/>||<sp/>last_character<sp/>==<sp/></highlight><highlight class="charliteral">&apos;!&apos;</highlight><highlight class="normal"><sp/>||<sp/>last_character<sp/>==<sp/></highlight><highlight class="charliteral">&apos;?&apos;</highlight><highlight class="normal"><sp/>||<sp/>last_character<sp/>==<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>8;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!kerned<sp/>||<sp/>letter[i]<sp/>||<sp/>((i<sp/>&gt;<sp/>0)<sp/>&amp;&amp;<sp/>(i<sp/>&lt;<sp/>7)<sp/>&amp;&amp;<sp/>letter[i<sp/>-<sp/>1]<sp/>&amp;&amp;<sp/>letter[i<sp/>+<sp/>1]))<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>letter[i];</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s++;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination[length++]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>length;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Morse<sp/>Code<sp/>Functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">uint8_t<sp/>*<ref refid="fonts_8c_1a5139b1f0fa5bece1659db4572c1f848b" kindref="member">cowpi_font_ascii_to_morse_code</ref>(uint8_t<sp/>*destination,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy_P(destination,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*)<sp/>pgm_read_word(cowpi_font_morse_code<sp/>+<sp/>c),</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>==<sp/></highlight><highlight class="charliteral">&apos;%&apos;</highlight><highlight class="normal"><sp/>?<sp/>PERCENT_MORSE_CODE_LENGTH<sp/>:<sp/>MAXIMUM_MORSE_CODE_LENGTH);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(destination,<sp/>cowpi_font_morse_code[(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>c],</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>==<sp/></highlight><highlight class="charliteral">&apos;%&apos;</highlight><highlight class="normal"><sp/>?<sp/>PERCENT_MORSE_CODE_LENGTH<sp/>:<sp/>MAXIMUM_MORSE_CODE_LENGTH);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>destination;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/fonts/fonts.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="font__7segment__internalfonts_8h" kind="file" language="C++">
+    <compoundname>font_7segment_internalfonts.h</compoundname>
+    <includedby refid="fonts_8c" local="yes">src/fonts/fonts.c</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/fonts/font_7segment_internalfonts.h</label>
+        <link refid="font__7segment__internalfonts_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/fonts/fonts.c</label>
+        <link refid="fonts_8c"/>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+<para>The specific constants for the font promised by <ref refid="font__7segment_8h" kindref="compound">font_7segment.h</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Christopher A. Bohn</para>
+</simplesect>
+</para>
+<para>This file should be <computeroutput>#include</computeroutput>d <emphasis>only</emphasis> by <ref refid="fonts_8c" kindref="compound">fonts.c</ref> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/**************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CowPi_stdio<sp/>(c)<sp/>2022-23<sp/>Christopher<sp/>A.<sp/>Bohn</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>COWPI_STDIO_FONTS_INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avr/pgmspace.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>cowpi_font_7segment[0x80]</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PROGMEM</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>00<sp/>nul<sp/><sp/>01<sp/>soh<sp/><sp/>02<sp/>stx<sp/><sp/>03<sp/>etx<sp/><sp/>04<sp/>eot<sp/><sp/>05<sp/>enq<sp/><sp/>06<sp/>ack<sp/><sp/>07<sp/>bel<sp/><sp/>08<sp/>bs<sp/><sp/><sp/>09<sp/>ht<sp/><sp/><sp/>0a<sp/>lf<sp/><sp/><sp/>0b<sp/>vt<sp/><sp/><sp/>0c<sp/>ff<sp/><sp/><sp/>0d<sp/>cr<sp/><sp/><sp/>0e<sp/>so<sp/><sp/><sp/>0f<sp/>si</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7E,<sp/><sp/><sp/>0x30,<sp/><sp/><sp/>0x6D,<sp/><sp/><sp/>0x79,<sp/><sp/><sp/>0x33,<sp/><sp/><sp/>0x5B,<sp/><sp/><sp/>0x5F,<sp/><sp/><sp/>0x70,<sp/><sp/><sp/>0x7F,<sp/><sp/><sp/>0x7B,<sp/><sp/><sp/>0x77,<sp/><sp/><sp/>0x1F,<sp/><sp/><sp/>0x0D,<sp/><sp/><sp/>0x3D,<sp/><sp/><sp/>0x4F,<sp/><sp/><sp/>0x47,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>10<sp/>dle<sp/><sp/>11<sp/>dc1<sp/><sp/>12<sp/>dc<sp/><sp/><sp/>13<sp/>dc<sp/><sp/><sp/>14<sp/>dc<sp/><sp/><sp/>15<sp/>na<sp/><sp/><sp/>16<sp/>sy<sp/><sp/><sp/>17<sp/>et<sp/><sp/><sp/>18<sp/>ca<sp/><sp/><sp/>19<sp/>em<sp/><sp/><sp/>1a<sp/>su<sp/><sp/><sp/>1b<sp/>es<sp/><sp/><sp/>1c<sp/>fs<sp/><sp/><sp/>1d<sp/>gs<sp/><sp/><sp/>1e<sp/>rs<sp/><sp/><sp/>1f<sp/>us</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,<sp/><sp/><sp/>0xFF,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>20<sp/>sp<sp/><sp/><sp/>21<sp/><sp/>!<sp/><sp/><sp/>22<sp/><sp/>&quot;<sp/><sp/><sp/>23<sp/><sp/>#<sp/><sp/><sp/>24<sp/><sp/>$<sp/><sp/><sp/>25<sp/><sp/>%<sp/><sp/><sp/>26<sp/><sp/>&amp;<sp/><sp/><sp/>27<sp/><sp/>&apos;<sp/><sp/><sp/>28<sp/><sp/>(<sp/><sp/><sp/>29<sp/><sp/>)<sp/><sp/><sp/>2a<sp/><sp/>*<sp/><sp/><sp/>2b<sp/><sp/>+<sp/><sp/><sp/>2c<sp/><sp/>,<sp/><sp/><sp/>2d<sp/><sp/>-<sp/><sp/><sp/>2e<sp/><sp/>.<sp/><sp/><sp/>2f<sp/><sp/>/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/><sp/><sp/>0xA0,<sp/><sp/><sp/>0x22,<sp/><sp/><sp/>0x49,<sp/><sp/><sp/>0x00,<sp/><sp/><sp/>0x5A,<sp/><sp/><sp/>0x4A,<sp/><sp/><sp/>0x02,<sp/><sp/><sp/>0x4A,<sp/><sp/><sp/>0x68,<sp/><sp/><sp/>0x2B,<sp/><sp/><sp/>0x07,<sp/><sp/><sp/>0x80,<sp/><sp/><sp/>0x01,<sp/><sp/><sp/>0x80,<sp/><sp/><sp/>0x25,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>30<sp/><sp/>0<sp/><sp/><sp/>31<sp/><sp/>1<sp/><sp/><sp/>32<sp/><sp/>2<sp/><sp/><sp/>33<sp/><sp/>3<sp/><sp/><sp/>34<sp/><sp/>4<sp/><sp/><sp/>35<sp/><sp/>5<sp/><sp/><sp/>36<sp/><sp/>6<sp/><sp/><sp/>37<sp/><sp/>7<sp/><sp/><sp/>38<sp/><sp/>8<sp/><sp/><sp/>39<sp/><sp/>9<sp/><sp/><sp/>3a<sp/><sp/>:<sp/><sp/><sp/>3b<sp/><sp/>;<sp/><sp/><sp/>3c<sp/><sp/>&lt;<sp/><sp/><sp/>3d<sp/><sp/>=<sp/><sp/><sp/>3e<sp/><sp/>&gt;<sp/><sp/><sp/>3f<sp/><sp/>?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x7E,<sp/><sp/><sp/>0x30,<sp/><sp/><sp/>0x6D,<sp/><sp/><sp/>0x79,<sp/><sp/><sp/>0x33,<sp/><sp/><sp/>0x5B,<sp/><sp/><sp/>0x5F,<sp/><sp/><sp/>0x70,<sp/><sp/><sp/>0x7F,<sp/><sp/><sp/>0x7B,<sp/><sp/><sp/>0x88,<sp/><sp/><sp/>0x88,<sp/><sp/><sp/>0x43,<sp/><sp/><sp/>0x41,<sp/><sp/><sp/>0x61,<sp/><sp/><sp/>0xE1,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>40<sp/><sp/>@<sp/><sp/><sp/>41<sp/><sp/>A<sp/><sp/><sp/>42<sp/><sp/>B<sp/><sp/><sp/>43<sp/><sp/>C<sp/><sp/><sp/>44<sp/><sp/>D<sp/><sp/><sp/>45<sp/><sp/>E<sp/><sp/><sp/>46<sp/><sp/>F<sp/><sp/><sp/>47<sp/><sp/>G<sp/><sp/><sp/>48<sp/><sp/>H<sp/><sp/><sp/>49<sp/><sp/>I<sp/><sp/><sp/>4a<sp/><sp/>J<sp/><sp/><sp/>4b<sp/><sp/>K<sp/><sp/><sp/>4c<sp/><sp/>L<sp/><sp/><sp/>4d<sp/><sp/>M<sp/><sp/><sp/>4e<sp/><sp/>N<sp/><sp/><sp/>4f<sp/><sp/>O</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x6F,<sp/><sp/><sp/>0x77,<sp/><sp/><sp/>0x1F,<sp/><sp/><sp/>0x0D,<sp/><sp/><sp/>0x3D,<sp/><sp/><sp/>0x4F,<sp/><sp/><sp/>0x47,<sp/><sp/><sp/>0x5E,<sp/><sp/><sp/>0x37,<sp/><sp/><sp/>0x04,<sp/><sp/><sp/>0x38,<sp/><sp/><sp/>0x2F,<sp/><sp/><sp/>0x0E,<sp/><sp/><sp/>0x57,<sp/><sp/><sp/>0x76,<sp/><sp/><sp/>0x1D,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>50<sp/><sp/>P<sp/><sp/><sp/>51<sp/><sp/>Q<sp/><sp/><sp/>52<sp/><sp/>R<sp/><sp/><sp/>53<sp/><sp/>S<sp/><sp/><sp/>54<sp/><sp/>T<sp/><sp/><sp/>55<sp/><sp/>U<sp/><sp/><sp/>56<sp/><sp/>V<sp/><sp/><sp/>57<sp/><sp/>W<sp/><sp/><sp/>58<sp/><sp/>X<sp/><sp/><sp/>59<sp/><sp/>Y<sp/><sp/><sp/>5a<sp/><sp/>Z<sp/><sp/><sp/>5b<sp/><sp/>[<sp/><sp/><sp/>5c<sp/><sp/>\<sp/><sp/><sp/>5d<sp/><sp/>]<sp/><sp/><sp/>5e<sp/><sp/>^<sp/><sp/><sp/>5f<sp/><sp/>_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x67,<sp/><sp/><sp/>0x73,<sp/><sp/><sp/>0x05,<sp/><sp/><sp/>0x5B,<sp/><sp/><sp/>0x0F,<sp/><sp/><sp/>0x3E,<sp/><sp/><sp/>0x27,<sp/><sp/><sp/>0x3F,<sp/><sp/><sp/>0x55,<sp/><sp/><sp/>0x3B,<sp/><sp/><sp/>0x6D,<sp/><sp/><sp/>0x4E,<sp/><sp/><sp/>0x13,<sp/><sp/><sp/>0x78,<sp/><sp/><sp/>0x62,<sp/><sp/><sp/>0x08,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>60<sp/><sp/>`<sp/><sp/><sp/>61<sp/><sp/>a<sp/><sp/><sp/>62<sp/><sp/>b<sp/><sp/><sp/>63<sp/><sp/>c<sp/><sp/><sp/>64<sp/><sp/>d<sp/><sp/><sp/>65<sp/><sp/>e<sp/><sp/><sp/>66<sp/><sp/>f<sp/><sp/><sp/>67<sp/><sp/>g<sp/><sp/><sp/>68<sp/><sp/>h<sp/><sp/><sp/>69<sp/><sp/>i<sp/><sp/><sp/>6a<sp/><sp/>j<sp/><sp/><sp/>6b<sp/><sp/>k<sp/><sp/><sp/>6c<sp/><sp/>l<sp/><sp/><sp/>6d<sp/><sp/>m<sp/><sp/><sp/>6e<sp/><sp/>n<sp/><sp/><sp/>6f<sp/><sp/>o</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20,<sp/><sp/><sp/>0x77,<sp/><sp/><sp/>0x1F,<sp/><sp/><sp/>0x0D,<sp/><sp/><sp/>0x3D,<sp/><sp/><sp/>0x4F,<sp/><sp/><sp/>0x47,<sp/><sp/><sp/>0x5E,<sp/><sp/><sp/>0x37,<sp/><sp/><sp/>0x04,<sp/><sp/><sp/>0x38,<sp/><sp/><sp/>0x2F,<sp/><sp/><sp/>0x0E,<sp/><sp/><sp/>0x57,<sp/><sp/><sp/>0x76,<sp/><sp/><sp/>0x1D,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>70<sp/><sp/>p<sp/><sp/><sp/>71<sp/><sp/>q<sp/><sp/><sp/>72<sp/><sp/>r<sp/><sp/><sp/>73<sp/><sp/>s<sp/><sp/><sp/>74<sp/><sp/>t<sp/><sp/><sp/>75<sp/><sp/>u<sp/><sp/><sp/>76<sp/><sp/>v<sp/><sp/><sp/>77<sp/><sp/>w<sp/><sp/><sp/>78<sp/><sp/>x<sp/><sp/><sp/>79<sp/><sp/>y<sp/><sp/><sp/>7a<sp/><sp/>z<sp/><sp/><sp/>7b<sp/><sp/>{<sp/><sp/><sp/>7c<sp/><sp/>|<sp/><sp/><sp/>7d<sp/><sp/>}<sp/><sp/><sp/>7e<sp/><sp/>~<sp/><sp/><sp/>7f<sp/>del</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x67,<sp/><sp/><sp/>0x73,<sp/><sp/><sp/>0x05,<sp/><sp/><sp/>0x5B,<sp/><sp/><sp/>0x0F,<sp/><sp/><sp/>0x3E,<sp/><sp/><sp/>0x27,<sp/><sp/><sp/>0x3F,<sp/><sp/><sp/>0x55,<sp/><sp/><sp/>0x3B,<sp/><sp/><sp/>0x6D,<sp/><sp/><sp/>0x4C,<sp/><sp/><sp/>0x06,<sp/><sp/><sp/>0x58,<sp/><sp/><sp/>0x40,<sp/><sp/><sp/>0xFF</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//COWPI_STDIO_FONTS_INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/fonts/font_7segment_internalfonts.h"/>
+  </compounddef>
+</doxygen>

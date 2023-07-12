@@ -1,0 +1,434 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="cowpi__io_8h" kind="file" language="C++">
+    <compoundname>cowpi_io.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="_cow_pi_8h" local="yes">src/CowPi.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/cowpi_io.h</label>
+        <link refid="cowpi__io_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/CowPi.h</label>
+        <link refid="_cow_pi_8h"/>
+      </node>
+      <node id="1">
+        <label>src/cowpi_io.h</label>
+        <link refid="cowpi__io_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="cowpi__io_8h_1a67948aab161a6b9cb8206d0c7f29ceb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char cowpi_get_keypress</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_get_keypress</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Scans the keypad to determine which, if any, key was pressed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There is no debouncing. This is a portable implementation, not a memory-mapped implementation. Returns the ASCII representation of the character depicted on whichever key was pressed (0-9, A-D, *, #).</para>
+<para>Assumes a common 4x4 matrix keypad with the rows in Arduino pins D4-D7 and the columns in Arduino pins A0-A3 (D14-D17). A pressed key grounds a pulled-high input.</para>
+<para><simplesect kind="return"><para>ASCII character corresponding to the key that is pressed, or NUL if no key is pressed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="52" column="6" declfile="src/cowpi_io.h" declline="52" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a86d9def1fd4d2ad84c5e9afb20aa36a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t cowpi_get_keypresses</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_get_keypresses</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="54" column="10" declfile="src/cowpi_io.h" declline="54" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a308eee9232481c14f3aabb96a162b421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cowpi_left_button_is_pressed</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_left_button_is_pressed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reports whether the left button is pressed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There is no debouncing. This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the left button is in Arduino pin D8. A pressed button grounds a pulled-high input.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the button is pressed, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="68" column="6" declfile="src/cowpi_io.h" declline="68" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1ae9e2f08c0c783b461d6ba1916d808ac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cowpi_right_button_is_pressed</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_right_button_is_pressed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reports whether the right button is pressed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There is no debouncing. This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the right button is in Arduino pin D9. A pressed button grounds a pulled-high input.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the button is pressed, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="82" column="6" declfile="src/cowpi_io.h" declline="82" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a2026b9d3b660c1e1edf5725323489d48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cowpi_left_switch_is_in_left_position</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_left_switch_is_in_left_position</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reports whether the left switch is in the left position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There is no debouncing. This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the left switch is in Arduino pin A4 (D18) if SPI (but not I2C) is in use or if no protocol is in use; assumes the switch is in pin D11 if I2C (but not SPI) is in use. If both protocols are in use, then this function will always return <computeroutput>false</computeroutput>. A switch in the left position grounds a pulled-high input.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the switch is in the left position, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="99" column="6" declfile="src/cowpi_io.h" declline="99" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1ae0fd99e4d68c4fb0b4377f0d1ad6d00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cowpi_right_switch_is_in_left_position</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_right_switch_is_in_left_position</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reports whether the right switch is in the left position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There is no debouncing. This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the right switch is in Arduino pin A5 (D19) if SPI (but not I2C) is in use or if no protocol is in use; assumes the switch is in pin D10 if I2C (but not SPI) is in use. If both protocols are in use, then this function will always return <computeroutput>false</computeroutput>. A switch in the left position grounds a pulled-high input.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the switch is in the left position, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="116" column="6" declfile="src/cowpi_io.h" declline="116" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a12c7e67a5e78b0128d3c56de4f273cce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cowpi_left_switch_is_in_right_position</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_left_switch_is_in_right_position</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reports whether the left switch is in the right position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There is no debouncing. This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the left switch is in Arduino pin A4 (D18) if SPI (but not I2C) is in use or if no protocol is in use; assumes the switch is in pin D11 if I2C (but not SPI) is in use. If both protocols are in use, then this function will always return <computeroutput>false</computeroutput>. A switch in the right position floats, allowing pulled-high input to remain high.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the switch is in the right position, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="133" column="6" declfile="src/cowpi_io.h" declline="133" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a92641e1b7a1f8e0e3bb7de938ef180ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cowpi_right_switch_is_in_right_position</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_right_switch_is_in_right_position</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reports whether the right switch is in the right position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There is no debouncing. This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the right switch is in Arduino pin A5 (D19) if SPI (but not I2C) is in use or if no protocol is in use; assumes the switch is in pin D10 if I2C (but not SPI) is in use. If both protocols are in use, then this function will always return <computeroutput>false</computeroutput>. A switch in the right position floats, allowing pulled-high input to remain high.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the switch is in the right position, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="150" column="6" declfile="src/cowpi_io.h" declline="150" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a8e3925d5fa737ef8388f207201bb9c9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_illuminate_right_led</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_illuminate_right_led</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Illuminates the right LED, aka the external LED. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the external LED is in Arduino pin D12. An LED illuminates when the pin is placed high, to match the semantics of Arduino&apos;s built-in LED. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="161" column="6" declfile="src/cowpi_io.h" declline="161" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1ade721a7e0b657fbce4341e350af9a96a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_illuminate_left_led</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_illuminate_left_led</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Illuminates the left LED, aka the built-in LED, aka the internal LED. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the internal LED is in Arduino pin D13. The Arduino semantics are that an LED illuminates when the pin is placed high. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="172" column="6" declfile="src/cowpi_io.h" declline="172" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a6d27979ccb40bac26a3ca7b249c8ddbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_deluminate_right_led</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_deluminate_right_led</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Deluminates the right LED, aka the external LED. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the external LED is in Arduino pin D12. An LED deluminates when the pin is placed low, to match the semantics of Arduino&apos;s built-in LED. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="183" column="6" declfile="src/cowpi_io.h" declline="183" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a3f09051852585a58105de9bae863a165" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_deluminate_left_led</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_deluminate_left_led</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Deluminates the left LED, aka the built-in LED, aka the internal LED. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the internal LED is in Arduino pin D13. The Arduino semantics are that an LED deluminates when the pin is placed low. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="194" column="6" declfile="src/cowpi_io.h" declline="194" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a22ccdc377705c63bf46c5679ee4d92e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_illuminate_external_led</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_illuminate_external_led</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Illuminates the external LED, aka the right LED. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the external LED is in Arduino pin D12. An LED illuminates when the pin is placed high, to match the semantics of Arduino&apos;s built-in LED. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="205" column="6" declfile="src/cowpi_io.h" declline="205" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a6f047955602459b995c47acdcc6daa04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_illuminate_internal_led</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_illuminate_internal_led</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Illuminates the internal LED, aka the built-in LED, aka the left LED. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the internal LED is in Arduino pin D13. The Arduino semantics are that an LED illuminates when the pin is placed high. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="216" column="6" declfile="src/cowpi_io.h" declline="216" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a9561c6d36126ef5cab2e11fc9f7f8c4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_deluminate_external_led</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_deluminate_external_led</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Deluminates the external LED, aka the right LED. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the external LED is in Arduino pin D12. An LED deluminates when the pin is placed low, to match the semantics of Arduino&apos;s built-in LED. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="227" column="6" declfile="src/cowpi_io.h" declline="227" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__io_8h_1a2a2fe1ec6842584b43ae6932abf6d4bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_deluminate_internal_led</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_deluminate_internal_led</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Deluminates the internal LED, aka the built-in LED, aka the left LED. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a portable implementation, not a memory-mapped implementation.</para>
+<para>Assumes the internal LED is in Arduino pin D13. The Arduino semantics are that an LED deluminates when the pin is placed low. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_io.h" line="238" column="6" declfile="src/cowpi_io.h" declline="238" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines the functions to query inputs and set outputs that can readily be accessed from the general-purpose I/O pins. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Christopher A. Bohn</para>
+</simplesect>
+</para>
+<para>Re-implementing these functions (using different function names) is a typical part of a memory-mapped I/O lab assignment. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/**************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CowPi<sp/>(c)<sp/>2021-23<sp/>Christopher<sp/>A.<sp/>Bohn</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>COWPI_IO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COWPI_IO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="cowpi__io_8h_1a67948aab161a6b9cb8206d0c7f29ceb7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a67948aab161a6b9cb8206d0c7f29ceb7" kindref="member">cowpi_get_keypress</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">uint16_t<sp/>cowpi_get_keypresses(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="cowpi__io_8h_1a308eee9232481c14f3aabb96a162b421" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a308eee9232481c14f3aabb96a162b421" kindref="member">cowpi_left_button_is_pressed</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="cowpi__io_8h_1ae9e2f08c0c783b461d6ba1916d808ac1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1ae9e2f08c0c783b461d6ba1916d808ac1" kindref="member">cowpi_right_button_is_pressed</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="cowpi__io_8h_1a2026b9d3b660c1e1edf5725323489d48" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a2026b9d3b660c1e1edf5725323489d48" kindref="member">cowpi_left_switch_is_in_left_position</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="cowpi__io_8h_1ae0fd99e4d68c4fb0b4377f0d1ad6d00a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1ae0fd99e4d68c4fb0b4377f0d1ad6d00a" kindref="member">cowpi_right_switch_is_in_left_position</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="cowpi__io_8h_1a12c7e67a5e78b0128d3c56de4f273cce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a12c7e67a5e78b0128d3c56de4f273cce" kindref="member">cowpi_left_switch_is_in_right_position</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="cowpi__io_8h_1a92641e1b7a1f8e0e3bb7de938ef180ba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a92641e1b7a1f8e0e3bb7de938ef180ba" kindref="member">cowpi_right_switch_is_in_right_position</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="cowpi__io_8h_1a8e3925d5fa737ef8388f207201bb9c9d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a8e3925d5fa737ef8388f207201bb9c9d" kindref="member">cowpi_illuminate_right_led</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172" refid="cowpi__io_8h_1ade721a7e0b657fbce4341e350af9a96a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1ade721a7e0b657fbce4341e350af9a96a" kindref="member">cowpi_illuminate_left_led</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="cowpi__io_8h_1a6d27979ccb40bac26a3ca7b249c8ddbe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a6d27979ccb40bac26a3ca7b249c8ddbe" kindref="member">cowpi_deluminate_right_led</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="cowpi__io_8h_1a3f09051852585a58105de9bae863a165" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a3f09051852585a58105de9bae863a165" kindref="member">cowpi_deluminate_left_led</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="cowpi__io_8h_1a22ccdc377705c63bf46c5679ee4d92e8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a22ccdc377705c63bf46c5679ee4d92e8" kindref="member">cowpi_illuminate_external_led</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216" refid="cowpi__io_8h_1a6f047955602459b995c47acdcc6daa04" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a6f047955602459b995c47acdcc6daa04" kindref="member">cowpi_illuminate_internal_led</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="cowpi__io_8h_1a9561c6d36126ef5cab2e11fc9f7f8c4d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a9561c6d36126ef5cab2e11fc9f7f8c4d" kindref="member">cowpi_deluminate_external_led</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238" refid="cowpi__io_8h_1a2a2fe1ec6842584b43ae6932abf6d4bf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__io_8h_1a2a2fe1ec6842584b43ae6932abf6d4bf" kindref="member">cowpi_deluminate_internal_led</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//COWPI_IO_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/cowpi_io.h"/>
+  </compounddef>
+</doxygen>

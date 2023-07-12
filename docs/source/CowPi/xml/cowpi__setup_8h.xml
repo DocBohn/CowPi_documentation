@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="cowpi__setup_8h" kind="file" language="C++">
+    <compoundname>cowpi_setup.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="_cow_pi_8h" local="yes">src/CowPi.h</includedby>
+    <includedby refid="cowpi__atmega328p_8h" local="yes">src/cowpi_atmega328p.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/cowpi_setup.h</label>
+        <link refid="cowpi__setup_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/CowPi.h</label>
+        <link refid="_cow_pi_8h"/>
+      </node>
+      <node id="3">
+        <label>src/cowpi_atmega328p.h</label>
+        <link refid="cowpi__atmega328p_8h"/>
+      </node>
+      <node id="1">
+        <label>src/cowpi_setup.h</label>
+        <link refid="cowpi__setup_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="cowpi__setup_8h_1aadd93900fc87105fa3ef514675d4133b" prot="public" static="no">
+        <name>SPI</name>
+        <initializer>0x0001u</initializer>
+        <briefdescription>
+<para>Instructs <computeroutput><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup()</ref></computeroutput> to configure the library for the SPI protocol. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="154" column="9" bodyfile="src/cowpi_setup.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1a457a9aa93dbb216459873a30bdb4d84a" prot="public" static="no">
+        <name>I2C</name>
+        <initializer>0x0002u</initializer>
+        <briefdescription>
+<para>Instructs <computeroutput><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup()</ref></computeroutput> to configure the library for the I2C protocol. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="155" column="9" bodyfile="src/cowpi_setup.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1ad187c2e378a2c713ac586f5e084e8f90" prot="public" static="no">
+        <name>IIC</name>
+        <initializer>0x0002u</initializer>
+        <briefdescription>
+<para>Alias of <computeroutput>I2C</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="156" column="9" bodyfile="src/cowpi_setup.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1a82dd285d848c7aa4c9ee6ae8910c5e89" prot="public" static="no">
+        <name>TWI</name>
+        <initializer>0x0002u</initializer>
+        <briefdescription>
+<para>Alias of <computeroutput>I2C</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="157" column="9" bodyfile="src/cowpi_setup.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1a2f05f6ac187e0d865c9a2f29a275631e" prot="public" static="no">
+        <name>MAX7219</name>
+        <initializer>0x0080u</initializer>
+        <briefdescription>
+<para>Instructs <computeroutput><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup()</ref></computeroutput> to configure the library for a MAX7219-based display module and to configure the display module. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="158" column="9" bodyfile="src/cowpi_setup.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1a157b0f652a5bc262e4adf2ffbf3f71b5" prot="public" static="no">
+        <name>LCD1602</name>
+        <initializer>0x0040u</initializer>
+        <briefdescription>
+<para>Instructs <computeroutput><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup()</ref></computeroutput> to configure the library for an LCD1602 display module and to configure the display module. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="159" column="9" bodyfile="src/cowpi_setup.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1adb2dc4153df9d01459138d5cf499373f" prot="public" static="no">
+        <name>COWPI_DEFAULT</name>
+        <initializer>0x8000u</initializer>
+        <briefdescription>
+<para>Instructs <computeroutput><ref refid="cowpi__setup_8h_1a02e764c97862eca443df369048a62f25" kindref="member">cowpi_set_display_dialect()</ref></computeroutput> to configure the library to use the common mapping of protocol bits to display module bits. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="166" column="9" bodyfile="src/cowpi_setup.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1aa096e5808f960edbc1e5d425e93ae8a0" prot="public" static="no">
+        <name>ADAFRUIT</name>
+        <initializer>0x4000u</initializer>
+        <briefdescription>
+<para>Instructs <computeroutput><ref refid="cowpi__setup_8h_1a02e764c97862eca443df369048a62f25" kindref="member">cowpi_set_display_dialect()</ref></computeroutput> to configure the library for <ulink url="https://www.adafruit.com/product/292">Adafruit&apos;s I2C/SPI character LCD backpack</ulink> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="167" column="9" bodyfile="src/cowpi_setup.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1a90ecd7ac46b551b70d33c9a1c3b1ac6d" prot="public" static="no">
+        <name>PROTOCOL_MASK</name>
+        <initializer>0x000Fu</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="173" column="9" bodyfile="src/cowpi_setup.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1a5e4f6ee61ee138cf1ffff83578150118" prot="public" static="no">
+        <name>DISPLAY_DEVICE_MASK</name>
+        <initializer>0x00F0u</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="174" column="9" bodyfile="src/cowpi_setup.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cowpi__setup_8h_1aa99cfd0e83b82443843247eac888042b" prot="public" static="no">
+        <name>DISPLAY_DIALECT_MASK</name>
+        <initializer>0xF000u</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="175" column="9" bodyfile="src/cowpi_setup.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_setup</definition>
+        <argsstring>(unsigned int configuration)</argsstring>
+        <name>cowpi_setup</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+<para>Configures the microcontroller&apos;s pins for the expected hardware setup, and configures the library to work with the specified display module and communication protocol. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="attention"><para>If a non-<computeroutput>COWPI_DEFAULT</computeroutput> dialect is used, then <computeroutput><ref refid="cowpi__setup_8h_1a02e764c97862eca443df369048a62f25" kindref="member">cowpi_set_display_dialect()</ref></computeroutput> must be called <emphasis>before</emphasis> <computeroutput><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup()</ref></computeroutput>.</para>
+</simplesect>
+<simplesect kind="attention"><para>If the <computeroutput>I2C</computeroutput> (or <computeroutput>IIC</computeroutput> or <computeroutput>TWI</computeroutput>) protocol is used, then <computeroutput><ref refid="cowpi__setup_8h_1a7d4f5d9ab81e3dd55134d880d4a99aa5" kindref="member">cowpi_set_display_i2c_address()</ref></computeroutput> must be called <emphasis>before</emphasis> <computeroutput><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup()</ref></computeroutput>.</para>
+</simplesect>
+If <computeroutput>printf()</computeroutput> and/or <computeroutput>scanf()</computeroutput> will be used, then we recommend that <computeroutput>cowpi_stdio_setup()</computeroutput> be called before <computeroutput><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup()</ref></computeroutput>; however, this is not required.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bitwise disjunction of named constants, specifying the display module and protocol </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="56" column="6" declfile="src/cowpi_setup.h" declline="56" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__setup_8h_1a02e764c97862eca443df369048a62f25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_set_display_dialect</definition>
+        <argsstring>(unsigned int dialect)</argsstring>
+        <name>cowpi_set_display_dialect</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>dialect</declname>
+        </param>
+        <briefdescription>
+<para>Sets the &quot;dialect,&quot; or the mapping of protocol bits to display module bits. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Some display modules (<emphasis>e.g.</emphasis>, MAX7219-based modules) have only one possible mapping, and calling this function has no effect for those modules. For other display modules, the <computeroutput>COWPI_DEFAULT</computeroutput> dialect is the default; this function does not need to be called if the <computeroutput>COWPI_DEFAULT</computeroutput> dialect will be used.</para>
+<para><simplesect kind="attention"><para>If this function is called, it must be called before <computeroutput><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup()</ref></computeroutput> so that the display module can be properly configured.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cowpi__setup_8h_1ae947db4718a64614edb9da497a77ac3d" kindref="member">cowpi_get_display_dialect</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dialect</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a named constant specifying which mapping of protocol bits to display module bits shall be used </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="76" column="6" declfile="src/cowpi_setup.h" declline="76" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__setup_8h_1ae947db4718a64614edb9da497a77ac3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int cowpi_get_display_dialect</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_get_display_dialect</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Identifies the &quot;dialect,&quot; or the mapping of protocol bits to display module bits, that the library has been configured to use. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Some display modules (<emphasis>e.g.</emphasis>, MAX7219-based modules) have only one possible mapping. For other the <computeroutput>COWPI_DEFAULT</computeroutput> dialect is the default; this will be the return value if <computeroutput><ref refid="cowpi__setup_8h_1a02e764c97862eca443df369048a62f25" kindref="member">cowpi_set_display_dialect()</ref></computeroutput> was not called.</para>
+<para><simplesect kind="see"><para><ref refid="cowpi__setup_8h_1a02e764c97862eca443df369048a62f25" kindref="member">cowpi_set_display_dialect</ref></para>
+</simplesect>
+<simplesect kind="return"><para>the value equal to that of the named constant corresponding to the configured dialect </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="92" column="14" declfile="src/cowpi_setup.h" declline="92" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__setup_8h_1a5948b4f7773a35155eb9b6df025bf547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cowpi_is_spi_lsbfirst</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_is_spi_lsbfirst</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Identifies whether the SPI hardware will send the least-significant bit first. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is unlikely to be called by the firmware program: there is no actionable reason for the program to do so. There is, however, no harm in doing so.</para>
+<para>This function will return <computeroutput>true</computeroutput> only when the display module is <computeroutput>LCD1602</computeroutput> and the dialect is <computeroutput>ADAFRUIT</computeroutput>.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the display module and dialect require that the SPI protocol sends the least-significant bit first </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="109" column="6" declfile="src/cowpi_setup.h" declline="109" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__setup_8h_1a7d4f5d9ab81e3dd55134d880d4a99aa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_set_display_i2c_address</definition>
+        <argsstring>(uint8_t peripheral_address)</argsstring>
+        <name>cowpi_set_display_i2c_address</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>peripheral_address</declname>
+        </param>
+        <briefdescription>
+<para>Sets the I2C address for an I2C-driven display module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Because the I2C (aka IIC, TWI) protocol uses addresses to select the peripheral that the microcontroller is communicating with, the display module&apos;s address needs to be set. If the SPI protocol is being used, then there is no need to call this function.</para>
+<para>The common PCF8574-based interfaces used with LCD1602 display modules typically have an address of 0x27, but this can readily be changed.</para>
+<para><simplesect kind="attention"><para>If this function is called, it must be called before <computeroutput><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup()</ref></computeroutput> so that the display module can be properly configured.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cowpi__setup_8h_1ade796a8a3161e57a842551d1d9c934af" kindref="member">cowpi_get_display_i2c_address</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>peripheral_address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="130" column="6" declfile="src/cowpi_setup.h" declline="130" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="cowpi__setup_8h_1ade796a8a3161e57a842551d1d9c934af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_get_display_i2c_address</definition>
+        <argsstring>(void)</argsstring>
+        <name>cowpi_get_display_i2c_address</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reports the I2C address that the library has been configured to use when communicating with an I2c-driven display module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>An illegal I2C address will be returned if <computeroutput>cowpi_set_i2c_address()</computeroutput> was not called. This obviously is not problematic if the I2C protocol is not being used.</para>
+<para><simplesect kind="see"><para><ref refid="cowpi__setup_8h_1a7d4f5d9ab81e3dd55134d880d4a99aa5" kindref="member">cowpi_set_display_i2c_address</ref></para>
+</simplesect>
+<simplesect kind="return"><para>the I2C address that the library expects a display module to be at </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_setup.h" line="145" column="9" declfile="src/cowpi_setup.h" declline="145" declcolumn="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Functions, constants, and masks to configure the Cow Pi hardware and to query the configuration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Christopher A. Bohn</para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/**************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CowPi<sp/>(c)<sp/>2021-23<sp/>Christopher<sp/>A.<sp/>Bohn</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>COWPI_SETUP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COWPI_SETUP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Public-facing<sp/>function<sp/>prototypes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__setup_8h_1a0195991b9a0da4e8d6db820b9cf87d2a" kindref="member">cowpi_setup</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>configuration);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="cowpi__setup_8h_1a02e764c97862eca443df369048a62f25" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__setup_8h_1a02e764c97862eca443df369048a62f25" kindref="member">cowpi_set_display_dialect</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dialect);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="cowpi__setup_8h_1ae947db4718a64614edb9da497a77ac3d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="cowpi__setup_8h_1ae947db4718a64614edb9da497a77ac3d" kindref="member">cowpi_get_display_dialect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="cowpi__setup_8h_1a5948b4f7773a35155eb9b6df025bf547" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="cowpi__setup_8h_1a5948b4f7773a35155eb9b6df025bf547" kindref="member">cowpi_is_spi_lsbfirst</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="cowpi__setup_8h_1a7d4f5d9ab81e3dd55134d880d4a99aa5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cowpi__setup_8h_1a7d4f5d9ab81e3dd55134d880d4a99aa5" kindref="member">cowpi_set_display_i2c_address</ref>(uint8_t<sp/>peripheral_address);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="cowpi__setup_8h_1ade796a8a3161e57a842551d1d9c934af" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="cowpi__setup_8h_1ade796a8a3161e57a842551d1d9c934af" kindref="member">cowpi_get_display_i2c_address</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Use<sp/>to<sp/>create<sp/>argument<sp/>to<sp/>cowpi_setup()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="cowpi__setup_8h_1aadd93900fc87105fa3ef514675d4133b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SPI<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0001u<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="cowpi__setup_8h_1a457a9aa93dbb216459873a30bdb4d84a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I2C<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0002u<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="cowpi__setup_8h_1ad187c2e378a2c713ac586f5e084e8f90" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IIC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0002u<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="cowpi__setup_8h_1a82dd285d848c7aa4c9ee6ae8910c5e89" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0002u<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="cowpi__setup_8h_1a2f05f6ac187e0d865c9a2f29a275631e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX7219<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0080u<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="cowpi__setup_8h_1a157b0f652a5bc262e4adf2ffbf3f71b5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD1602<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0040u<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Use<sp/>as<sp/>argument<sp/>to<sp/>cowpi_set_display_dialect()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="cowpi__setup_8h_1adb2dc4153df9d01459138d5cf499373f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COWPI_DEFAULT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x8000u<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="cowpi__setup_8h_1aa096e5808f960edbc1e5d425e93ae8a0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADAFRUIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4000u<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Masks<sp/>to<sp/>distinguish<sp/>between<sp/>configuration<sp/>fields<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROTOCOL_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x000Fu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DISPLAY_DEVICE_MASK<sp/><sp/><sp/><sp/><sp/>0x00F0u</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DISPLAY_DIALECT_MASK<sp/><sp/><sp/><sp/>0xF000u</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//COWPI_SETUP_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/cowpi_setup.h"/>
+  </compounddef>
+</doxygen>

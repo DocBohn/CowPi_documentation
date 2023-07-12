@@ -8,6 +8,8 @@ an electronic combination lock to secure your wildly-dangerous experimental robo
 or a motion alarm to protect yourself from zombie gourds,
 using the Cow Pi development board is your best option.
 
+linking to :func:`cowpi_configure_single_pin` from another file
+
 .. toctree::
     :maxdepth: 3
 

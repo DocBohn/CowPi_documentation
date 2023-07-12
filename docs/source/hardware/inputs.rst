@@ -179,7 +179,7 @@ But, as shown in :numref:`scanningPressedRow`, if "row7" is the only logic-low r
     \end{tikzpicture}
 
 After the code has determined which row and column the pressed key is on, it can return a value or assign a value to a variable accordingly.
-This might be a ``char`` corresponding to the character on the key's face, as is the case for **``cowpi_get_keypress``** (Section `2.4 <#subsec:ScannedInputs>`__).
+This might be a ``char`` corresponding to the character on the key's face, as is the case for ``cowpi_get_keypress()`` (Section XXXXX).
 Or this might be an ``int`` corresponding to the value of the numeral on the key's face.
 Or this might even be some value unrelated to whatever is printed on the key's face.
 

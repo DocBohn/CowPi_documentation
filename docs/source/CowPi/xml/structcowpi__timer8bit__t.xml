@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="structcowpi__timer8bit__t" kind="struct" language="C++" prot="public">
+    <compoundname>cowpi_timer8bit_t</compoundname>
+    <includes refid="cowpi__atmega328p_8h" local="no">cowpi_atmega328p.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcowpi__timer8bit__t_1a2d3b9213a48c7c5ec9e0a08423195506" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t cowpi_timer8bit_t::control</definition>
+        <argsstring></argsstring>
+        <name>control</name>
+        <qualifiedname>cowpi_timer8bit_t::control</qualifiedname>
+        <briefdescription>
+<para>Timer/counter control registers A &amp; B; register A is the low-order byte (TCCRxB TCCRxA) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="184" column="14" bodyfile="src/cowpi_atmega328p.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__timer8bit__t_1ac06d078336f823a4c9c9a35486a5a586" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_timer8bit_t::counter</definition>
+        <argsstring></argsstring>
+        <name>counter</name>
+        <qualifiedname>cowpi_timer8bit_t::counter</qualifiedname>
+        <briefdescription>
+<para>Timer/counter register (TCNTx) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="185" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__timer8bit__t_1a507dfad0b639165332141cdcc89365ed" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_timer8bit_t::compareA</definition>
+        <argsstring></argsstring>
+        <name>compareA</name>
+        <qualifiedname>cowpi_timer8bit_t::compareA</qualifiedname>
+        <briefdescription>
+<para>Output compare register A (OCRxA) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="186" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__timer8bit__t_1aec16287da5b5a2faffc3a5b69ca5b04b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_timer8bit_t::compareB</definition>
+        <argsstring></argsstring>
+        <name>compareB</name>
+        <qualifiedname>cowpi_timer8bit_t::compareB</qualifiedname>
+        <briefdescription>
+<para>Output compare register B (OCRxB) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="187" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure for 8-bit timer/counter (TIMER0 or TIMER1). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The timer/counter interrupt mask register (TIMSKx) and the timer/counter interrupt flag register (TIFRx) are not part of this structure. Neither are the asynchronous status register (ASSR) nor the general timer/counter control register (GTCCR). </para>
+    </detaileddescription>
+    <location file="src/cowpi_atmega328p.h" line="183" column="1" bodyfile="src/cowpi_atmega328p.h" bodystart="183" bodyend="188"/>
+    <listofallmembers>
+      <member refid="structcowpi__timer8bit__t_1a507dfad0b639165332141cdcc89365ed" prot="public" virt="non-virtual"><scope>cowpi_timer8bit_t</scope><name>compareA</name></member>
+      <member refid="structcowpi__timer8bit__t_1aec16287da5b5a2faffc3a5b69ca5b04b" prot="public" virt="non-virtual"><scope>cowpi_timer8bit_t</scope><name>compareB</name></member>
+      <member refid="structcowpi__timer8bit__t_1a2d3b9213a48c7c5ec9e0a08423195506" prot="public" virt="non-virtual"><scope>cowpi_timer8bit_t</scope><name>control</name></member>
+      <member refid="structcowpi__timer8bit__t_1ac06d078336f823a4c9c9a35486a5a586" prot="public" virt="non-virtual"><scope>cowpi_timer8bit_t</scope><name>counter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

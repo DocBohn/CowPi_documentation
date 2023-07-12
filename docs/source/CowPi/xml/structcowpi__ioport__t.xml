@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="structcowpi__ioport__t" kind="struct" language="C++" prot="public">
+    <compoundname>cowpi_ioport_t</compoundname>
+    <includes refid="cowpi__atmega328p_8h" local="no">cowpi_atmega328p.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcowpi__ioport__t_1a50dd6867d88f56234ea891814236ea21" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_ioport_t::input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <qualifiedname>cowpi_ioport_t::input</qualifiedname>
+        <briefdescription>
+<para>Read inputs from field (PINx) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="135" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__ioport__t_1a9fad4ed334233388bbe481f7f73c25ed" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_ioport_t::direction</definition>
+        <argsstring></argsstring>
+        <name>direction</name>
+        <qualifiedname>cowpi_ioport_t::direction</qualifiedname>
+        <briefdescription>
+<para>Set the pin&apos;s direction using this field (DDRx) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="136" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__ioport__t_1aebd761330e6ebd35517e60a59cc14c26" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_ioport_t::output</definition>
+        <argsstring></argsstring>
+        <name>output</name>
+        <qualifiedname>cowpi_ioport_t::output</qualifiedname>
+        <briefdescription>
+<para>Write outputs to this field, and set/unset a pull-up resistor (PORTx) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cowpi_atmega328p.h" line="137" column="13" bodyfile="src/cowpi_atmega328p.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure for the general-purpose I/O pins. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An array of these structures can be indexed using named constants (COWPI_PB, etc). </para>
+    </detaileddescription>
+    <location file="src/cowpi_atmega328p.h" line="134" column="1" bodyfile="src/cowpi_atmega328p.h" bodystart="134" bodyend="138"/>
+    <listofallmembers>
+      <member refid="structcowpi__ioport__t_1a9fad4ed334233388bbe481f7f73c25ed" prot="public" virt="non-virtual"><scope>cowpi_ioport_t</scope><name>direction</name></member>
+      <member refid="structcowpi__ioport__t_1a50dd6867d88f56234ea891814236ea21" prot="public" virt="non-virtual"><scope>cowpi_ioport_t</scope><name>input</name></member>
+      <member refid="structcowpi__ioport__t_1aebd761330e6ebd35517e60a59cc14c26" prot="public" virt="non-virtual"><scope>cowpi_ioport_t</scope><name>output</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

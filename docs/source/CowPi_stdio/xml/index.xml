@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.7" xml:lang="en-US">
+  <compound refid="structcowpi__display__module__protocol__t" kind="struct"><name>cowpi_display_module_protocol_t</name>
+    <member refid="structcowpi__display__module__protocol__t_1ab8020fe2cab1b6c4dffee607edc08d54" kind="variable"><name>protocol</name></member>
+    <member refid="structcowpi__display__module__protocol__t_1ae29ca698a5e40254c7e67d9c47d37dff" kind="variable"><name>data_pin</name></member>
+    <member refid="structcowpi__display__module__protocol__t_1aed21bafc873ebfcf0b4f6f7d4d6f08f9" kind="variable"><name>clock_pin</name></member>
+    <member refid="structcowpi__display__module__protocol__t_1a0f23c051906f8c1ca4327769b0bf5abf" kind="variable"><name>select_pin</name></member>
+    <member refid="structcowpi__display__module__protocol__t_1a1a76cc42bfa75fc85584cad2a50d324f" kind="variable"><name>i2c_address</name></member>
+    <member refid="structcowpi__display__module__protocol__t_1aca80c90102e57a739ef6ac8911047f89" kind="variable"><name>adapter_mapping</name></member>
+  </compound>
+  <compound refid="structcowpi__display__module__t" kind="struct"><name>cowpi_display_module_t</name>
+    <member refid="structcowpi__display__module__t_1a988a5950615261c5f09efacfe98f1256" kind="variable"><name>display_module</name></member>
+    <member refid="structcowpi__display__module__t_1aaba8f9fffaba220e24f895599899f29b" kind="variable"><name>width</name></member>
+    <member refid="structcowpi__display__module__t_1a6b7fc50475c36d26ca94ec9360eee14b" kind="variable"><name>height</name></member>
+    <member refid="structcowpi__display__module__t_1a895dab9b3513b44b9f67a1fdff7878b0" kind="variable"><name>words_per_minute</name></member>
+    <member refid="structcowpi__display__module__t_1a56a9236a922eab34e999b47833606210" kind="variable"><name>display_orientation</name></member>
+    <member refid="structcowpi__display__module__t_1a9aa8221217bdba71bd72ae14daee0fa4" kind="variable"><name>character_flip</name></member>
+  </compound>
+  <compound refid="communication_8h" kind="file"><name>communication.h</name>
+    <member refid="communication_8h_1a97eceed51859eb3e90fc20be1809e60c" kind="enum"><name>bit_order_t</name></member>
+    <member refid="communication_8h_1a97eceed51859eb3e90fc20be1809e60caa61931f6a8a6808b63588b392c7f3f37" kind="enumvalue"><name>COWPI_LSB_FIRST</name></member>
+    <member refid="communication_8h_1a97eceed51859eb3e90fc20be1809e60ca9cf66bdf5ef1c84f2e035138aa3b9777" kind="enumvalue"><name>COWPI_MSB_FIRST</name></member>
+    <member refid="communication_8h_1ae56ad6594960d7d4ee6ef6041c200e0a" kind="variable"><name>cowpi_spi_initialize</name></member>
+    <member refid="communication_8h_1a8081d2ae373c4f3f0ef9883716d7b5ba" kind="variable"><name>cowpi_spi_transmit</name></member>
+    <member refid="communication_8h_1a50fed624317382ee7f85dd4e50a9d533" kind="variable"><name>cowpi_spi_finalize</name></member>
+    <member refid="communication_8h_1aeef6d2fe8b4808a69f38dce46a33e86f" kind="variable"><name>cowpi_i2c_initialize</name></member>
+    <member refid="communication_8h_1a37c852a914e0488ebb1f909815aeed76" kind="variable"><name>cowpi_i2c_transmit</name></member>
+    <member refid="communication_8h_1a2b869486af06844eedb843fd5c0c6deb" kind="variable"><name>cowpi_i2c_finalize</name></member>
+    <member refid="communication_8h_1a9ccea4bfedcd66e54c74366845193553" kind="function"><name>cowpi_use_spi_hardware</name></member>
+    <member refid="communication_8h_1a487a89c904390ee413a7f74b05a446c1" kind="function"><name>cowpi_use_spi_bitbang</name></member>
+    <member refid="communication_8h_1a7269ef3039db09b417f685643b8e1eae" kind="function"><name>cowpi_discover_i2c_address</name></member>
+    <member refid="communication_8h_1ad9b5f556b020528ad090295534b45b0c" kind="function"><name>cowpi_use_i2c_hardware</name></member>
+    <member refid="communication_8h_1ad87e18447a141b8e0b9b08889babc74f" kind="function"><name>cowpi_use_i2c_bitbang</name></member>
+  </compound>
+  <compound refid="i2c_8c" kind="file"><name>i2c.c</name>
+    <member refid="i2c_8c_1a4d3438214f4a23bce2edfd953fc7bc4d" kind="define"><name>WRITE_LOW</name></member>
+    <member refid="i2c_8c_1a6e9627fd85a6bcfae27040b50c0d0d92" kind="define"><name>WRITE_HIGH</name></member>
+    <member refid="i2c_8c_1a0ca8b37572124ad1df6ae619feaa6305" kind="variable"><name>data_pin</name></member>
+    <member refid="i2c_8c_1a77229b3e891eeeabe5b4e83cf3cb31f6" kind="variable"><name>clock_pin</name></member>
+    <member refid="i2c_8c_1aeef6d2fe8b4808a69f38dce46a33e86f" kind="variable"><name>cowpi_i2c_initialize</name></member>
+    <member refid="i2c_8c_1a37c852a914e0488ebb1f909815aeed76" kind="variable"><name>cowpi_i2c_transmit</name></member>
+    <member refid="i2c_8c_1a2b869486af06844eedb843fd5c0c6deb" kind="variable"><name>cowpi_i2c_finalize</name></member>
+    <member refid="i2c_8c_1ad87e18447a141b8e0b9b08889babc74f" kind="function"><name>cowpi_use_i2c_bitbang</name></member>
+    <member refid="i2c_8c_1a6bf11c5a94e8e9e73e5913d58c7262e8" kind="function"><name>cowpi_i2c_initialize_bitbang</name></member>
+    <member refid="i2c_8c_1a0919d8883527981ba813ea2159b5699c" kind="function"><name>cowpi_i2c_transmit_bitbang</name></member>
+    <member refid="i2c_8c_1a98c4937fe7c6a2081736ff0a8419c511" kind="function"><name>cowpi_i2c_finalize_bitbang</name></member>
+    <member refid="i2c_8c_1ad9b5f556b020528ad090295534b45b0c" kind="function"><name>cowpi_use_i2c_hardware</name></member>
+    <member refid="i2c_8c_1ad8aa166aa700f8f0d52be6eea9b176e8" kind="function"><name>cowpi_i2c_initialize_hardware</name></member>
+    <member refid="i2c_8c_1a392256e05988efb8ad36e043c1ffb1ec" kind="function"><name>cowpi_i2c_transmit_hardware</name></member>
+    <member refid="i2c_8c_1a82d5ee7a140c7fac38a6a4becc363b96" kind="function"><name>cowpi_i2c_finalize_hardware</name></member>
+    <member refid="i2c_8c_1a7269ef3039db09b417f685643b8e1eae" kind="function"><name>cowpi_discover_i2c_address</name></member>
+  </compound>
+  <compound refid="i2c_8h" kind="file"><name>i2c.h</name>
+    <member refid="i2c_8h_1a6bf11c5a94e8e9e73e5913d58c7262e8" kind="function"><name>cowpi_i2c_initialize_bitbang</name></member>
+    <member refid="i2c_8h_1a0919d8883527981ba813ea2159b5699c" kind="function"><name>cowpi_i2c_transmit_bitbang</name></member>
+    <member refid="i2c_8h_1a98c4937fe7c6a2081736ff0a8419c511" kind="function"><name>cowpi_i2c_finalize_bitbang</name></member>
+    <member refid="i2c_8h_1ad8aa166aa700f8f0d52be6eea9b176e8" kind="function"><name>cowpi_i2c_initialize_hardware</name></member>
+    <member refid="i2c_8h_1a392256e05988efb8ad36e043c1ffb1ec" kind="function"><name>cowpi_i2c_transmit_hardware</name></member>
+    <member refid="i2c_8h_1a82d5ee7a140c7fac38a6a4becc363b96" kind="function"><name>cowpi_i2c_finalize_hardware</name></member>
+  </compound>
+  <compound refid="spi_8c" kind="file"><name>spi.c</name>
+    <member refid="spi_8c_1a0ca8b37572124ad1df6ae619feaa6305" kind="variable"><name>data_pin</name></member>
+    <member refid="spi_8c_1a77229b3e891eeeabe5b4e83cf3cb31f6" kind="variable"><name>clock_pin</name></member>
+    <member refid="spi_8c_1a7b730e90ff2c6e46fd35064cabd0ce48" kind="variable"><name>data_order</name></member>
+    <member refid="spi_8c_1ae56ad6594960d7d4ee6ef6041c200e0a" kind="variable"><name>cowpi_spi_initialize</name></member>
+    <member refid="spi_8c_1a8081d2ae373c4f3f0ef9883716d7b5ba" kind="variable"><name>cowpi_spi_transmit</name></member>
+    <member refid="spi_8c_1a50fed624317382ee7f85dd4e50a9d533" kind="variable"><name>cowpi_spi_finalize</name></member>
+    <member refid="spi_8c_1a487a89c904390ee413a7f74b05a446c1" kind="function"><name>cowpi_use_spi_bitbang</name></member>
+    <member refid="spi_8c_1a6ca4b938a71a8321954f5ac045f96970" kind="function"><name>cowpi_spi_initialize_bitbang</name></member>
+    <member refid="spi_8c_1a4a5da23ff494753ca31c403a8d2cf323" kind="function"><name>cowpi_spi_transmit_bitbang</name></member>
+    <member refid="spi_8c_1ad25b0e5a844b8af779e3db3261b8f35f" kind="function"><name>cowpi_spi_finalize_bitbang</name></member>
+    <member refid="spi_8c_1a9ccea4bfedcd66e54c74366845193553" kind="function"><name>cowpi_use_spi_hardware</name></member>
+    <member refid="spi_8c_1a62a9cc5d048c853dc3f2cc4fead5da1e" kind="function"><name>cowpi_spi_initialize_hardware</name></member>
+    <member refid="spi_8c_1afaa9beac52b99f1477a49458313a13c2" kind="function"><name>cowpi_spi_transmit_hardware</name></member>
+    <member refid="spi_8c_1a2ea9536533eaeef45a2744d5f882eebc" kind="function"><name>cowpi_spi_finalize_hardware</name></member>
+  </compound>
+  <compound refid="spi_8h" kind="file"><name>spi.h</name>
+    <member refid="spi_8h_1a6ca4b938a71a8321954f5ac045f96970" kind="function"><name>cowpi_spi_initialize_bitbang</name></member>
+    <member refid="spi_8h_1a4a5da23ff494753ca31c403a8d2cf323" kind="function"><name>cowpi_spi_transmit_bitbang</name></member>
+    <member refid="spi_8h_1ad25b0e5a844b8af779e3db3261b8f35f" kind="function"><name>cowpi_spi_finalize_bitbang</name></member>
+    <member refid="spi_8h_1a62a9cc5d048c853dc3f2cc4fead5da1e" kind="function"><name>cowpi_spi_initialize_hardware</name></member>
+    <member refid="spi_8h_1afaa9beac52b99f1477a49458313a13c2" kind="function"><name>cowpi_spi_transmit_hardware</name></member>
+    <member refid="spi_8h_1a2ea9536533eaeef45a2744d5f882eebc" kind="function"><name>cowpi_spi_finalize_hardware</name></member>
+  </compound>
+  <compound refid="_cow_pi__stdio_8h" kind="file"><name>CowPi_stdio.h</name>
+    <member refid="_cow_pi__stdio_8h_1aca5663d35932f60dc01680ec985787c6" kind="define"><name>COWPI_STDIO_VERSION</name></member>
+  </compound>
+  <compound refid="display__module__streams_8c" kind="file"><name>display_module_streams.c</name>
+    <member refid="display__module__streams_8c_1abc1fa8058b8ee81462612def10b96e20" kind="define"><name>COWPI_STDIO_FILE_STREAMS_INTERNAL</name></member>
+    <member refid="display__module__streams_8c_1ad7e03b055d65456d0d6ef4bba130424f" kind="define"><name>MAXIMUM_NUMBER_OF_STREAMS</name></member>
+    <member refid="display__module__streams_8c_1a8dac8e358073eda509a4731b43ce3ed2" kind="variable"><name>number_of_streams</name></member>
+    <member refid="display__module__streams_8c_1af6cc49a242c0b9e3995cbda583cd9594" kind="variable"><name>streams</name></member>
+    <member refid="display__module__streams_8c_1acae55e7766896d1fb7d7f0fd58a1df24" kind="function"><name>cowpi_add_display_module</name></member>
+    <member refid="display__module__streams_8c_1a7a85db5aa5dae2364f8293e2a2945c0e" kind="function"><name>cowpi_file_to_cookie</name></member>
+    <member refid="display__module__streams_8c_1a28652260c87d868bc0524c54680f7cf1" kind="function"><name>cowpi_clear_display</name></member>
+    <member refid="display__module__streams_8c_1aa7ded5f8294db6df3914c10a5bf97911" kind="function"><name>cowpi_sleep_display</name></member>
+    <member refid="display__module__streams_8c_1ae4a8fe0e8d49ea22c9db2dcac2871bb6" kind="function"><name>cowpi_wake_display</name></member>
+  </compound>
+  <compound refid="file__streams_8h" kind="file"><name>file_streams.h</name>
+    <member refid="file__streams_8h_1acb598ce94651ac18adc1fd26b1adba1b" kind="function"><name>cowpi_stdio_setup</name></member>
+    <member refid="file__streams_8h_1acae55e7766896d1fb7d7f0fd58a1df24" kind="function"><name>cowpi_add_display_module</name></member>
+    <member refid="file__streams_8h_1a28652260c87d868bc0524c54680f7cf1" kind="function"><name>cowpi_clear_display</name></member>
+    <member refid="file__streams_8h_1aa7ded5f8294db6df3914c10a5bf97911" kind="function"><name>cowpi_sleep_display</name></member>
+    <member refid="file__streams_8h_1ae4a8fe0e8d49ea22c9db2dcac2871bb6" kind="function"><name>cowpi_wake_display</name></member>
+  </compound>
+  <compound refid="file__streams__internal_8h" kind="file"><name>file_streams_internal.h</name>
+  </compound>
+  <compound refid="hd44780__streams_8c" kind="file"><name>hd44780_streams.c</name>
+    <member refid="hd44780__streams_8c_1abc1fa8058b8ee81462612def10b96e20" kind="define"><name>COWPI_STDIO_FILE_STREAMS_INTERNAL</name></member>
+    <member refid="hd44780__streams_8c_1a6dd6fa95aa3f742c51aa68b500c6c75d" kind="function"><name>cowpi_lcd_character_put</name></member>
+  </compound>
+  <compound refid="max7219__streams_8c" kind="file"><name>max7219_streams.c</name>
+    <member refid="max7219__streams_8c_1abc1fa8058b8ee81462612def10b96e20" kind="define"><name>COWPI_STDIO_FILE_STREAMS_INTERNAL</name></member>
+    <member refid="max7219__streams_8c_1aad30791dd3e2e8ca62c83ca51638cfac" kind="function"><name>send_segment_pattern_from_buffer</name></member>
+    <member refid="max7219__streams_8c_1a80bd1a16461d84bf0e38db1c0316f392" kind="function"><name>send_matrix_pattern_from_buffer</name></member>
+    <member refid="max7219__streams_8c_1aaa7351efb7e708f2df5211fb2e3a3f5e" kind="function"><name>cowpi_seven_segment_noscroll_put</name></member>
+    <member refid="max7219__streams_8c_1afbce8ff20cb06cc33126dd821082f1bf" kind="function"><name>cowpi_seven_segment_scrolling_put</name></member>
+    <member refid="max7219__streams_8c_1a4793cf04e6c2b81350ada34b2c4ca7a4" kind="function"><name>cowpi_led_matrix_scrolling_put</name></member>
+  </compound>
+  <compound refid="morse__code__streams_8c" kind="file"><name>morse_code_streams.c</name>
+    <member refid="morse__code__streams_8c_1abc1fa8058b8ee81462612def10b96e20" kind="define"><name>COWPI_STDIO_FILE_STREAMS_INTERNAL</name></member>
+    <member refid="morse__code__streams_8c_1a5a74a553c578fb1bd2b47a293ae04e29" kind="function"><name>send_morse_symbol_from_buffer</name></member>
+    <member refid="morse__code__streams_8c_1a14e535856994b34cb3c511eafff4dd3c" kind="function"><name>cowpi_morse_code_put</name></member>
+  </compound>
+  <compound refid="stdin__stdout_8cpp" kind="file"><name>stdin_stdout.cpp</name>
+    <member refid="stdin__stdout_8cpp_1abc1fa8058b8ee81462612def10b96e20" kind="define"><name>COWPI_STDIO_FILE_STREAMS_INTERNAL</name></member>
+  </compound>
+  <compound refid="timed__streams_8cpp" kind="file"><name>timed_streams.cpp</name>
+    <member refid="timed__streams_8cpp_1abc1fa8058b8ee81462612def10b96e20" kind="define"><name>COWPI_STDIO_FILE_STREAMS_INTERNAL</name></member>
+    <member refid="timed__streams_8cpp_1af239449afdda7f6ab670d3c7a51c097c" kind="variable"><name>buffer_head</name></member>
+    <member refid="timed__streams_8cpp_1a974eb817c2508ecbe316a53ca8eed09d" kind="variable"><name>buffer_tail</name></member>
+    <member refid="timed__streams_8cpp_1aef80160bcbb70260e542d54b28cad542" kind="variable"><name>symbol_buffer</name></member>
+    <member refid="timed__streams_8cpp_1a654ad7c9ed8664b819bdd4b349eb8d49" kind="function"><name>timer_handler</name></member>
+    <member refid="timed__streams_8cpp_1a3f133d37b572ceea7d737980584f0879" kind="function"><name>cowpi_enable_buffer_timer</name></member>
+  </compound>
+  <compound refid="font__7segment_8h" kind="file"><name>font_7segment.h</name>
+    <member refid="font__7segment_8h_1af3e0e343bc6b8fc3eae5c269ce9ccd43" kind="function"><name>cowpi_font_ascii_to_7segment</name></member>
+    <member refid="font__7segment_8h_1a961311a015eda71844339d0247941c1a" kind="function"><name>cowpi_font_string_to_7segment</name></member>
+  </compound>
+  <compound refid="font__7segment__internalfonts_8h" kind="file"><name>font_7segment_internalfonts.h</name>
+  </compound>
+  <compound refid="font__dotmatrix_8h" kind="file"><name>font_dotmatrix.h</name>
+    <member refid="font__dotmatrix_8h_1ad1402c894475056760e935559eea4756" kind="function"><name>cowpi_font_get_dotmatrix_width</name></member>
+    <member refid="font__dotmatrix_8h_1a2540146dfc7fae258609b0180b92ddaf" kind="function"><name>cowpi_font_ascii_to_narrow_dotmatrix</name></member>
+    <member refid="font__dotmatrix_8h_1a9837280ea0856025839af606efaf8fac" kind="function"><name>cowpi_font_ascii_to_5wide_dotmatrix</name></member>
+    <member refid="font__dotmatrix_8h_1a6ce3c98c676cc39fbb50e9aa72475189" kind="function"><name>cowpi_font_ascii_to_8wide_dotmatrix</name></member>
+    <member refid="font__dotmatrix_8h_1a9cd394cdd812539e35d3967e4735a7cf" kind="function"><name>cowpi_font_transpose_dotmatrix</name></member>
+    <member refid="font__dotmatrix_8h_1a9536ecd91698c7a43aa8c28dd7556836" kind="function"><name>cowpi_font_string_to_horizontal_dotmatrix</name></member>
+    <member refid="font__dotmatrix_8h_1a54a586042e47b1a9551f72ecd2276e2d" kind="function"><name>cowpi_font_string_to_vertical_dotmatrix</name></member>
+  </compound>
+  <compound refid="font__dotmatrix__internalfonts_8h" kind="file"><name>font_dotmatrix_internalfonts.h</name>
+  </compound>
+  <compound refid="font__morse__code_8h" kind="file"><name>font_morse_code.h</name>
+    <member refid="font__morse__code_8h_1a06fc87d81c62e9abb8790b6e5713c55b" kind="enum"><name></name></member>
+    <member refid="font__morse__code_8h_1a06fc87d81c62e9abb8790b6e5713c55baaf8f5cc050e4179ab8661a2bdff874da" kind="enumvalue"><name>END_OF_CHARACTER</name></member>
+    <member refid="font__morse__code_8h_1a06fc87d81c62e9abb8790b6e5713c55bad57af82d7e33d989049339ee7ace3769" kind="enumvalue"><name>SYMBOL_SPACE</name></member>
+    <member refid="font__morse__code_8h_1a06fc87d81c62e9abb8790b6e5713c55ba4d4f48fba38c84afc91ae33c9e030029" kind="enumvalue"><name>CHARACTER_SPACE</name></member>
+    <member refid="font__morse__code_8h_1a06fc87d81c62e9abb8790b6e5713c55ba997cf3458a4f3e8dc4f4d040140b5323" kind="enumvalue"><name>WORD_SPACE</name></member>
+    <member refid="font__morse__code_8h_1a06fc87d81c62e9abb8790b6e5713c55baee12ad5bab727999e5d777192eb4dca4" kind="enumvalue"><name>DIT</name></member>
+    <member refid="font__morse__code_8h_1a06fc87d81c62e9abb8790b6e5713c55bacd11f1cd24a944c9294692a7dc786739" kind="enumvalue"><name>DAH</name></member>
+    <member refid="font__morse__code_8h_1a5139b1f0fa5bece1659db4572c1f848b" kind="function"><name>cowpi_font_ascii_to_morse_code</name></member>
+  </compound>
+  <compound refid="font__morse__code__internalfonts_8h" kind="file"><name>font_morse_code_internalfonts.h</name>
+  </compound>
+  <compound refid="fonts_8c" kind="file"><name>fonts.c</name>
+    <member refid="fonts_8c_1aee2c69d1aadaeefc41d77834dac0242e" kind="define"><name>COWPI_STDIO_FONTS_INTERNAL</name></member>
+    <member refid="fonts_8c_1af3e0e343bc6b8fc3eae5c269ce9ccd43" kind="function"><name>cowpi_font_ascii_to_7segment</name></member>
+    <member refid="fonts_8c_1a961311a015eda71844339d0247941c1a" kind="function"><name>cowpi_font_string_to_7segment</name></member>
+    <member refid="fonts_8c_1ad1402c894475056760e935559eea4756" kind="function"><name>cowpi_font_get_dotmatrix_width</name></member>
+    <member refid="fonts_8c_1a2540146dfc7fae258609b0180b92ddaf" kind="function"><name>cowpi_font_ascii_to_narrow_dotmatrix</name></member>
+    <member refid="fonts_8c_1a9837280ea0856025839af606efaf8fac" kind="function"><name>cowpi_font_ascii_to_5wide_dotmatrix</name></member>
+    <member refid="fonts_8c_1a6ce3c98c676cc39fbb50e9aa72475189" kind="function"><name>cowpi_font_ascii_to_8wide_dotmatrix</name></member>
+    <member refid="fonts_8c_1a9cd394cdd812539e35d3967e4735a7cf" kind="function"><name>cowpi_font_transpose_dotmatrix</name></member>
+    <member refid="fonts_8c_1a9536ecd91698c7a43aa8c28dd7556836" kind="function"><name>cowpi_font_string_to_horizontal_dotmatrix</name></member>
+    <member refid="fonts_8c_1a54a586042e47b1a9551f72ecd2276e2d" kind="function"><name>cowpi_font_string_to_vertical_dotmatrix</name></member>
+    <member refid="fonts_8c_1a5139b1f0fa5bece1659db4572c1f848b" kind="function"><name>cowpi_font_ascii_to_morse_code</name></member>
+  </compound>
+  <compound refid="fonts_8h" kind="file"><name>fonts.h</name>
+  </compound>
+  <compound refid="hd44780_8c" kind="file"><name>hd44780.c</name>
+    <member refid="hd44780_8c_1ad82ccbd1dc1b0750c4a32451ddf30ea5" kind="define"><name>ENTRY_MODE_MARKER</name></member>
+    <member refid="hd44780_8c_1a9f0c79030209fbe80750b02f6c4916cb" kind="variable"><name>last_entry_mode</name></member>
+    <member refid="hd44780_8c_1a99f1f7331636d5979b980d7e90d3bc44" kind="variable"><name>is_backlit</name></member>
+    <member refid="hd44780_8c_1abf967c3ec8222f81543f56beac0295bd" kind="variable"><name>cowpi_lcd1602_send_halfbyte</name></member>
+    <member refid="hd44780_8c_1ab65d3f98f84ed07ae763e575c3394564" kind="function"><name>cowpi_hd44780_set_4bit_mode</name></member>
+    <member refid="hd44780_8c_1adaa1029f797cf38f963554c5f132527a" kind="function"><name>cowpi_hd44780_send_halfbyte_spi</name></member>
+    <member refid="hd44780_8c_1a9e33efe90facc2012b9b270e2b3215c2" kind="function"><name>cowpi_hd44780_send_halfbyte_i2c</name></member>
+    <member refid="hd44780_8c_1ad31e56f967148bdc0deae2f59f89a118" kind="function"><name>cowpi_setup_hd44780</name></member>
+    <member refid="hd44780_8c_1aebf696abd7e94ef830e23f7875b3423f" kind="function"><name>cowpi_hd44780_set_send_halfbyte_function</name></member>
+    <member refid="hd44780_8c_1a43c8a12dc31b76b0dbefdecdd648a873" kind="function"><name>cowpi_hd44780_place_character</name></member>
+    <member refid="hd44780_8c_1aa1bf4bd12dffc0dfe394ebe5855974fd" kind="function"><name>cowpi_hd44780_place_cursor</name></member>
+    <member refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kind="function"><name>cowpi_hd44780_send_command</name></member>
+    <member refid="hd44780_8c_1a2b75ba8a2eaecf03482195e6098e4abf" kind="function"><name>cowpi_hd44780_send_character</name></member>
+    <member refid="hd44780_8c_1a5edfabb20813e7374f155972586725c5" kind="function"><name>cowpi_hd44780_create_character</name></member>
+    <member refid="hd44780_8c_1aacdfb659a2e1719d3a6616e1bf7e3665" kind="function"><name>cowpi_hd44780_clear_display</name></member>
+    <member refid="hd44780_8c_1af44ddb08d58f4b9fc6a223fae4a67398" kind="function"><name>cowpi_hd44780_return_home</name></member>
+    <member refid="hd44780_8c_1a40221ee5cf4a248048243cfffc7f1f95" kind="function"><name>cowpi_hd44780_set_backlight</name></member>
+  </compound>
+  <compound refid="hd44780_8h" kind="file"><name>hd44780.h</name>
+    <member refid="hd44780_8h_1af4003fdc700480c3e654e1a5245d2e0f" kind="define"><name>LCDENTRY_CURSORMOVESRIGHT</name></member>
+    <member refid="hd44780_8h_1a0d4ce8138829f65ff69122989d83351e" kind="define"><name>LCDENTRY_CURSORMOVESLEFT</name></member>
+    <member refid="hd44780_8h_1afdf7f89008087e4f535a539c9dd92d74" kind="define"><name>LCDENTRY_TEXTSHIFTS</name></member>
+    <member refid="hd44780_8h_1a8e46fc36f92a144ea4b1ceaf308de94f" kind="define"><name>LCDENTRY_TEXTNOSHIFT</name></member>
+    <member refid="hd44780_8h_1ac68931475690c957a40985f9af490850" kind="define"><name>LCDONOFF_DISPLAYON</name></member>
+    <member refid="hd44780_8h_1a5f3a876dbba06d426d42f4fb79ad9990" kind="define"><name>LCDONOFF_DISPLAYOFF</name></member>
+    <member refid="hd44780_8h_1a005efc2b1a2ff15f0b4ea1a3cae5cbbb" kind="define"><name>LCDONOFF_CURSORON</name></member>
+    <member refid="hd44780_8h_1a1875292adc905c85843bb67638d90c9a" kind="define"><name>LCDONOFF_CURSOROFF</name></member>
+    <member refid="hd44780_8h_1a0adb1ec70701c8d29f13581d0e22cf0c" kind="define"><name>LCDONOFF_BLINKON</name></member>
+    <member refid="hd44780_8h_1a8baf00d2d89236c4dcdc8e0092b96ceb" kind="define"><name>LCDONOFF_BLINKOFF</name></member>
+    <member refid="hd44780_8h_1ab57d448050f011589c1a98a0639507ae" kind="define"><name>LCDSHIFT_DISPLAYLEFT</name></member>
+    <member refid="hd44780_8h_1a475e0f240eee7be64ff8595ba24fb8a5" kind="define"><name>LCDSHIFT_DISPLAYRIGHT</name></member>
+    <member refid="hd44780_8h_1aee083e008fb76ed6ea6bde6e3500877e" kind="define"><name>LCDSHIFT_CURSORLEFT</name></member>
+    <member refid="hd44780_8h_1a13624db759d218da4389c676e8acfc05" kind="define"><name>LCDSHIFT_CURSORRIGHT</name></member>
+    <member refid="hd44780_8h_1ad3c45dc1b1eb4be8c0a3fb27d0b2af53" kind="typedef"><name>cowpi_hd44780_send_halfbyte_t</name></member>
+    <member refid="hd44780_8h_1ad31e56f967148bdc0deae2f59f89a118" kind="function"><name>cowpi_setup_hd44780</name></member>
+    <member refid="hd44780_8h_1a4c9bcf6e4d19f3991ce1601f0b6b543c" kind="function"><name>cowpi_hd44780_set_send_halfbyte_function</name></member>
+    <member refid="hd44780_8h_1a43c8a12dc31b76b0dbefdecdd648a873" kind="function"><name>cowpi_hd44780_place_character</name></member>
+    <member refid="hd44780_8h_1aa1bf4bd12dffc0dfe394ebe5855974fd" kind="function"><name>cowpi_hd44780_place_cursor</name></member>
+    <member refid="hd44780_8h_1aae8db16b83b43198a27c54404a9f772a" kind="function"><name>cowpi_hd44780_send_command</name></member>
+    <member refid="hd44780_8h_1a2b75ba8a2eaecf03482195e6098e4abf" kind="function"><name>cowpi_hd44780_send_character</name></member>
+    <member refid="hd44780_8h_1a5edfabb20813e7374f155972586725c5" kind="function"><name>cowpi_hd44780_create_character</name></member>
+    <member refid="hd44780_8h_1aacdfb659a2e1719d3a6616e1bf7e3665" kind="function"><name>cowpi_hd44780_clear_display</name></member>
+    <member refid="hd44780_8h_1af44ddb08d58f4b9fc6a223fae4a67398" kind="function"><name>cowpi_hd44780_return_home</name></member>
+    <member refid="hd44780_8h_1a40221ee5cf4a248048243cfffc7f1f95" kind="function"><name>cowpi_hd44780_set_backlight</name></member>
+  </compound>
+  <compound refid="max7219_8c" kind="file"><name>max7219.c</name>
+    <member refid="max7219_8c_1aa3cf9e639e5c1de7634bd001eec9d484" kind="function"><name>cowpi_setup_max7219</name></member>
+    <member refid="max7219_8c_1a520ba7e36f1e594821af8f92b9cd75dd" kind="function"><name>cowpi_max7219_send</name></member>
+    <member refid="max7219_8c_1aa6bde6b535ba9fe55f44e2d6cc18089d" kind="function"><name>cowpi_max7219_no_decode</name></member>
+    <member refid="max7219_8c_1a6d04ebbeeef727e0c99eea52a4cc5046" kind="function"><name>cowpi_max7219_bcd_decode</name></member>
+    <member refid="max7219_8c_1a0e939da1631828884abad234eeb66c7c" kind="function"><name>cowpi_max7219_set_intensity</name></member>
+    <member refid="max7219_8c_1a5485fb13f4b90d3e0ce92f5830a42991" kind="function"><name>cowpi_max7219_shutdown</name></member>
+    <member refid="max7219_8c_1a3144ea1358ef6ae7a54bd6b5d21cec2d" kind="function"><name>cowpi_max7219_startup</name></member>
+  </compound>
+  <compound refid="max7219_8h" kind="file"><name>max7219.h</name>
+    <member refid="max7219_8h_1aa3cf9e639e5c1de7634bd001eec9d484" kind="function"><name>cowpi_setup_max7219</name></member>
+    <member refid="max7219_8h_1a520ba7e36f1e594821af8f92b9cd75dd" kind="function"><name>cowpi_max7219_send</name></member>
+    <member refid="max7219_8h_1a5485fb13f4b90d3e0ce92f5830a42991" kind="function"><name>cowpi_max7219_shutdown</name></member>
+    <member refid="max7219_8h_1a3144ea1358ef6ae7a54bd6b5d21cec2d" kind="function"><name>cowpi_max7219_startup</name></member>
+    <member refid="max7219_8h_1aa6bde6b535ba9fe55f44e2d6cc18089d" kind="function"><name>cowpi_max7219_no_decode</name></member>
+    <member refid="max7219_8h_1a6d04ebbeeef727e0c99eea52a4cc5046" kind="function"><name>cowpi_max7219_bcd_decode</name></member>
+    <member refid="max7219_8h_1a0e939da1631828884abad234eeb66c7c" kind="function"><name>cowpi_max7219_set_intensity</name></member>
+  </compound>
+  <compound refid="translations_8cpp" kind="file"><name>translations.cpp</name>
+    <member refid="translations_8cpp_1a17c91c645a4fa0112a0b3ea8b7ef4ece" kind="function"><name>cowpi_pin_mode</name></member>
+  </compound>
+  <compound refid="translations_8h" kind="file"><name>translations.h</name>
+    <member refid="translations_8h_1a17c91c645a4fa0112a0b3ea8b7ef4ece" kind="function"><name>cowpi_pin_mode</name></member>
+  </compound>
+  <compound refid="typedefs_8h" kind="file"><name>typedefs.h</name>
+    <member refid="typedefs_8h_1a6d3dee1ec4ba6aafec39cefe74684191" kind="enum"><name>display_modules</name></member>
+    <member refid="typedefs_8h_1a6d3dee1ec4ba6aafec39cefe74684191a2a6003405e87a615cf8a9d4f102bac8f" kind="enumvalue"><name>NO_MODULE</name></member>
+    <member refid="typedefs_8h_1a6d3dee1ec4ba6aafec39cefe74684191a41ee54be7e945a4ad303a81d2e44b2cc" kind="enumvalue"><name>SEVEN_SEGMENT</name></member>
+    <member refid="typedefs_8h_1a6d3dee1ec4ba6aafec39cefe74684191a846f8c965ed56fbfec6ab2f1e38f3361" kind="enumvalue"><name>LED_MATRIX</name></member>
+    <member refid="typedefs_8h_1a6d3dee1ec4ba6aafec39cefe74684191aaa39dea0a8a4f905e1488be2a5e12a39" kind="enumvalue"><name>LCD_CHARACTER</name></member>
+    <member refid="typedefs_8h_1a6d3dee1ec4ba6aafec39cefe74684191a44f0d187be51f4238eec1f232def2afd" kind="enumvalue"><name>OLED_MATRIX</name></member>
+    <member refid="typedefs_8h_1a6d3dee1ec4ba6aafec39cefe74684191a8119e096e052c0110d16e6704681a27e" kind="enumvalue"><name>MORSE_CODE</name></member>
+    <member refid="typedefs_8h_1a17e213b55d23626361c092746fd9aa3e" kind="enum"><name>orientations</name></member>
+    <member refid="typedefs_8h_1a17e213b55d23626361c092746fd9aa3eab5b3793b961949c817c7c0d99c05dad7" kind="enumvalue"><name>EAST</name></member>
+    <member refid="typedefs_8h_1a17e213b55d23626361c092746fd9aa3ead0611de6f28d4a9c9eac959f5344698e" kind="enumvalue"><name>NORTH</name></member>
+    <member refid="typedefs_8h_1a17e213b55d23626361c092746fd9aa3eae9449e8683a8199dad36b07a63b2f523" kind="enumvalue"><name>WEST</name></member>
+    <member refid="typedefs_8h_1a17e213b55d23626361c092746fd9aa3ea8ef5c0bce69283a9986011a63eea8a6b" kind="enumvalue"><name>SOUTH</name></member>
+    <member refid="typedefs_8h_1a8e52c966e0076d183563b5aac207dc05" kind="enum"><name>flips</name></member>
+    <member refid="typedefs_8h_1a8e52c966e0076d183563b5aac207dc05a4f73b81acb40b3226b61e6b4cd9dac9f" kind="enumvalue"><name>HEADS</name></member>
+    <member refid="typedefs_8h_1a8e52c966e0076d183563b5aac207dc05a55ad5ea7ad8db0a296376f8e1594987b" kind="enumvalue"><name>TAILS</name></member>
+    <member refid="typedefs_8h_1afd636896b1f6e43aacdb4c31b5da5036" kind="enum"><name>protocols</name></member>
+    <member refid="typedefs_8h_1afd636896b1f6e43aacdb4c31b5da5036a2adafc65f411aa90e302c562b2d89aba" kind="enumvalue"><name>NO_PROTOCOL</name></member>
+    <member refid="typedefs_8h_1afd636896b1f6e43aacdb4c31b5da5036a999bae3da733e2c2015a4585271b0187" kind="enumvalue"><name>I2C</name></member>
+    <member refid="typedefs_8h_1afd636896b1f6e43aacdb4c31b5da5036aefea9eb0772378037221a3f1fe759a76" kind="enumvalue"><name>SPI</name></member>
+    <member refid="typedefs_8h_1a338f0414b64e1aaa411ef8e80337c173" kind="enum"><name>adapter_mappings</name></member>
+    <member refid="typedefs_8h_1a338f0414b64e1aaa411ef8e80337c173ac66f26b2dc734f6d371e3690088add14" kind="enumvalue"><name>COWPI_DEFAULT</name></member>
+    <member refid="typedefs_8h_1a338f0414b64e1aaa411ef8e80337c173aa50a1234275945d24f66577f7ae4fc5a" kind="enumvalue"><name>ADAFRUIT</name></member>
+    <member refid="typedefs_8h_1a60f460d6da2938baccbfd94fe2a9331a" kind="function"><name>cowpi_configure_single_pin</name></member>
+    <member refid="typedefs_8h_1ac450537bd2d711481dc166356cede4ca" kind="function"><name>cowpi_configure_spi</name></member>
+    <member refid="typedefs_8h_1aefd856d56e7dfa644278ecc72ae40094" kind="function"><name>cowpi_configure_i2c</name></member>
+    <member refid="typedefs_8h_1a7a30b2642abc03336752fee9b7346fab" kind="function"><name>cowpi_configure_seven_segment_display</name></member>
+    <member refid="typedefs_8h_1aba5b55f258c69a4e4bb7f369d9cdf039" kind="function"><name>cowpi_configure_scrolling_seven_segment_display</name></member>
+    <member refid="typedefs_8h_1a0e902fa7db358312d830c684be1dc0fa" kind="function"><name>cowpi_configure_led_matrix_display</name></member>
+    <member refid="typedefs_8h_1a530d61accf4784d2ddbc20e3c75bd1e1" kind="function"><name>cowpi_configure_lcd_character_display</name></member>
+    <member refid="typedefs_8h_1a43fcd010cb065c2d25ae8b2bcd1bacf7" kind="function"><name>cowpi_configure_morse_code</name></member>
+  </compound>
+  <compound refid="group__configuration" kind="group"><name>configuration</name>
+  </compound>
+  <compound refid="group__display" kind="group"><name>display</name>
+  </compound>
+  <compound refid="group__font" kind="group"><name>font</name>
+  </compound>
+  <compound refid="group__protocol" kind="group"><name>protocol</name>
+  </compound>
+  <compound refid="group__stream" kind="group"><name>stream</name>
+  </compound>
+  <compound refid="dir_6d2104db64b91953bbd7b8fedbb8a094" kind="dir"><name>src/communication</name>
+  </compound>
+  <compound refid="dir_09b232ad7787f3076c33e2c12ca93b53" kind="dir"><name>src/file_streams</name>
+  </compound>
+  <compound refid="dir_bec663b67e4420d39ecb45ef100bdbac" kind="dir"><name>src/fonts</name>
+  </compound>
+  <compound refid="dir_5f0f9af53f1a9daf959d0f05b4f95aae" kind="dir"><name>src/hd44780</name>
+  </compound>
+  <compound refid="dir_8d33122d55ac876e9c3af5226fb08b88" kind="dir"><name>src/max7219</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_8299ff5e31d31320b10cfe1bd526934a" kind="dir"><name>src/translations</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="communication_8h" kind="file" language="C++">
+    <compoundname>communication.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="typedefs_8h" local="yes">../typedefs.h</includes>
+    <includedby refid="_cow_pi__stdio_8h" local="yes">src/CowPi_stdio.h</includedby>
+    <includedby refid="i2c_8h" local="yes">src/communication/i2c.h</includedby>
+    <includedby refid="spi_8h" local="yes">src/communication/spi.h</includedby>
+    <includedby refid="hd44780_8c" local="yes">src/hd44780/hd44780.c</includedby>
+    <includedby refid="max7219_8c" local="yes">src/max7219/max7219.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/communication/communication.h</label>
+        <link refid="communication_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>../typedefs.h</label>
+        <link refid="typedefs_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/CowPi_stdio.h</label>
+        <link refid="_cow_pi__stdio_8h"/>
+      </node>
+      <node id="1">
+        <label>src/communication/communication.h</label>
+        <link refid="communication_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/communication/i2c.c</label>
+        <link refid="i2c_8c"/>
+      </node>
+      <node id="3">
+        <label>src/communication/i2c.h</label>
+        <link refid="i2c_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/communication/spi.c</label>
+        <link refid="spi_8c"/>
+      </node>
+      <node id="5">
+        <label>src/communication/spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/hd44780/hd44780.c</label>
+        <link refid="hd44780_8c"/>
+      </node>
+      <node id="8">
+        <label>src/max7219/max7219.c</label>
+        <link refid="max7219_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="communication_8h_1a97eceed51859eb3e90fc20be1809e60c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>bit_order_t</name>
+        <enumvalue id="communication_8h_1a97eceed51859eb3e90fc20be1809e60caa61931f6a8a6808b63588b392c7f3f37" prot="public">
+          <name>COWPI_LSB_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="communication_8h_1a97eceed51859eb3e90fc20be1809e60ca9cf66bdf5ef1c84f2e035138aa3b9777" prot="public">
+          <name>COWPI_MSB_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Indicates whether a byte&apos;s bits should be transmitted least- or most-significant bit first. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="38" column="1" bodyfile="src/communication/communication.h" bodystart="38" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="communication_8h_1ae56ad6594960d7d4ee6ef6041c200e0a" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* cowpi_spi_initialize) (const cowpi_display_module_protocol_t *configuration, bit_order_t bit_order)</definition>
+        <argsstring>)(const cowpi_display_module_protocol_t *configuration, bit_order_t bit_order)</argsstring>
+        <name>cowpi_spi_initialize</name>
+        <briefdescription>
+<para>Function pointer for function that takes care of any setup needed before using SPI to send data to a display module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The particulars of what this setup is depends on the particular SPI implementation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the pins used for SPI </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bit_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicates whether the peripheral expects the byte to arrive LSB first or MSB first</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="communication_8h_1a8081d2ae373c4f3f0ef9883716d7b5ba" kindref="member">cowpi_spi_transmit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="communication_8h_1a50fed624317382ee7f85dd4e50a9d533" kindref="member">cowpi_spi_finalize</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="58" column="8" bodyfile="src/communication/spi.c" bodystart="32" bodyend="-1" declfile="src/communication/communication.h" declline="58" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="variable" id="communication_8h_1a8081d2ae373c4f3f0ef9883716d7b5ba" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* cowpi_spi_transmit) (uint8_t byte)</definition>
+        <argsstring>)(uint8_t byte)</argsstring>
+        <name>cowpi_spi_transmit</name>
+        <briefdescription>
+<para>Function pointer for function that uses SPI to send data to a display module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This might be a pre-defined implementation that uses the microcontroller&apos;s SPI hardware, or it might be a pre-defined bit-bang implementation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>byte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte to be transmitted to the peripheral</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="communication_8h_1ae56ad6594960d7d4ee6ef6041c200e0a" kindref="member">cowpi_spi_initialize</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="communication_8h_1a50fed624317382ee7f85dd4e50a9d533" kindref="member">cowpi_spi_finalize</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="72" column="8" bodyfile="src/communication/spi.c" bodystart="35" bodyend="-1" declfile="src/communication/communication.h" declline="72" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="variable" id="communication_8h_1a50fed624317382ee7f85dd4e50a9d533" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* cowpi_spi_finalize) (void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>cowpi_spi_finalize</name>
+        <briefdescription>
+<para>Function pointer for function that takes care of any teardown needed after using SPI to send data to a display module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The particulars of what this teardown is depends on the particular SPI implementation.</para>
+<para><simplesect kind="see"><para><ref refid="communication_8h_1ae56ad6594960d7d4ee6ef6041c200e0a" kindref="member">cowpi_spi_initialize</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="communication_8h_1a8081d2ae373c4f3f0ef9883716d7b5ba" kindref="member">cowpi_spi_transmit</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="84" column="8" bodyfile="src/communication/spi.c" bodystart="37" bodyend="-1" declfile="src/communication/communication.h" declline="84" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="variable" id="communication_8h_1aeef6d2fe8b4808a69f38dce46a33e86f" prot="public" static="no" mutable="no">
+        <type>bool(*</type>
+        <definition>bool(* cowpi_i2c_initialize) (const cowpi_display_module_protocol_t *configuration)</definition>
+        <argsstring>)(const cowpi_display_module_protocol_t *configuration)</argsstring>
+        <name>cowpi_i2c_initialize</name>
+        <briefdescription>
+<para>Function pointer for function that takes care of any setup needed before using I2C to send data to a display module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This includes, but might not be limited to, transmitting the start bit and the peripheral&apos;s address.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if ACK received; <computeroutput>false</computeroutput> otherwise</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="communication_8h_1a37c852a914e0488ebb1f909815aeed76" kindref="member">cowpi_i2c_transmit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="communication_8h_1a2b869486af06844eedb843fd5c0c6deb" kindref="member">cowpi_i2c_finalize</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="133" column="8" bodyfile="src/communication/i2c.c" bodystart="32" bodyend="-1" declfile="src/communication/communication.h" declline="133" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="variable" id="communication_8h_1a37c852a914e0488ebb1f909815aeed76" prot="public" static="no" mutable="no">
+        <type>bool(*</type>
+        <definition>bool(* cowpi_i2c_transmit) (uint8_t byte)</definition>
+        <argsstring>)(uint8_t byte)</argsstring>
+        <name>cowpi_i2c_transmit</name>
+        <briefdescription>
+<para>Function pointer for function that uses SPI to send data to a display module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This might be a pre-defined implementation that uses the microcontroller&apos;s SPI hardware, or it might be a pre-defined bit-bang implementation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>byte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte to be transmitted to the peripheral </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if ACK received; <computeroutput>false</computeroutput> otherwise</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="communication_8h_1aeef6d2fe8b4808a69f38dce46a33e86f" kindref="member">cowpi_i2c_initialize</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="communication_8h_1a2b869486af06844eedb843fd5c0c6deb" kindref="member">cowpi_i2c_finalize</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="148" column="8" bodyfile="src/communication/i2c.c" bodystart="34" bodyend="-1" declfile="src/communication/communication.h" declline="148" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="variable" id="communication_8h_1a2b869486af06844eedb843fd5c0c6deb" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* cowpi_i2c_finalize) (void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>cowpi_i2c_finalize</name>
+        <briefdescription>
+<para>Function pointer for function that takes care of any teardown needed after using SPI to send data to a display module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This includes, but might not be limited to, transmitting the stop bit.</para>
+<para><simplesect kind="see"><para><ref refid="communication_8h_1aeef6d2fe8b4808a69f38dce46a33e86f" kindref="member">cowpi_i2c_initialize</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="communication_8h_1a37c852a914e0488ebb1f909815aeed76" kindref="member">cowpi_i2c_transmit</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="159" column="8" bodyfile="src/communication/i2c.c" bodystart="36" bodyend="-1" declfile="src/communication/communication.h" declline="159" declcolumn="8"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="communication_8h_1a9ccea4bfedcd66e54c74366845193553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cowpi_use_spi_hardware</definition>
+        <argsstring>()</argsstring>
+        <name>cowpi_use_spi_hardware</name>
+        <briefdescription>
+<para>Assigns to <computeroutput>cowpi_spi_initialize</computeroutput>, <computeroutput>cowpi_spi_transmit</computeroutput>, and <computeroutput>cowpi_spi_finalize</computeroutput> implementations that use the microcontroller&apos;s built-in SPI hardware. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Using the SPI hardware may limit the choice of data and clock pins. Attempting to use the SPI hardware while specifying pins that cannot be used by the SPI hardware may result in unexpected behavior.</para>
+<para>The CowPi_stdio library does not have SPI hardware implementations for all microcontrollers. If a hardware implementation is unavailable, this function will return <computeroutput>false</computeroutput> and will assign a bit-banged implementation instead.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if hardware implementations have been assigned to the CowPi&apos;s SPI function pointers </para>
+</simplesect>
+<simplesect kind="return"><para><computeroutput>false</computeroutput> if hardware implementations have not been assigned to the CowPi&apos;s SPI function pointers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="106" column="6" bodyfile="src/communication/spi.c" bodystart="86" bodyend="89" declfile="src/communication/communication.h" declline="106" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="communication_8h_1a487a89c904390ee413a7f74b05a446c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_use_spi_bitbang</definition>
+        <argsstring>()</argsstring>
+        <name>cowpi_use_spi_bitbang</name>
+        <briefdescription>
+<para>Assigns to <computeroutput>cowpi_spi_initialize</computeroutput>, <computeroutput>cowpi_spi_transmit</computeroutput>, and <computeroutput>cowpi_spi_finalize</computeroutput> pure software (&quot;bit-banged&quot;) implementations that do not use the microcontroller&apos;s built-in SPI hardware. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Bit-banged implementations have no restrictions on the choice of data and clock pins. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="116" column="6" bodyfile="src/communication/spi.c" bodystart="40" bodyend="44" declfile="src/communication/communication.h" declline="116" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="communication_8h_1a7269ef3039db09b417f685643b8e1eae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t cowpi_discover_i2c_address</definition>
+        <argsstring>(uint8_t i2c_data_pin, uint8_t i2c_clock_pin)</argsstring>
+        <name>cowpi_discover_i2c_address</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>i2c_data_pin</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>i2c_clock_pin</declname>
+        </param>
+        <briefdescription>
+<para>Reports the address of the I2C peripheral if there is exactly one I2C peripheral attached to the designated pins. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i2c_data_pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the I2C serial data pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i2c_clock_pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the I2C serial clock pin </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><itemizedlist>
+<listitem>
+<para>0 if no I2C peripherals are detected </para>
+</listitem>
+<listitem>
+<para>-1 if multiple I2C peripherals are detected </para>
+</listitem>
+<listitem>
+<para>the peripheral&apos;s I2C address otherwise </para>
+</listitem>
+</itemizedlist>
+</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="173" column="8" bodyfile="src/communication/i2c.c" bodystart="177" bodyend="200" declfile="src/communication/communication.h" declline="173" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="communication_8h_1ad9b5f556b020528ad090295534b45b0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cowpi_use_i2c_hardware</definition>
+        <argsstring>()</argsstring>
+        <name>cowpi_use_i2c_hardware</name>
+        <briefdescription>
+<para>Assigns to <computeroutput>cowpi_i2c_initialize</computeroutput>, <computeroutput>cowpi_i2c_transmit</computeroutput>, and <computeroutput>cowpi_i2c_finalize</computeroutput> implementations that use the microcontroller&apos;s built-in I2C (aka IIC, aka TWI) hardware. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Using the I2C hardware may limit the choice of data and clock pins. Attempting to use the I2C hardware while specifying pins that cannot be used by the I2C hardware may result in unexpected behavior.</para>
+<para>The CowPi_stdio library does not have I2C hardware implementations for all microcontrollers. If a hardware implementation is unavailable, this function will return <computeroutput>false</computeroutput> and will assign a bit-banged implementation instead.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if hardware implementations have been assigned to the CowPi&apos;s I2C function pointers </para>
+</simplesect>
+<simplesect kind="return"><para><computeroutput>false</computeroutput> if hardware implementations have not been assigned to the CowPi&apos;s I2C function pointers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="195" column="6" bodyfile="src/communication/i2c.c" bodystart="157" bodyend="160" declfile="src/communication/communication.h" declline="195" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="communication_8h_1ad87e18447a141b8e0b9b08889babc74f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_use_i2c_bitbang</definition>
+        <argsstring>()</argsstring>
+        <name>cowpi_use_i2c_bitbang</name>
+        <briefdescription>
+<para>Assigns to <computeroutput>cowpi_i2c_initialize</computeroutput>, <computeroutput>cowpi_i2c_transmit</computeroutput>, and <computeroutput>cowpi_i2c_finalize</computeroutput> pure software (&quot;bit-banged&quot;) implementations that do not use the microcontroller&apos;s built-in I2C hardware. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Bit-banged implementations have no restrictions on the choice of data and clock pins. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/communication/communication.h" line="205" column="6" bodyfile="src/communication/i2c.c" bodystart="42" bodyend="46" declfile="src/communication/communication.h" declline="205" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Public-facing type definitions and function pointers for SPI &amp; I2C. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/**************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CowPi_stdio<sp/>(c)<sp/>2022-23<sp/>Christopher<sp/>A.<sp/>Bohn</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>COWPI_STDIO_COMMUNICATION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COWPI_STDIO_COMMUNICATION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../typedefs.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="communication_8h_1a97eceed51859eb3e90fc20be1809e60c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>COWPI_LSB_FIRST,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>COWPI_MSB_FIRST</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/><ref refid="communication_8h_1a97eceed51859eb3e90fc20be1809e60c" kindref="member">bit_order_t</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="communication_8h_1ae56ad6594960d7d4ee6ef6041c200e0a" kindref="member">cowpi_spi_initialize</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,<sp/><ref refid="communication_8h_1a97eceed51859eb3e90fc20be1809e60c" kindref="member">bit_order_t</ref><sp/>bit_order);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="communication_8h_1a8081d2ae373c4f3f0ef9883716d7b5ba" kindref="member">cowpi_spi_transmit</ref>)(uint8_t<sp/>byte);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="communication_8h_1a50fed624317382ee7f85dd4e50a9d533" kindref="member">cowpi_spi_finalize</ref>)(void);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="communication_8h_1a9ccea4bfedcd66e54c74366845193553" kindref="member">cowpi_use_spi_hardware</ref>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="communication_8h_1a487a89c904390ee413a7f74b05a446c1" kindref="member">cowpi_use_spi_bitbang</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>bool<sp/>(*<ref refid="communication_8h_1aeef6d2fe8b4808a69f38dce46a33e86f" kindref="member">cowpi_i2c_initialize</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>bool<sp/>(*<ref refid="communication_8h_1a37c852a914e0488ebb1f909815aeed76" kindref="member">cowpi_i2c_transmit</ref>)(uint8_t<sp/>byte);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="communication_8h_1a2b869486af06844eedb843fd5c0c6deb" kindref="member">cowpi_i2c_finalize</ref>)(void);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">int8_t<sp/><ref refid="communication_8h_1a7269ef3039db09b417f685643b8e1eae" kindref="member">cowpi_discover_i2c_address</ref>(uint8_t<sp/>i2c_data_pin,<sp/>uint8_t<sp/>i2c_clock_pin);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="communication_8h_1ad9b5f556b020528ad090295534b45b0c" kindref="member">cowpi_use_i2c_hardware</ref>();</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="communication_8h_1ad87e18447a141b8e0b9b08889babc74f" kindref="member">cowpi_use_i2c_bitbang</ref>();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//COWPI_STDIO_COMMUNICATION_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/communication/communication.h"/>
+  </compounddef>
+</doxygen>

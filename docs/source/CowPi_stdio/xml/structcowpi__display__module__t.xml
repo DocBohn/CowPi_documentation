@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="structcowpi__display__module__t" kind="struct" language="C++" prot="public">
+    <compoundname>cowpi_display_module_t</compoundname>
+    <includes refid="typedefs_8h" local="no">typedefs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcowpi__display__module__t_1a988a5950615261c5f09efacfe98f1256" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="typedefs_8h_1a6d3dee1ec4ba6aafec39cefe74684191" kindref="member">display_modules</ref></type>
+        <definition>enum display_modules cowpi_display_module_t::display_module</definition>
+        <argsstring></argsstring>
+        <name>display_module</name>
+        <qualifiedname>cowpi_display_module_t::display_module</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/typedefs.h" line="110" column="25" bodyfile="src/typedefs.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__display__module__t_1aaba8f9fffaba220e24f895599899f29b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_display_module_t::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>cowpi_display_module_t::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/typedefs.h" line="111" column="13" bodyfile="src/typedefs.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__display__module__t_1a6b7fc50475c36d26ca94ec9360eee14b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_display_module_t::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>cowpi_display_module_t::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/typedefs.h" line="112" column="13" bodyfile="src/typedefs.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__display__module__t_1a895dab9b3513b44b9f67a1fdff7878b0" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cowpi_display_module_t::words_per_minute</definition>
+        <argsstring></argsstring>
+        <name>words_per_minute</name>
+        <qualifiedname>cowpi_display_module_t::words_per_minute</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/typedefs.h" line="113" column="13" bodyfile="src/typedefs.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__display__module__t_1a56a9236a922eab34e999b47833606210" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="typedefs_8h_1a17e213b55d23626361c092746fd9aa3e" kindref="member">orientations</ref></type>
+        <definition>enum orientations cowpi_display_module_t::display_orientation</definition>
+        <argsstring></argsstring>
+        <name>display_orientation</name>
+        <qualifiedname>cowpi_display_module_t::display_orientation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/typedefs.h" line="114" column="22" bodyfile="src/typedefs.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcowpi__display__module__t_1a9aa8221217bdba71bd72ae14daee0fa4" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="typedefs_8h_1a8e52c966e0076d183563b5aac207dc05" kindref="member">flips</ref></type>
+        <definition>enum flips cowpi_display_module_t::character_flip</definition>
+        <argsstring></argsstring>
+        <name>character_flip</name>
+        <qualifiedname>cowpi_display_module_t::character_flip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/typedefs.h" line="115" column="15" bodyfile="src/typedefs.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure that consolidates all information needed about a display module. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/typedefs.h" line="109" column="1" bodyfile="src/typedefs.h" bodystart="109" bodyend="116"/>
+    <listofallmembers>
+      <member refid="structcowpi__display__module__t_1a9aa8221217bdba71bd72ae14daee0fa4" prot="public" virt="non-virtual"><scope>cowpi_display_module_t</scope><name>character_flip</name></member>
+      <member refid="structcowpi__display__module__t_1a988a5950615261c5f09efacfe98f1256" prot="public" virt="non-virtual"><scope>cowpi_display_module_t</scope><name>display_module</name></member>
+      <member refid="structcowpi__display__module__t_1a56a9236a922eab34e999b47833606210" prot="public" virt="non-virtual"><scope>cowpi_display_module_t</scope><name>display_orientation</name></member>
+      <member refid="structcowpi__display__module__t_1a6b7fc50475c36d26ca94ec9360eee14b" prot="public" virt="non-virtual"><scope>cowpi_display_module_t</scope><name>height</name></member>
+      <member refid="structcowpi__display__module__t_1aaba8f9fffaba220e24f895599899f29b" prot="public" virt="non-virtual"><scope>cowpi_display_module_t</scope><name>width</name></member>
+      <member refid="structcowpi__display__module__t_1a895dab9b3513b44b9f67a1fdff7878b0" prot="public" virt="non-virtual"><scope>cowpi_display_module_t</scope><name>words_per_minute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

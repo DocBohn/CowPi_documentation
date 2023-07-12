@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="translations_8cpp" kind="file" language="C++">
+    <compoundname>translations.cpp</compoundname>
+    <includes refid="translations_8h" local="yes">translations.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/translations/translations.cpp</label>
+        <link refid="translations_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>translations.h</label>
+        <link refid="translations_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="translations_8cpp_1a17c91c645a4fa0112a0b3ea8b7ef4ece" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_pin_mode</definition>
+        <argsstring>(pin_number_t pin, pin_mode_t mode)</argsstring>
+        <name>cowpi_pin_mode</name>
+        <param>
+          <type>pin_number_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>pin_mode_t</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Configures the specified pin to behave either as an input or an output and, if as an input, then whether it is high-impedance or uses an internal pullup (or pulldown) resistor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the pin whose mode is to be set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>INPUT, OUTPUT, INPUT_PULLUP, or (if supported) INPUT_PULLDOWN </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/translations/translations.cpp" line="26" column="6" bodyfile="src/translations/translations.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Functions and definitions to provide a common way to express similar ubiquitous concepts in the library&apos;s code that are expressed slightly differently on different targets.   </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Obviously when porting this library across different toolchains, concepts such as setting a pin&apos;s direction will be expressed differently: <computeroutput>pinMode()</computeroutput> in Arduino and <computeroutput>gpi_set_dir()</computeroutput> in the Raspberry Pi Pico SDK. Even within a single toolchain, there may be differences <ndash/> Arduino&apos;s <computeroutput>pinMode()</computeroutput> might take a <computeroutput>uint8_t</computeroutput> or a <computeroutput>pin_size_t</computeroutput> for the pin number, and it might take a <computeroutput>uint8_t</computeroutput> or a <computeroutput>PinMode</computeroutput> for the mode (input/output/pullup/pulldown).   </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/**************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CowPi_stdio<sp/>(c)<sp/>2022-23<sp/>Christopher<sp/>A.<sp/>Bohn</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="translations_8h" kindref="compound">translations.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="translations_8cpp_1a17c91c645a4fa0112a0b3ea8b7ef4ece" kindref="member">cowpi_pin_mode</ref>(pin_number_t<sp/>pin,<sp/>pin_mode_t<sp/>mode)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>pinMode(pin,<sp/>mode);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/translations/translations.cpp"/>
+  </compounddef>
+</doxygen>

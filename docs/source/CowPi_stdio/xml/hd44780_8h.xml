@@ -1,0 +1,778 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="hd44780_8h" kind="file" language="C++">
+    <compoundname>hd44780.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="typedefs_8h" local="yes">../typedefs.h</includes>
+    <includedby refid="_cow_pi__stdio_8h" local="yes">src/CowPi_stdio.h</includedby>
+    <includedby refid="display__module__streams_8c" local="yes">src/file_streams/display_module_streams.c</includedby>
+    <includedby refid="hd44780__streams_8c" local="yes">src/file_streams/hd44780_streams.c</includedby>
+    <includedby refid="hd44780_8c" local="yes">src/hd44780/hd44780.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/hd44780/hd44780.h</label>
+        <link refid="hd44780_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>../typedefs.h</label>
+        <link refid="typedefs_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/CowPi_stdio.h</label>
+        <link refid="_cow_pi__stdio_8h"/>
+      </node>
+      <node id="3">
+        <label>src/file_streams/display_module_streams.c</label>
+        <link refid="display__module__streams_8c"/>
+      </node>
+      <node id="4">
+        <label>src/file_streams/hd44780_streams.c</label>
+        <link refid="hd44780__streams_8c"/>
+      </node>
+      <node id="5">
+        <label>src/hd44780/hd44780.c</label>
+        <link refid="hd44780_8c"/>
+      </node>
+      <node id="1">
+        <label>src/hd44780/hd44780.h</label>
+        <link refid="hd44780_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="hd44780_8h_1af4003fdc700480c3e654e1a5245d2e0f" prot="public" static="no">
+        <name>LCDENTRY_CURSORMOVESRIGHT</name>
+        <initializer>0x06</initializer>
+        <briefdescription>
+<para>Instructs the display module to shift the cursor right after a character is displayed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="236" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1a0d4ce8138829f65ff69122989d83351e" prot="public" static="no">
+        <name>LCDENTRY_CURSORMOVESLEFT</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+<para>Instructs the display module to shift the cursor left after a character is displayed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="237" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1afdf7f89008087e4f535a539c9dd92d74" prot="public" static="no">
+        <name>LCDENTRY_TEXTSHIFTS</name>
+        <initializer>0x05</initializer>
+        <briefdescription>
+<para>Instructs the display module to shift the entire display after a character is displayed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="238" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1a8e46fc36f92a144ea4b1ceaf308de94f" prot="public" static="no">
+        <name>LCDENTRY_TEXTNOSHIFT</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+<para>Instructs the display module not to shift the display after a character is displayed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="239" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1ac68931475690c957a40985f9af490850" prot="public" static="no">
+        <name>LCDONOFF_DISPLAYON</name>
+        <initializer>0x0C</initializer>
+        <briefdescription>
+<para>Instructs the display module to turn on the display. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="242" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1a5f3a876dbba06d426d42f4fb79ad9990" prot="public" static="no">
+        <name>LCDONOFF_DISPLAYOFF</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+<para>Instructs the display module to turn off the display. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="243" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1a005efc2b1a2ff15f0b4ea1a3cae5cbbb" prot="public" static="no">
+        <name>LCDONOFF_CURSORON</name>
+        <initializer>0x0A</initializer>
+        <briefdescription>
+<para>Instructs the display module to turn on the underscore cursor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="244" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1a1875292adc905c85843bb67638d90c9a" prot="public" static="no">
+        <name>LCDONOFF_CURSOROFF</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+<para>Instructs the display module to turn off the underscore cursor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="245" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1a0adb1ec70701c8d29f13581d0e22cf0c" prot="public" static="no">
+        <name>LCDONOFF_BLINKON</name>
+        <initializer>0x09</initializer>
+        <briefdescription>
+<para>Instructs the display module to blink the cursor&apos;s position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="246" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1a8baf00d2d89236c4dcdc8e0092b96ceb" prot="public" static="no">
+        <name>LCDONOFF_BLINKOFF</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+<para>Instructs the display module not to blink the cursor&apos;s position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="247" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1ab57d448050f011589c1a98a0639507ae" prot="public" static="no">
+        <name>LCDSHIFT_DISPLAYLEFT</name>
+        <initializer>0x18</initializer>
+        <briefdescription>
+<para>Shifts the entire display to the left. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="250" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1a475e0f240eee7be64ff8595ba24fb8a5" prot="public" static="no">
+        <name>LCDSHIFT_DISPLAYRIGHT</name>
+        <initializer>0x1C</initializer>
+        <briefdescription>
+<para>Shifts the entire display to the right. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="251" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1aee083e008fb76ed6ea6bde6e3500877e" prot="public" static="no">
+        <name>LCDSHIFT_CURSORLEFT</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+<para>Shifts the cursor to the left. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="252" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hd44780_8h_1a13624db759d218da4389c676e8acfc05" prot="public" static="no">
+        <name>LCDSHIFT_CURSORRIGHT</name>
+        <initializer>0x14</initializer>
+        <briefdescription>
+<para>Shifts the cursor to the right. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="253" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="hd44780_8h_1ad3c45dc1b1eb4be8c0a3fb27d0b2af53" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* cowpi_hd44780_send_halfbyte_t) (const cowpi_display_module_protocol_t *configuration, uint8_t halfbyte, bool is_command)</definition>
+        <argsstring>)(const cowpi_display_module_protocol_t *configuration, uint8_t halfbyte, bool is_command)</argsstring>
+        <name>cowpi_hd44780_send_halfbyte_t</name>
+        <briefdescription>
+<para>Pointer to function that sends a halfbyte to the HD44780 character display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput>cowpi_hd44780</computeroutput> utility functions all make use of the <computeroutput>cowpi_hd44780_send_halfbyte()</computeroutput> function pointer.</para>
+<para>Initially, <computeroutput>cowpi_hd44780_send_halfbyte()</computeroutput> is one of two default implementations, depending on the protocol specified in the argument to <computeroutput>cowpi_setup()</computeroutput>. The SPI implementation is a portable software-only implementation that does not use SPI hardware, nor does it use memory-mapped I/O of any form. The I2C implementation currently makes use of the I2C hardware using avr-libc macros.</para>
+<para>Re-implementing this function to use SPI or I2C hardware is a possible part of a memory-mapped I/O lab assignment.</para>
+<para>SPI: Assumes the display module&apos;s data-in line is connected to the microcontroller&apos;s COPI pin (D11 on most Arduino boards), the display module&apos;s serial-clock line is connected to the microcontroller&apos;s SCK pin (D13 on most Arduino boards), and the display module&apos;s chip-select line is connected to Arduino pin D10.</para>
+<para>I2C: Assumes the display module&apos;s data line is connected to the microcontroller&apos;s SDA pin (D18 on most Arduino boards) and the display module&apos;s serial-clock line is connected to the microcontroller&apos;s SCL pin (D19 on most Arduino boards).</para>
+<para><simplesect kind="see"><para><ref refid="hd44780_8h_1a4c9bcf6e4d19f3991ce1601f0b6b543c" kindref="member">cowpi_hd44780_set_send_halfbyte_function</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>halfbyte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to be sent to the display module </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicates whether the data is part of a command (<computeroutput>true</computeroutput>) or part of a character (<computeroutput>false</computeroutput>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="92" column="9" bodyfile="src/hd44780/hd44780.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hd44780_8h_1ad31e56f967148bdc0deae2f59f89a118" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_setup_hd44780</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration)</argsstring>
+        <name>cowpi_setup_hd44780</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+<para>Configures the HD44780 to nominal settings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="101" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="46" bodyend="65" declfile="src/hd44780/hd44780.h" declline="101" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8h_1a4c9bcf6e4d19f3991ce1601f0b6b543c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_set_send_halfbyte_function</definition>
+        <argsstring>(cowpi_hd44780_send_halfbyte_t send_halfbyte_function)</argsstring>
+        <name>cowpi_hd44780_set_send_halfbyte_function</name>
+        <param>
+          <type><ref refid="hd44780_8h_1ad3c45dc1b1eb4be8c0a3fb27d0b2af53" kindref="member">cowpi_hd44780_send_halfbyte_t</ref></type>
+          <declname>send_halfbyte_function</declname>
+        </param>
+        <briefdescription>
+<para>Reassigns the <computeroutput>cowpi_hd44780_send_halfbyte</computeroutput> function pointer to point to the specified function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>During setup, this function is used to assign one of the two default <computeroutput>cowpi_hd44780_send_halfbyte_t</computeroutput> implementations to <computeroutput>cowpi_hd44780_send_halfbyte</computeroutput>, unless it was previously used to assign a re-implementation. I can also later be used to assign a re-implementation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>send_halfbyte_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the function to be used to send halfbytes to the HD44780 character display </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="115" column="6" declfile="src/hd44780/hd44780.h" declline="115" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8h_1a43c8a12dc31b76b0dbefdecdd648a873" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_place_character</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t address, uint8_t character)</argsstring>
+        <name>cowpi_hd44780_place_character</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>character</declname>
+        </param>
+        <briefdescription>
+<para>Places the specified character on the display at the specified location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The character is an ASCII or &quot;extended-ASCII&quot; character, or a custom character created by using <computeroutput><ref refid="hd44780_8h_1a5edfabb20813e7374f155972586725c5" kindref="member">cowpi_hd44780_create_character()</ref></computeroutput>.</para>
+<para>Note that the base address of the top row is 0x00, and the base address of the bottom row is 0x40.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address of the desired location </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the character to be displayed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="132" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="73" bodyend="77" declfile="src/hd44780/hd44780.h" declline="132" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8h_1aa1bf4bd12dffc0dfe394ebe5855974fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_place_cursor</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t address)</argsstring>
+        <name>cowpi_hd44780_place_cursor</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+<para>Places the cursor at the specified location without updating the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>While the cursor will move to the specified location, it will only be visibly there if the cursor is on.</para>
+<para>Note that the base address of the top row is 0x00, and the base address of the bottom row is 0x40.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address of the desired location </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="149" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="79" bodyend="81" declfile="src/hd44780/hd44780.h" declline="149" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8h_1aae8db16b83b43198a27c54404a9f772a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_send_command</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t command)</argsstring>
+        <name>cowpi_hd44780_send_command</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>Sends a command to the HD44780 character display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The command is a bitwise disjunction of named constants to specify the entry mode (cursor and text movement to occur after characters are sent), a disjunction of named constants to specify the display mode (whether the display is on, whether the underscore cursor is displayed, and whether the cursor&apos;s location blinks), or one shift command (shift display left/right or shift cursor left/right).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>constant(s) that specify the entry mode, display mode, or shift command </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="166" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="83" bodyend="91" declfile="src/hd44780/hd44780.h" declline="166" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8h_1a2b75ba8a2eaecf03482195e6098e4abf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_send_character</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t character)</argsstring>
+        <name>cowpi_hd44780_send_character</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>character</declname>
+        </param>
+        <briefdescription>
+<para>Displays a character at the cursor&apos;s location on the HD44780 character display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The character is an ASCII or &quot;extended-ASCII&quot; character, or one of the eight custom characters created by using <computeroutput><ref refid="hd44780_8h_1a5edfabb20813e7374f155972586725c5" kindref="member">cowpi_hd44780_create_character()</ref></computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the character to be displayed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="179" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="93" bodyend="98" declfile="src/hd44780/hd44780.h" declline="179" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8h_1a5edfabb20813e7374f155972586725c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_create_character</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t encoding, const uint8_t pixel_vector[8])</argsstring>
+        <name>cowpi_hd44780_create_character</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>encoding</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>pixel_vector</declname>
+          <array>[8]</array>
+        </param>
+        <briefdescription>
+<para>Creates a custom character for the HD44780 character display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The encoding can be a value between 0 and 7, inclusive. Each element of the pixel vector corresponds to a row of the 5x8 character matrix (thus, only 5 bits of each element are used).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>encoding</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value used to represent the character </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pixel_vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>identifies which LCDs are &quot;on&quot; or &quot;off&quot; for the custom character. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="194" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="100" bodyend="107" declfile="src/hd44780/hd44780.h" declline="194" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8h_1aacdfb659a2e1719d3a6616e1bf7e3665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_clear_display</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration)</argsstring>
+        <name>cowpi_hd44780_clear_display</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+<para>Clears the display and places the cursor in row 0, column 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="203" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="109" bodyend="113" declfile="src/hd44780/hd44780.h" declline="203" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8h_1af44ddb08d58f4b9fc6a223fae4a67398" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_return_home</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration)</argsstring>
+        <name>cowpi_hd44780_return_home</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+<para>Places the cursor in row 0, column 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the display was shifted, the display is shifted back to its original position. The contents of each character position remain unchanged.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="214" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="115" bodyend="118" declfile="src/hd44780/hd44780.h" declline="214" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8h_1a40221ee5cf4a248048243cfffc7f1f95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_set_backlight</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, bool backlight_on)</argsstring>
+        <name>cowpi_hd44780_set_backlight</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>backlight_on</declname>
+        </param>
+        <briefdescription>
+<para>Turns the display module&apos;s backlight on or off. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>backlight_on</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicates whether the backlight should be on (<computeroutput>true</computeroutput>) or off (<computeroutput>false</computeroutput>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.h" line="224" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="120" bodyend="123" declfile="src/hd44780/hd44780.h" declline="224" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Utility functions for peripherals driven by HD44780 such as 16x2 and 20x4 LCD character display modules. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Christopher A. Bohn</para>
+</simplesect>
+</para>
+<para>The HD44780 will initially be placed in 4-bit mode, and:<itemizedlist>
+<listitem><para>With each character, increment the cursor&apos;s location but do not shift the display</para>
+</listitem><listitem><para>Turn the display on, the cursor off, and no blinking</para>
+</listitem><listitem><para>Clear the display</para>
+</listitem></itemizedlist>
+</para>
+<para>The HD44780 is complex enough that the firmware program should call <computeroutput><ref refid="hd44780_8h_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command()</ref></computeroutput>, <computeroutput><ref refid="hd44780_8h_1a2b75ba8a2eaecf03482195e6098e4abf" kindref="member">cowpi_hd44780_send_character()</ref></computeroutput>, or another more-specific function. These functions will take care of dividing the data into halfbytes, managing timing, and other complexities, and will call <computeroutput>cowpi_hd44780_send_halfbyte()</computeroutput>.</para>
+<para>Unlike the MAX7219 and the SSD1306, the HD44780 does not handle serial communication on its own and requires a serial adapter. The mapping between the byte sent from the program and the lines on the display module is specified by the <computeroutput>adapter_mapping</computeroutput> field in the functions&apos; <computeroutput><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref></computeroutput> argument </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/**************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CowPi_stdio<sp/>(c)<sp/>2022-23<sp/>Christopher<sp/>A.<sp/>Bohn</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>COWPI_STDIO_HD44780_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COWPI_STDIO_HD44780_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../typedefs.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="hd44780_8h_1ad3c45dc1b1eb4be8c0a3fb27d0b2af53" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="hd44780_8h_1ad3c45dc1b1eb4be8c0a3fb27d0b2af53" kindref="member">cowpi_hd44780_send_halfbyte_t</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>halfbyte,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_command);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1ad31e56f967148bdc0deae2f59f89a118" kindref="member">cowpi_setup_hd44780</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="hd44780_8h_1a4c9bcf6e4d19f3991ce1601f0b6b543c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1a4c9bcf6e4d19f3991ce1601f0b6b543c" kindref="member">cowpi_hd44780_set_send_halfbyte_function</ref>(<ref refid="hd44780_8h_1ad3c45dc1b1eb4be8c0a3fb27d0b2af53" kindref="member">cowpi_hd44780_send_halfbyte_t</ref><sp/>send_halfbyte_function);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1a43c8a12dc31b76b0dbefdecdd648a873" kindref="member">cowpi_hd44780_place_character</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>address,<sp/>uint8_t<sp/>character);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1aa1bf4bd12dffc0dfe394ebe5855974fd" kindref="member">cowpi_hd44780_place_cursor</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,<sp/>uint8_t<sp/>address);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,<sp/>uint8_t<sp/>command);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1a2b75ba8a2eaecf03482195e6098e4abf" kindref="member">cowpi_hd44780_send_character</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,<sp/>uint8_t<sp/>character);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1a5edfabb20813e7374f155972586725c5" kindref="member">cowpi_hd44780_create_character</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>encoding,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>pixel_vector[8]);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1aacdfb659a2e1719d3a6616e1bf7e3665" kindref="member">cowpi_hd44780_clear_display</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1af44ddb08d58f4b9fc6a223fae4a67398" kindref="member">cowpi_hd44780_return_home</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8h_1a40221ee5cf4a248048243cfffc7f1f95" kindref="member">cowpi_hd44780_set_backlight</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>backlight_on);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Entry<sp/>Mode<sp/>Commands<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="hd44780_8h_1af4003fdc700480c3e654e1a5245d2e0f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDENTRY_CURSORMOVESRIGHT<sp/><sp/><sp/>0x06<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="hd44780_8h_1a0d4ce8138829f65ff69122989d83351e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDENTRY_CURSORMOVESLEFT<sp/><sp/><sp/><sp/>0x04<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238" refid="hd44780_8h_1afdf7f89008087e4f535a539c9dd92d74" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDENTRY_TEXTSHIFTS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x05<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="hd44780_8h_1a8e46fc36f92a144ea4b1ceaf308de94f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDENTRY_TEXTNOSHIFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Display<sp/>On/Off<sp/>Commands<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242" refid="hd44780_8h_1ac68931475690c957a40985f9af490850" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDONOFF_DISPLAYON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0C<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="hd44780_8h_1a5f3a876dbba06d426d42f4fb79ad9990" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDONOFF_DISPLAYOFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="hd44780_8h_1a005efc2b1a2ff15f0b4ea1a3cae5cbbb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDONOFF_CURSORON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0A<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245" refid="hd44780_8h_1a1875292adc905c85843bb67638d90c9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDONOFF_CURSOROFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="hd44780_8h_1a0adb1ec70701c8d29f13581d0e22cf0c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDONOFF_BLINKON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x09<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247" refid="hd44780_8h_1a8baf00d2d89236c4dcdc8e0092b96ceb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDONOFF_BLINKOFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Cursor<sp/>or<sp/>Display<sp/>Shift<sp/>Commands<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250" refid="hd44780_8h_1ab57d448050f011589c1a98a0639507ae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDSHIFT_DISPLAYLEFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x18<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="hd44780_8h_1a475e0f240eee7be64ff8595ba24fb8a5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDSHIFT_DISPLAYRIGHT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1C<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252" refid="hd44780_8h_1aee083e008fb76ed6ea6bde6e3500877e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDSHIFT_CURSORLEFT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="hd44780_8h_1a13624db759d218da4389c676e8acfc05" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCDSHIFT_CURSORRIGHT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x14<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//COWPI_STDIO_HD44780_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/hd44780/hd44780.h"/>
+  </compounddef>
+</doxygen>

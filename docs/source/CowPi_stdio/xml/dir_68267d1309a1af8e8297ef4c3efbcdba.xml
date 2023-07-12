@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_6d2104db64b91953bbd7b8fedbb8a094">src/communication</innerdir>
+    <innerdir refid="dir_09b232ad7787f3076c33e2c12ca93b53">src/file_streams</innerdir>
+    <innerdir refid="dir_bec663b67e4420d39ecb45ef100bdbac">src/fonts</innerdir>
+    <innerdir refid="dir_5f0f9af53f1a9daf959d0f05b4f95aae">src/hd44780</innerdir>
+    <innerdir refid="dir_8d33122d55ac876e9c3af5226fb08b88">src/max7219</innerdir>
+    <innerdir refid="dir_8299ff5e31d31320b10cfe1bd526934a">src/translations</innerdir>
+    <innerfile refid="_cow_pi__stdio_8h">CowPi_stdio.h</innerfile>
+    <innerfile refid="typedefs_8h">typedefs.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

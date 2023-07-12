@@ -3,6 +3,9 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import sys
+sys.path.append('ext/breathe/')
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
@@ -28,7 +31,10 @@ extensions = [
     # 'sphinx.ext.autosectionlabel',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinxcontrib.tikz'
+    'sphinxcontrib.tikz',
+    'sphinx.ext.imgmath',
+    'sphinx.ext.todo',
+    'breathe'
 ]
 
 intersphinx_mapping = {
@@ -61,4 +67,16 @@ epub_show_urls = 'footnote'
 
 tikz_proc_suite = 'GhostScript'
 tikz_tikzlibraries = 'shapes.geometric'
-# tikz_latex_preamble = 'x=.1in, y=.1in'
+
+# DOXYGEN / BREATHE
+
+breathe_projects = {
+    'CowPi': 'CowPi/xml/',
+    'CowPi_stdio': 'CowPi_stdio/xml/'
+}
+
+breathe_default_project = 'CowPi_stdio'
+
+# primary_domain = 'c'
+# highlight_language = 'c'
+primary_domain = 'cpp'

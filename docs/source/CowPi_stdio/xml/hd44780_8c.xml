@@ -1,0 +1,797 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="hd44780_8c" kind="file" language="C++">
+    <compoundname>hd44780.c</compoundname>
+    <includes local="no">Arduino.h</includes>
+    <includes local="no">assert.h</includes>
+    <includes refid="hd44780_8h" local="yes">hd44780.h</includes>
+    <includes refid="communication_8h" local="yes">../communication/communication.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>../communication/communication.h</label>
+        <link refid="communication_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/hd44780/hd44780.c</label>
+        <link refid="hd44780_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>hd44780.h</label>
+        <link refid="hd44780_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../typedefs.h</label>
+        <link refid="typedefs_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="3">
+        <label>assert.h</label>
+      </node>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="hd44780_8c_1ad82ccbd1dc1b0750c4a32451ddf30ea5" prot="public" static="no">
+        <name>ENTRY_MODE_MARKER</name>
+        <initializer>0x4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="30" column="9" bodyfile="src/hd44780/hd44780.c" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="hd44780_8c_1a9f0c79030209fbe80750b02f6c4916cb" prot="public" static="yes" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t last_entry_mode</definition>
+        <argsstring></argsstring>
+        <name>last_entry_mode</name>
+        <initializer>= ENTRY_MODE_MARKER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="31" column="16" bodyfile="src/hd44780/hd44780.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="hd44780_8c_1a99f1f7331636d5979b980d7e90d3bc44" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool is_backlit</definition>
+        <argsstring></argsstring>
+        <name>is_backlit</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="32" column="13" bodyfile="src/hd44780/hd44780.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="hd44780_8c_1abf967c3ec8222f81543f56beac0295bd" prot="public" static="no" mutable="no">
+        <type><ref refid="hd44780_8h_1ad3c45dc1b1eb4be8c0a3fb27d0b2af53" kindref="member">cowpi_hd44780_send_halfbyte_t</ref></type>
+        <definition>cowpi_hd44780_send_halfbyte_t cowpi_lcd1602_send_halfbyte</definition>
+        <argsstring></argsstring>
+        <name>cowpi_lcd1602_send_halfbyte</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="35" column="31" bodyfile="src/hd44780/hd44780.c" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hd44780_8c_1ab65d3f98f84ed07ae763e575c3394564" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_set_4bit_mode</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration)</argsstring>
+        <name>cowpi_hd44780_set_4bit_mode</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="125" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="125" bodyend="148" declfile="src/hd44780/hd44780.c" declline="37" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1adaa1029f797cf38f963554c5f132527a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void cowpi_hd44780_send_halfbyte_spi</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t halfbyte, bool is_command)</argsstring>
+        <name>cowpi_hd44780_send_halfbyte_spi</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>halfbyte</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="150" column="13" bodyfile="src/hd44780/hd44780.c" bodystart="150" bodyend="191" declfile="src/hd44780/hd44780.c" declline="39" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1a9e33efe90facc2012b9b270e2b3215c2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void cowpi_hd44780_send_halfbyte_i2c</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t halfbyte, bool is_command)</argsstring>
+        <name>cowpi_hd44780_send_halfbyte_i2c</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>halfbyte</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="193" column="13" bodyfile="src/hd44780/hd44780.c" bodystart="193" bodyend="227" declfile="src/hd44780/hd44780.c" declline="42" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1ad31e56f967148bdc0deae2f59f89a118" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_setup_hd44780</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration)</argsstring>
+        <name>cowpi_setup_hd44780</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+<para>Configures the HD44780 to nominal settings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="46" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="46" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1aebf696abd7e94ef830e23f7875b3423f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_set_send_halfbyte_function</definition>
+        <argsstring>(void(*send_halfbyte_function)(const cowpi_display_module_protocol_t *configuration, uint8_t halfbyte, bool is_command))</argsstring>
+        <name>cowpi_hd44780_set_send_halfbyte_function</name>
+        <param>
+          <type>void(*)(const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *configuration, uint8_t halfbyte, bool is_command)</type>
+          <declname>send_halfbyte_function</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="67" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="67" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1a43c8a12dc31b76b0dbefdecdd648a873" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_place_character</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t address, uint8_t character)</argsstring>
+        <name>cowpi_hd44780_place_character</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>character</declname>
+        </param>
+        <briefdescription>
+<para>Places the specified character on the display at the specified location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The character is an ASCII or &quot;extended-ASCII&quot; character, or a custom character created by using <computeroutput><ref refid="hd44780_8h_1a5edfabb20813e7374f155972586725c5" kindref="member">cowpi_hd44780_create_character()</ref></computeroutput>.</para>
+<para>Note that the base address of the top row is 0x00, and the base address of the bottom row is 0x40.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address of the desired location </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the character to be displayed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="73" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="73" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1aa1bf4bd12dffc0dfe394ebe5855974fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_place_cursor</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t address)</argsstring>
+        <name>cowpi_hd44780_place_cursor</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+<para>Places the cursor at the specified location without updating the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>While the cursor will move to the specified location, it will only be visibly there if the cursor is on.</para>
+<para>Note that the base address of the top row is 0x00, and the base address of the bottom row is 0x40.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the address of the desired location </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="79" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_send_command</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t command)</argsstring>
+        <name>cowpi_hd44780_send_command</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>Sends a command to the HD44780 character display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The command is a bitwise disjunction of named constants to specify the entry mode (cursor and text movement to occur after characters are sent), a disjunction of named constants to specify the display mode (whether the display is on, whether the underscore cursor is displayed, and whether the cursor&apos;s location blinks), or one shift command (shift display left/right or shift cursor left/right).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>constant(s) that specify the entry mode, display mode, or shift command </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="83" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="83" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1a2b75ba8a2eaecf03482195e6098e4abf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_send_character</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t character)</argsstring>
+        <name>cowpi_hd44780_send_character</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>character</declname>
+        </param>
+        <briefdescription>
+<para>Displays a character at the cursor&apos;s location on the HD44780 character display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The character is an ASCII or &quot;extended-ASCII&quot; character, or one of the eight custom characters created by using <computeroutput><ref refid="hd44780_8h_1a5edfabb20813e7374f155972586725c5" kindref="member">cowpi_hd44780_create_character()</ref></computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the character to be displayed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="93" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="93" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1a5edfabb20813e7374f155972586725c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_create_character</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, uint8_t encoding, const uint8_t pixel_vector[8])</argsstring>
+        <name>cowpi_hd44780_create_character</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>encoding</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>pixel_vector</declname>
+          <array>[8]</array>
+        </param>
+        <briefdescription>
+<para>Creates a custom character for the HD44780 character display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The encoding can be a value between 0 and 7, inclusive. Each element of the pixel vector corresponds to a row of the 5x8 character matrix (thus, only 5 bits of each element are used).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>encoding</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value used to represent the character </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pixel_vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>identifies which LCDs are &quot;on&quot; or &quot;off&quot; for the custom character. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="100" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="100" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1aacdfb659a2e1719d3a6616e1bf7e3665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_clear_display</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration)</argsstring>
+        <name>cowpi_hd44780_clear_display</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+<para>Clears the display and places the cursor in row 0, column 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="109" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="109" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1af44ddb08d58f4b9fc6a223fae4a67398" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_return_home</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration)</argsstring>
+        <name>cowpi_hd44780_return_home</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+<para>Places the cursor in row 0, column 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the display was shifted, the display is shifted back to its original position. The contents of each character position remain unchanged.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="115" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="hd44780_8c_1a40221ee5cf4a248048243cfffc7f1f95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cowpi_hd44780_set_backlight</definition>
+        <argsstring>(const cowpi_display_module_protocol_t *configuration, bool backlight_on)</argsstring>
+        <name>cowpi_hd44780_set_backlight</name>
+        <param>
+          <type>const <ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref> *</type>
+          <declname>configuration</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>backlight_on</declname>
+        </param>
+        <briefdescription>
+<para>Turns the display module&apos;s backlight on or off. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>configuration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the microcontroller pins, adapter mapping, and possibly i2c peripheral address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>backlight_on</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicates whether the backlight should be on (<computeroutput>true</computeroutput>) or off (<computeroutput>false</computeroutput>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/hd44780/hd44780.c" line="120" column="6" bodyfile="src/hd44780/hd44780.c" bodystart="120" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Utility functions for peripherals driven by HD44780 such as 16x2 and 20x4 LCD character display modules.   </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Christopher A. Bohn</para>
+</simplesect>
+</para>
+<para>The HD44780 will initially be placed in 4-bit mode, and:<itemizedlist>
+<listitem><para>With each character, increment the cursor&apos;s location but do not shift the display</para>
+</listitem><listitem><para>Turn the display on, the cursor off, and no blinking</para>
+</listitem><listitem><para>Clear the display</para>
+</listitem></itemizedlist>
+</para>
+<para>The HD44780 is complex enough that the firmware program should call <computeroutput><ref refid="hd44780_8h_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command()</ref></computeroutput>, <computeroutput><ref refid="hd44780_8h_1a2b75ba8a2eaecf03482195e6098e4abf" kindref="member">cowpi_hd44780_send_character()</ref></computeroutput>, or another more-specific function. These functions will take care of dividing the data into halfbytes, managing timing, and other complexities, and will call <computeroutput>cowpi_hd44780_send_halfbyte()</computeroutput>.</para>
+<para>Unlike the MAX7219 and the SSD1306, the HD44780 does not handle serial communication on its own and requires a serial adapter. The mapping between the byte sent from the program and the lines on the display module is specified by the <computeroutput>adapter_mapping</computeroutput> field in the functions&apos; <computeroutput><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref></computeroutput> argument   </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/**************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CowPi_stdio<sp/>(c)<sp/>2022-23<sp/>Christopher<sp/>A.<sp/>Bohn</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="hd44780_8h" kindref="compound">hd44780.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../communication/communication.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENTRY_MODE_MARKER<sp/>0x4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>last_entry_mode<sp/>=<sp/>ENTRY_MODE_MARKER;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_backlit<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="hd44780_8h_1ad3c45dc1b1eb4be8c0a3fb27d0b2af53" kindref="member">cowpi_hd44780_send_halfbyte_t</ref><sp/>cowpi_lcd1602_send_halfbyte<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cowpi_hd44780_set_4bit_mode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cowpi_hd44780_send_halfbyte_spi(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>halfbyte,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_command);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cowpi_hd44780_send_halfbyte_i2c(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>halfbyte,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_command);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8c_1ad31e56f967148bdc0deae2f59f89a118" kindref="member">cowpi_setup_hd44780</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(configuration-&gt;protocol<sp/>==<sp/>SPI<sp/>||<sp/>configuration-&gt;protocol<sp/>==<sp/>I2C);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>HD44780U<sp/>datasheet<sp/>says<sp/>LCD<sp/>needs<sp/>40ms<sp/>after<sp/>Vcc=2.7V,<sp/>or<sp/>15ms<sp/>after<sp/>Vcc=4.5V<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(12500);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Don&apos;t<sp/>want<sp/>to<sp/>use<sp/>delay(50)<sp/>just<sp/>in<sp/>case<sp/>interrupts<sp/>are<sp/>disabled.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(12500);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Don&apos;t<sp/>want<sp/>to<sp/>use<sp/>delayMicroseconds(50000)<sp/>because<sp/>that&apos;s<sp/>3x<sp/>longer<sp/>than</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(12500);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>delayMicroseconds<sp/>is<sp/>safe<sp/>for.<sp/>Note<sp/>that<sp/>16383<sp/>==<sp/>2**14<sp/>-<sp/>1<sp/>--<sp/>this<sp/>suggests</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(12500);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>that<sp/>while<sp/>there<sp/>will<sp/>be<sp/>some<sp/>drift,<sp/>the<sp/>real<sp/>problem<sp/>is<sp/>integer<sp/>overflow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Place<sp/>in<sp/>4-bit<sp/>mode<sp/>because<sp/>74HC595<sp/>is<sp/>an<sp/>8-bit<sp/>shift<sp/>register,<sp/>and<sp/>we<sp/>need<sp/>RS<sp/>&amp;<sp/>EN<sp/>bits,<sp/>too</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>(likewise,<sp/>the<sp/>8-bit<sp/>I2C<sp/>serial<sp/>adapters)*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_hd44780_set_4bit_mode(configuration);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>4-bit<sp/>mode,<sp/>2<sp/>line<sp/>display,<sp/>5x8<sp/>dot<sp/>matrix</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>(use<sp/>this<sp/>configuration<sp/>even<sp/>for<sp/>20x4<sp/>display<sp/>modules)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(configuration,<sp/>0x28);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>with<sp/>each<sp/>character:<sp/>increment<sp/>location,<sp/>do<sp/>not<sp/>shift<sp/>display<sp/>(0x06)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(configuration,<sp/><ref refid="hd44780_8h_1af4003fdc700480c3e654e1a5245d2e0f" kindref="member">LCDENTRY_CURSORMOVESRIGHT</ref><sp/>|<sp/><ref refid="hd44780_8h_1a8e46fc36f92a144ea4b1ceaf308de94f" kindref="member">LCDENTRY_TEXTNOSHIFT</ref>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>on,<sp/>cursor<sp/>off,<sp/>no<sp/>blink<sp/>(0x0C)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(configuration,<sp/><ref refid="hd44780_8h_1ac68931475690c957a40985f9af490850" kindref="member">LCDONOFF_DISPLAYON</ref><sp/>|<sp/><ref refid="hd44780_8h_1a1875292adc905c85843bb67638d90c9a" kindref="member">LCDONOFF_CURSOROFF</ref><sp/>|<sp/><ref refid="hd44780_8h_1a8baf00d2d89236c4dcdc8e0092b96ceb" kindref="member">LCDONOFF_BLINKOFF</ref>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>clear<sp/>display<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aacdfb659a2e1719d3a6616e1bf7e3665" kindref="member">cowpi_hd44780_clear_display</ref>(configuration);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cowpi_hd44780_set_send_halfbyte_function(</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*send_halfbyte_function)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>halfbyte,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_command))<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_lcd1602_send_halfbyte<sp/>=<sp/>send_halfbyte_function;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8c_1a43c8a12dc31b76b0dbefdecdd648a873" kindref="member">cowpi_hd44780_place_character</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>address,<sp/>uint8_t<sp/>character)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aa1bf4bd12dffc0dfe394ebe5855974fd" kindref="member">cowpi_hd44780_place_cursor</ref>(configuration,<sp/>address);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1a2b75ba8a2eaecf03482195e6098e4abf" kindref="member">cowpi_hd44780_send_character</ref>(configuration,<sp/>character);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8c_1aa1bf4bd12dffc0dfe394ebe5855974fd" kindref="member">cowpi_hd44780_place_cursor</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,<sp/>uint8_t<sp/>address)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(configuration,<sp/>address<sp/>|<sp/>0x80);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,<sp/>uint8_t<sp/>command)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_lcd1602_send_halfbyte(configuration,<sp/>(command<sp/>&gt;&gt;<sp/>4)<sp/>&amp;<sp/>0xF,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_lcd1602_send_halfbyte(configuration,<sp/>command<sp/>&amp;<sp/>0xF,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(command<sp/>&amp;<sp/>ENTRY_MODE_MARKER)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>last_entry_mode<sp/>=<sp/>command;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>50);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>most<sp/>commands<sp/>require<sp/>37us-38us<sp/>according<sp/>to<sp/>various<sp/>datasheets;<sp/>the<sp/>exceptions<sp/>have<sp/>their<sp/>own<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8c_1a2b75ba8a2eaecf03482195e6098e4abf" kindref="member">cowpi_hd44780_send_character</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,<sp/>uint8_t<sp/>character)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_lcd1602_send_halfbyte(configuration,<sp/>(character<sp/>&gt;&gt;<sp/>4)<sp/>&amp;<sp/>0xF,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_lcd1602_send_halfbyte(configuration,<sp/>character<sp/>&amp;<sp/>0xF,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>50);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>HD44780U<sp/>datasheet<sp/>says<sp/>41us<sp/>(37+4)<sp/>needed<sp/>until<sp/>character<sp/>is<sp/>updated<sp/>and<sp/>ddram<sp/>address<sp/>is<sp/>updated;<sp/>SPLC780D<sp/>simply<sp/>says<sp/>38us</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8c_1a5edfabb20813e7374f155972586725c5" kindref="member">cowpi_hd44780_create_character</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>encoding,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>pixel_vector[8])<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>cgram_start<sp/>=<sp/>(encoding<sp/>&amp;<sp/>0x7)<sp/>&lt;&lt;<sp/>3;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row<sp/>=<sp/>0;<sp/>row<sp/>&lt;<sp/>8;<sp/>row++)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(configuration,<sp/>(cgram_start<sp/>+<sp/>row)<sp/>|<sp/>0x40);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1a2b75ba8a2eaecf03482195e6098e4abf" kindref="member">cowpi_hd44780_send_character</ref>(configuration,<sp/>pixel_vector[row]);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8c_1aacdfb659a2e1719d3a6616e1bf7e3665" kindref="member">cowpi_hd44780_clear_display</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(configuration,<sp/>0x01);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5000);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tom<sp/>alby<sp/>says<sp/>5ms;<sp/>adafruit<sp/>uses<sp/>2ms;<sp/>HD44780U<sp/>datasheet<sp/>simply<sp/>says<sp/>that<sp/>0x20<sp/>is<sp/>written<sp/>to<sp/>each<sp/>position;<sp/>SPLC780D<sp/>datasheet<sp/>says<sp/>1.52ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8c_1af44ddb08d58f4b9fc6a223fae4a67398" kindref="member">cowpi_hd44780_return_home</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(configuration,<sp/>0x02);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(2000);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tom<sp/>alby<sp/>is<sp/>silent;<sp/>adafruit<sp/>uses<sp/>2ms;<sp/>datasheets<sp/>agree<sp/>on<sp/>1.52ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hd44780_8c_1a40221ee5cf4a248048243cfffc7f1f95" kindref="member">cowpi_hd44780_set_backlight</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>backlight_on)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>is_backlit<sp/>=<sp/>backlight_on;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hd44780_8c_1aae8db16b83b43198a27c54404a9f772a" kindref="member">cowpi_hd44780_send_command</ref>(configuration,<sp/>last_entry_mode);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cowpi_hd44780_set_4bit_mode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!cowpi_lcd1602_send_halfbyte)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(configuration-&gt;protocol<sp/>==<sp/>SPI)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cowpi_hd44780_set_send_halfbyte_function(cowpi_hd44780_send_halfbyte_spi);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(configuration-&gt;protocol<sp/>==<sp/>I2C)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(8<sp/>&lt;=<sp/>configuration-&gt;i2c_address<sp/>||<sp/>configuration-&gt;i2c_address<sp/>&lt;<sp/>128);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cowpi_hd44780_set_send_halfbyte_function(cowpi_hd44780_send_halfbyte_i2c);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>initial<sp/>state<sp/>is:<sp/><sp/><sp/><sp/><sp/>8-bit<sp/>mode<sp/><sp/><sp/><sp/><sp/><sp/>4-bit<sp/>mode<sp/>interbyte<sp/><sp/><sp/><sp/>4-bit<sp/>mode<sp/>intrabyte</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>then<sp/>LCD<sp/>sees...<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_lcd1602_send_halfbyte(configuration,<sp/>0x3,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3<sp/>finishes<sp/>byte<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(5000);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>HD44780U<sp/>datasheet<sp/>says<sp/>wait<sp/>&gt;<sp/>4.1ms<sp/>--<sp/>worst<sp/>case<sp/>if<sp/>display<sp/>was<sp/>intrabyte</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_lcd1602_send_halfbyte(configuration,<sp/>0x3,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x33:<sp/>8-bit<sp/>mode<sp/><sp/><sp/><sp/>0x33:<sp/>8-bit<sp/>mode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(200);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>HD44780U<sp/>datasheet<sp/>says<sp/>wait<sp/>more<sp/>than<sp/>100us</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_lcd1602_send_halfbyte(configuration,<sp/>0x3,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x30:<sp/>8-bit<sp/>mode<sp/><sp/><sp/><sp/>0x30:<sp/>8-bit<sp/>mode<sp/><sp/><sp/><sp/>0x33:<sp/>8-bit<sp/>mode<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(200);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>not<sp/>in<sp/>the<sp/>datasheets,<sp/>but<sp/>we<sp/>determined<sp/>experimentally<sp/>that<sp/>100us<sp/>is<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>cowpi_lcd1602_send_halfbyte(configuration,<sp/>0x2,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20:<sp/>4-bit<sp/>mode<sp/><sp/><sp/><sp/>0x20:<sp/>4-bit<sp/>mode<sp/><sp/><sp/><sp/>0x20:<sp/>4-bit<sp/>mode<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(200);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>doesn&apos;t<sp/>seem<sp/>to<sp/>be<sp/>needed<sp/>¯\_(ツ)_/¯</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cowpi_hd44780_send_halfbyte_spi(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>halfbyte,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_command)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>packet<sp/>=<sp/>0,<sp/>rs<sp/>=<sp/>0,<sp/>en<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1a97eceed51859eb3e90fc20be1809e60c" kindref="member">bit_order_t</ref><sp/>bit_order<sp/>=<sp/>COWPI_MSB_FIRST;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(configuration-&gt;adapter_mapping<sp/>==<sp/>COWPI_DEFAULT)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>unlike<sp/>I2C,<sp/>there<sp/>doesn&apos;t<sp/>seem<sp/>to<sp/>be<sp/>a<sp/>&quot;typical&quot;<sp/>mapping<sp/>for<sp/>SPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We&apos;ll<sp/>make<sp/>our<sp/>lives<sp/>simpler<sp/>by<sp/>using<sp/>the<sp/>same<sp/>default<sp/>mapping<sp/>for<sp/>SPI<sp/>that<sp/>we&apos;re<sp/>using<sp/>for<sp/>I2C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>MSB<sp/><sp/>P7<sp/><sp/>P6<sp/><sp/>P5<sp/><sp/>P4<sp/><sp/>P3<sp/><sp/>P2<sp/><sp/>P1<sp/><sp/>P0<sp/><sp/>LSB<sp/>*</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>MSB<sp/><sp/>D7<sp/><sp/>D6<sp/><sp/>D5<sp/><sp/>D4<sp/>LITE<sp/>EN<sp/><sp/>RW<sp/><sp/>RS<sp/><sp/>LSB<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rs<sp/>=<sp/>is_command<sp/>?<sp/>0<sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>en<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>2;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>packet<sp/>=<sp/>rs<sp/>|<sp/>(halfbyte<sp/>&lt;&lt;<sp/>4)<sp/>|<sp/>(is_backlit<sp/>?<sp/>1<sp/>&lt;&lt;<sp/>3<sp/>:<sp/>0);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(configuration-&gt;adapter_mapping<sp/>==<sp/>ADAFRUIT)<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>mapping<sp/>is<sp/>used<sp/>with<sp/>AdaFruit&apos;s<sp/>SPI+I2C<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>https://github.com/adafruit/Adafruit_LiquidCrystal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>LSB<sp/><sp/><sp/><sp/>QH<sp/><sp/>QG<sp/><sp/>QF<sp/><sp/>QE<sp/><sp/>QD<sp/><sp/>QC<sp/><sp/>QB<sp/><sp/>QA<sp/><sp/>MSB<sp/>*</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>LSB<sp/><sp/>LITE<sp/><sp/>D4<sp/><sp/>D5<sp/><sp/>D6<sp/><sp/>D7<sp/><sp/>EN<sp/><sp/>RS<sp/><sp/>xx<sp/><sp/>MSB<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rs<sp/>=<sp/>is_command<sp/>?<sp/>0<sp/>:<sp/>1<sp/>&lt;&lt;<sp/>6;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>en<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>5;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>packet<sp/>=<sp/>rs<sp/>|<sp/>(halfbyte<sp/>&lt;&lt;<sp/>1)<sp/>|<sp/>(is_backlit<sp/>?<sp/>1<sp/>:<sp/>0);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bit_order<sp/>=<sp/>COWPI_LSB_FIRST;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1ae56ad6594960d7d4ee6ef6041c200e0a" kindref="member">cowpi_spi_initialize</ref>(configuration,<sp/>bit_order);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>place<sp/>data<sp/>on<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(configuration-&gt;select_pin,<sp/>LOW);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1a8081d2ae373c4f3f0ef9883716d7b5ba" kindref="member">cowpi_spi_transmit</ref>(packet);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(configuration-&gt;select_pin,<sp/>HIGH);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>pulse</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(configuration-&gt;select_pin,<sp/>LOW);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1a8081d2ae373c4f3f0ef9883716d7b5ba" kindref="member">cowpi_spi_transmit</ref>(packet<sp/>|<sp/>en);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(configuration-&gt;select_pin,<sp/>HIGH);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Tom<sp/>Alby<sp/>uses<sp/>NOPs<sp/>to<sp/>get<sp/>to<sp/>create<sp/>an<sp/>exact<sp/>0.5us<sp/>pulse<sp/>(6<sp/>NOPs<sp/>(6<sp/>cycles)<sp/>+<sp/>1<sp/>memory<sp/>write<sp/>(2<sp/>cycles)<sp/>=<sp/>0.5us)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>but<sp/>that<sp/>isn&apos;t<sp/>portable<sp/>(also:<sp/>AVR<sp/>docs<sp/>say<sp/>to<sp/>use<sp/>_delay_ms()<sp/>or<sp/>_delay_us(),<sp/>which<sp/>also<sp/>aren&apos;t<sp/>portable).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>However,<sp/>since<sp/>we&apos;re<sp/>only<sp/>doing<sp/>a<sp/>half-byte<sp/>at<sp/>a<sp/>time,<sp/>function<sp/>calls,<sp/>etc.,<sp/>will<sp/>provide<sp/>sufficient<sp/>delay.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>But,<sp/>just<sp/>to<sp/>be<sp/>sure...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(1);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>the<sp/>pulse</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(configuration-&gt;select_pin,<sp/>LOW);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1a8081d2ae373c4f3f0ef9883716d7b5ba" kindref="member">cowpi_spi_transmit</ref>(packet);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(configuration-&gt;select_pin,<sp/>HIGH);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1a50fed624317382ee7f85dd4e50a9d533" kindref="member">cowpi_spi_finalize</ref>();</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cowpi_hd44780_send_halfbyte_i2c(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcowpi__display__module__protocol__t" kindref="compound">cowpi_display_module_protocol_t</ref><sp/>*configuration,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>halfbyte,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_command)<sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>packet<sp/>=<sp/>0,<sp/>rs<sp/>=<sp/>0,<sp/>en<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(configuration-&gt;adapter_mapping<sp/>==<sp/>COWPI_DEFAULT)<sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>mapping<sp/>is<sp/>used<sp/>with<sp/>most<sp/>I2C<sp/>interfaces<sp/>and<sp/>libraries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>https://github.com/johnrickman/LiquidCrystal_I2C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>https://github.com/blackhack/LCD_I2C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>MSB<sp/><sp/>P7<sp/><sp/>P6<sp/><sp/>P5<sp/><sp/>P4<sp/><sp/>P3<sp/><sp/>P2<sp/><sp/>P1<sp/><sp/>P0<sp/><sp/>LSB<sp/>*</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>MSB<sp/><sp/>D7<sp/><sp/>D6<sp/><sp/>D5<sp/><sp/>D4<sp/>LITE<sp/>EN<sp/><sp/>RW<sp/><sp/>RS<sp/><sp/>LSB<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rs<sp/>=<sp/>is_command<sp/>?<sp/>0<sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>en<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>2;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>packet<sp/>=<sp/>rs<sp/>|<sp/>(halfbyte<sp/>&lt;&lt;<sp/>4)<sp/>|<sp/>(is_backlit<sp/>?<sp/>1<sp/>&lt;&lt;<sp/>3<sp/>:<sp/>0);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(configuration-&gt;adapter_mapping<sp/>==<sp/>ADAFRUIT)<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>mapping<sp/>is<sp/>used<sp/>with<sp/>AdaFruit&apos;s<sp/>SPI+I2C<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>https://github.com/adafruit/Adafruit_LiquidCrystal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>MSB<sp/><sp/><sp/>GP7<sp/>GP6<sp/>GP5<sp/>GP4<sp/>GP3<sp/>GP2<sp/>GP1<sp/>GP0<sp/><sp/>LSB<sp/>*</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>MSB<sp/><sp/>LITE<sp/><sp/>D7<sp/><sp/>D6<sp/><sp/>D5<sp/><sp/>D4<sp/><sp/>EN<sp/><sp/>RS<sp/><sp/>xx<sp/><sp/>LSB<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rs<sp/>=<sp/>is_command<sp/>?<sp/>0<sp/>:<sp/>1<sp/>&lt;&lt;<sp/>1;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>en<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>2;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>packet<sp/>=<sp/>rs<sp/>|<sp/>(halfbyte<sp/>&lt;&lt;<sp/>3)<sp/>|<sp/>(is_backlit<sp/>?<sp/>1<sp/>&lt;&lt;<sp/>7<sp/>:<sp/>0);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1aeef6d2fe8b4808a69f38dce46a33e86f" kindref="member">cowpi_i2c_initialize</ref>(configuration);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>place<sp/>data<sp/>on<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1a37c852a914e0488ebb1f909815aeed76" kindref="member">cowpi_i2c_transmit</ref>(packet);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>pulse</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1a37c852a914e0488ebb1f909815aeed76" kindref="member">cowpi_i2c_transmit</ref>(packet<sp/>|<sp/>en);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Tom<sp/>Alby<sp/>uses<sp/>NOPs<sp/>to<sp/>get<sp/>to<sp/>create<sp/>an<sp/>exact<sp/>0.5us<sp/>pulse<sp/>(6<sp/>NOPs<sp/>(6<sp/>cycles)<sp/>+<sp/>1<sp/>memory<sp/>write<sp/>(2<sp/>cycles)<sp/>=<sp/>0.5us)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>but<sp/>that<sp/>isn&apos;t<sp/>portable<sp/>(also:<sp/>AVR<sp/>docs<sp/>say<sp/>to<sp/>use<sp/>_delay_ms()<sp/>or<sp/>_delay_us(),<sp/>which<sp/>also<sp/>aren&apos;t<sp/>portable).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>However,<sp/>since<sp/>we&apos;re<sp/>only<sp/>doing<sp/>a<sp/>half-byte<sp/>at<sp/>a<sp/>time,<sp/>function<sp/>calls,<sp/>etc.,<sp/>will<sp/>provide<sp/>sufficient<sp/>delay.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>But,<sp/>just<sp/>to<sp/>be<sp/>sure...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(1);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>the<sp/>pulse</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1a37c852a914e0488ebb1f909815aeed76" kindref="member">cowpi_i2c_transmit</ref>(packet);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="communication_8h_1a2b869486af06844eedb843fd5c0c6deb" kindref="member">cowpi_i2c_finalize</ref>();</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/hd44780/hd44780.c"/>
+  </compounddef>
+</doxygen>

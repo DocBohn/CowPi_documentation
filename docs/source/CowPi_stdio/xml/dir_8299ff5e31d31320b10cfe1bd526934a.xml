@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="dir_8299ff5e31d31320b10cfe1bd526934a" kind="dir">
+    <compoundname>src/translations</compoundname>
+    <innerfile refid="translations_8cpp">translations.cpp</innerfile>
+    <innerfile refid="translations_8h">translations.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/translations/"/>
+  </compounddef>
+</doxygen>
