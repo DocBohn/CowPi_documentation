@@ -1,7 +1,7 @@
 Configuring ``stdio`` File Streams
 ==================================
 
-..  contents::
+..  contents:: \
 
 Configuring ``stdin`` and ``stdout``
 ------------------------------------
@@ -12,6 +12,8 @@ This will allow you to use ``printf()`` to print to a serial terminal.
 Someone less-common is reading input from a serial terminal.
 Nonetheless, the :func:`cowpi_stdio_setup` function will also configure the standard input file stream (``stdin``) to get its input from the USB connection to the host computer.
 This will allow you to use ``scanf()`` to read from a serial terminal.
+
+..  image:: img/printf_and_scanf.gif
 
 The only parameter is the bitrate, in bits per second;
 be sure to match the serial terminal's expectations.
@@ -34,6 +36,7 @@ be sure to match the serial terminal's expectations.
     The :func:`cowpi_stdio_setup` function does *not* configure the standard error file stream (``stderr``).
     You may explicitly set the ``stderr`` file stream.
     Common choices are to assign ``stderr = stdout`` or to assign ``stderr`` to a Morse Code "display" using :func:`cowpi_add_display_module`.
+
 
 Configuring a Display Module
 ----------------------------
@@ -110,6 +113,13 @@ Available Display Modules
 
 ..  doxygenenum:: display_modules
 
+..  seealso::
+    -   The :doc:`seven_segment` page has further discussion about MAX7219-driven seven-segment display modules.
+    -   The :doc:`led_matrix` page has further discussion about MAX7219-driven LED matrix display modules.
+    -   The :doc:`lcd_character` page has further discussion about HD44780-driven LCD character display modules.
+    -   (SSD1306-driven OLED matrix displays are not yet available)
+    -   The :doc:`morse_code` page has further discussion about using Morse Code to communicate with only an LED or active buzzer.
+
 For MAX7219-driven LED matrix displays, there is no standard relationship between dot matrix positions and MAX7219 bits.
 For this reason, we provide a way to ensure that the top of the characters are at the top of the display and to ensure that the characters are forward-facing and not reversed.
 
@@ -124,6 +134,9 @@ Available Communication Protocols
 
 Because HD44780-driven LCD character displays do not natively communicate over a serial protocol, an adapter is required.
 Depending on which adapter you use, you may need to specify how the adapter maps the protocol's bits to the display module's bits.
+
+..  seealso::
+    The :doc:`protocols` page has further discussion about the communication protocols.
 
 ..  doxygenenum:: adapter_mappings
 
@@ -159,13 +172,25 @@ Available Display Modules
 
 ..  doxygenfunction:: cowpi_configure_seven_segment_display
 
+..  seealso::
+    The :doc:`seven_segment` page has further discussion about MAX7219-driven seven-segment display modules.
+
 ..  doxygenfunction:: cowpi_configure_led_matrix_display
 
+..  seealso::
+    The :doc:`led_matrix` page has further discussion about MAX7219-driven LED matrix display modules.
+
 ..  doxygenfunction:: cowpi_configure_lcd_character_display
+
+..  seealso::
+    The :doc:`lcd_character` page has further discussion about HD44780-driven LCD character display modules.
 
 (``cowpi_configure_oled_matrix_display()`` is not yet available)
 
 ..  doxygenfunction:: cowpi_configure_morse_code
+
+..  seealso::
+    The :doc:`morse_code` page has further discussion about using Morse Code to communicate with only an LED or active buzzer.
 
 Available Communication Protocols
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -175,3 +200,6 @@ Available Communication Protocols
 ..  doxygenfunction:: cowpi_configure_spi
 
 ..  doxygenfunction:: cowpi_configure_i2c
+
+..  seealso::
+    The :doc:`protocols` page has further discussion about the communication protocols.

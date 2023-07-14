@@ -14,14 +14,15 @@ copyright = '2021-2023, Christopher Bohn'
 author = 'Christopher Bohn'
 
 release = '2023.07'
-version = '2023.07.11'
+version = '2023.07.13'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 rst_prolog = """
-.. |i2c| replace:: :math:`\mathrm{I}^2\mathrm{C}`
+..  |i2c| replace:: I\ :sup:`2`\ C
 """
+# .. |i2c| replace:: :math:`\mathrm{I}^2\mathrm{C}`
 numfig = True
 
 extensions = [

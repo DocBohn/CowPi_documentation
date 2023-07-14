@@ -19,7 +19,16 @@ This documentation is for the ``CowPi_stdio`` v\ **0.5.0**\ .
 The current version is: |ArduinoBadge|_ |PlatformIOBadge|_
 
 
-
 ..  toctree::
+    :maxdepth: 3
 
     CowPi_stdio/configuration
+    CowPi_stdio/considerations
+    CowPi_stdio/other_functions
+    CowPi_stdio/seven_segment
+    CowPi_stdio/led_matrix
+    CowPi_stdio/lcd_character
+    CowPi_stdio/morse_code
+    CowPi_stdio/protocols
+    CowPi_stdio/theory_of_operation
+
