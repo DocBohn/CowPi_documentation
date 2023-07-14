@@ -18,9 +18,13 @@ This documentation is for the ``CowPi`` v\ **0.5.0**\ .
 
 The current version is: |ArduinoBadge|_ |PlatformIOBadge|_
 
-yada
 
-..  doxygenfunction:: cowpi_setup
-    :project: CowPi
+..  toctree::
+    :maxdepth: 3
 
-yada
+    CowPi/configuration
+    CowPi/simple_inputs
+    CowPi/simple_outputs
+    CowPi/scanned_inputs
+    CowPi/interrupts
+    CowPi/atmega328p

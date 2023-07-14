@@ -3,6 +3,26 @@ Communication Protocols for Display Modules
 
 ..  contents:: \
 
+
+Bit-Banged Implementation and Hardware-Based Implementation
+-----------------------------------------------------------
+
+For some microcontrollers, the CowPi_stdio library has implementations of SPI and of |i2c| that make use of the microcontroller's SPI hardware and |i2c| hardware.
+For all microcontrollers, the CowPi_stdio library has bit-banged (*i.e.*, software-only) implementations of SPI and of |i2c|\ .
+The latter is useful for rapidly porting the library to new microcontrollers, while the former is useful for reducing the size of the program and having faster communication with the display module.
+
+By default, the hardware-based implementation is used when available.
+Four functions are available to specify which implementations you wish to use:
+
+..  doxygenfunction:: cowpi_use_spi_bitbang
+
+..  doxygenfunction:: cowpi_use_spi_hardware
+
+..  doxygenfunction:: cowpi_use_i2c_bitbang
+
+..  doxygenfunction:: cowpi_use_i2c_hardware
+
+
 No Protocol
 -----------
 

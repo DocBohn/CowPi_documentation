@@ -8,6 +8,14 @@ an electronic combination lock to secure your wildly-dangerous experimental robo
 or a motion alarm to protect yourself from zombie gourds,
 using the Cow Pi development board is your best option.
 
+..  include:: foo.rst
+
+..  include:: xyzzy.rst
+
+..  include:: choose.rst
+
+..  include:: do-it.rst
+
 .. toctree::
     :maxdepth: 3
 
