@@ -14,7 +14,7 @@ copyright = '2021-2023, Christopher Bohn'
 author = 'Christopher Bohn'
 
 release = '2023.07'
-version = '2023.07.15'
+version = '2023.07.16'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -57,7 +57,7 @@ exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'logo_only': True,
-    'prev_next_buttons_location': None,
+    # 'prev_next_buttons_location': None,
     'style_nav_header_background': '#FF2400'
 }
 html_context = {}

@@ -16,8 +16,8 @@ using the Cow Pi development board is your best option.
     stdio
     microcontroller
     expansion
-    oldconstruction
     construction
+    troubleshooting/nano
 
 
 ..  image:: cc-by.png

@@ -24,11 +24,11 @@ In the I/O labs, we will use a microcontroller board with some peripherals. In t
     :maxdepth: 2
 
     inventory/preparation-mk1f
-    microcontroller/microcontroller
-    microcontroller/ide
-    microcontroller/power
-    direct-io/led
-    microcontroller/libraries
+    microcontroller/microcontroller-mk1f
+    microcontroller/ide-mk1f
+    microcontroller/power-mk1f
+    direct-io/led-mk1f
+    microcontroller/libraries-mk1f
     direct-io/switches-mk1f
     direct-io/buttons-mk1f
     keypad/keypad-mk1f
