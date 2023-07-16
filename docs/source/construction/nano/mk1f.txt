@@ -1,0 +1,25 @@
+..  |leftSwitchRange|                   replace:: a27-a29
+..  |leftSwitchLeftPin|                 replace:: e27
+..  |leftSwitchCenterPin|               replace:: e28
+..  |mcuLeftSwitchPin|                  replace:: ``D11``
+..  |mcuLeftSwitchPoint|                replace:: j2
+..  |rightSwitchRange|                  replace:: a32-a34
+..  |rightSwitchLeftPin|                replace:: e32
+..  |rightSwitchCenterPin|              replace:: e33
+..  |mcuRightSwitchPin|                 replace:: ``D10``
+..  |mcuRightSwitchPoint|               replace:: j3
+
+..  |numberOfSerialPins|                replace:: 4
+..  |serialPins|                        replace:: ``SDA`` (serial data), and ``SCL`` (serial clock)
+..  |serialAdapterRange|                replace:: i48-i63
+..  |lcd1602Range|                      replace:: g48-g63
+..  |serialClockPin|                    replace:: ``SCL``
+..  |mcuClockPoint|                     replace:: a9
+..  |mcuClockPin|                       replace:: ``D19/A5``
+..  |serialDataPin|                     replace:: ``SDA``
+..  |mcuDataPoint|                      replace:: a8
+..  |mcuDataPin|                        replace:: ``D18/A4``
+
+..  |referenceKeypadSection|            replace:: :ref:`mk1fKeypadSection`
+
+..  |displayModuleHelloWorld|           replace:: *lcd1602_hello_world*

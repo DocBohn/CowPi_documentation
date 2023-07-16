@@ -1,0 +1,26 @@
+..  |leftSwitchRange|                   replace:: a27-a29
+..  |leftSwitchLeftPin|                 replace:: e27
+..  |leftSwitchCenterPin|               replace:: e28
+..  |mcuLeftSwitchPin|                  replace:: ``D11``
+..  |mcuLeftSwitchPoint|                replace:: j2
+..  |rightSwitchRange|                  replace:: a32-a34
+..  |rightSwitchLeftPin|                replace:: e32
+..  |rightSwitchCenterPin|              replace:: e33
+..  |mcuRightSwitchPin|                 replace:: ``D10``
+..  |mcuRightSwitchPoint|               replace:: j3
+
+..  |numberOfSerialPins|                replace:: 5
+..  |serialPins|                        replace:: ``DIN`` (data in), ``CS`` (chip select), and ``CLK`` (clock)
+..  |serialClockPin|                    replace:: ``CLK``
+..  |mcuClockPoint|                     replace:: a1
+..  |mcuClockPin|                       replace:: ``D13``
+..  |serialDataPin|                     replace:: ``DIN``
+..  |mcuDataPoint|                      replace:: j2
+..  |mcuDataPin|                        replace:: ``D11``
+..  |serialLatchPin|                    replace:: ``CS``
+..  |mcuLatchPoint|                     replace:: j3
+..  |mcuLatchPin|                       replace:: ``D10``
+
+..  |referenceKeypadSection|            replace:: :ref:`mk1eKeypadSection`
+
+..  |displayModuleHelloWorld|           replace:: *max7219_7segment_hello_world*

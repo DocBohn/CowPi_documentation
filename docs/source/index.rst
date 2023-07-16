@@ -8,22 +8,15 @@ an electronic combination lock to secure your wildly-dangerous experimental robo
 or a motion alarm to protect yourself from zombie gourds,
 using the Cow Pi development board is your best option.
 
-..  include:: foo.rst
-
-..  include:: xyzzy.rst
-
-..  include:: choose.rst
-
-..  include:: do-it.rst
-
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
 
     hardware
     library
     stdio
     microcontroller
     expansion
+    oldconstruction
     construction
 
 
@@ -37,8 +30,8 @@ using the Cow Pi development board is your best option.
 | *CowPi_stdio library*         ©2022–23, Christopher A. Bohn, and licensed under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ License.
 
 
-.. [#pretendLegal]
+..  [#pretendLegal]
     | Eclectic Electronics is a joint subsidiary of The Pleistocene Petting Zoo, a Limited-Reality Corporation, and of Babbage’s Analytic Engines, a Frankly-Figmentary Partnership. [#fictionAdmission]_
 
-.. [#fictionAdmission]
+..  [#fictionAdmission]
     | These are fictional companies imagined by Christopher Bohn for course assignments. You didn’t think they really existed, did you? Christopher Bohn, however, really does exist and can be contacted at bohn@unl.edu.

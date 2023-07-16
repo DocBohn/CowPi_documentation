@@ -179,7 +179,7 @@ But, as shown in :numref:`scanningPressedRow`, if "row7" is the only logic-low r
     \end{tikzpicture}
 
 After the code has determined which row and column the pressed key is on, it can return a value or assign a value to a variable accordingly.
-This might be a ``char`` corresponding to the character on the key's face, as is the case for ``cowpi_get_keypress()`` (Section XXXXX).
+This might be a ``char`` corresponding to the character on the key's face, as is the case for :func:`cowpi_get_keypress`.
 Or this might be an ``int`` corresponding to the value of the numeral on the key's face.
 Or this might even be some value unrelated to whatever is printed on the key's face.
 
@@ -203,15 +203,15 @@ For example, if you need to return a character that corresponds to the face valu
 
 If the keypad is wired to the microcontroller such that four contiguous output pins are connected to the rows and four contiguous input pins are connected to the columns (as is the case for the Cow Pi), then this pseudocode will scan the keypad and determine which key, if any, is pressed.
 
-.. code-block::
+.. code-block:: pascal
     :linenos:
 
-    ∀row:
+    for each row do
         row_bit_vector := 0b1111    (* set all rows to 1 *)
         row_bit_vector(row) := 0    (* except the row we're currently examining *)
         wait at least one microcontroller clock cycle
-        ∀column:
-            if (column_bit_vector(column) = 0):
+        for each column do
+            if (column_bit_vector(column) = 0) then
                 key_pressed := keys(row,column)
     row_bit_vector := 0b0000        (* set all rows to 0 to detect the next keypress *)
 
@@ -221,6 +221,12 @@ If the keypad is wired to the microcontroller such that four contiguous output p
 
     This software limitation is not a limitation for mark 1 Cow Pis, as mark 1 Cow Pis have a hardware limitation:
     their keypads have no protection against shorting power to ground when two keys are pressed simultaneously.
+
+..  TIP::
+    The ``for each`` expressions in the pseudocode should be understood to be the mathematical :math:`\forall` operator.
+    Write a loop, or don't, based on what makes sense to you in terms of readability and ease of modification.
+    We have seen successful implementations that use a loop to iterate over the columns,
+    and we have seen successful implementations that instead have four ``if`` statements.
 
 
 The delay shown in line 4 is sometimes, but not always necessary.

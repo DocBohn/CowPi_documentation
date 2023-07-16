@@ -1,15 +1,32 @@
-**********************
-Hardware [#copyright]_
-**********************
+********
+Hardware
+********
+
+..  borrowing this image until we set up our own repo just for hardware
+..  |LibraryLicense| image:: https://img.shields.io/github/license/paulocode/picostation_pcb?color=rgb(0,153,176)
+..  _LibraryLicense: https://github.com/paulocode/picostation_pcb/blob/main/LICENSE
+..  eventually we'll get certified
+..  |DocumentationLicense| image:: https://img.shields.io/github/license/DocBohn/CowPi_documentation
+..  _DocumentationLicense: https://github.com/DocBohn/CowPi_documentation/blob/main/LICENSE
+..  |oshwBadge| image:: https://i0.wp.com/www.oshwa.org/wp-content/uploads/2014/03/oshw-logo-antipixel.png
+..  _oshwBadge: https://www.oshwa.org/open-source-hardware-logo/
+
+-   Hardware design licensed under |LibraryLicense|_
+-   Documentation licensed under |DocumentationLicense|_
+-   The Cow Pi is Open Source Hardware |oshwBadge|_
+
 
 This section describes the Cow Pi development boards, describes the theory of operation for its components, and summarizes the features of its display module.
 
 .. IMPORTANT::
-    If you need to construct a Cow Pi development board, see the :doc:`construction`.
+    If you need to assemble a Cow Pi development board, see the :doc:`construction`.
 
 
-Cow Pi Development Board Overview
-=================================
+.. Cow Pi Development Board Overview
+.. =================================
+
+**Cow Pi Development Board Overview**
+
 
 The Cow Pi development board consists of:
 
@@ -106,7 +123,3 @@ as well as which general-purpose input/output register bit corresponds to each p
     hardware/boards
     hardware/inputs
     hardware/outputs
-
-
-..  [#copyright]
-    | Cow Pi hardware design ©2021–23, Christopher A. Bohn, and licensed under the `CERN-OHLP v2 <https://cern.ch/cern-ohl>`_ License.
