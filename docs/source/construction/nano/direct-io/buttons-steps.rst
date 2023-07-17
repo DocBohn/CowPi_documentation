@@ -13,6 +13,8 @@
     - Insert the prongs of one pushbutton into contact points |leftButton4Prong|.
     - Insert the prongs of the other pushbutton into contact points |rightButton4Prong|.
 
+\
+
 :\:[   ]: Peel off one wire from the male-to-male rainbow cable, and use it to connect contact point |leftButtonRightPin| to the upper |ground|.
 
 :\:[   ]: Peel off one wire from the male-to-male rainbow cable, and use it to connect contact point |rightButtonRightPin| to the upper |ground|.

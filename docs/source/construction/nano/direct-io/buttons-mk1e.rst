@@ -19,17 +19,17 @@ We will wire the pushbuttons such that they normally produce a 1, and when press
 
     Diagram of wiring associated with momentary pushbutton input.
 
-    +-------+-------------------------------------------------------+
-    |       | .. image:: ../fritzing_diagrams/pushbutton-2lead.png  |
-    | **a** |    :width: 90.0%                                      |
-    |       |                                                       |
-    |       | 2-lead pushbuttons                                    |
-    +-------+-------------------------------------------------------+
-    |       | .. image:: ../fritzing_diagrams/pushbutton-4prong.png |
-    | **b** |    :width: 90.0%                                      |
-    |       |                                                       |
-    |       | 4-prong pushbuttons                                   |
-    +-------+-------------------------------------------------------+
+    +-------+-------------------------------------------------------------------+
+    |       | .. image:: ../fritzing_diagrams/CowPi-mk1ef-pushbutton-2lead.png  |
+    | **a** |    :width: 90.0%                                                  |
+    |       |                                                                   |
+    |       | 2-lead pushbuttons                                                |
+    +-------+-------------------------------------------------------------------+
+    |       | .. image:: ../fritzing_diagrams/CowPi-mk1ef-pushbutton-4prong.png |
+    | **b** |    :width: 90.0%                                                  |
+    |       |                                                                   |
+    |       | 4-prong pushbuttons                                               |
+    +-------+-------------------------------------------------------------------+
 
 ..  _mk1eFigureButton:
 .. figure:: ../../../blank.png

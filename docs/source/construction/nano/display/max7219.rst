@@ -19,7 +19,7 @@ When the display module is oriented for viewing, these header pins will be on th
 :numref:`max7219FigureDisplayDiagram` shows a diagram of the wiring to connect the display module to the breadboard.
 
 ..  _max7219FigureDisplayDiagram:
-..  figure:: ../fritzing_diagrams/display-max7219.png
+..  figure:: ../fritzing_diagrams/CowPi-mk1e-display-max7219.png
     :alt: Diagram of display module's connections to the breadboard.
     :width: 90.0%
 
@@ -84,4 +84,6 @@ Kit Assembly is Complete
 You have now finished assembling the class kit.
 In the upcoming I/O labs, you will use the kit to learn about memory-mapped I/O and about handling low-level interrupts.
 
-    ..  image:: ../fritzing_diagrams/complete-max7219.png
+..  image:: ../fritzing_diagrams/CowPi-mk1e-max7219-complete.png
+    :alt: Diagram of completed Cow Pi mk1f circuit with LCD1602 character display.
+    :width: 90.0%

@@ -1,13 +1,7 @@
-..  |leftSwitchRange|                   replace:: a27-a29
-..  |leftSwitchLeftPin|                 replace:: e27
-..  |leftSwitchCenterPin|               replace:: e28
-..  |mcuLeftSwitchPin|                  replace:: ``D11``
-..  |mcuLeftSwitchPoint|                replace:: j2
-..  |rightSwitchRange|                  replace:: a32-a34
-..  |rightSwitchLeftPin|                replace:: e32
-..  |rightSwitchCenterPin|              replace:: e33
-..  |mcuRightSwitchPin|                 replace:: ``D10``
-..  |mcuRightSwitchPoint|               replace:: j3
+..  |mcuLeftSwitchPin|                  replace:: ``D18/A4``
+..  |mcuLeftSwitchPoint|                replace:: a8
+..  |mcuRightSwitchPin|                 replace:: ``D19/A5``
+..  |mcuRightSwitchPoint|               replace:: a9
 
 ..  |numberOfSerialPins|                replace:: 5
 ..  |serialPins|                        replace:: ``DIN`` (data in), ``CS`` (chip select), and ``CLK`` (clock)

@@ -32,7 +32,7 @@ From left-to-right, we will name these pins ``row1``, ``row4``, ``row7``, ``row*
 :numref:`mk1fFigureKeypadDiagram` shows a diagram of the wiring for the matrix keypad.
 
 ..  _mk1fFigureKeypadDiagram:
-..  figure:: ../fritzing_diagrams/keypad.png
+..  figure:: ../fritzing_diagrams/CowPi-mk1ef-keypad.png
     :alt: Diagram of wiring associated with matrix keyboard input.
     :width: 90.0%
 

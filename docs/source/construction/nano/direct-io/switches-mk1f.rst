@@ -10,7 +10,7 @@ We will wire them such that when a switch is toggled to the left, it will produc
 :numref:`mk1fSwitchDiagram` shows a diagram of the wiring for the slide switches.
 
 ..  _mk1fSwitchDiagram:
-..  figure:: ../fritzing_diagrams/switch-i2c-spdt.png
+..  figure:: ../fritzing_diagrams/CowPi-mk1f-switch-spdt.png
     :alt: Diagram of wiring associated with toggle switch input.
     :width: 90.0%
 

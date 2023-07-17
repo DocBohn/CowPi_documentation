@@ -23,7 +23,7 @@ will install for the LED output.
     The LED's longer lead connects to power; the shorter lead connects to ground.
 
 ..  _mk1eLEDDiagram:
-..  figure:: ../fritzing_diagrams/led.png
+..  figure:: ../fritzing_diagrams/CowPi-mk1ef-led.png
     :alt: Diagram of component assembly for LED output.
     :width: 90.0%
 

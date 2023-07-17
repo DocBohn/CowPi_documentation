@@ -1,11 +1,5 @@
-..  |leftSwitchRange|                   replace:: a27-a29
-..  |leftSwitchLeftPin|                 replace:: e27
-..  |leftSwitchCenterPin|               replace:: e28
 ..  |mcuLeftSwitchPin|                  replace:: ``D11``
 ..  |mcuLeftSwitchPoint|                replace:: j2
-..  |rightSwitchRange|                  replace:: a32-a34
-..  |rightSwitchLeftPin|                replace:: e32
-..  |rightSwitchCenterPin|              replace:: e33
 ..  |mcuRightSwitchPin|                 replace:: ``D10``
 ..  |mcuRightSwitchPoint|               replace:: j3
 

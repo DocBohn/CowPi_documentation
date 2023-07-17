@@ -10,7 +10,7 @@ We will wire them such that when a switch is toggled to the left, it will produc
 :numref:`mk1eSwitchDiagram` shows a diagram of the wiring for the slide switches.
 
 ..  _mk1eSwitchDiagram:
-..  figure:: ../fritzing_diagrams/switch-spi-spdt.png
+..  figure:: ../fritzing_diagrams/CowPi-mk1e-switch-spdt.png
     :alt: Diagram of wiring associated with toggle switch input.
     :width: 90.0%
 

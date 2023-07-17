@@ -18,6 +18,7 @@
 ..  |digitalPinDescription|             replace:: Pins ``D2``-``D13`` are digital input/output pins.
 ..  |unregulatedVoltageDescription|     replace:: ``VIN`` can be used to power the |developmentBoard| if connected to an unregulated power supply, such as a 9V battery; the |developmentBoard|'s onboard voltage regulator will then provide regulated voltages needed.
 ..  |regulatedVoltageDescription|       replace:: Pins ``3V3`` and ``5V`` provide regulated 3.3 volts and 5 volts for external circuitry; ``5V`` can also be used to power the |developmentBoard| if connected to a regulated 5V power supply.
+
 ..  |mcuUpperLeft|                      replace:: g1
 ..  |mcuUpperRight|                     replace:: g15
 ..  |mcuLowerLeft|                      replace:: c1
@@ -34,26 +35,35 @@
 ..  |mcuUpperGroundContactPoint|        replace:: j12
 ..  |mcuLowerGround|                    replace:: c14
 ..  |mcuLowerGroundContactPoint|        replace:: a14
+
 ..  |resistorContactPointOne|           replace:: i1
 ..  |resistorContactPointTwo|           replace:: i16
 ..  |ledAnodeContactPoint|              replace:: j16
 ..  |ledPin|                            replace:: ``D12``
 ..  |ledPinContactPoint|                replace:: g12
 
-..  |leftButton2Lead|                   replace:: a37 and a39
-..  |leftButton4Prong|                  replace:: a37, d37, a39, and d39
-..  |leftButtonLeftPin|                 replace:: e37
-..  |leftButtonRightPin|                replace:: e39
+..  |leftSwitchRange|                   replace:: a19-a21
+..  |leftSwitchLeftPin|                 replace:: e19
+..  |leftSwitchCenterPin|               replace:: e20
+..  |rightSwitchRange|                  replace:: a24-a24
+..  |rightSwitchLeftPin|                replace:: e24
+..  |rightSwitchCenterPin|              replace:: e25
+
+..  |leftButton2Lead|                   replace:: a29 and a31
+..  |leftButton4Prong|                  replace:: a29, d29, a31, and d31
+..  |leftButtonLeftPin|                 replace:: e29
+..  |leftButtonRightPin|                replace:: e31
 ..  |mcuLeftButtonPin|                  replace:: ``D8``
 ..  |mcuLeftButtonPoint|                replace:: j5
-..  |rightButton2Lead|                  replace:: a41 and a43
-..  |rightButton4Prong|                 replace:: a41, d41, a43, and d43
-..  |rightButtonLeftPin|                replace:: e41
-..  |rightButtonRightPin|               replace:: e43
+..  |rightButton2Lead|                  replace:: a33 and a35
+..  |rightButton4Prong|                 replace:: a33, d33, a35, and d35
+..  |rightButtonLeftPin|                replace:: e33
+..  |rightButtonRightPin|               replace:: e35
 ..  |mcuRightButtonPin|                 replace:: ``D9``
 ..  |mcuRightButtonPoint|               replace:: j4
 ..  |keypadRowRange|                    replace:: h26-h29
 ..  |mcuKeypadRowContacts|              replace:: j9-j6
+
 ..  |mcuRow1Pin|                        replace:: ``D4``
 ..  |mcuRow4Pin|                        replace:: ``D5``
 ..  |mcuRow7Pin|                        replace:: ``D6``
