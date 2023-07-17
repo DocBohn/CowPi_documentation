@@ -41,7 +41,7 @@ We will wire the pushbuttons such that they normally produce a 1, and when press
     | **a** |                                 | **b** |                                  |
     |       | Pushbuttons with two leads.     |       | Pushbuttons with four prongs.    |
     +-------+---------------------------------+-------+----------------------------------+
-    |       | .. image:: pushbutton-wired.png                                            |
+    |       | .. image:: pushbutton-wired-mk1e.jpg                                       |
     | **c** |    :width: 90.0%                                                           |
     |       |                                                                            |
     |       | The momentary pushbuttons, wired to the |developmentBoard|.                |

@@ -39,6 +39,22 @@ From left-to-right, we will name these pins ``row1``, ``row4``, ``row7``, ``row*
     Diagram of wiring associated with matrix keyboard input.
 
 
+.. _mk1fFigureKeypad:
+.. figure:: ../../../blank.png
+
+    The matrix keypad, wired to the |developmentBoard|
+
+    +---------------------------------+-------------------------------------+
+    | a                               | b                                   |
+    +=================================+=====================================+
+    | .. image:: keypad-rows-mk1f.jpg | .. image:: keypad-columns-mk1f.jpg  |
+    |    :height: 7cm                 |    :height: 7cm                     |
+    |    :align: center               |    :align: center                   |
+    +---------------------------------+-------------------------------------+
+    | Wiring the rows.                | Wiring the columns.                 |
+    +---------------------------------+-------------------------------------+
+
+
 ..  include:: keypad-steps.rst
 
 

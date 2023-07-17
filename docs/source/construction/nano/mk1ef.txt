@@ -61,20 +61,20 @@
 ..  |rightButtonRightPin|               replace:: e35
 ..  |mcuRightButtonPin|                 replace:: ``D9``
 ..  |mcuRightButtonPoint|               replace:: j4
-..  |keypadRowRange|                    replace:: h26-h29
-..  |mcuKeypadRowContacts|              replace:: j9-j6
 
+..  |keypadRowRange|                    replace:: h19-h22
+..  |mcuKeypadRowContacts|              replace:: j9-j6
 ..  |mcuRow1Pin|                        replace:: ``D4``
 ..  |mcuRow4Pin|                        replace:: ``D5``
 ..  |mcuRow7Pin|                        replace:: ``D6``
 ..  |mcuRowStarPin|                     replace:: ``D7``
-..  |keypadRow1Insertion|               replace:: j26
-..  |keypadColumnAInsertion|            replace:: j33
-..  |keypadColumnRange|                 replace:: h30-h33
+..  |keypadRow1Insertion|               replace:: j19
+..  |keypadColumnAInsertion|            replace:: j26
+..  |keypadColumnRange|                 replace:: h23-h26
 ..  |mcuKeypadColumnContacts|           replace:: a4-a7
 ..  |mcuColumnPinRange|                 replace:: ``D14/A0``-``D17/A3``
 ..  |mcuColumn1Pin|                     replace:: ``D14/A0``
 ..  |mcuColumn2Pin|                     replace:: ``D15/A1``
 ..  |mcuColumn3Pin|                     replace:: ``D16/A2``
 ..  |mcuColumnAPin|                     replace:: ``D17/A3``
-..  |keypadExcessInsertions|            replace:: j34, j35, etc.
+..  |keypadExcessInsertions|            replace:: j27, j28, etc.

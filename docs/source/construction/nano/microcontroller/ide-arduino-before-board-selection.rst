@@ -28,11 +28,12 @@ The Arduino IDE will compile your sketch and link it to a ``main()`` function th
 Connect to the |developmentBoard|
 """""""""""""""""""""""""""""""""
 
--   Review the `instructions to upload a program <https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-uploading-a-sketch>`_.
+:\:[   ]: Review the `instructions to upload a program <https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-uploading-a-sketch>`_.
 
--   Connect one end of the USB cable to a lab computer or to your personal laptop.\ [#usbConnection]_
+:\:[   ]: Connect one end of the USB cable to a lab computer or to your personal laptop.\ [#usbConnection]_
 
--   Connect the other end of the cable to your |developmentBoard|.
+:\:[   ]: Connect the other end of the cable to your |developmentBoard|.
+
 
 The ``PWR`` LED will light up, and you may see the ``L`` LED repeatedly blink on-and-off.
 The ``L`` LED is connected to the |developmentBoard|'s pin D13, and Arduino microcontroller boards typically leave the factory with *Blink.ino* loaded, but it does not matter if yours does not have *Blink.ino* pre-loaded.

@@ -14,8 +14,8 @@
     ..  TIP::
         If you used 20cm wires to connect your slide-switches and/or pushbuttons to the |developmentBoard|, then you can use the matrix keypad's ribbon cable to pull these wires away from the circuit, reducing clutter near the controls.
 
-        ..  image:: keypad-pullingwires.png
-            :scale: 150%
+        ..  image:: keypad-pullingwires.jpg
+            :scale: 50%
             :align: center
 
 

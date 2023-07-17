@@ -27,8 +27,9 @@ Upload a New Sketch
 """""""""""""""""""
 
 :\:[   ]: From the Arduino IDE's File menu, open the *Blink.ino* example:
-    | *File* ⟶ *Examples* ⟶ *01.Basics* ⟶ *Blink*
-    | Select *Save As...* and save the project as *MyBlink*.
+    *File* ⟶ *Examples* ⟶ *01.Basics* ⟶ *Blink*
+
+:\:[   ]: Select *Save As...* and save the project as *MyBlink*.
 
 :\:[   ]: Edit the values in the ``delay()`` calls to change the delays between the LED turning on, off, and on again.
     Select values that will visibly have a difference, such as 250 or 2000.

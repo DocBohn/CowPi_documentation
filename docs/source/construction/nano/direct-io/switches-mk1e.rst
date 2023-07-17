@@ -17,7 +17,7 @@ We will wire them such that when a switch is toggled to the left, it will produc
     Diagram of wiring associated with toggle switch input.
 
 ..  _mk1eFigureSwitchSPDT:
-..  figure:: switch-spdt-spi.png
+..  figure:: switches-spdt-mk1e.jpg
     :alt: The slide switches, each with the center pin grounded, the left pin connected to the |developmentBoard|, and the right pin floating.
     :width: 60.0%
 

@@ -2,9 +2,8 @@
 Hardware
 ********
 
-..  borrowing this image until we set up our own repo just for hardware
-..  |LibraryLicense| image:: https://img.shields.io/github/license/paulocode/picostation_pcb?color=rgb(0,153,176)
-..  _LibraryLicense: https://github.com/paulocode/picostation_pcb/blob/main/LICENSE
+..  |LibraryLicense| image:: https://img.shields.io/github/license/DocBohn/CowPi_hardware?color=rgb(0,153,176)
+..  _LibraryLicense: https://github.com/DocBohn/CowPi_hardware/blob/main/LICENSE
 ..  eventually we'll get certified
 ..  |DocumentationLicense| image:: https://img.shields.io/github/license/DocBohn/CowPi_documentation
 ..  _DocumentationLicense: https://github.com/DocBohn/CowPi_documentation/blob/main/LICENSE
