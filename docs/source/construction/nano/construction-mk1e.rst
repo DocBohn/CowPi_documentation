@@ -32,7 +32,7 @@ In the I/O labs, we will use a microcontroller board with some peripherals. In t
     direct-io/switches-mk1e
     direct-io/buttons-mk1e
     keypad/keypad-mk1e
-    display/max7219
+    display/spi
 
 
 ----

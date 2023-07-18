@@ -25,12 +25,65 @@ When the display module is oriented for viewing, these header pins will be on th
 
     Diagram of display module's connections to the breadboard.
 
+..  _spiFigureConnections:
+..  figure:: display-connections-mk1e.jpg
+    :alt: SPI connections on at the microcontroller.
+    :width: 90.0%
+
+    SPI connections on at the microcontroller.
+
 
 ..  IMPORTANT::
     Before proceeding further, disconnect the USB cable from the |developmentBoard|.
 
 
-:\:[   ]: Take the |numberOfSerialPins|-conductor female-to-male rainbow cable and attach the |numberOfSerialPins| female connectors to the display module’s |numberOfSerialPins| header pins.
+:\:[   ]: Look at :numref:`spiFigureDisplays` to determine which display module you have:
+
+
+..  _spiFigureDisplays:
+.. figure:: ../../../blank.png
+
+    Display modules that use the Serial-Parallel Interface protocol
+
+    +-------+---------------------------------------------------------------------------------------------------------+
+    |       | .. image:: max7219-segment-display.jpg                                                                  |
+    |       |    :align: center                                                                                       |
+    | **a** |    :width: 45%                                                                                          |
+    |       |                                                                                                         |
+    |       | MAX7219-driven 8-digit/7-segment display.                                                               |
+    +-------+------------------------------------------------+-------+------------------------------------------------+
+    |       | .. image:: max7219-matrix-floating-display.jpg |       | .. image:: max7219-matrix-pinned-display.jpg   |
+    |       |    :align: center                              |       |    :align: center                              |
+    | **b** |    :width: 90%                                 | **c** |    :width: 90%                                 |
+    |       |                                                |       |                                                |
+    |       | MAX7219-driven LED matrix display.             |       | MAX7219-driven LED matrix display              |
+    |       |                                                |       |  (pins inserted into breadboard).              |
+    +-------+------------------------------------------------+-------+------------------------------------------------+
+
+
+-   If you have an 8-digit/7-segment display (:numref:`spiFigureDisplays`\ (a)):
+
+    :\:[   ]: Take the |numberOfSerialPins|-conductor female-to-male rainbow cable and attach the |numberOfSerialPins| female connectors to the display module’s |numberOfSerialPins| header pins.
+
+    :\:[   ]: *Optionally* loop a wire from breadboard row 63(a-e) to row 63(f-j) as shown in :numref:`spiFigureDisplays`\ (a) to keep the display module from sliding around.
+
+
+-   If you have an LED matrix display, you can either let it float free (:numref:`spiFigureDisplays`\ (b)) or pin it to the breadboard (:numref:`spiFigureDisplays`\ (c))
+
+    -   If you let it float free:
+
+        :\:[   ]: Take the |numberOfSerialPins|-conductor female-to-male rainbow cable and attach the |numberOfSerialPins| female connectors to the display module’s |numberOfSerialPins| header pins. Be sure that you attach the cable to the side of the display module that has a ``DIN`` pin.
+
+        :\:[   ]: *Optionally* loop a wire from breadboard row 63(a-e) to row 63(f-j) as shown in :numref:`spiFigureDisplays`\ (a) to keep the display module from sliding around.
+
+    -   If you pin it to the breadboard:
+
+        :\:[   ]: Determine which side of the display module has a ``DIN`` pin. Insert the pins on that side into |numberOfSerialPins| adjacent breadboard rows.
+
+        :\:[   ]: Take a |numberOfSerialPins|-conductor male-to-male rainbow cable and insert one end into the same rows as the display module’s |numberOfSerialPins| header pins.
+
+\
+\
 
 :\:[   ]: Identify the wire that is connected to the display module's |serialClockPin| pin;
     insert the male end of this wire in contact point |mcuClockPoint| (electrically connected to the |developmentBoard|'s |mcuClockPin| pin).

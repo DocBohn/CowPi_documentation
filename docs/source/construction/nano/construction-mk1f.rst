@@ -32,7 +32,7 @@ In the I/O labs, we will use a microcontroller board with some peripherals. In t
     direct-io/switches-mk1f
     direct-io/buttons-mk1f
     keypad/keypad-mk1f
-    display/lcd1602
+    display/i2c
 
 
 ----

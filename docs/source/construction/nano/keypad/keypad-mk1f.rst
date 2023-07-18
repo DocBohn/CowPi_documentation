@@ -39,6 +39,9 @@ From left-to-right, we will name these pins ``row1``, ``row4``, ``row7``, ``row*
     Diagram of wiring associated with matrix keyboard input.
 
 
+..  include:: keypad-steps.rst
+
+
 .. _mk1fFigureKeypad:
 .. figure:: ../../../blank.png
 
@@ -53,9 +56,6 @@ From left-to-right, we will name these pins ``row1``, ``row4``, ``row7``, ``row*
     +---------------------------------+-------------------------------------+
     | Wiring the rows.                | Wiring the columns.                 |
     +---------------------------------+-------------------------------------+
-
-
-..  include:: keypad-steps.rst
 
 
 When you have finished setting up the keypad wiring, there should be the electrical paths described in :numref:`mk1fTableKeypadConnections`.
