@@ -90,5 +90,4 @@ If, instead of an error, your IDE "hangs" while collecting configuration data, t
 
 ..  ATTENTION::
     **CHECKPOINT 2**
-    | Before proceeding further, have a TA or a classmate verify that you have correctly uploaded new code to the |developmentBoard|.
-    Update *checkpoints.txt* file to indicate who checked your work and when they did so.
+    | |checkpoint| uploaded new code to the |developmentBoard|. |updateCheckpointsTXT|

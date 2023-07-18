@@ -22,8 +22,4 @@ Connect Power and Ground to Power Bus Strips
 
 ..  ATTENTION::
     **CHECKPOINT 3**
-    | Before proceeding further, have a TA or a classmate verify that you have correctly connected the |developmentBoard| to the upper |power| and the upper |ground|.
-    Update *checkpoints.txt* file to indicate who checked your work and when they did so.
-
-
-
+    | |checkpoint| connected the |developmentBoard| to the upper |power| and the upper |ground|. |updateCheckpointsTXT|

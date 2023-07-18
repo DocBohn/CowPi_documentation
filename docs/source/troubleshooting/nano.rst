@@ -95,19 +95,31 @@ however, we are not aware of any students using Linux personal laptops in this c
 Other Uploading Issues
 ======================
 
-
-(Windows) Do you have the right COM port selected?
---------------------------------------------------
-
-The `Troubleshooting Guide <https://support.arduino.cc/hc/en-us/articles/4401874331410--Error-avrdude-when-uploading>`_ recommends disconnecting your Arduino Nano and reconnecting it, then selecting whichever COM port appears.
-
+Arduino's `Troubleshooting Guide <https://support.arduino.cc/hc/en-us/articles/4401874331410--Error-avrdude-when-uploading>`_ has some suggestions.
 
 Does a soft reboot or a hard reboot fix it?
 -------------------------------------------
 
 -   Try pressing the RESET button on the Arduino Nano and then re-attempt the upload.
 
--   Even if you don't have a COM port issue, sometimes unplugging the USB cable and plugging it back in fixes the problem.
+-   Sometimes unplugging the USB cable and plugging it back in fixes the problem.
+
+
+Do you have the right COM port (Windows) / TTY port (MacOS/Linux) selected?
+---------------------------------------------------------------------------
+
+:Windows: The `Troubleshooting Guide <https://support.arduino.cc/hc/en-us/articles/4401874331410--Error-avrdude-when-uploading>`_ recommends disconnecting your Arduino Nano and reconnecting it, then selecting whichever COM port appears.
+
+:MacOS: From the command line, type ``ls /dev/tty.*``. If there is only one port that starts with ``/dev/tty.usbserial`` then that is the one you want. For example:
+
+    ..  code-block:: console
+
+            % ls /dev/tty.*
+            /dev/tty.BLTH				/dev/tty.Bluetooth-Incoming-Port	/dev/tty.usbserial-141330
+
+    In this case, you would choose ``tty.usbserial-141330``. If there are more than one port that starts with ``/dev/tty.usbserial`` then unplug your Arduino Nano and reconnect it, then selecting whichever TTY port appears.
+
+:Linux: (note: I haven't tested this with Linux -- I would think that ``ls /dev/tty[AU]*`` would work similarly to the MacOS solution, looking for ``/dev/ttyUSBnn`` or ``/dev/ttyACMnn``, but if Linux "remembers" connections and they don't go away, then there seems to be a common internet solution of ``dmesg | grep tty`` and selecting the tty device with the  most-recent timestamp.)
 
 
 Do you have the right bootloader selected?

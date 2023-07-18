@@ -1,6 +1,5 @@
 
-..  IMPORTANT::
-    Before proceeding further, disconnect the USB cable from the |developmentBoard|.
+..  IMPORTANT:: |unplug|
 
 
 :\:[   ]: If you have 2-lead pushbuttons:

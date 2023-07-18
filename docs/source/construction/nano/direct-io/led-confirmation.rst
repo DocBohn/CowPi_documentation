@@ -1,9 +1,8 @@
 ..  ATTENTION::
     **CHECKPOINT 4**
-    | Before proceeding further, have a TA or a classmate verify that you have correctly installed the LED and its current-limiting resistor.
-    Update *checkpoints.txt* file to indicate who checked your work and when they did so.
+    | |checkpoint| installed the LED and its current-limiting resistor. |updateCheckpointsTXT|
 
-:\:[   ]: In your IDE, load the *MyBlink* project.
+:\:[   ]: In your IDE, load your modified Blink project (*MyBlink* for Arduino IDE, date-time-\ *arduino-blink* for PlatformIO).
 
 :\:[   ]: In the ``pinMode()`` and the two ``digitalWrite()`` calls, replace the ``LED_BUILTIN`` argument with ``12``:
 
@@ -24,7 +23,7 @@
 
 :\:[   ]: Re-connect the USB cable to your |developmentBoard|.
 
-:\:[   ]: Compile the sketch and upload it to your |developmentBoard|.
+:\:[   ]: Compile the program and upload it to your |developmentBoard|.
 
 Now, instead of the built-in LED, the external LED that you installed will blink.
 

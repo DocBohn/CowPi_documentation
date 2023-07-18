@@ -37,8 +37,7 @@ will install for the LED output.
     Bend the resistor's leads about 1cm from the ends.
 
 
-..  IMPORTANT::
-    Before proceeding further, disconnect the USB cable from the |developmentBoard|.
+..  IMPORTANT:: |unplug|
 
 
 :\:[   ]: Take the 1k\ :math:`\Omega` resistor and place a right-angle bend in each lead about 0.4in (1cm) from the ends

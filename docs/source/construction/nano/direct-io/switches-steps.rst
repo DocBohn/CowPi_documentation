@@ -1,5 +1,4 @@
-..  IMPORTANT::
-    Before proceeding further, disconnect the USB cable from the |developmentBoard|.
+..  IMPORTANT:: |unplug|
 
 
 :\:[   ]: Insert one slider switch into contact points |leftSwitchRange|.

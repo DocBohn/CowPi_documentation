@@ -1,6 +1,5 @@
 
-..  IMPORTANT::
-    Before proceeding further, disconnect the USB cable from the |developmentBoard|.
+..  IMPORTANT:: |unplug|
 
 
 :\:[   ]: If your 8-pin male-male header strip is not already inserted into the keypad's female connectors, insert it into the female connectors now.

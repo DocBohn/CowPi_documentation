@@ -1,3 +1,7 @@
+..  |unplug|                            replace:: Before proceeding further, disconnect the USB cable from the |developmentBoard|.
+..  |checkpoint|                        replace:: Before proceeding further, have a TA, a classmate, or a friend verify that you have correctly
+..  |updateCheckpointsTXT|              replace:: Update your *checkpoints.txt* file to indicate who checked your work and when they did so.
+
 ..  |power|                             replace:: power (**+**) rail
 ..  |ground|                            replace:: ground (**–**) rail
 

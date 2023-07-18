@@ -1,7 +1,6 @@
 ..  ATTENTION::
     **CHECKPOINT 5**
-    | Before proceeding further, have a TA or a classmate verify that you have correctly inserted and wired the slider switches.
-    Update *checkpoints.txt* file to indicate who checked your work and when they did so.
+    | |checkpoint| inserted and wired the slider switches. |updateCheckpointsTXT|
 
 Connect your |developmentBoard| to the computer.
 In the IDE's Serial Monitor, notice that

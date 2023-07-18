@@ -32,18 +32,32 @@ You will see a pop-up window telling you that you also need to install the CowPi
     -   If you err and select "Install Without Dependencies" then you can still install the CowPi_stdio library separately.
 
 
-After the libraries are installed, proceed to :doc:`../direct-io/switches-mk1e`.
+Load the I/O Test Code
+~~~~~~~~~~~~~~~~~~~~~~
+
+..  DANGER::
+    TODO: Update the test code
+
+
+After the libraries are installed and the test code is loaded, proceed to :doc:`../direct-io/switches-mk1e`.
+
 
 ----
+
 
 .. _mk1ePlatformIOLibrary:
 
 Install the Libraries for PlatformIO
 """"""""""""""""""""""""""""""""""""
 
-.. ..  include:: ide-platformio.rst
+You do not need to explicitly install the libraries;
+we will specify their use in *platformio.ini* files, and PlatformIO will automatically download them.
+
+Load the I/O Test Code
+~~~~~~~~~~~~~~~~~~~~~~
 
 ..  DANGER::
-    TODO
+    TODO: Update the test code
 
-If you are satisfied with using the Arduino IDE, then proceed to :doc:`../direct-io/switches-mk1e`.
+
+After the test code is loaded, proceed to :doc:`../direct-io/switches-mk1f`.

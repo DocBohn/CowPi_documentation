@@ -1,8 +1,7 @@
 The columns marked with red and blue stripes are the power bus strips, also known as the power rails.
 You will now provide power to the bus strips so that the other components can use power.
 
-..  IMPORTANT::
-    Before proceeding further, disconnect the USB cable from the |developmentBoard|.
+..  IMPORTANT:: |unplug|
 
 
 :\:[   ]: Take the male-to-male rainbow cable, and peel off two wires.

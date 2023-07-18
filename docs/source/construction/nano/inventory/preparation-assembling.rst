@@ -7,7 +7,7 @@ Assembling the Class Kit
 ------------------------
 
 You will assemble the hardware in the following steps.
-**At various checkpoints, you should pause to have a TA or classmate double-check your work.**
+**At various checkpoints, you should pause to have a TA, a classmate, or a friend double-check your work.**
 When you do so, update the *checkpoints.txt* file to indicate who checked your work and when they did so.
 
 You may want to store your partially- and fully-completed kit in a plastic food container or some other container to prevent jumper wires from being pulled out while in your backpack.

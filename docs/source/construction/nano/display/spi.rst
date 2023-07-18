@@ -33,8 +33,7 @@ When the display module is oriented for viewing, these header pins will be on th
     SPI connections on at the microcontroller.
 
 
-..  IMPORTANT::
-    Before proceeding further, disconnect the USB cable from the |developmentBoard|.
+..  IMPORTANT:: |unplug|
 
 
 :\:[   ]: Look at :numref:`spiFigureDisplays` to determine which display module you have:
@@ -112,8 +111,7 @@ When you have finished connecting the display module, there should be the electr
 
 ..  ATTENTION::
     **CHECKPOINT 8**
-    | Before proceeding further, have a TA or a classmate verify that you have correctly connected the display module to the breadboard.
-    Update *checkpoints.txt* file to indicate who checked your work and when they did so.
+    | |checkpoint| connected the display module to the breadboard. |updateCheckpointsTXT|
 
 
 :\:[   ]: In the Arduino IDE, open the *File* ⟶ *Examples* ⟶ *CowPi* ⟶ |displayModuleHelloWorld| example.

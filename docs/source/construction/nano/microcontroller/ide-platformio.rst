@@ -62,7 +62,6 @@ On VS Code's left-side menu, you will see an bug head icon;
 this is PlatformIO's logo.
 
 ..  image:: platformIOIcon.png
-    :align: center
 
 :\:[   ]: Click on the PlatformIO logo.
 
@@ -79,7 +78,7 @@ This takes you to the "PlatformIO Home."
 :\:[   ]: In the drop-down menu, click on "arduino blink" (it should be the first option). Click on the "Import" button.
 
 You will need to wait a few seconds, and then a new project will be created whose name is derived from the current date and time, such as "230718-112959-arduino-blink."
-The code in *src/Blink.cpp* is the same code that is typically loaded onto an Arduino Nano before leaving the factory.
+This will create an example project with the same "blink" code that is typically loaded onto an Arduino Nano before leaving the factory.
 
 :\:[   ]: Open the *platformio.ini* file (it may open automatically).
 
@@ -249,8 +248,8 @@ At the top of VS Code, you will see the environment options.
 Select whichever environment **SUCCESS**\ fully uploaded the program to your |developmentBoard|.
 
 
-Modify the Program
-""""""""""""""""""
+Modify and Upload the Program
+"""""""""""""""""""""""""""""
 
 :\:[   ]: Open *src/Blink.cpp*
 
@@ -278,5 +277,4 @@ Handling Errors
 
 ..  ATTENTION::
     **CHECKPOINT 2**
-    | Before proceeding further, have a TA or a classmate verify that you have correctly uploaded new code to the |developmentBoard|.
-    Update *checkpoints.txt* file to indicate who checked your work and when they did so.
+    | |checkpoint| uploaded new code to the |developmentBoard|. |updateCheckpointsTXT|

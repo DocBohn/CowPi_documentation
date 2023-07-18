@@ -1,7 +1,6 @@
 ..  ATTENTION::
     **CHECKPOINT 7**
-    | Before proceeding further, have a TA or a classmate verify that you have correctly inserted and wired the matrix keypad.
-    Update *checkpoints.txt* file to indicate who checked your work and when they did so.
+    | |checkpoint| inserted and wired the matrix keypad. |updateCheckpointsTXT|
 
 ..  WARNING::
     Do not press more than one key on the matrix keypad at a time.

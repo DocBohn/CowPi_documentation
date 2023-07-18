@@ -37,8 +37,7 @@ A microcontroller board, such as the |developmentBoard|, combines the microcontr
 
 ..  ATTENTION::
     **CHECKPOINT 1**
-    | Before proceeding further, have a TA or a classmate verify that you have correctly inserted the |developmentBoard| into the breadboard.
-    Update *checkpoints.txt* file to indicate who checked your work and when they did so.
+    | |checkpoint| inserted the |developmentBoard| into the breadboard. |updateCheckpointsTXT|
 
 
 
