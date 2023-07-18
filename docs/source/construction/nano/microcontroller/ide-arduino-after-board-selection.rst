@@ -1,5 +1,5 @@
 Selecting the Correct "Processor"
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are *three* choices for the Arduino Nano's processor, two of which specify the ATmega328P processor.
 Even though the difference is with the bootloader, it is resolved through the Arduino IDE's "Processor" selection:
@@ -14,14 +14,17 @@ Even though the difference is with the bootloader, it is resolved through the Ar
     If you have such a device, replace it with a newer Arduino Nano.
 
 Updating Windows USB Driver if Necessary
-""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Official Arduino Nanos use the FT232RL USB interface chip.
 *Most* Arduino Nano clones use the CH340 USB interface chip.
-We have seen some Windows computers without the CH340 USB driver,
-and we have seen that some Windows 11 computers need their CH340 USB driver updated.
+We have seen some Windows 10 computers without the CH340 USB driver,
+and we have seen that some Windows 11 computers need their CH340 USB driver updated.
 
 See :doc:`../../../troubleshooting/nano` for instructions to handle these problems.
+
+If you are unable to get your Windows 11 computer to work with your Arduino Nano, then you should consider using a lab computer for the I/O labs since they still run Windows 10. [#toughLuck]_
+
 
 Upload a New Sketch
 """""""""""""""""""
@@ -36,12 +39,10 @@ Upload a New Sketch
 
 :\:[   ]: Compile the program using the "Verify" checkmark in the IDE's toolbar and make corrections if the program doesn't compile.
 
-:\:[   ]: Upload the program to your Arduino Nano using the "Upload" arrow in the IDE's toolbar.
+:\:[   ]: Upload the program to your |developmentBoard| using the "Upload" arrow in the IDE's toolbar.
     (If you forget to compile first, the IDE will compile your program before uploading, but I find it useful to find compile-time mistakes before attempting to upload the program.)
 
 If you successfully uploaded *MyBlink.ino* then you will see the following in the IDE's *Output* window:
-
-   …(elided configuration data)…
 
 .. code-block:: console
 

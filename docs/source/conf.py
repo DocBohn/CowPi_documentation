@@ -4,6 +4,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import sys
+
 sys.path.append('ext/breathe/')
 
 # -- Project information -----------------------------------------------------
@@ -36,6 +37,7 @@ extensions = [
     'sphinxcontrib.tikz',
     'sphinx.ext.imgmath',
     'sphinx.ext.todo',
+    'sphinx_copybutton',
     'breathe'
 ]
 
