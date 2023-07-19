@@ -247,6 +247,13 @@ At the top of VS Code, you will see the environment options.
 
 Select whichever environment **SUCCESS**\ fully uploaded the program to your |developmentBoard|.
 
+..  NOTE::
+    On the following pages, some of the |developmentBoard|\ s have a label indicating which bootloader they have.
+    If you have only one |developmentBoard|, you do not need to label it;
+    however, if you have many |developmentBoard|\ s, you may find that labeling them will help you keep track of which bootloader to select.
+
+    Whether you have an old bootloader  or a new bootloader does not affect any steps you need to take, except that you need to select the correct one in order to upload the programs to your |developmentBoard|\ .
+
 
 Modify and Upload the Program
 """""""""""""""""""""""""""""

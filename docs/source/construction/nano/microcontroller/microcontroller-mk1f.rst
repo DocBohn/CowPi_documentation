@@ -1,7 +1,7 @@
 ..  include:: ../mk1ef.txt
 
-Inserting the Microcontroller into the Breadboard
-=================================================
+Insert the Microcontroller into the Breadboard
+==============================================
 *Cow Pi mk1f: Arduino Nano form factor*
 
 A microcontroller, such as the |microcontrollerReference|_ on the |developmentBoard|, is a very simple processor when compared to a microprocessor designed for general-purpose computing.

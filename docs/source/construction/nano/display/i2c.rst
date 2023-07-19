@@ -1,8 +1,8 @@
 ..  include:: ../mk1ef.txt
 ..  include:: ../mk1f.txt
 
-Installing the Display Module
-=============================
+Install the Display Module
+==========================
 *Cow Pi mk1f: Arduino Nano form factor,* |i2c-italics| *communication*
 
 Examine the I2C-LCD serial interface.
@@ -82,8 +82,7 @@ When the display module is oriented for viewing, these header pins will be on th
 
         :\:[   ]: Take a |numberOfSerialPins|-conductor male-to-male rainbow cable and insert one end into the same rows as the display module’s |numberOfSerialPins| header pins.
 
-\
-\
+|
 
 :\:[   ]: Identify the wire that is connected to the display module's |serialClockPin| pin;
     insert the male end of this wire in contact point |mcuClockPoint| (electrically connected to the |developmentBoard|'s |mcuClockPin| pin).

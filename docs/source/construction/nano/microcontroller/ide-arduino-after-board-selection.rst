@@ -13,6 +13,14 @@ Even though the difference is with the bootloader, it is resolved through the Ar
 -   Very old Arduino Nanos use the ATmega168 processor.
     If you have such a device, replace it with a newer Arduino Nano.
 
+..  NOTE::
+    On the following pages, some of the |developmentBoard|\ s have a label indicating which bootloader they have.
+    If you have only one |developmentBoard|, you do not need to label it;
+    however, if you have many |developmentBoard|\ s, you may find that labeling them will help you keep track of which bootloader to select.
+
+    Whether you have an old bootloader  or a new bootloader does not affect any steps you need to take, except that you need to select the correct one in order to upload the programs to your |developmentBoard|\ .
+
+
 Updating Windows USB Driver if Necessary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

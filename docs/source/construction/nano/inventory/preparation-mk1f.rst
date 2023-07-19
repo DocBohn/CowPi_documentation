@@ -1,7 +1,7 @@
 ..  include:: ../mk1f.txt
 
-Preparing to Assemble the Cow Pi mark 1f
-========================================
+Prepare to Assemble the Cow Pi mark 1f
+======================================
 
 ..  include:: preparation-inventory.rst
 

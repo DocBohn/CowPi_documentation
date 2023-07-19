@@ -115,7 +115,7 @@ Do you have the right COM port (Windows) / TTY port (MacOS/Linux) selected?
     ..  code-block:: console
 
             % ls /dev/tty.*
-            /dev/tty.BLTH				/dev/tty.Bluetooth-Incoming-Port	/dev/tty.usbserial-141330
+            /dev/tty.BLTH   /dev/tty.Bluetooth-Incoming-Port    /dev/tty.usbserial-141330
 
     In this case, you would choose ``tty.usbserial-141330``. If there are more than one port that starts with ``/dev/tty.usbserial`` then unplug your Arduino Nano and reconnect it, then selecting whichever TTY port appears.
 
@@ -135,6 +135,6 @@ Do you have the right bootloader selected?
 Is some other software on the host computer connected to the COM port (Windows) / TTY port (MacOS/Linux)?
 ---------------------------------------------------------------------------------------------------------
 
-If you're using PuTTY (on Windows), Screen (on MacOS or Linux) to interface with your Arduino Nano, then you need to disconnect your serial terminal emulator before uploading firmware to the microcontroller.
+If you're using PuTTY (on Windows), Screen (on MacOS or Linux), or some other serial terminal emulator to interface with your Arduino Nano, then you need to disconnect your serial terminal emulator before uploading firmware to the microcontroller.
 
 (If you're using the Arduino Serial Monitor or the PlatformIO Serial Monitor, this shouldn't be an issue since those integrated environments disconnect the Serial Monitor from the port before attempting an upload.)

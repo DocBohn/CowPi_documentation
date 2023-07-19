@@ -1,5 +1,5 @@
-Inventorying the Hardware
--------------------------
+Inventory the Hardware
+----------------------
 
 Examine the contents of your class kit. It contains:
 

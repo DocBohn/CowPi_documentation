@@ -1,17 +1,15 @@
 ..  include:: ../mk1ef.txt
 
-Installing the IDE
-==================
+Install the IDE
+===============
 *Cow Pi mk1e: Arduino Nano form factor*
 
-\
-\
+|
 
 ..  ATTENTION::
     **If you are a Windows user,** please review the notes about CH340 USB Driver issues for :ref:`Windows10CH340` and :ref:`Windows11CH340`.
 
-\
-\
+|
 
 Broadly speaking, you have two options:
 
