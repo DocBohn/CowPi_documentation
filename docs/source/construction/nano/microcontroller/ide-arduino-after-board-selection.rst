@@ -13,6 +13,8 @@ Even though the difference is with the bootloader, it is resolved through the Ar
 -   Very old Arduino Nanos use the ATmega168 processor.
     If you have such a device, replace it with a newer Arduino Nano.
 
+:\:[   ]: Unless you already know which bootloader your |developmentBoard| has, select "ATmega328P."
+
 ..  NOTE::
     On the following pages, some of the |developmentBoard|\ s have a label indicating which bootloader they have.
     If you have only one |developmentBoard|, you do not need to label it;
@@ -50,51 +52,61 @@ Upload a New Sketch
 :\:[   ]: Upload the program to your |developmentBoard| using the "Upload" arrow in the IDE's toolbar.
     (If you forget to compile first, the IDE will compile your program before uploading, but I find it useful to find compile-time mistakes before attempting to upload the program.)
 
-If you successfully uploaded *MyBlink.ino* then you will see the following in the IDE's *Output* window:
+|
 
-.. code-block:: console
+-   If you successfully uploaded *MyBlink.ino* then you will see the following in the IDE's *Output* window:
 
-          avrdude: AVR device initialized and ready to accept instructions
+    .. code-block:: console
 
-          Reading | ################################################## | 100% 0.01s
+              avrdude: AVR device initialized and ready to accept instructions
 
-          avrdude: Device signature = 0x1e950f (probably m328p)
-          avrdude: reading input file "/var/folders/p7/lx4gt70d0_34cpy8r0j3c95c0000gp/T/arduino-sketch-11A4823C54657006C9F78B0812B621A8/MyBlink.ino.hex"
-          avrdude: writing flash (932 bytes):
+              Reading | ################################################## | 100% 0.01s
 
-          Writing | ################################################## | 100% 0.33s
+              avrdude: Device signature = 0x1e950f (probably m328p)
+              avrdude: reading input file "/var/folders/p7/lx4gt70d0_34cpy8r0j3c95c0000gp/T/arduino-sketch-11A4823C54657006C9F78B0812B621A8/MyBlink.ino.hex"
+              avrdude: writing flash (932 bytes):
 
-          avrdude: 932 bytes of flash written
+              Writing | ################################################## | 100% 0.33s
 
-          avrdude done.  Thank you.
+              avrdude: 932 bytes of flash written
+
+              avrdude done.  Thank you.
 
 
-          --------------------------
-          upload complete.
+              --------------------------
+              upload complete.
 
-and then the LED's on-off pattern will change, reflecting the ``delay()`` values you assigned.
+    and then the LED's on-off pattern will change, reflecting the ``delay()`` values you assigned.
 
-..  image:: animations/myblink.gif
-    :height: 3cm
-    :align: center
+    ..  image:: animations/myblink.gif
+        :height: 3cm
+        :align: center
+
+|
+
+-   If you did not successfully upload *MyBlink.ino* then you will see the following in the IDE's *Output* window:
+
+    .. code-block:: console
+
+              ...
+
+:\:[   ]: If you did not successfully upload *MyBlink.ino*, then change your "Processor" selection to "ATmega328P (Old Bootloader)".
+
+:\:[   ]: Upload the program to your |developmentBoard| using the "Upload" arrow in the IDE's toolbar.
+
+|
 
 Handling Errors
 ~~~~~~~~~~~~~~~
 
-If you get an error when attempting to upload a sketch, try these corrective measures:
-
-#.  Try selecting "ATmega328P" and try selecting "ATmega328P (Old Bootloader)".
-
-#.  Try uploading again (if you attempt to upload a sketch too soon after connecting your Arduino Nano to your computer, the USB interface won't have finished its handshake).
-
-#.  The `Troubleshooting Guide <https://support.arduino.cc/hc/en-us/articles/4401874331410--Error-avrdude-when-uploading>`_ recommends disconnecting your Arduino Nano and reconnecting it, then selecting whichever COM port appears.
-
-#.  Review the discussion at :ref:`Windows11CH340`.
+If you get an error when attempting to upload a sketch that is not resolved by changing the "Processor" selection, see :doc:`../../../troubleshooting/nano` for guidance to handle these problems.
 
 If, instead of an error, your IDE "hangs" while collecting configuration data, try this corrective measure:
 
 -   Press the ``RESET`` button in the middle of the Arduino Nano;
     the IDE should begin uploading the sketch after you release the button.
+
+|
 
 ..  ATTENTION::
     **CHECKPOINT 2**

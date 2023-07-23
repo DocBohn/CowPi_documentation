@@ -44,13 +44,40 @@ Broadly speaking, you have two options:
 
 If you are satisfied with using the Arduino IDE, then proceed to :doc:`power-mk1e`.
 
+|
+
 ----
+
+|
 
 .. _mk1eVSCodeWithPlatformIO:
 
-..  include:: ide-platformio.rst
+..  include:: ide-platformio-before-creating-project.rst
+
+:\:[   ]: In resulting pop-up window, name the project *MyBlink*. In the "board" field, type *arduino nano* (:numref:`mk1eCreatingPlatformIOProject`\ (a)).
+
+:\:[   ]: Unless you already know which bootloader your |developmentBoard| has, select "Arduino Nano ATmega328." After you do so, the "framework" field will auto-populate to "Arduino" (:numref:`mk1eCreatingPlatformIOProject`\ (b)).
+
+.. _mk1eCreatingPlatformIOProject:
+.. figure:: ../../../blank.png
+
+    Selecting board and processor in the Arduino IDE.
+
+    +----------------------------------------+-------------------------------------------------+
+    | a                                      | b                                               |
+    +========================================+=================================================+
+    | .. image:: platformioSelectBoard.png   | .. image:: platformioReadyForNewProject.png     |
+    |    :width: 8cm                         |    :width: 8cm                                  |
+    |    :align: center                      |    :align: center                               |
+    +----------------------------------------+-------------------------------------------------+
+    | Selecting the board with PlatformIO.   | Ready to create a new project using PlatformIO. |
+    +----------------------------------------+-------------------------------------------------+
+
+..  include:: ide-platformio-after-creating-project.rst
 
 If you are satisfied with using the Arduino IDE, then proceed to :doc:`power-mk1e`.
+
+|
 
 ----
 
