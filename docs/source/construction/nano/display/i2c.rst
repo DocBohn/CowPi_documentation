@@ -110,17 +110,27 @@ When you have finished connecting the display module, there should be the electr
     **CHECKPOINT 8**
     | |checkpoint| connected the display module to the breadboard. |updateCheckpointsTXT|
 
+.. .. -   If you have an LCD character display:
 
-:\:[   ]: In the Arduino IDE, open the *File* ⟶ *Examples* ⟶ *CowPi* ⟶ |displayModuleHelloWorld| example.
+-   If you are using the Arduino IDE:
 
-:\:[   ]: Find these lines in the ``setup()`` function:
+    :\:[   ]: Open the *File* ⟶ *Examples* ⟶ *CowPi_stdio* ⟶ *hd44780_lcd_character* example.
 
-   ::
+-   If you are using PlatformIO:
 
-      //    protocol = SPI;
-          protocol = I2C;
+    :\:[   ]: Create a new project named *DisplayTest* with the appropriate board selection for  your |developmentBoard|.
+        *Without removing anything from your* platformio.ini *file,* add the following to your *platformio.ini* file, replacing ``▶environment_name◀`` with the environment name that PlatformIO created automatically for you:
 
-:\:[   ]: Make sure that the ``protocol = I2C`` line is uncommented and that the ``protocol = SPI`` line is commented-out.
+        ..  code-block:: ini
+
+            [platformio]
+            src_dir = .pio/libdeps/▶environment_name◀/CowPi_stdio/examples/hd44780_lcd_character
+
+            [env]
+            lib_deps =
+              docbohn/CowPi @ ^0.6.0
+              docbohn/CowPi_stdio @ ^0.5.1
+            monitor_echo = yes
 
 :\:[   ]: Compile the program and upload it to your Arduino Nano.
 
@@ -133,7 +143,13 @@ When you have finished connecting the display module, there should be the electr
         :height: 5cm
         :align: center
 
+.. .. |
 
+.. .. -   If you have an OLED graphic display:
+
+|
+
+----
 
 Kit Assembly is Complete
 ========================

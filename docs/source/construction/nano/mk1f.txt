@@ -15,5 +15,3 @@
 ..  |mcuDataPin|                        replace:: ``D18/A4``
 
 ..  |referenceKeypadSection|            replace:: :ref:`mk1fKeypadSection`
-
-..  |displayModuleHelloWorld|           replace:: *lcd1602_hello_world*

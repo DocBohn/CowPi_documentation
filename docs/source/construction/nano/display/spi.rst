@@ -112,21 +112,73 @@ When you have finished connecting the display module, there should be the electr
     **CHECKPOINT 8**
     | |checkpoint| connected the display module to the breadboard. |updateCheckpointsTXT|
 
+-   If you have an 8-digit/7-segment display:
 
-:\:[   ]: In the Arduino IDE, open the *File* ⟶ *Examples* ⟶ *CowPi* ⟶ |displayModuleHelloWorld| example.
+    -   If you are using the Arduino IDE:
 
-:\:[   ]: Compile the program and upload it to your Arduino Nano.
+        :\:[   ]: Open the *File* ⟶ *Examples* ⟶ *CowPi_stdio* ⟶ *max7219_seven_segment* example.
 
-    You should see the display module's backlight blink on and off.
-    If so, then you have correctly connected the display module and serial adapter even if you don't see a message on the display module.
+    -   If you are using PlatformIO:
 
-:\:[   ]: Using a screwdriver, turn the trim potentiometer on the serial adapter until you can see the "Hello, world!" message.
+        :\:[   ]: Create a new project named *DisplayTest* with the appropriate board selection for  your |developmentBoard|.
+            *Without removing anything from your* platformio.ini *file,* add the following to your *platformio.ini* file, replacing ``▶environment_name◀`` with the environment name that PlatformIO created automatically for you:
 
-    ..  image:: animations/sevensegment.gif
-        :height: 5cm
-        :align: center
+            ..  code-block:: ini
 
+                [platformio]
+                src_dir = .pio/libdeps/▶environment_name◀/CowPi_stdio/examples/max7219_seven_segment
 
+                [env]
+                lib_deps =
+                  docbohn/CowPi @ ^0.6.0
+                  docbohn/CowPi_stdio @ ^0.5.1
+                monitor_echo = yes
+
+    :\:[   ]: Compile the program and upload it to your Arduino Nano.
+
+        You should see a "Hello, world!" message.
+        If so, then you have correctly connected the display module.
+
+        ..  image:: animations/sevensegment.gif
+            :height: 5cm
+            :align: center
+
+|
+
+-   If you have an LED matrix display:
+
+    -   If you are using the Arduino IDE:
+
+        :\:[   ]: Open the *File* ⟶ *Examples* ⟶ *CowPi_stdio* ⟶ *max7219_dotmatrix* example.
+
+    -   If you are using PlatformIO:
+
+        :\:[   ]: Create a new project named *DisplayTest* with the appropriate board selection for  your |developmentBoard|.
+            *Without removing anything from your* platformio.ini *file,* add the following to your *platformio.ini* file, replacing ``▶environment_name◀`` with the environment name that PlatformIO created automatically for you:
+
+            ..  code-block:: ini
+
+                [platformio]
+                src_dir = .pio/libdeps/▶environment_name◀/CowPi_stdio/examples/max7219_dotmatrix
+
+                [env]
+                lib_deps =
+                  docbohn/CowPi @ ^0.6.0
+                  docbohn/CowPi_stdio @ ^0.5.1
+                monitor_echo = yes
+
+    :\:[   ]: Compile the program and upload it to your Arduino Nano.
+
+        You should see a "Hello, world!" message.
+        If so, then you have correctly connected the display module.
+
+.. ..        ..  image:: animations/sevensegment.gif
+.. ..            :height: 5cm
+.. ..            :align: center
+
+|
+
+----
 
 Kit Assembly is Complete
 ========================

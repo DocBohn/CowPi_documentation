@@ -4,7 +4,7 @@
 
 :\:[   ]: Unless you already know which bootloader your |developmentBoard| has, delete the entire contents of *platformio.ini* and replace it with:
 
-    ..  code-block:: console
+    ..  code-block:: ini
 
         [env:nanoatmega328old]
         platform = atmelavr

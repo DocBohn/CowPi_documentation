@@ -35,15 +35,24 @@ You will see a pop-up window telling you that you also need to install the CowPi
 Load the I/O Test Code
 ~~~~~~~~~~~~~~~~~~~~~~
 
-..  DANGER::
-    TODO: Update the test code
+:\:[   ]: From the Arduino IDE's File menu, open the *io_test* example:
+    *File* ⟶ *Examples* ⟶ *CowPi* ⟶ *io_test*
+
+:\:[   ]: Open your IDE's Serial Monitor.
+
+:\:[   ]: Compile and upload *io_test* to your |developmentBoard| in the same manner that you did for *MyBlink*.
+
+
+..  include:: io-test-started.rst
 
 
 After the libraries are installed and the test code is loaded, proceed to :doc:`../direct-io/switches-mk1f`.
 
+|
 
 ----
 
+|
 
 ..  _mk1fPlatformIOLibrary:
 
@@ -60,7 +69,46 @@ Load the I/O Test Code
 ~~~~~~~~~~~~~~~~~~~~~~
 
 ..  DANGER::
-    TODO: Update the test code
+    TODO: Add accompanying images
+
+:\:[   ]: In the PlatformIO Home, under "Quick Access," click on the "+ New Project" button.
+
+:\:[   ]: In resulting pop-up window, name the project *io_test*. In the "board" field, type *arduino nano* (:numref:`mk1fCreatingPlatformIOProject`\ (a)).
+
+:\:[   ]: If your |developmentBoard| has the old bootloader, then select "Arduino Nano ATmega328".
+    If your |developmentBoard| has the new bootloader, then select "Arduino Nano ATmega328 (New Bootloader)".
+    After you do so, the "framework" field will auto-populate to "Arduino" (:numref:`mk1fCreatingPlatformIOProject`\ (b)).
+
+:\:[   ]: Click on the "Finish" button. After several seconds, a new project will be ready.
+
+:\:[   ]: Open the *platformio.ini* file (it may open automatically).
+
+:\:[   ]: Make a note of the environment name that PlatformIO created automatically for you.
+    If you see ``[env:nanoatmega328]`` then then environment name is ``nanoatmega328``.
+    If you see ``[env:nanoatmega328new]`` then then environment name is ``nanoatmega328new``.
+
+:\:[   ]: *Without removing anything from your* platformio.ini *file,* add the following to your *platformio.ini* file, replacing ``▶environment_name◀`` with the environment name that PlatformIO created automatically for you (see ...):
+
+    ..  code-block:: ini
+
+        [platformio]
+        src_dir = .pio/libdeps/▶environment_name◀/CowPi/examples/io_test
+
+        [env]
+        lib_deps =
+          docbohn/CowPi @ ^0.6.0
+          docbohn/CowPi_stdio @ ^0.5.1
+        monitor_echo = yes
+
+    This will instruct PlatformIO to use the CowPi and CowPi_stdio libraries,
+    and it instructs PlatformIO to compile the CowPi library's *io_test* example instead of anything in the *src/* directory.
+
+:\:[   ]: Open your IDE's Serial Monitor.
+
+:\:[   ]: Compile and upload *io_test* to your |developmentBoard| in the same manner that you did for *MyBlink*.
+
+
+..  include:: io-test-started.rst
 
 
 After the test code is loaded, proceed to :doc:`../direct-io/switches-mk1f`.

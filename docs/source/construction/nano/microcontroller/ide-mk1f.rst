@@ -16,6 +16,11 @@ Broadly speaking, you have two options:
 -   Using the :ref:`mk1fArduinoIDE` (either on a lab computer or your personal laptop)
 -   Using :ref:`mk1fVSCodeWithPlatformIO`
 
+|
+
+----
+
+|
 
 ..  _mk1fArduinoIDE:
 

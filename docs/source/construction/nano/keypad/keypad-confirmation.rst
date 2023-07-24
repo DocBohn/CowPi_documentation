@@ -16,7 +16,7 @@ Notice that the first line of the message from the |developmentBoard| is now
 
 ::
 
-       Keypad:      5        Column pins:  1011    Keypad NAND: 1
+       Keypad:      5        Column pins:  1011
 
 In general, when you press a key on the keypad, the corresponding character will be displayed after ``Keypad:``.
 When you press 1, 4, 7, or \*, Column pins becomes 0111;

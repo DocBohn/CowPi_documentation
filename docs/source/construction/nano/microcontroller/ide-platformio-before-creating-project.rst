@@ -80,4 +80,4 @@ This takes you to the "PlatformIO Home."
 .. .. You will need to wait a few seconds, and then a new project will be created whose name is derived from the current date and time, such as "230718-112959-arduino-blink."
 .. .. This will create an example project with the same "blink" code that is typically loaded onto an Arduino Nano before leaving the factory.
 
-:\:[   ]: In PlatformIO Home, under "Quick Access," click on the "+ New Project" button.
+:\:[   ]: In the PlatformIO Home, under "Quick Access," click on the "+ New Project" button.
