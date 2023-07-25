@@ -3,8 +3,10 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-import sys
+import sys, subprocess, os
 
+subprocess.call('cd CowPi; doxygen', shell=True)
+subprocess.call('cd CowPi_stdio; doxygen', shell=True)
 sys.path.append('ext/breathe/')
 
 # -- Project information -----------------------------------------------------
@@ -15,7 +17,7 @@ copyright = '2021-2023, Christopher Bohn'
 author = 'Christopher Bohn'
 
 release = '2023.07'
-version = '2023.07.24'
+version = '2023.07.25'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

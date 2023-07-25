@@ -18,6 +18,7 @@ using the Cow Pi development board is your best option.
     expansion
     construction
     troubleshooting/nano
+    changelog
 
 
 ..  image:: cc-by.png
