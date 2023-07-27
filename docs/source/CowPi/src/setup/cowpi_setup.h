@@ -48,8 +48,8 @@ extern "C" {
  * display module (and the communication protocol's pins are not otherwise used)
  * then you may assign `communication_protocol` to `{.protocol = NO_PROTOCOL}`.
  *
- * @sa cowpi_stdio_setup in CowPi_stdio
- * @sa cowpi_add_display_module in CowPi_stdio
+ * @sa `cowpi_stdio_setup()` in CowPi_stdio
+ * @sa `cowpi_add_display_module()` in CowPi_stdio
  *
  * @param console_bitrate the serial interface's bitrate, or `0` if the serial
  *      interface should not be configured

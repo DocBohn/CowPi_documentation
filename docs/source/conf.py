@@ -17,7 +17,7 @@ copyright = '2021-2023, Christopher Bohn'
 author = 'Christopher Bohn'
 
 release = '2023.07'
-version = '2023.07.25'
+version = '2023.07.27'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -40,7 +40,8 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.todo',
     'sphinx_copybutton',
-    'breathe'
+    'breathe',
+    'linuxdoc.rstFlatTable'
 ]
 
 intersphinx_mapping = {

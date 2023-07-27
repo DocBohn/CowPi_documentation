@@ -100,6 +100,8 @@ the Inter-Integrated Circuit (|i2c| or IIC) protocol, also known as the Two-Wire
 These figures show which input or output is connected to each of the unknown’s pins,
 as well as which general-purpose input/output register bit corresponds to each pin:
 
+..  _NanoPinoutSPI:
+
 .. figure:: hardware/nano-spi.png
     :alt: yada
     :align: center
@@ -107,6 +109,8 @@ as well as which general-purpose input/output register bit corresponds to each p
     :figwidth: 75 %
 
     Pinout for the mk1c Cow Pi development board using Arduino Nano and the SPI serial communication protocol.
+
+..  _NanoPinoutI2C:
 
 .. figure:: hardware/nano-i2c.png
     :alt: yada

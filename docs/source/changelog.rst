@@ -20,16 +20,16 @@ Changed
 -   Construction instructions incorporated into datasheet
 
 
-[202301xx]
-==========
+[202301]
+========
 
 Changed
 -------
 
 -   Cow Pi datasheet (in LaTeX) updated for CowPi v0.4 library
 
-[202208xx]
-==========
+[202208]
+========
 
 Added
 -----
@@ -42,8 +42,8 @@ Changed
 
 -   Construction instructions for Cow Pi mk1c replaces those for mk1b, in LaTeX
 
-[202201xx]
-==========
+[202201]
+========
 
 Added
 -----
@@ -55,8 +55,8 @@ Changed
 
 -   Construction instructions for Cow Pi mk1b replaces those for mk1a, in LaTeX
 
-[202108xx]
-==========
+[202108]
+========
 
 Added
 -----

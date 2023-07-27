@@ -14,7 +14,7 @@ CowPi_stdio Library
 - Library licensed under |LibraryLicense|_
 - Documentation licensed under |DocumentationLicense|_
 
-This documentation is for the ``CowPi_stdio`` v\ **0.5.0**\ .
+This documentation is for the ``CowPi_stdio`` library, v\ **0.5.0**\ .
 
 The current version is: |ArduinoBadge|_ |PlatformIOBadge|_
 

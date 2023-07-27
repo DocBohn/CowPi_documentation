@@ -3,3 +3,4 @@ sphinx_rtd_theme==1.2.2
 sphinxcontrib-tikz==0.4.16
 sphinx-copybutton==0.5.2
 breathe==4.35.0
+linuxdoc==20230629
