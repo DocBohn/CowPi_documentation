@@ -16,8 +16,8 @@ project = 'Cow Pi'
 copyright = '2021-2023, Christopher Bohn'
 author = 'Christopher Bohn'
 
-release = '2023.07'
-version = '2023.07.27'
+release = '2023.08'
+version = '2023.08.03'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -52,6 +52,8 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 exclude_patterns = []
+
+todo_include_todos = True
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

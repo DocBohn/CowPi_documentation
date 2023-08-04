@@ -4,15 +4,11 @@ Hardware
 
 ..  |LibraryLicense| image:: https://img.shields.io/github/license/DocBohn/CowPi_hardware?color=rgb(0,153,176)
 ..  _LibraryLicense: https://github.com/DocBohn/CowPi_hardware/blob/main/LICENSE
-..  eventually we'll get certified
 ..  |DocumentationLicense| image:: https://img.shields.io/github/license/DocBohn/CowPi_documentation
 ..  _DocumentationLicense: https://github.com/DocBohn/CowPi_documentation/blob/main/LICENSE
-..  |oshwBadge| image:: https://i0.wp.com/www.oshwa.org/wp-content/uploads/2014/03/oshw-logo-antipixel.png
-..  _oshwBadge: https://www.oshwa.org/open-source-hardware-logo/
 
 -   Hardware design licensed under |LibraryLicense|_
 -   Documentation licensed under |DocumentationLicense|_
--   The Cow Pi is Open Source Hardware |oshwBadge|_
 
 
 This section describes the Cow Pi development boards, describes the theory of operation for its components, and summarizes the features of its display module.
@@ -31,7 +27,7 @@ The Cow Pi development board consists of:
 
 - a microcontroller board, such as an Arduino Nano, an Arduino Uno, or a Raspberry Pi Pico
 - a display module, such as a MAX7219-driven 8-digit/7-segment display, an HD44780-driven LCD character display, or an SSD1306-driven OLED graphic display
-- a :math:`4 \times 4` matrix keypad
+- a 4 × 4 matrix keypad
 - two momentary buttons
 - two toggleable switches, and
 - at least two LEDs

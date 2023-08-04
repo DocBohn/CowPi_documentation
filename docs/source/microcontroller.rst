@@ -276,11 +276,12 @@ we arrive at the mapping in :numref:`tableATmega328pMapDevicesToArrayI2C` that i
     |                      | | ``.output`` | | —      | | —      | |   display module  | | —      | | —      | | —      | | —      |
     +----------------------+---------------+----------+----------+---------------------+----------+----------+----------+----------+
 
+..  _atmega328pSPI:
 
 Serial-Parallel Interface
 """""""""""""""""""""""""
 
-..  DANGER:: TODO
+..  TODO:: \
 
 
 Inter-Integrated Circuit Protocol
@@ -370,7 +371,7 @@ Control and Data Bits
     | | TWAMR                            | 0xBD    | TWAM6 | TWAM5 | TWAM4 | TWAM3 | TWAM2 | TWAM1 | TWAM0 | —     |
     +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
     | | Control Register                 |         |       |       |       |       |       |       |       |       |
-    | | TWCR                             | 0xBC    | TWINT | TWEA  | TWSTA | TWSTO | TWWC  | TWEN  |       | TWIE  |
+    | | TWCR                             | 0xBC    | TWINT | TWEA  | TWSTA | TWSTO | TWWC  | TWEN  | —     | TWIE  |
     +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
     | | Data Register                    |         |       |       |       |       |       |       |       |       |
     | | TWDR                             | 0xBB    | TWD7  | TWD6  | TWD5  | TWD4  | TWD3  | TWD2  | TWD1  | TWD0  |
@@ -379,14 +380,15 @@ Control and Data Bits
     | | TWAR                             | 0xBA    | TWA6  | TWA5  | TWA4  | TWA3  | TWA2  | TWA1  | TWA0  | TWGCE |
     +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
     | | Status Register                  |         |       |       |       |       |       |       |       |       |
-    | | TWSR                             | 0xB9    | TWS7  | TWS6  | TWS5  | TWS4  | TWS3  |       | TWPS1 | TWPS0 |
+    | | TWSR                             | 0xB9    | TWS7  | TWS6  | TWS5  | TWS4  | TWS3  | —     | TWPS1 | TWPS0 |
     +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
     | | Bit Rate Register                |         |       |       |       |       |       |       |       |       |
     | | TWBR                             | 0xB8    | TWBR7 | TWBR6 | TWBR5 | TWBR4 | TWBR3 | TWBR2 | TWBR1 | TWBR0 |
     +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
 
 
-In this section we shall describe only the control and data bits.
+The CowPi_stdio library configures the |i2c| hardware to transmit at 100kbps.
+In this section we focus on the needs of the application programmer and shall describe only the control and data bits.
 If you need information about the setting the bit rate, or configuring the peripheral address and address mask,
 see Section 21.9 of the |microcontrollerReference| for the bit descriptions, and Chapter 21 generally for the bits' uses.
 
@@ -452,6 +454,7 @@ Generally speaking, the |i2c| controller transmitter sequence consists of:
 
 After each transmission, the program should busy-wait until the TWI Interrupt Flag has been set (bit 7 of TWCR or the ``control`` field of a :struct:`cowpi_i2c_t` variable).
 After the busy-wait terminates, the |i2c| status can be checked (bits 7..3 of TWSR or the ``status`` field of a :struct:`cowpi_i2c_t` variable) to determine whether there were any errors.
+Table 21-3 of the |microcontrollerReference|_ specifies what the status bits should be after each transmission.
 
 The pseudocode for this sequence is:
 
@@ -476,19 +479,23 @@ The pseudocode for this sequence is:
             (* wait until operation finishes *)
     busy_wait_while(bit 7 of i2c->control = 0)
 
+    (* if controller now controls the I2C bus, then bitwise_and(i2c->status, 0xF8) is 0x08 *)
+
             (* when sending the peripheral's address, it should be in the data
-              register's bits 7..1 -- bit 0 should be 0 for controller-transmitter *)
+               register's bits 7..1 -- bit 0 should be 0 for controller-transmitter *)
     i2c->data := (peripheral_address << 1)
 
             (* send contents of data register *)
     i2c->control := control_bits
     busy_wait_while(bit 7 of i2c->control = 0)
 
+    (* if peripheral sent ACK, then bitwise_and(i2c->status, 0xF8) is 0x18 *)
+
 
 -   transmit one or more data bytes
 
 .. code-block:: pascal
-    :lineno-start: 22
+    :lineno-start: 26
 
             (* send the data that the peripheral needs *)
     for each byte of data do
@@ -496,14 +503,21 @@ The pseudocode for this sequence is:
         i2c->control := control_bits
         busy_wait_while(bit 7 of i2c->control = 0)
 
+        (* if peripheral sent ACK, then bitwise_and(i2c->status, 0xF8) is 0x28 *)
+
 
 -   transmit a stop bit
 
 .. code-block:: pascal
-    :lineno-start: 28
+    :lineno-start: 33
 
             (* send the stop bit by writing a 1 to bit 4 of i2c.control *)
         i2c->control := bitwise_or(control_bits, (1 << 4))
+            (* unlike the START, address, and data transmissions, the STOP transmission
+               does not set the TWINT bit when finished, but we shouldn't start another
+               transmission while the STOP transmission is in-progress -- so we shall
+               delay at least (8 bits / 100,000 bits per second = 80 microseconds) *)
+        timed_wait(80 microseconds or longer)
 
 ..  TIP::
     The ``for each`` expression in the pseudocode should be understood to be the mathematical :math:`\forall` operator.
@@ -511,127 +525,16 @@ The pseudocode for this sequence is:
     On the other hand, if there are a small number of bytes, each of which must be handled differently,
     then it probably makes more sense to write straight-line code.
 
+|
 
-|i2c| with LCD1602 Display Module
-'''''''''''''''''''''''''''''''''
-
-..  DANGER::
-    TODO -- replace ``cowpi_lcd1602_set_send_halfbyte()``
-
-The :func:`add_display_module` function (which is called by :func:`cowpi_setup`) configures the display module so that it can be controlled with 8 bits in parallel.
-One of the tradeoffs is that each character or command byte must be transmitted as two halfbytes.
-The CowPi_stdio library takes care of dividing the full byte into two halfbytes and passing each halfbyte to **COWPI_HD44780_SEND_HALFBYTE()** in the appropriate order.
-
-..  IMPORTANT::
-    When a halfbyte is passed to **COWPI_HD44780_SEND_HALFBYTE()**, it will be in the lower 4 bits of the ``halfbyte`` argument, regardless of which of the two halfbytes it is.
-
-The |serialAdapterReference|_ converts the serial data coming from the microcontroller into the parallel data that the display module requires.
-For this to be effective, the function must pack the bits in the order that the |i2c| adapter expects.
-
-Data Byte for LCD1602 Display Module
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The ``COWPI_DEFAULT`` bit order is described in :numref:`tableHD44780Bits`.
-When constructing a byte to place in the |i2c| Data Register:
-
-..  _tableHD44780Bits:
-..  flat-table:: The ``COWPI_DEFAULT`` mapping of |i2c| data bits to HD44780 bits.
-    :stub-columns: 1
-    :align: center
-
-    *   -   Data Register
-        -   Bit7
-        -   Bit6
-        -   Bit5
-        -   Bit4
-        -   Bit3
-        -   Bit2
-        -   Bit1
-        -   Bit0
-    *   -   HD44780 Bit
-        -   D7
-        -   D6
-        -   D5
-        -   D4
-        -   BT
-        -   EN
-        -   RW
-        -   RS
-    *   -   Bit source
-        -   :cspan:`3` ``halfbyte << 4``
-        -   backlight on/off
-        -   latch data
-        -   read/write
-        -   ``!is_command``
-
-Bits 7..4
-    The upper four bits are the ``halfbyte`` argument passed to **COWPI_HD44780_SEND_HALFBYTE()**, left-shifted four places.
-
-Bit 3
-    Bit 3 is a 1 if you want the display module's backlight to illuminate, or 0 if you want it deluminated.\ [#backlight]_
-
-Bit 2
-    As described below, bit 2 is used to send a pulse to the HD44780 that instructs the display module that it should latch-in the halfbyte that it has received.
-
-Bit 1
-    Bit 1 informs the HD44780 whether data is being sent to it, or if a data request is being made of it;
-    while it is possible to query the display module's memory, the CowPi_stdio library does not support this feature, and bit 1 should always be 0.
-
-Bit 0
-    Bit 0 informs the HD44780 whether the halfbyte that it receives is part of a command or is part of a character;
-    if the ``is_command`` argument passed to **COWPI_HD44780_SEND_HALFBYTE()** is ``true``, then bit 0 should be 0; otherwise, bit 0 should be 1.
-
-
-Data Byte Sequence
-^^^^^^^^^^^^^^^^^^
-
-When the function executes the controller-transmitter sequence (see the pseudocode in the :ref:`atmega328pControllerTransmitterSequence` Section), it will have three (3) data bytes to transmit.
-
-#.  First, the halfbyte needs to be sent *without* yet instructing the display module to latch-in the halfbyte:
-
-    ..  code-block:: pascal
-
-        bitwise_or(
-            (halfbyte << 4),
-            ((1 if backlight_on else 0) << 3),
-            (0 << 2), (* not yet latching halfbyte *)
-            (0 << 1),
-            ((0 if is_command else 1) << 0)
-        )
-
-#.  Second, the start of the "latch pulse" needs to be sent:
-
-    ..  code-block:: pascal
-
-        bitwise_or(
-            (halfbyte << 4),
-            ((1 if backlight_on else 0) << 3),
-            (1 << 2), (* latch the halfbyte *)
-            (0 << 1),
-            ((0 if is_command else 1) << 0)
-        )
-
-    -   **The pulse needs to stay active for at least 0.5𝜇s.**
-        While there is a low-level `AVR-libc function <https://www.nongnu.org/avr-libc/user-manual/group__util__delay.html>`_ that can introduce a delay of nearly exactly 0.5𝜇s,
-        we recommend introducing a 1𝜇s delay using the |delayMicroseconds|_, which is portable across all devices using the Arduino framework.
-
-#.  Third, the end of the "latch pulse" needs to be sent:
-
-    ..  code-block:: pascal
-
-        bitwise_or(
-            (halfbyte << 4),
-            ((1 if backlight_on else 0) << 3),
-            (0 << 2), (* complete the latch *)
-            (0 << 1),
-            ((0 if is_command else 1) << 0)
-        )
+..  ATTENTION::
+    The specific data byte sequence to be transmitted is described in the :ref:`hd44780` portion of the :doc:`hardware/outputs` Section.
 
 |
 
 ----
 
-|
+..  _atmega328pInterrupts:
 
 Interrupts
 ----------
@@ -1474,12 +1377,6 @@ After enabling timer interrupts, be sure to register any necessary ISRs as descr
 ..  |microcontrollerReference|  replace:: ATmega328P datasheet
 ..  _microcontrollerReference: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf
 
-..  |serialAdapterReference|    replace:: PCF8574-based |i2c| adapter
-..  _serialAdapterReference:    http://www.handsontec.com/dataspecs/module/I2C_1602_LCD.pdf
-
-..  |delayMicroseconds|         replace:: Arduino ``delayMicroseconds()`` function
-..  _delayMicroseconds:         https://www.arduino.cc/reference/en/language/functions/time/delaymicroseconds/
-
 ..  |attachInterrupt|           replace:: Arduino ``attachInterrupt()`` function
 ..  _attachInterrupt:           https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/
 
@@ -1487,9 +1384,6 @@ After enabling timer interrupts, be sure to register any necessary ISRs as descr
 ..  [#terminology]
     The ATmega328P datasheet uses the older terms: master transmitter, master receiver, slave transmitter, and slave receiver.
     In the Cow Pi datasheet, we will use the preferred terminology recommended by the Open Source Hardware Association.
-
-..  [#backlight]
-    While the ``cowpi_hd44780_set_backlight()`` function can be used to turn the backlight on and off, bit 3 needs to preserve the appropriate setting.
 
 
 

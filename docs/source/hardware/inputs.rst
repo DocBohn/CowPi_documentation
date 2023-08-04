@@ -1,27 +1,164 @@
 Input Devices
 =============
 
-TODO
+Unless implementing :doc:`../expansion`, all inputs in the Cow Pi circuit are either simple passive input devices, described here, or timers that are part of the microcontroller, described in the :doc:`../microcontroller` Section.
 
 Switches and Buttons
 --------------------
 
-TODO
+There are two pushbuttons and two slide-switches in the Cow Pi circuit.
 
 Theory of Operation
 ^^^^^^^^^^^^^^^^^^^
 
-TODO
+The pushbuttons, or tactile switches,\ [#]_ are normally-open, momentary switches.
+When a button is in the "up" position, that is, it is not being pressed, there is an open circuit between the contacts.
+When the button is pressed and is in the "down" position, it closes the circuit between the contacts.
+
+..  _pushbutton:
+..  tikz:: The pushbuttons used in the Cow Pi are normally-open, momentary switches.
+    :align: center
+
+    \begin{tikzpicture}[x=.05in, y=.05in]
+        \draw (-4,0) -- (-1.5,0);
+        \draw[black, fill=black] (-1.5,0) circle (.5);
+        \draw (4,0) -- (1.5,0);
+        \draw[black, fill=black] (1.5,0) circle (.5);
+        \draw (-2,1.5) -- (2,1.5);
+        \draw (0,3.5) -- (0,1.5);
+    \end{tikzpicture}
+
+
+The slide-switches are technically single-pole, double-throw switches, but we treat them as single-pole, single-throw switches.
+In the Cow Pi circuit, when a switch is in the "right" position, there is an open circuit between the contacts.
+When the switch is in the "left" position, it closes the circuit between the contacts.
+
+..  _slideSwitch:
+..  tikz:: We treat the slide-switches used in the Cow Pi as single-pole, single-throw switches.
+    :align: center
+
+    \begin{tikzpicture}[x=.05in, y=.05in]
+        \draw(0,5) -- (0,2);
+        \draw[black, fill=black] (0,2) circle (0.5);
+        \draw (0,-5) -- (0,-2);
+        \draw[black, fill=black] (0,-2) circle (0.5);
+        \draw (0,-2) -- (2,2);
+    \end{tikzpicture}
+
+
+As shown in :numref:`electricalView`, the devices are placed in the circuit with one pole grounded and the other attached to a microcontroller input pin.
+The microcontroller is configured to place its operating voltage on the pin with a "pull-up resistor."
+This pull-up resistor has a very high resistance, typically 10kΩ-20kΩ, so that when the switch is closed, only a very small amount of current flows.
+
+..  _electricalView:
+..  tikz:: Tactile switches and slide switches have one pole grounded and the other connected to a pin with a pull-up resistor.
+    :align: center
+
+    \begin{tikzpicture}[x=.05in, y=.05in]
+        \draw (-24,0) -- (-21.5,0);
+        \draw[black, fill=black] (-21.5,0) circle (.5);
+        \draw (-16,0) -- (-18.5,0);
+        \draw[black, fill=black] (-18.5,0) circle (.5);
+        \draw (-18.5,-2.5) node {\rotatebox{-90}{\tiny pin}};
+        \draw (-22,1.5) -- (-18,1.5);
+        \draw (-20,3.5) -- (-20,1.5);
+        \draw (-24,0) -- (-24,-5);
+        \draw (-22.5,-5) -- (-25.5,-5);
+        \draw (-23,-5.5) -- (-25,-5.5);
+        \draw (-23.5,-6) -- (-24.5,-6);
+        \draw (-16,0) -- (-16,5) -- ++(.5,.25) -- ++(-1,.5) -- ++(1,.5) -- ++(-1,.5) -- ++(1,.5) -- ++(-1,.5) -- ++(.5,.25) -- ++(0,1) -- ++(1,0) -- ++(-1,1) -- ++(-1,-1) -- ++(1,0);
+
+        \draw(20,5) -- (20,2);
+        \draw[black, fill=black] (20,2) circle (0.5);
+        \draw(17.5,2) node {\tiny pin};
+        \draw (20,-5) -- (20,-2);
+        \draw[black, fill=black] (20,-2) circle (0.5);
+        \draw (20,-2) -- (22,2);
+        \draw (18.5,-5) -- (21.5,-5);
+        \draw (19,-5.5) -- (21,-5.5);
+        \draw (19.5,-6) -- (20.5,-6);
+        \draw (20,5) -- ++(.5,.25) -- ++(-1,.5) -- ++(1,.5) -- ++(-1,.5) -- ++(1,.5) -- ++(-1,.5) -- ++(.5,.25) -- ++(0,1) -- ++(1,0) -- ++(-1,1) -- ++(-1,-1) -- ++(1,0);
+    \end{tikzpicture}
+
+
+When the circuit is open (button in the "up" position or slide-switch in the "right" position), no current flows through the resistor.
+Because no current flows through the resistor, there is no voltage drop across the resistor, and so the voltage measured at the pin is the microcontroller's operating voltage.
+As shown in :numref:`logicHigh`, This is interpreted as logic high (boolean 1).
+
+..  _logicHigh:
+..  tikz:: When a switch is open, the pin reads high.
+    :align: center
+
+    \begin{tikzpicture}[x=.05in, y=.05in]
+        \draw (-24,0) -- (-21.5,0);
+        \draw[black, fill=black] (-21.5,0) circle (.5);
+        \draw (-16,0) -- (-18.5,0);
+        \draw[black, fill=black] (-18.5,0) circle (.5);
+        \draw (-18.5,-2.5) node {1};
+        \draw (-22,1.5) -- (-18,1.5);
+        \draw (-20,3.5) -- (-20,1.5);
+
+        \draw(20,5) -- (20,2);
+        \draw[black, fill=black] (20,2) circle (0.5);
+        \draw(18,2) node {1};
+        \draw (20,-5) -- (20,-2);
+        \draw[black, fill=black] (20,-2) circle (0.5);
+        \draw (20,-2) -- (22,2);
+    \end{tikzpicture}
+
+On the other hand, when the circuit is closed (button in the "down" position or slide-switch in the "left" position), current flows through the resistor.
+Because there is no other appreciable resistance in the circuit, all of the voltage drop is across the resistor, and so 0V is measured at the pin.
+As shown in :numref:`logicLow`, This is interpreted as logic low (boolean 0).
+
+
+..  _logicLow:
+..  tikz:: When a switch is closed, the pin reads low.
+    :align: center
+
+    \begin{tikzpicture}[x=.05in, y=.05in]
+        \draw (-24,0) -- (-21.5,0);
+        \draw[black, fill=black] (-21.5,0) circle (.5);
+        \draw (-16,0) -- (-18.5,0);
+        \draw[black, fill=black] (-18.5,0) circle (.5);
+        \draw (-18.5,-2.5) node {0};
+        \draw (-22,.6) -- (-18,.6);
+        \draw (-20,2.6) -- (-20,.6);
+
+        \draw(20,5) -- (20,2);
+        \draw[black, fill=black] (20,2) circle (0.5);
+        \draw(18,2) node {0};
+        \draw (20,-5) -- (20,-2);
+        \draw[black, fill=black] (20,-2) circle (0.5);
+        \draw (20,-2) -- (20.7,2.5);
+    \end{tikzpicture}
+
+
 
 Reading the Devices' Positions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+To read these input devices, the pins must be configured as input pins with the microcontroller's internal pullup resistors enabled.
+(Alternatively, external pullup resistors could be used -- but won't be in the Cow Pi for passive input devices.)
+The CowPi library's :func:`cowpi_setup` function takes care of this along with other configuration settings.
+
+That done, reading a devices' position is as simple as reading the pin's logic value.
+If you are not writing code using memory-mapped I/O, then you would do this with Arduino's ``digitalRead()`` function or the Raspberry Pi SDK's ``gpio_get()`` function.
+If you are writing code using memory-mapped I/O, then you would examine the pin's bit in the I/O bank's input register, as described in the :doc:`../microcontroller` Section.
+If the bit's value is 0, then the button is pressed, or the switch is in the left position.
+If the bit's value is 1, then the button is not pressed, or the switch is in the right position.
+
+
+To Learn More
+^^^^^^^^^^^^^
+
+SparkFun has a webpage that discusses `Button and Switch Basics <https://learn.sparkfun.com/tutorials/button-and-switch-basics>`_\ .
+
 
 Matrix Keypad
 -------------
 
-TODO
+The numeric keypad consists of sixteen keys, labeled ``0``-``9``, ``A``-``D``, ``#``, and ``*``.
+Rather than requiring sixteen distinct pins on the microcontroller (one for each key), it is wired so that it only requires eight pins: one for each column and one for each row.
 
 Theory of Operation
 ^^^^^^^^^^^^^^^^^^^
@@ -89,7 +226,7 @@ A keypress, thus, can be detected based on the values read from the columns' pin
 An application programmer can poll the four columns' pins.
 If, collectively, they produce the bit vector 0xF, then no key is being pressed;
 however, if the bit vector is anything other than 0xF (such as in :numref:`keypressDetected`, then at least one key is being pressed.
-As an alternative to polling, an interrupt that is triggered by a change on the columns' pins can be used to indicate that a key has been pressed (see Section XXXXX).
+As an alternative to polling, an interrupt that is triggered by a change on the columns' pins can be used to indicate that a key has been pressed (see the Section discussing :ref:`atmega328pInterrupts`).
 
 ..  _keypressDetected:
 ..  tikz:: Pressing a key, such as "8", causes the column bit vector to be something other than 0xF.
@@ -234,4 +371,10 @@ There is a slight delay between setting a pin's output value and being able to d
 Some realizations of the pseudocode attempt to read the change before it can be read reliably;
 this usually manifests as one of the keypad's columns not being readable.
 The fix is to introduce a delay of at least one clock cycle (strictly speaking, one clock cycle is more than enough, but a shorter delay is not possible).
-For our purposes, this should be managed by introducing a 1\ :math:`\mu`\ s delay using the Arduino core library's ``delayMicroseconds()``.
+For our purposes, this should be managed by introducing a 1µs delay using the Arduino core library's ``delayMicroseconds()``.
+
+|
+
+----
+
+..  [#] Tactile switches are so-called because a "bump" in the plunger's travel provides tactile feedback when you press and release it.

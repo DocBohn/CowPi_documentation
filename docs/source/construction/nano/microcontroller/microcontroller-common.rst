@@ -37,6 +37,9 @@ Breadboard Terminology
     `Breadboards for Beginners <https://learn.adafruit.com/breadboards-for-beginners?view=all>`_
     Guide at adafruit.com.
 
+    The `How to Use a Breadboard <https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard>`_
+    Tutorial at sparkfun.com is also informative.
+
 Even though breadboards are often viewed in "landscape" orientation (such as in the photo in the inventory and as seen in the diagram figures) instead of "portrait" orientation,
 the numbered sections are called rows and the lettered sections are called columns.
 In the interest of preserving common usage, we will use this terminology.

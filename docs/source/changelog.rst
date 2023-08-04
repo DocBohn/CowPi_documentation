@@ -5,8 +5,20 @@ Changelog
 [TODO]
 ======
 
+-   Hardware
+    -   Replace pinout diagrams for mk1c & mk1d with mk1e & mk1f
+    -   Microcontroller boards
+-   Update libraries for v0.6
+-   Expansion Options
+    -   EEPROM
+    -   Servomotor
+    -   Ultrasonic rangefinder
+    -   Piezobuzzer
+    -   Rotary encoder
 -   Modification instructions to change Cow Pi mk1a/b/c into mk1e-equivalent and to change mk1d into mk1f-equivalent
--   CowPi software portion of RTD datasheet
+-   Add updated info about lab computers to construction instructions
+-   Construction instructions for mk3a, mk3b, mk3c
+
 
 [Unreleased]
 ============

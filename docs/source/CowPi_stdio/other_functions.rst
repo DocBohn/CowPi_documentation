@@ -41,7 +41,7 @@ we recommend that you strictly use the character values 1-8 for the custom chara
 The *hd44780_blinky* and *hd44780_lcd_character* examples both demonstrate the use of custom characters.
 
 The *hd44780_lcd_character* example also demonstrates the use of :func:`cowpi_font_ascii_to_5wide_dotmatrix`.
-As noted in :doc:`lcd_character`, there are a few ASCII character values that the HD44780 uses for characters other than the corresponding ASCII characters, such as `\`.
+As noted in :doc:`lcd_character`, there are a few ASCII character values that the HD44780 uses for characters other than the corresponding ASCII characters, such as ``\``.
 You can overcome this by using :func:`cowpi_font_ascii_to_5wide_dotmatrix` to obtain a sequence of bytes that correspond to the ASCII character, packaged in an array that :func:`cowpi_hd44780_create_character` can make use of.
 
 ..  NOTE::

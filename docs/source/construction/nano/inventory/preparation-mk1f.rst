@@ -5,7 +5,7 @@ Prepare to Assemble the Cow Pi mark 1f
 
 ..  include:: preparation-inventory.rst
 
--   | One (1) :math:`2 \times 16` character LCD display module
+-   | One (1) 2 × 16 character LCD display module
     | |lcd1602|
 
 -   | One (1) |i2c| Serial Interface (might be attached to display module)
@@ -13,6 +13,10 @@ Prepare to Assemble the Cow Pi mark 1f
 
 -   | One (1) 4-conductor 20cm "rainbow" cable (female-to-male)
     | |fourConductor|
+
+
+Not included: when you :doc:`../display/i2c`, you will briefly need a Phillips-head screwdriver.
+If you do not have one, I have placed one at the TA desk in the Student Resource Center. [#]_
 
 
 ..  include:: preparation-assembling.rst
@@ -46,3 +50,6 @@ Prepare to Assemble the Cow Pi mark 1f
     :height: 2cm
 ..  |fourConductor|     image:: fm-4cable.jpg
     :height: 2cm
+
+
+..  [#] In the past, screwdrivers that I place at the TA desk have grown feet. Don't be that person.

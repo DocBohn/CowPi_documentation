@@ -19,16 +19,36 @@ using the Cow Pi development board is your best option.
     construction
     troubleshooting/nano
     changelog
+    acknowledgements
 
 
-..  image:: cc-by.png
+..  |cc-by| image:: cc-by.png
     :alt: Logo for the Creative Commons 4.0 Attribution International License
-    :align: right
+    :height: 25px
 
-| *Cow Pi      documentation*   ©2021–23, Christopher A. Bohn, and licensed under the `CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`_ License.
-| *Cow Pi      hardware design* ©2021–23, Christopher A. Bohn, and licensed under the `CERN-OHLP v2 <https://cern.ch/cern-ohl>`_ License.
-| *CowPi       library*         ©2021–23, Christopher A. Bohn, and licensed under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ License.
-| *CowPi_stdio library*         ©2022–23, Christopher A. Bohn, and licensed under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ License.
+..  _cc-by: https://creativecommons.org/
+
+..  |oshw| image:: oshw-logo.png
+    :alt: Logo for the Open Source Hardware Association
+    :height: 25px
+
+..  _oshw: https://www.oshwa.org/
+
+..  |osi| image:: osi_symbol.png
+    :alt: Logo for the Open Source Initiative
+    :height: 25px
+
+..  _osi: https://opensource.org/
+
+.. ..    :align: right
+
+| *Cow Pi      documentation*    ©2021–23, Christopher A. Bohn, and licensed under the `CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`_ License.
+|       |cc-by|_
+| *Cow Pi      hardware designs* ©2021–23, Christopher A. Bohn, and licensed under the `CERN-OHLP v2 <https://cern.ch/cern-ohl>`_ License.
+|       |oshw|_
+| *CowPi       library*          ©2021–23, Christopher A. Bohn, and licensed under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ License.
+| *CowPi_stdio library*          ©2022–23, Christopher A. Bohn, and licensed under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ License.
+|       |osi|_
 
 
 ..  [#pretendLegal]

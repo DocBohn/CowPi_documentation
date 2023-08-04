@@ -5,6 +5,10 @@ Install the Display Module
 ==========================
 *Cow Pi mk1f: Arduino Nano form factor,* |i2c-italics| *communication*
 
+..  IMPORTANT::
+    You will need a Phillips-head screwdriver to adjust the contrast on the LCD character display.
+    If you do not have one, I have placed a screwdriver at the TA desk in the SRC.
+
 Examine the I2C-LCD serial interface.
 Notice that the header has |numberOfSerialPins| pins (:numref:`i2cDisplayModuleHeader`): ``VCC`` (common collector voltage), ``GND`` (ground), |serialPins|.
 When the display module is oriented for viewing, these header pins will be on the left.

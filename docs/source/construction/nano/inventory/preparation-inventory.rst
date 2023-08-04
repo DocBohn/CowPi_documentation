@@ -12,7 +12,7 @@ Examine the contents of your class kit. It contains:
 -   | One (1) USB cable (mini-USB shown; yours may be different)
     | |usbCable|
 
--   | One (1) :math:`4 \times 4` matrix keypad
+-   | One (1) 4 × 4 matrix keypad
     | |keypad|
 
 -   | One (1) 8-pin male-male header strip
