@@ -21,7 +21,7 @@ Changelog
 
         -   Timer/font compiler arguments (especially on ATmega328P)
 
-        -   (reference: https://support.arduino.cc/hc/en-us/articles/4415103213714-Find-sketches-libraries-board-cores-and-other-files-on-your-computer)
+        .. .. reference: https://support.arduino.cc/hc/en-us/articles/4415103213714-Find-sketches-libraries-board-cores-and-other-files-on-your-computer)
 
     -   Custom transmission functions note for display modules (done for HD44780)
 

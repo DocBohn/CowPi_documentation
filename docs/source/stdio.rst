@@ -31,4 +31,5 @@ The current version is: |ArduinoBadge|_ |PlatformIOBadge|_
     CowPi_stdio/morse_code
     CowPi_stdio/protocols
     CowPi_stdio/theory_of_operation
+    CowPi_stdio/direct-control
 

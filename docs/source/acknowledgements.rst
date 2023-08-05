@@ -43,7 +43,23 @@ Acknowledgements
     The Raspberry Pi Pico will probably be the go-to microcontroller for future Cow Pi designs for some time,
     due to it being inexpensive, has enough pins that they don't need to serve multiple purposes for the Cow Pi, and has other attractive features for the lessons and assignments that I create.
 
--   Cow Pi logo
+-   The UNL Engineering Electronics Shop
+
+    The College of Engineering's EE Shop has been instrumental in sourcing inexpensive components for "class kits" that allow students to assemble Cow Pi mk1 circuits
+    and in working through the quirks of Arduino Nano clones' evolving USB designs (and of Microsoft Windows' drivers for those USB designs).
+
+-   The UNL School of Computing's SysAdmin Team
+
+    The School of Computing's SysAdmin team has been of great help directly for our students and also in maintaining lab computer, terminal server, and virtual machine options for our students.
+
+-   My students and teaching assistants
+
+    Being in control of the hardware and libraries that my students use for assignments gives me the ability to make changes to focus the student's efforts on the learning objectives and not on accidents of design.
+    A key part of evolving the Cow Pi hardware and, to a greater degree, the CowPi and CowPi_stdio libraries, has been feedback from my students and teaching assistants.
+
+|
+
+About the Cow Pi logo
 
     The "Cow Pi" logo found on the Cow Pi mk3 PCBs, and on this datasheet, consists of
     the "Cow Face" emoji (🐮) in Google's `Noto Emoji <https://fonts.google.com/noto/specimen/Noto+Emoji>`_ font
@@ -51,16 +67,3 @@ Acknowledgements
 
 .. .. https://fonts.google.com/noto/specimen/Noto+Sans+Math
 
--   The UNL Engineering Electronics Shop
-
-    The UNL EE Shop has been instrumental in sourcing inexpensive components for "class kits" that allow students to assemble Cow Pi mk1 circuits
-    and in working through the quirks of Arduino Nano clones' evolving designs (and of Windows drivers).
-
--   The UNL School of Computing's SysAdmin Team
-
-    The SysAdmin team has been of great help directly for our students and also in maintaining lab computer and virtual machine options for our students.
-
--   My students and teaching assistants
-
-    Being in control of the hardware and libraries that my students use for assignments gives me the ability to make changes to focus the student's efforts on the learning objectives and not on accidents of design.
-    A key part of evolving the Cow Pi hardware and, to a greater degree, the CowPi and CowPi_stdio libraries, has been feedback from my students and teaching assistants.

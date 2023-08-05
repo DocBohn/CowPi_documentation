@@ -7,7 +7,7 @@ Relatively Low-Level Functions
 ------------------------------
 
 The CowPi_stdio library has several functions designed to control the display modules with greater flexibility than you can achieve with the ``stdio`` functions.
-If you want or need to use them, they are exposed to the application programmer, and you can review their Doxygen comments.
+If you want or need to use them, they are exposed to the application programmer, and you can review their Doxygen comments in the :doc:`direct-control` Section.
 In general, we believe that most, application programmers do not need to use them if you are using the more-convenient ``stdio`` functions and the `Special Functions`_ described in the next section.
 
 ..  WARNING::
