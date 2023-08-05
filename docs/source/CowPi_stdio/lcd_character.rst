@@ -318,6 +318,35 @@ or
     }
 
 
+Custom Transmission Function
+""""""""""""""""""""""""""""
+
+As noted in :ref:`hd44780`, :var:`cowpi_hd44780_send_halfbyte` is used to send data and commands to the display module.
+The :var:`cowpi_hd44780_send_halfbyte` function pointer initially points to either a function that transmits the halfbytes via SPI or to a function that transmits the halfbytes via |i2c|.
+
+..  doxygentypedef:: cowpi_hd44780_send_halfbyte_t
+
+..  doxygenvariable:: cowpi_hd44780_send_halfbyte
+
+If you write a custom function to transmit data and commands to the display module, be sure that its signature matches a :type:`cowpi_hd44780_send_halfbyte_t` and then assign that function to :var:`cowpi_hd44780_send_halfbyte`:
+
+..  code-block:: c
+    :emphasize-lines: 5
+
+    void my_send_halfbyte(const cowpi_display_module_protocol_t *configuration, uint8_t halfbyte, bool is_command);
+
+    void setup(void) {
+        /* other setup code */
+        cowpi_hd44780_send_halfbyte = my_send_halfbyte;
+    }
+
+    /* other functions */
+
+    void my_send_halfbyte(const cowpi_display_module_protocol_t *configuration, uint8_t halfbyte, bool is_command) {
+        ...
+    }
+
+
 Examples
 --------
 

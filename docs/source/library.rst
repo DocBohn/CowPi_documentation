@@ -14,7 +14,7 @@ CowPi Library
 - Library licensed under |LibraryLicense|_
 - Documentation licensed under |DocumentationLicense|_
 
-This documentation is for the ``CowPi`` library, v\ **0.5.0**\ .
+This documentation is for the ``CowPi`` library, v\ **0.6.0**\ .
 
 The current version is: |ArduinoBadge|_ |PlatformIOBadge|_
 
@@ -30,5 +30,7 @@ The current version is: |ArduinoBadge|_ |PlatformIOBadge|_
 
 |
 
-This section covers the functions provided by the CowPi library.
-Microcontroller-specific memory-mapped I/O data structures are covered in the :doc:`microcontroller` section.
+..  admonition:: Memory-Mapped I/O
+
+    This section covers the functions provided by the CowPi library.
+    Microcontroller-specific memory-mapped I/O data structures are covered in the :doc:`microcontroller` section.

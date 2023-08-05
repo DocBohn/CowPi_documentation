@@ -2,7 +2,7 @@
 Acknowledgements
 ****************
 
-.. .. Why does clion provide syntactic highlighting for this file until I start typing? It doesn't happen on others
+.. .. Why does clion provide syntactic highlighting for this file until I start typing? It doesn't happen on others (except modification.rst)
 
 -   Adafruit
 

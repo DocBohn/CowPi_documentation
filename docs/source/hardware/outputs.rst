@@ -3,6 +3,8 @@ Output Devices
 
 Unless implementing :doc:`../expansion`, the Cow Pi circuit's output devices are simple light emitting diodes and a display module, described here.
 
+..  _LEDs:
+
 Light Emitting Diodes (LEDs)
 ----------------------------
 
@@ -136,10 +138,10 @@ While these display modules *can* be driven directly from a microcontroller, Cow
 
 The CowPi_stdio :func:`add_display_module` function (which is called by the CowPi :func:`cowpi_setup` function) configures a HD44780-based display module so that it can be controlled with 8 bits in parallel.
 One of the tradeoffs is that each character or command byte must be transmitted as two halfbytes.
-The CowPi_stdio library takes care of dividing the full byte into two halfbytes and passing each halfbyte to **COWPI_HD44780_SEND_HALFBYTE()** in the appropriate order.
+The CowPi_stdio library takes care of dividing the full byte into two halfbytes and passing each halfbyte to :var:`cowpi_hd44780_send_halfbyte` in the appropriate order.
 
 ..  IMPORTANT::
-    When a halfbyte is passed to **COWPI_HD44780_SEND_HALFBYTE()**, it will be in the lower 4 bits of the ``halfbyte`` argument, regardless of which of the two halfbytes it is.
+    When a halfbyte is passed to :var:`cowpi_hd44780_send_halfbyte`, it will be in the lower 4 bits of the ``halfbyte`` argument, regardless of which of the two halfbytes it is.
 
 The serial adapter converts the serial data coming from the microcontroller into the parallel data that the display module requires.
 For this to be effective, the function must pack the bits in the order that the serial adapter expects.

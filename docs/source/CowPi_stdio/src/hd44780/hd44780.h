@@ -59,11 +59,8 @@ extern "C" {
  * `cowpi_hd44780_send_halfbyte()` function pointer.
  *
  * Initially, `cowpi_hd44780_send_halfbyte()` is one of two default
- * implementations, depending on the protocol specified in the argument to
- * `cowpi_setup()`. The SPI implementation is a portable software-only
- * implementation that does not use SPI hardware, nor does it use memory-mapped
- * I/O of any form. The I2C implementation currently makes use of the I2C
- * hardware using avr-libc macros.
+ * implementations, depending on whether the communication protocol is SPI or
+ * I2C.
  *
  * Re-implementing this function to use SPI or I2C hardware is a possible
  * part of a memory-mapped I/O lab assignment.
@@ -79,7 +76,7 @@ extern "C" {
  * module's serial-clock line is connected to the microcontroller's SCL pin (D19
  * on most Arduino boards).
  *
- * @sa cowpi_hd44780_set_send_halfbyte_function
+ * @sa cowpi_hd44780_send_halfbyte
  *
  * @param configuration the microcontroller pins, adapter mapping, and possibly
  *      i2c peripheral address
@@ -105,7 +102,9 @@ void cowpi_setup_hd44780(const cowpi_display_module_protocol_t *configuration);
  * During setup, this function is used to assign one of the two default
  * `cowpi_hd44780_send_halfbyte_t` implementations to
  * `cowpi_hd44780_send_halfbyte`, unless it was previously used to assign a
- * re-implementation. I can also later be used to assign a re-implementation.
+ * re-implementation. It can also later be used to assign a re-implementation.
+ *
+ * @deprecated Make assignments directly to cowpi_hd44780_send_halfbyte
  *
  * @param send_halfbyte_function the function to be used to send halfbytes to
  *      the HD44780 character display
@@ -245,10 +244,5 @@ void cowpi_hd44780_set_backlight(const cowpi_display_module_protocol_t *configur
 #define LCDSHIFT_DISPLAYRIGHT       0x1C    //!< Shifts the entire display to the right
 #define LCDSHIFT_CURSORLEFT         0x10    //!< Shifts the cursor to the left
 #define LCDSHIFT_CURSORRIGHT        0x14    //!< Shifts the cursor to the right
-
-
-/** @var cowpi_hd44780_send_halfbyte_t cowpi_hd44780_send_halfbyte
- * @copydoc cowpi_hd44780_send_halfbyte_t
- */
 
 #endif //COWPI_STDIO_HD44780_H

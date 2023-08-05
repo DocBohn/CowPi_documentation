@@ -49,8 +49,6 @@ extern "C" {
 #elif defined (ARDUINO_ARCH_MBED)
 #define pin_number_t pin_size_t
 #define pin_mode_t PinMode
-#define SDA PIN_WIRE_SDA
-#define SCL PIN_WIRE_SCL
 #endif //ARCHITECTURE
 
 // borrowing cowpi_pin_mode from CowPi_stdio -- in an upcoming release, we'll have to figure out how to do this cleaner

@@ -65,6 +65,8 @@ we will specify their use in *platformio.ini* files, and PlatformIO will automat
 Proceed to :doc:`../direct-io/switches-mk1f`.
 
 
+..  _testCode:
+
 Load the I/O Test Code
 ~~~~~~~~~~~~~~~~~~~~~~
 

@@ -127,17 +127,6 @@ typedef struct {
     enum adapter_mappings adapter_mapping;  // used only for HD44780
 } cowpi_display_module_protocol_t;
 
-#ifdef __cplusplus
-} // extern "C"
-
-// While C++ will allow us to use a struct initializer that uses default (zero)
-// values for fields that are not given an explicit initial value, it will not
-// allow us to skip over fields when doing so (unlike C) -- for example, we
-// cannot initialize i2c_address without explicitly (and unnecessarily)
-// initializing select_pin -- and so we'll provide some initialization functions
-// for use in C++ code.
-
-// There doesn't seem to be an easy way to use Arduino's MOSI, SCK, SDA, and SCL here
 
 #if defined (ARDUINO_AVR_UNO) || defined (ARDUINO_AVR_NANO) || defined (ARDUINO_AVR_NANO_EVERY) || defined (ARDUINO_SAMD_NANO_33_IOT) || defined (ARDUINO_ARDUINO_NANO33BLE)
 
@@ -151,7 +140,7 @@ typedef struct {
 
 #define COWPI_DEFAULT_SPI_DATA_PIN      (51)
 #define COWPI_DEFAULT_SPI_CLOCK_PIN     (52)
-#define COWPI_DEFAULT_SPI_SELECT_PIN    (53)
+#define COWPI_DEFAULT_SPI_SELECT_PIN    (10)
 #define COWPI_DEFAULT_I2C_DATA_PIN      (20)
 #define COWPI_DEFAULT_I2C_CLOCK_PIN     (21)
 
@@ -168,6 +157,17 @@ typedef struct {
 #warning No default SPI/I2C pins are defined!
 
 #endif //microcontroller boards
+
+
+#ifdef __cplusplus
+} // extern "C"
+
+// While C++ will allow us to use a struct initializer that uses default (zero)
+// values for fields that are not given an explicit initial value, it will not
+// allow us to skip over fields when doing so (unlike C) -- for example, we
+// cannot initialize i2c_address without explicitly (and unnecessarily)
+// initializing select_pin -- and so we'll provide some initialization functions
+// for use in C++ code.
 
 /**
  * @brief Produces a `cowpi_display_module_protocol_t` instantiation for a
