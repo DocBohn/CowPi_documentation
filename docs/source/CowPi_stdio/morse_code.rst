@@ -5,6 +5,8 @@ Morse Code is brilliant in its simplicity.
 For both wired and wireless remote communication, the simplicity of Morse Code led to its use before the technology for voice communication was ready.
 For displaying output, the simplicity of Morse Code is such that it can be used to communicate diagnostics to the user even when no other outputs are functioning correctly (and also when no outputs other than LEDs are available).
 
+..  image:: img/morsecode.gif
+
 ..  contents:: \
 
 Discussion
@@ -112,6 +114,14 @@ to generate the appropriate :struct:`cowpi_display_module_protocol_t` variable. 
 
 in C or C++.
 
+
+
+Custom Transmission Function
+""""""""""""""""""""""""""""
+
+..  TODO:: Describe (absence of) custom transmission function for Morse Code on LED
+
+    Or -- just hear me out -- creating a 600 Hz sounder with a piezodisc might be a nifty part of a GroupLab
 
 
 Example

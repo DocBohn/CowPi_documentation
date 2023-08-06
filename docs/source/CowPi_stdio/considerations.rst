@@ -25,6 +25,9 @@ could be changed to
 
 reducing the SRAM usage by 27 bytes and increasing the Flash Memory usage by 27 bytes.
 
+..  TODO:: Compiler arguments to enable/disable matrix & morse fonts and timer-based displays
+
+.. .. file location for Arduino IDE described here: https://support.arduino.cc/hc/en-us/articles/4415103213714-Find-sketches-libraries-board-cores-and-other-files-on-your-computer
 
 ``printf`` Limitations
 ----------------------
@@ -48,6 +51,8 @@ For example:
     - The *hd44780_blinky* example program demonstrates the occasional need to work around this limitation
 
 The *printf_limitations* example program demonstrates these limitations.
+
+..  TODO:: Linker arguments to enable float conversions
 
 
 ASCII Control Characters

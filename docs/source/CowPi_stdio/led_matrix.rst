@@ -8,6 +8,8 @@ This library offers some customizations to accommodate your particular display m
 
 Another "gotcha" (and this really is beyond the scope of the library) is that the MAX7219 is strictly a 5V device (with reasonable allowances), so if your microcontroller board outputs 3.3V for logic high then you will need a "level converter" in your circuit.
 
+..  image:: img/ledmatrix.gif
+
 ..  contents:: \
 
 
@@ -151,6 +153,12 @@ in C++, or
             .select_pin = the_select_pin}
 
 in C.
+
+
+Custom Transmission Function
+""""""""""""""""""""""""""""
+
+..  TODO:: Describe custom transmission function for MAX7219
 
 
 Example

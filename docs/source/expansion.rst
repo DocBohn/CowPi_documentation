@@ -2,4 +2,12 @@
 Expansion Options
 *****************
 
-..  TODO:: \
+..  TODO:: EEPROM
+
+..  TODO:: Servomotor
+
+..  TODO:: Ultrasonic Echo Sensor
+
+..  TODO:: Piezobuzzer
+
+..  TODO:: Rotary Encoder

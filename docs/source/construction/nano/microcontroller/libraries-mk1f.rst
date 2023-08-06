@@ -70,7 +70,7 @@ Proceed to :doc:`../direct-io/switches-mk1f`.
 Load the I/O Test Code
 ~~~~~~~~~~~~~~~~~~~~~~
 
-..  TODO:: Add accompanying images
+..  TODO:: Add accompanying images for loading test code in PlatformIO
 
 :\:[   ]: In the PlatformIO Home, under "Quick Access," click on the "+ New Project" button.
 

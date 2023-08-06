@@ -2,51 +2,8 @@
 Changelog
 *********
 
-[TODO]
-======
-
--   Hardware
-
-    -   Replace pinout diagrams for mk1c/d with mk1e/f
-
-    -   Add pinout diagrams for newer models
-
--   CowPi_stdio
-
-    -   Gifs of display modules
-
-    -   Special considerations
-
-        -   Linker arguments for float conversions
-
-        -   Timer/font compiler arguments (especially on ATmega328P)
-
-        .. .. reference: https://support.arduino.cc/hc/en-us/articles/4415103213714-Find-sketches-libraries-board-cores-and-other-files-on-your-computer)
-
-    -   Custom transmission functions note for display modules (done for HD44780)
-
--   Expansion Options
-
-    -   EEPROM
-
-    -   Servomotor
-
-    -   Ultrasonic rangefinder
-
-    -   Piezobuzzer
-
-    -   Rotary encoder
-
--   Construction Instructions
-
-    -   Updated info about lab computers and terminal server
-
-    -   Add images for loading I/O Test Code
-
-    -   Construction instructions for newer mark 1 models
-
-    -   Construction instructions for mk3a, mk3b, mk3c
-
+.. .. grep TODO source/*rst source/*/*rst source/*/*/*rst source/*/*/*/*rst
+.. .. grep yada source/*rst source/*/*rst source/*/*/*rst source/*/*/*/*rst
 
 [Unreleased]
 ============

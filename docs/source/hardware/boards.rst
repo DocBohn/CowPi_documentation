@@ -13,7 +13,8 @@ There are Cow Pi designs that make use of the Arduino Nano family (Nano, Nano Ev
 Designs that use other microcontroller boards may exist in the future.
 For the purposes of lab assignments that use the Cow Pi, we focus on the microcontroller; any additional components are treated as :doc:`../expansion`.
 
-----
+Microcontrollers are Simple Processors
+--------------------------------------
 
 We noted that microcontrollers are simple processors when compared to general-purpose microprocessors.
 Many "basic" optimizations in microprocessors are eschewed in lower-end microcontrollers (and for many embedded systems, lower-end microcontrollers are quite sufficient).
@@ -29,3 +30,32 @@ Instead of a using a branch prediction scheme even as simple as "predict taken",
 
 While variable-length instructions are usually more memory-efficient, microcontrollers (along with microprocessors) designed in the past 40 years generally have gravitated to RISC designs, including fixed-length instructions.
 They reduce the size of the program image by using 16-bit instruction words instead of the more-common 32-bit instruction words that you would see in a RISC microprocessor design.
+
+Pinout Diagrams
+---------------
+
+These figures show which input or output is connected to each of the unknown’s pins,
+as well as which general-purpose input/output register bit corresponds to each pin:
+
+..  _NanoPinoutSPI:
+
+.. figure:: nano-spi.png
+    :alt: yada
+    :align: center
+    :height: 10cm
+    :figwidth: 75 %
+
+    Pinout for the mk1c Cow Pi development board using Arduino Nano and the SPI serial communication protocol.
+
+..  _NanoPinoutI2C:
+
+.. figure:: nano-i2c.png
+    :alt: yada
+    :align: center
+    :height: 10cm
+    :figwidth: 75 %
+
+    Pinout for the mk1d Cow Pi development board using Arduino Nano and the |i2c| serial communication protocol.
+
+..  TODO:: Replace mk1c/d pinout diagrams with those for mk1e/f
+

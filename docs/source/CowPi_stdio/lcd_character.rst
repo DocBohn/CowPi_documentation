@@ -8,6 +8,10 @@ While these display modules *can* be driven directly from a microcontroller, the
 While the integrated circuits on both the display module and (most of) the serial adapters function at both 3.3V and 5V, most of the display modules’ liquid crystals are insufficiently responsive to 3.3V.
 Unless you know that you have a display module that will work at 3.3V, you should use a "level converter" (or a serial adapter that will perform the "level conversion").
 
+..  image:: img/lcd1602.gif
+
+..  TODO:: LCD2004 running hd44780_lcd_character.ino
+
 ..  contents:: \
 
 

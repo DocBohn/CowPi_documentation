@@ -253,38 +253,46 @@ When the function executes the SPI Controller-Out/Peripheral-In sequence or the 
 MAX7219-driven 8-Digit/7-Segment Display
 """"""""""""""""""""""""""""""""""""""""
 
-..  TODO:: \
+..  TODO:: Describe MAX7219-driven 8-Digit/7-Segment Displays
 
 ..  seealso::
     :doc:`../CowPi_stdio/seven_segment`
 
+
+|
+
 MAX7219-driven LED Matrix
 """""""""""""""""""""""""
 
-..  TODO:: \
+..  TODO:: Describe MAX7219-driven LED Matrices
 
 ..  seealso::
     :doc:`../CowPi_stdio/led_matrix`
 
+
+|
+
 SSD1306-driven OLED Graphic Display
 """""""""""""""""""""""""""""""""""
 
-..  TODO:: \
+..  TODO:: (Implement and) Describe SSD1306-driven OLED Graphic Displays
+
+|
 
 Communication Protocols
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-..  TODO:: \
+..  TODO:: Introduce Serial Communication Protocols
 
 Serial-Parallel Interface (SPI)
 """""""""""""""""""""""""""""""
 
-..  TODO:: \
+..  TODO:: Describe SPI
 
 Inter-Integrated Circuit (|i2c|)
 """"""""""""""""""""""""""""""""
 
-..  TODO:: \
+..  TODO:: Describe |i2c|
 
 |
 

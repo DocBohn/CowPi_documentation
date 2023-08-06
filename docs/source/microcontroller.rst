@@ -281,7 +281,7 @@ we arrive at the mapping in :numref:`tableATmega328pMapDevicesToArrayI2C` that i
 Serial-Parallel Interface
 """""""""""""""""""""""""
 
-..  TODO:: \
+..  TODO:: Describe SPI for ATmega328P
 
 
 Inter-Integrated Circuit Protocol

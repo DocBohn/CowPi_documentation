@@ -11,10 +11,14 @@ Install the IDE
 
 |
 
-Broadly speaking, you have two options:
+Broadly speaking, you have four options:
 
--   Using the :ref:`mk1fArduinoIDE` (either on a lab computer or your personal laptop)
--   Using :ref:`mk1fVSCodeWithPlatformIO`
+-   Using the :ref:`mk1fArduinoIDE` on your personal laptop
+-   Using :ref:`mk1fVSCodeWithPlatformIO` on your personal laptop
+-   Using PlatformIO on a lab computer
+-   Using PlatformIO on a terminal server
+
+..  TODO:: Describe lab computer & terminal server options
 
 |
 

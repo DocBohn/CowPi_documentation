@@ -59,7 +59,11 @@ Cow Pi mk3 boards are assembled on through-hole PCBs:
     :height: 3cm
     :alt: yada
 
-Cow Pi mk4 boards are assembled on surface-mount PCBs.
+.. image:: hardware/mk3b-vice.jpg
+    :height: 3cm
+    :alt: yada
+
+Cow Pi mk4 boards are assembled on surface-mount PCBs:
 
 *(no image available)*
 
@@ -92,30 +96,6 @@ The matrix keypad is designed to be scanned using the conventional approach of s
 The microcontroller communicates with the display module using either
 the Serial Peripheral Interface (SPI) protocol or
 the Inter-Integrated Circuit (|i2c| or IIC) protocol, also known as the Two-Wire Interface (TWI) protocol.
-
-These figures show which input or output is connected to each of the unknown’s pins,
-as well as which general-purpose input/output register bit corresponds to each pin:
-
-..  _NanoPinoutSPI:
-
-.. figure:: hardware/nano-spi.png
-    :alt: yada
-    :align: center
-    :height: 10cm
-    :figwidth: 75 %
-
-    Pinout for the mk1c Cow Pi development board using Arduino Nano and the SPI serial communication protocol.
-
-..  _NanoPinoutI2C:
-
-.. figure:: hardware/nano-i2c.png
-    :alt: yada
-    :align: center
-    :height: 10cm
-    :figwidth: 75 %
-
-    Pinout for the mk1d Cow Pi development board using Arduino Nano and the |i2c| serial communication protocol.
-
 
 .. toctree::
 

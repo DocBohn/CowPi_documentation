@@ -13,6 +13,8 @@ That mastered, requiring that a program display text was more an exercise in ted
 Bypassing that tedium is why you would use this library with these display modules. 
 (That, and perhaps you want scrolling text.)
 
+..  image:: img/sevensegment.gif
+
 ..  contents:: \
 
 Discussion
@@ -171,6 +173,12 @@ in C++, or
             .select_pin = the_select_pin}
 
 in C.
+
+
+Custom Transmission Function
+""""""""""""""""""""""""""""
+
+..  TODO:: Describe custom transmission function for MAX7219
 
 
 Example

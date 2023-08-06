@@ -6,7 +6,7 @@ The **Cow Pi** is the latest product line from Eclectic Electronics [#pretendLe
 Whether you need a 4-function calculator to count your terror bird eggs before they hatch,
 an electronic combination lock to secure your wildly-dangerous experimental robots,
 or a motion alarm to protect yourself from zombie gourds,
-using the Cow Pi development board is your best option.
+using a Cow Pi development board is your best option.
 
 .. toctree::
     :maxdepth: 2
