@@ -34,28 +34,56 @@ They reduce the size of the program image by using 16-bit instruction words inst
 Pinout Diagrams
 ---------------
 
-These figures show which input or output is connected to each of the unknown’s pins,
-as well as which general-purpose input/output register bit corresponds to each pin:
+These figures show which input or output is connected to each of the microcontroller boards' pins for the current Cow Pi designs,
+as well as which general-purpose input/output microcontroller register bit corresponds to each pin:
 
 ..  _NanoPinoutSPI:
 
 .. figure:: nano-spi.png
-    :alt: yada
+    :alt: Pinout for Cow Pi development boards that use the Arduino Nano and the SPI serial communication protocol.
     :align: center
     :height: 10cm
     :figwidth: 75 %
 
-    Pinout for the mk1c Cow Pi development board using Arduino Nano and the SPI serial communication protocol.
+    Pinout for the mk1e and mk3a Cow Pi development board using the Arduino Nano and the SPI serial communication protocol.
 
 ..  _NanoPinoutI2C:
 
 .. figure:: nano-i2c.png
-    :alt: yada
+    :alt: Pinout for Cow Pi development boards that use the Arduino Nano and the |i2c| serial communication protocol.
     :align: center
     :height: 10cm
     :figwidth: 75 %
 
-    Pinout for the mk1d Cow Pi development board using Arduino Nano and the |i2c| serial communication protocol.
+    Pinout for the mk1f and mk3a Cow Pi development board using the Arduino Nano and the |i2c| serial communication protocol.
 
-..  TODO:: Replace mk1c/d pinout diagrams with those for mk1e/f
+..  _UnoPinoutSPI:
+
+.. figure:: uno-spi.png
+    :alt: Pinout for Cow Pi development boards that use the Arduino Uno and the SPI serial communication protocol.
+    :align: center
+    :height: 10cm
+    :figwidth: 75 %
+
+    Pinout for the mk3b Cow Pi development board using the Arduino Uno and the SPI serial communication protocol.
+
+..  _UnoPinoutI2C:
+
+.. figure:: uno-i2c.png
+    :alt: Pinout for Cow Pi development boards that use the Arduino Uno and the |i2c| serial communication protocol.
+    :align: center
+    :height: 10cm
+    :figwidth: 75 %
+
+    Pinout for the mk3b Cow Pi development board using the Arduino Uno and the |i2c| serial communication protocol.
+
+..  _PicoPinout:
+
+.. figure:: pico.png
+    :alt: Pinout for Cow Pi development boards that use the Raspberry Pi Pico.
+    :align: center
+    :height: 10cm
+    :figwidth: 75 %
+
+    Pinout for the mk3c Cow Pi development board using the Raspberry Pi Pico.
 

@@ -12,7 +12,7 @@ Changed
 -------
 
 -   Cow Pi hardware/software datasheet migrated to readthedocs.io
--   Cow Pi datasheet (on readthedocs.io) updated for CowPi v0.6 library and CowPi_stdio v0.5 library
+-   Cow Pi datasheet (on readthedocs.io) updated for CowPi v0.6 library and CowPi_stdio v0.6 library
 -   Construction instructions for Cow Pi mk1e & mk1f replace mk1c & mk1d
 -   Construction instructions incorporated into datasheet
 
