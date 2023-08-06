@@ -61,13 +61,17 @@ its default value is :enumerator:`COWPI_DEFAULT`.
 Terminology
 """""""""""
 
-The data pin historically has been called ``MOSI`` (there is also ``MISO``, but not for the purposes of this library).
+The data pin historically has been called ``MOSI`` (there is also ``MISO``, but not for the purposes of this library) from the "master/slave" paradigm.
 In 2020, the Open Source Hardware Association (OSHWA) proposed changing this to ``SDO`` (Serial Data Out) for devices that are strictly data-out on this pin, and to ``COPI`` (Controller-Out/Peripheral-In) for devices whose pin direction changes depending on their role as controller or peripheral.
 In 2022, OSHWA changed its proposal to ``SDO`` and ``PICO`` (Peripheral-In/Controller-Out) after discovering that the abbreviation for Controller-In/Peripheral-Out is a vulgar and offensive word in some parts of the world.
-Unfortunately, the potential for confusion with the "Pico" shorthand for "Raspberry Pi Pico" dissuades us from using ``PICO``.
-Fortunately, this library uses the data pin in only one direction, and so we may refer to it as ``SDO`` but will typically refer to it as the "data pin".
 The clock pin has been, and continues to be, referred to as ``SCK`` or ``CLK``.
 The select pin historically has been called ``SS``, and the OSHWA’s proposal renames it as ``CS`` (Chip Select).
+Another common re-definition of ``MOSI`` and ``MISO`` use the terms "main" and "sub-node".
+NXP Semiconductor, which owns Motorola's intellectual property that covers SPI, has adopted ``COTI``, ``CITO``, and ``TS``, using the terms "controller" and "target".
+
+We prefer the terms "controller" and "peripheral", as we think these are the most-descriptive terms for the components.
+Unfortunately, the potential for confusion with the "Pico" shorthand for "Raspberry Pi Pico" dissuades us from using ``PICO``.
+Fortunately, this library uses the data pin in only one direction, and so we may refer to it as ``SDO`` but will typically refer to it as the "data pin".
 
 As of June 2023, Arduino has adopted "COPI" on the hardware side but still uses "MOSI" on the software side.
 The Raspberry Pi Pico uses "TX" (Transmit).
@@ -93,7 +97,7 @@ Even if the bit-banged implementation is used, the default ``data_pin`` and ``cl
 For HD44780-based LCD character displays, the ``adapter_mapping`` field may also be specified;
 its default value is :enumerator:`COWPI_DEFAULT`.
 
-Specifying the Peripheral’s I2C Address
+Specifying the Peripheral's I2C Address
 """""""""""""""""""""""""""""""""""""""
 
 When specifying the display module’s’s I2C address, you may, of course, hard-code the address if you know it.
@@ -109,3 +113,12 @@ see the *scan_i2c* example for a demonstration of :func:`cowpi_discover_i2c_addr
     If you need to determine the addresses of multiple peripherals, then we recommend that you run the Arduino Wire library’s
     `i2c_scanner <https://github.com/arduino/ArduinoCore-avr/blob/master/libraries/Wire/examples/i2c_scanner/i2c_scanner.ino>`__
     example to print the addresses of all devices on the I2C bus.
+
+Terminology
+"""""""""""
+
+While the |i2c| lines don't reference the "master/slave" paradigm -- they are ``SDA`` ("Serial DAta") and ``SCL`` ("Serial CLock"), legacy datasheets use the "master/slave" terminology when describing the components' roles.
+NXP Semiconductor, which owns Philip Semiconductor's intellectual property that covers |i2c|, has adopted the terms "controller/target".
+OSHWA has not proposed any changes.
+
+As with SPI, we prefer the terms "controller" and "peripheral", as we think these are the most-descriptive terms for the components.

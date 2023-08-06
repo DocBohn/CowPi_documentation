@@ -36,32 +36,31 @@ Cow Pi mk1 boards are assembled on solderless breadboards:
 
 .. image:: hardware/mk1a.jpg
     :height: 3cm
-    :alt: yada
+    :alt: A rat's nest of wires attached to a solderless breadboard. The keypad is a membrane keypad, and the display is an 8-digit/7-segment display.
 .. image:: hardware/mk1d.jpg
     :height: 3cm
-    :alt: yada
+    :alt: A rat's nest of wires attached to a solderless breadboard. The keypad is a membrane keypad, and the display is an LCD character display.
 
 Cow Pi mk2 boards are assembled on perfboards:
 
 .. image:: hardware/mk2a.jpg
     :height: 3cm
-    :alt: yada
+    :alt: Perfboards mounted on a wooden base with an Arduino Nano mounted upon one of them. Wires stretch across, and between, the perfboards. The keypad is a membrane keypad adhered to a wooden block, and the display is an 8-digit/7-segment display.
 .. image:: hardware/mk2b-1.jpg
     :height: 3cm
-    :alt: yada
+    :alt: A perfboard designed to mount atop an Arduino Uno. Wires stretch across the perfboard. The keypad is a membrane keypad, and the display is an LED matrix display.
 .. image:: hardware/mk2c.jpg
     :height: 3cm
-    :alt: yada
+    :alt: Perfboards mounted on a wooden base with an Arduino Nano mounted upon one of them. Wires stretch across, and between, the perfboards. The keypad is a matrix of discrete tactile switches with a low-valued resistor inlined with each row, and the display is an LCD character display.
 
 Cow Pi mk3 boards are assembled on through-hole PCBs:
 
 .. image:: hardware/mk3a.jpg
     :height: 3cm
-    :alt: yada
-
+    :alt: Red printed circuit boards with Arduino Nanos mounted upon them. The keypad is a matrix of discrete tactile switches with a diode inlined with each key, and the display is an LCD character display.
 .. image:: hardware/mk3b-vice.jpg
     :height: 3cm
-    :alt: yada
+    :alt: A blue printed circuit board designed to mount atop an Arduino Uno. The keypad is a matrix of discrete tactile switches with a "forest" of diodes to the side; while no display is currently attached, insertion points for an arbitrary display module are attached to the board.
 
 Cow Pi mk4 boards are assembled on surface-mount PCBs:
 

@@ -9,6 +9,7 @@ While the integrated circuits on both the display module and (most of) the seria
 Unless you know that you have a display module that will work at 3.3V, you should use a "level converter" (or a serial adapter that will perform the "level conversion").
 
 ..  image:: img/lcd1602.gif
+    :alt: An LCD character display demonstrating the uses of ASCII control characters.
 
 ..  TODO:: LCD2004 running hd44780_lcd_character.ino
 

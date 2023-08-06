@@ -138,7 +138,7 @@ Each pin is individually controlled by a particular bit in the port registers.
             | DDRB0
             | PINB0
 
-:numref:`NanoPinoutSPI` and :numref:`NanoPinoutI2C` show which bit in which port corresponds to each Arduino Nano pin (the same mapping applies to Arduino Uno R3). 
+:numref:`NanoPinoutSPI`\ –\ :numref:`UnoPinoutI2C` show which bit in which port corresponds to each Arduino pin.
 For example, pin ``D10`` is labeled "PB2" indicating that it is part of port B and uses bit 2 in each of port B's registers. 
 If ``D10`` were an input pin, then we could determine the pin's logic level by using a bitmask to examine ``PINB``\ 's bit 2. 
 On the other hand, if ``D10`` were an output pin, then we could set the pin's logic level to high or low by assigning a 1 or 0, respectively, to ``PORTB``\ 's bit 2, using the read/modify/write pattern.
@@ -230,7 +230,7 @@ Mapping Input/Output Devices to I/O Port Array
 ''''''''''''''''''''''''''''''''''''''''''''''
 
 The :ref:`atmega328pMmapIOStruct` Section describes the I/O ports, a structure definition, and named constants that can be used to access the inputs and outputs attached to the Arduino's pins.
-:numref:`NanoPinoutSPI` shows which input/output devices are attached to the various Arduino Nano (and Uno) pins when SPI is used to communicate with the display module.
+:numref:`NanoPinoutSPI` & :numref:`UnoPinoutSPI` show which input/output devices are attached to the various Arduino pins when SPI is used to communicate with the display module.
 Combining this information, we arrive at the mapping in :numref:`tableATmega328pMapDevicesToArraySPI` that is suitable for the Cow Pi mk1e, and for the Cow Pi mk3a & 3b when configured for SPI.
 
 ..  _tableATmega328pMapDevicesToArraySPI:
@@ -254,7 +254,7 @@ Combining this information, we arrive at the mapping in :numref:`tableATmega328p
 
 |
 
-Similarly, by combining the information in the :ref:`atmega328pMmapIOStruct` Section with the information in :numref:`NanoPinoutI2C`,
+Similarly, by combining the information in the :ref:`atmega328pMmapIOStruct` Section with the information in :numref:`NanoPinoutI2C` & :numref:`UnoPinoutI2C`,
 we arrive at the mapping in :numref:`tableATmega328pMapDevicesToArrayI2C` that is suitable for the Cow Pi mk1f, and for the Cow Pi mk3a & 3b when configured for |i2c|.
 
 ..  _tableATmega328pMapDevicesToArrayI2C:

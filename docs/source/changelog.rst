@@ -3,7 +3,6 @@ Changelog
 *********
 
 .. .. grep TODO source/*rst source/*/*rst source/*/*/*rst source/*/*/*/*rst
-.. .. grep yada source/*rst source/*/*rst source/*/*/*rst source/*/*/*/*rst
 
 [Unreleased]
 ============

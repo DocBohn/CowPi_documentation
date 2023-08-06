@@ -129,6 +129,9 @@ or because they are relatively low-hanging fruit from earlier efforts put into t
 HD44780-driven LCD Character Display
 """"""""""""""""""""""""""""""""""""
 
+..  image:: ../CowPi_stdio/img/lcd1602.gif
+    :alt: An LCD character display demonstrating the uses of ASCII control characters.
+
 ..  seealso::
     :doc:`../CowPi_stdio/lcd_character`
 
@@ -282,17 +285,48 @@ SSD1306-driven OLED Graphic Display
 Communication Protocols
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-..  TODO:: Introduce Serial Communication Protocols
+When a microprocessor or microcontroller needs to communicate with peripheral devices, the most straight-forward approach is to run all of the necessary lines in parallel.
+Besides its simplicity, it should be clear that for a given signalling rate, the data rate is proportional to the number of data lines.
+As a specific example, before the advent of USB, printers were typically connected to microcomputers using a 25-line parallel cable (8 lines for data, 4 for control, 5 for status, and the remainder as ground lines).
+The problems in that type of application stem from susceptibility to external noise, and mutual inductance and capacitance between the lines.
+These factors both limited the signalling rate and limited parallel cables' length to a few meters at most.
+
+For our purposes, another problem with parallel lines is that we don't have that many pins available.
+For example, an HD44780-driven LCD character display has 8 lines for data and four for control;
+the HD44780 has a mode that can reduce the number of data lines to 4 --
+so we would "\ *only*\ " need 8 of the pins on our microcontroller board, a *very* significant fraction.
+If we moved all of the MAX 7219's control functions to software, we would still need 16 lines for an 8-digit/7-segment display or an LED matrix display.
+
+The solution is serial communication protocols.
+Some you are already familiar with, such as RS-232 or USB.
+Two protocols commonly used to communicate with microcontrollers' peripherals are the Serial-Parallel Interface (SPI) protocol and the Inter-Integrated Circuit (|i2c|) protocol.
+
 
 Serial-Parallel Interface (SPI)
 """""""""""""""""""""""""""""""
 
-..  TODO:: Describe SPI
+The |spiReference|_ protocol is a remarkably simple protocol.
+
+SPI transmits and receives data using one or two data lines:
+if data only travels in one direction then only one data line is needed;
+if data travels in both directions, then two data lines are needed.
+SPI also requires a clock line to synchronize transmission and reception.
+Finally, each a "select" or "latch" line is required for each peripheral, to identify which peripheral is being addressed and to indicate when all data for a particular transmission have been sent.
+
+In the case of the Cow Pi, in which data travels only from the controller to the peripheral, and in which there is a single peripheral, three lines are needed (not including power and ground).
 
 Inter-Integrated Circuit (|i2c|)
 """"""""""""""""""""""""""""""""
 
-..  TODO:: Describe |i2c|
+The |i2cReference|_ protocol is more complex than SPI but also more versatile.
+
+|i2c| requires only two lines (not including power and ground), regardless of how many peripherals are being used: one for bi-directional data and one for a clock.
+Where SPI uses "select" lines to identify which peripheral is being addressed, each |i2c| peripheral is addressed using a 7-bit address.
+Unlike SPI, |i2c| permits multiple controllers to be present on the same |i2c| bus;
+arbitration for control of the bus is handled through the transmission of START, RESTART, and STOP bits.
+External pullup resistors on each of these two lines allow any device (whether it is a controller or a peripheral) on the |i2c| bus to generate signals on a line by grounding the line or letting it be pulled high by the resistor.
+
+In the case of the Cow Pi, most of the |i2c|'s versatility is unused, but that doesn't make |i2c| any less useful for us.
 
 |
 
@@ -315,6 +349,12 @@ Inter-Integrated Circuit (|i2c|)
 
 ..  |delayMicroseconds|         replace:: Arduino ``delayMicroseconds()`` function
 ..  _delayMicroseconds:         https://www.arduino.cc/reference/en/language/functions/time/delaymicroseconds/
+
+..  |spiReference|              replace:: Serial-Parallel Interface
+..  _spiReference:              https://www.nxp.com/docs/en/application-note/AN3020.pdf
+
+..  |i2cReference|              replace:: Inter-Integrated Circuit
+..  _i2cReference:              https://www.nxp.com/docs/en/user-guide/UM10204.pdf
 
 
 
