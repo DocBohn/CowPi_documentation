@@ -65,17 +65,30 @@ we will specify their use in *platformio.ini* files, and PlatformIO will automat
 Load the I/O Test Code
 ~~~~~~~~~~~~~~~~~~~~~~
 
-..  TODO:: Add accompanying images for loading test code in PlatformIO
-
 :\:[   ]: In the PlatformIO Home, under "Quick Access," click on the "+ New Project" button.
 
-:\:[   ]: In resulting pop-up window, name the project *io_test*. In the "board" field, type *arduino nano* (:numref:`mk1fCreatingPlatformIOProject`\ (a)).
+:\:[   ]: In resulting pop-up window, name the project *io_test*. In the "board" field, type *arduino nano* (:numref:`mk1eCreatingIOTest`\ (a)).
 
 :\:[   ]: If your |developmentBoard| has the old bootloader, then select "Arduino Nano ATmega328".
     If your |developmentBoard| has the new bootloader, then select "Arduino Nano ATmega328 (New Bootloader)".
-    After you do so, the "framework" field will auto-populate to "Arduino" (:numref:`mk1fCreatingPlatformIOProject`\ (b)).
+    After you do so, the "framework" field will auto-populate to "Arduino" (:numref:`mk1eCreatingIOTest`\ (b)).
 
 :\:[   ]: Click on the "Finish" button. After several seconds, a new project will be ready.
+
+..  _mk1eCreatingIOTest:
+..  figure:: ../../../blank.png
+
+    Selecting board and processor in the Arduino IDE.
+
+    +------------------------------------------+-----------------------------------------+
+    | a                                        | b                                       |
+    +==========================================+=========================================+
+    | .. image:: platformIOStartingProject.png | .. image:: platformIOReadyForIOTest.png |
+    |    :width: 8cm                           |    :width: 8cm                          |
+    |    :align: center                        |    :align: center                       |
+    +------------------------------------------+-----------------------------------------+
+    | Selecting the board with PlatformIO.     | Ready to create the *io_test* project   |
+    +------------------------------------------+-----------------------------------------+
 
 :\:[   ]: Open the *platformio.ini* file (it may open automatically).
 
@@ -83,7 +96,7 @@ Load the I/O Test Code
     If you see ``[env:nanoatmega328]`` then then environment name is ``nanoatmega328``.
     If you see ``[env:nanoatmega328new]`` then then environment name is ``nanoatmega328new``.
 
-:\:[   ]: *Without removing anything from your* platformio.ini *file,* add the following to your *platformio.ini* file, replacing ``▶environment_name◀`` with the environment name that PlatformIO created automatically for you (see ...):
+:\:[   ]: *Without removing anything from your* platformio.ini *file,* add the following to your *platformio.ini* file, replacing ``▶environment_name◀`` with the environment name that PlatformIO created automatically for you (see :numref:`mk1eLoadLibraries`):
 
     ..  code-block:: ini
 
@@ -93,15 +106,24 @@ Load the I/O Test Code
         [env]
         lib_deps =
           docbohn/CowPi @ ^0.6.0
-          docbohn/CowPi_stdio @ ^0.5.1
+          docbohn/CowPi_stdio @ ^0.6.0
         monitor_echo = yes
 
     This will instruct PlatformIO to use the CowPi and CowPi_stdio libraries,
     and it instructs PlatformIO to compile the CowPi library's *io_test* example instead of anything in the *src/* directory.
 
+..  _mk1eLoadLibraries:
+..  figure:: platformioINI.png
+    :align: center
+    :width: 75%
+
+    Configuring the PlatformIO project to use the CowPi and CowPi_stdio libraries, and to compile the *io_test* example.
+
+:\:[   ]: **Save** *platformio.ini*\ .
+
 :\:[   ]: Open your IDE's Serial Monitor.
 
-:\:[   ]: Compile and upload *io_test* to your |developmentBoard| in the same manner that you did for *MyBlink*.
+:\:[   ]: **Compile** and **upload** *io_test* to your |developmentBoard| in the same manner that you did for *MyBlink*.
 
 
 ..  include:: io-test-started.rst

@@ -276,13 +276,228 @@ we arrive at the mapping in :numref:`tableATmega328pMapDevicesToArrayI2C` that i
     |                      | | ``.output`` | | —      | | —      | |   display module  | | —      | | —      | | —      | | —      |
     +----------------------+---------------+----------+----------+---------------------+----------+----------+----------+----------+
 
+|
+
 ..  _atmega328pSPI:
 
 Serial-Parallel Interface
 """""""""""""""""""""""""
 
-..  TODO:: Describe SPI for ATmega328P
+The ATmega328P uses three registers for SPI:
 
+``SPCR``
+    The SPI Control Register is used to configure the SPI hardware.
+
+``SPSR``
+    The SPI Status Register is used to indicate the status of a data transfer.
+
+``SPDR``
+    The SPI Data Register is used to transfer data to and from an SPI peripheral device.
+
+The SPI hardware has four modes of operation: controller output/peripheral input and controller input/peripheral output as the controller; and controller output/peripheral input and controller input/peripheral output as the peripheral.\ [#terminology]_
+In the Cow Pi's typical usage, the controller output/peripheral input mode will be used to drive the display module.
+For this reason, the discussion in this datasheet will focus on the controller output/peripheral input mode.
+
+In general, the nature of SPI allows for uses other than the display module without compromising the ability to work with the display module;
+however, the limited number of ATmega328P data pins would make this challenging.
+If you choose to expand the Cow Pi in such a manner that controller input/peripheral output is necessary, see Chapter 18 of the |microcontrollerReference|_ for details.
+You will need to write a custom :func:`cowpi_max7219_send` function -- or at least a custom :var:`cowpi_spi_finalize` function -- that does not disable the SPI hardware upon completion.
+
+*We strongly advise against using the ATmega328P as a peripheral while it is in the Cow Pi circuit.*
+
+.. _`atmega328pSPIStruct`:
+
+Structure for Memory-Mapped Input/Output
+''''''''''''''''''''''''''''''''''''''''
+
+The CowPi library provides data structures to access the memory-mapped I/O registers in a more readable form.
+Specifically, the :struct:`cowpi_spi_t` structure provides meaningfully-named fields in place of the 4-letter register names.
+
+..  doxygenstruct:: cowpi_spi_t
+    :project: CowPi
+    :members:
+
+Unlike the I/O registers for the external pins, you will not have an array of :struct:`cowpi_spi_t` structures; you'll have just the one.
+Create a pointer to a :struct:`cowpi_spi_t` structure that points to the lowest-addressed register (TWBR, ``0x4C``, per :numref:`tableATmega328pSPIRegisters`).
+For example, if we wanted to determine if a serial transfer had been completed, and then enable the SPI hardware as a controller with a 1MHz bit rate, then we could do so with C code similar to this:
+
+..  code-block:: c
+    :linenos:
+
+    volatile cowpi_spi_t *spi = (cowpi_spi_t *)(0x4C);
+    uint8_t status = spi->status & 0x80; // mask-off the irrelevant bits
+    spi->control = (1 << 6) | (1 << 4) | (1 << 0);  // Enable bit | Controller bit | Prescaler 16
+
+You may have noticed that this code does not use the read/modify/write pattern.
+Because of the particular uses of the control bits, you may find it easier to explicitly assign each control bit value afresh, rather than modify the pre-existing values.
+
+.. _`atmega328pSPIBits`:
+
+SPI Register Bits
+'''''''''''''''''
+
+:numref:`tableATmega328pSPIRegisters` identifies the particular bits in each of the SPI registers.
+
+
+..  _tableATmega328pSPIRegisters:
+
+..  table:: ATmega328P "Two Wire Interface" registers. Adapted from original data in |microcontrollerReference|_, §18.5.
+
+    +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
+    | Register Name                      | Address | Bit7  | Bit6  | Bit5  | Bit4  | Bit3  | Bit2  | Bit1  | Bit0  |
+    +====================================+=========+=======+=======+=======+=======+=======+=======+=======+=======+
+    | | Data Register                    |         |       |       |       |       |       |       |       |       |
+    | | TSPR                             | 0x4E    | MSB   |  ...  |  ...  |  ...  |  ...  |  ...  |  ...  | LSB   |
+    +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
+    | | Status Register                  |         |       |       |       |       |       |       |       |       |
+    | | SPSR                             | 0x4D    | SPIF  | WCOL  | —     | —     | —     | —     | TWPS1 | SPI2X |
+    +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
+    | | Control Register                 |         |       |       |       |       |       |       |       |       |
+    | | SPCR                             | 0x4C    | SPIE  |  SPE  | DORD  | CTLR  | CPOL  | CPHA  | SPR1  | SPR0  |
+    +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+The CowPi_stdio library configures the SPI hardware to transmit at 1Mbps.
+In this section we focus on the needs of the application programmer.
+If you need information about the setting the bit rate, or configuring the peripheral address and address mask,
+see Section 18.5 of the |microcontrollerReference|_ for the bit descriptions, and Chapter 18 generally for the bits' uses.
+
+Data Bits
+^^^^^^^^^
+
+The eight data bits are straight-forward.
+When in controller output/peripheral input mode, place the byte that needs to be transmitted into the SPI Data Register (or the ``data`` field of a :struct:`cowpi_spi_t` variable);
+there is generally no need to use the distinct bits.
+Similarly, when in controller input/peripheral output mode, the last byte sent by the transmitter can be found in the SPI Data Register.
+
+Status Bits
+^^^^^^^^^^^
+
+There are two bits in the SPI Status Register that allow a program to learn when it is safe to control the hardware, and one that is actually a control bit.
+
+Bit 7, SPI Interrupt Flag
+    The SPI hardware sets this bit to a 1 when it has finished its last operation and the program can safely write to the data register.
+    The program clears the flag by reading from the SPI Status Register when the bit is 1. and then writing to the SPI Data Register;
+    this causes the bit to become 0.
+    Once the bit is 0, the program should not write to the data registers until it is 1 again.
+    You can create a busy-wait loop that blocks the program while the bit is 0.
+
+    Alternatively, if SPI interrupts are enabled then you can create an interrupt handler that updates the data register only when it is safe to do so.
+    The :func:`cowpi_spi_initialize_hardware` function initially disables SPI interrupts;
+    you must explicitly enable SPI interrupts in a custom function if you intend to use them.
+
+Bit 6, Write Collision Flag
+    If a program writes to the data register while the TWI Interrupt Flag (bit 7) is 0, a data collision will occur, and this bit will become 1.
+    If you only use controller output/peripheral input mode *and* you always use a busy-wait loop that blocks the program while the SPI Interrupt Flag is 0, then the Write Collision Flag should never become 1.
+
+Bit 0, SPI Double Speed Bit
+    Setting this bit causes the clock rate to be double what it otherwise would be at.
+
+Control Bits
+^^^^^^^^^^^^
+
+There are eight bits that are used to configure teh SPI hardware
+
+Bit 7, SPI Interrupt Enable
+    Causes an SPI interrupt to fire whenever the SPI Interrupt Flag becomes 1.
+
+Bit 6, SPI Enable
+    When this bit is 1, the SPI hardware controls both SPI data pins and the SPI clock pin.
+    Only one of the SPI data pins is used by the Cow Pi as a data pin;
+    the other is used for the right LED, and the clock pin is used for the left LED.
+    For this reason, :func:`cowpi_spi_initialize_hardware` enables the SPI hardware, and :func:`cowpi_spi_finalize_hardware` disables the SPI hardware.
+
+Bit 5, Data Order
+    If this bit is 0 then the most significant bit is transmitted first;
+    if this bit is 1 then the least significant bit is transmitted first.
+
+Bit 4, Controller/Peripheral Select
+    The ATmega328P acts as the SPI controller when this bit is 1, and as a SPI peripheral when this bit is 0.
+
+Bit 3, Clock Polarity
+    \
+
+Bit 2, Clock Phase
+    Orthogonal to the controller output/peripheral input and controller input/peripheral output modes,
+    there are another four modes based on the clock's attributes.
+    See Section 18.4 of the |microcontrollerReference|_\ .
+
+Bit 1, SPI Clock Rate Select 1
+    \
+
+Bit 0, SPI CLock Rate Select 0
+    The clock rate is determined by a prescaler applied to the system clock.
+    See Table 18.5 of the |microcontrollerReference|_\ .
+
+
+..  _`atmega328pCOPISequence`:
+
+Controller Output/Peripheral Input Sequence
+'''''''''''''''''''''''''''''''''''''''''''
+
+The typical SPI controller output/peripheral input sequence is:
+
+-   if necessary, enabling the SPI hardware
+-   signaling the peripheral to receive data by setting the chip select pin to 0
+-   transmitting one or more data bytes
+-   signaling the peripheral to latch the data into its permanent register by setting the chip select pin to 1
+-   if necessary, disabling the SPI hardware
+
+After each transmission, the program should busy-wait until the SPI Interrupt Flag has been set (bit 7 of SPSR or the ``status`` field of a :struct:`cowpi_spi_t` variable).
+
+The pseudocode for this sequence is:
+
+..  code-block:: pascal
+    :linenos:
+
+    (* assume variable i2c is a reference to a cowpi_i2c_t structure *)
+    (* assume variable bit_order indicates whether the peripheral expects MSB first (0) or LSB first (1) *)
+    (* assume variable select_pin is an integer identifying the chip select pin *)
+
+-   if necessary, enable the SPI hardware
+
+..  code-block:: pascal
+    :lineno-start: 5
+
+            (* Enable SPI, data order, Controller, set clock rate 1MHz *)
+    spi->control := bitwise_or((1 << 6), (bit_order << 5), (1 << 4), (1 << 0))
+
+
+-   transmit one or more data bytes:
+
+..  code-block:: pascal
+    :lineno-start: 8
+
+            (* signal the peripheral to receive data *)
+    set_pin(select_pin, 0);
+            (* send the data that the peripheral needs *)
+    for each byte of data do
+        spi->data := data_byte
+        busy_wait_while(bit 7 of i2c->status = 0)
+            (* signal the peripheral to latch data *)
+    set_pin(select_pin, 1);
+
+
+-   if necessary, enable the SPI hardware
+
+..  code-block:: pascal
+    :lineno-start: 17
+
+            (* Disable SPI *)
+    spi->control := 0
+
+..  TIP::
+    The ``for each`` expression in the pseudocode should be understood to be the mathematical :math:`\forall` operator.
+    If there are several bytes that are handled identically, then writing a loop probably makes sense.
+    On the other hand, if there are a small number of bytes, each of which must be handled differently,
+    then it probably makes more sense to write straight-line code.
+
+|
+
+..  ATTENTION::
+    The specific data byte sequence to be transmitted is described in the :ref:`hd44780` portion of the :doc:`hardware/outputs` Section.
+
+|
 
 Inter-Integrated Circuit Protocol
 """""""""""""""""""""""""""""""""
@@ -327,6 +542,8 @@ For this reason, the discussion in this datasheet will focus on the controller t
 The nature of |i2c| allows for uses other than the display module without compromising the ability to work with the display module.
 If you choose to expand the Cow Pi in such a manner that other |i2c| modes are necessary, see Section 21.7 of the |microcontrollerReference|_ for details.
 
+*We strongly advise against using the ATmega328P as a peripheral while it is in the Cow Pi circuit.*
+
 .. _`atmega328pTWIStruct`:
 
 Structure for Memory-Mapped Input/Output
@@ -341,7 +558,7 @@ Specifically, the :struct:`cowpi_i2c_t` structure provides meaningfully-named fi
 
 Unlike the I/O registers for the external pins, you will not have an array of :struct:`cowpi_i2c_t` structures; you'll have just the one.
 Create a pointer to a :struct:`cowpi_i2c_t` structure that points to the lowest-addressed register (TWBR, ``0xB8``, per :numref:`tableATmega328pTWIRegisters`).
-For example, if we wanted to determine if a status had been set and then set the TWI Enable bit (TWEN), then we could do so with C code similar to this:
+For example, if we wanted to determine if a status had been set, and then set the TWI Enable bit (TWEN), then we could do so with C code similar to this:
 
 ..  code-block:: c
     :linenos:
@@ -362,7 +579,7 @@ Control and Data Bits
 
 
 ..  _tableATmega328pTWIRegisters:
-..  table:: ATmega328P "Two Wire Interface" registers. Original data from |microcontrollerReference|, §21.9.
+..  table:: ATmega328P "Two Wire Interface" registers. Original data from |microcontrollerReference|_, §21.9.
 
     +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
     | Register Name                      | Address | Bit7  | Bit6  | Bit5  | Bit4  | Bit3  | Bit2  | Bit1  | Bit0  |
@@ -390,15 +607,15 @@ Control and Data Bits
 The CowPi_stdio library configures the |i2c| hardware to transmit at 100kbps.
 In this section we focus on the needs of the application programmer and shall describe only the control and data bits.
 If you need information about the setting the bit rate, or configuring the peripheral address and address mask,
-see Section 21.9 of the |microcontrollerReference| for the bit descriptions, and Chapter 21 generally for the bits' uses.
+see Section 21.9 of the |microcontrollerReference|_ for the bit descriptions, and Chapter 21 generally for the bits' uses.
 
 Data Bits
 ^^^^^^^^^
 
 The eight data bits are straight-forward.
-When in controller transmitter or peripheral transmitter mode, place the byte that needs to be transmitted into the TWI Data Register (or the ``data`` field of a :struct:`cowpi_i2c_t` variable);
+When in controller transmitter mode, place the byte that needs to be transmitted into the TWI Data Register (or the ``data`` field of a :struct:`cowpi_i2c_t` variable);
 there is generally no need to use the distinct bits.
-Similarly, when in controller receiver or peripheral receiver mode, the last byte sent by the transmitter can be found in the TWI Data Register.
+Similarly, when in controller receiver mode, the last byte sent by the transmitter can be found in the TWI Data Register.
 
 Control Bits
 ^^^^^^^^^^^^
@@ -406,15 +623,15 @@ Control Bits
 There are seven bits that either allow a program to control the |i2c| hardware or to learn when it is safe to control the hardware.
 
 Bit 7, TWI Interrupt Flag
-    The |i2c| hardware sets this bit to a 1 when it has finished with its last operation and the program can safely write to the data and status registers. 
+    The |i2c| hardware sets this bit to a 1 when it has finished with its last operation and the program can safely write to the data and status registers.
     Perhaps counterintuitively, the program clears the flag by writing a 1 to this bit; 
     this causes the bit to become 0. 
     Once the bit is 0, the program should not write to the status or data registers until it is 1 again. 
     You can create a busy-wait loop that blocks the program while the bit is 0.
 
     Alternatively, if TWI interrupts are enabled then you can create an interrupt handler that updates the data and status registers only when it is safe to do so (and then clears this bit).
-    The function initially disables TWI interrupts;
-    you must explicitly enable TWI interrupts if you intend to use them.
+    The :func:`cowpi_i2c_initialize_hardware` function initially disables TWI interrupts;
+    you must explicitly enable TWI interrupts in a custom function if you intend to use them.
 
 Bit 6, TWI Enable Acknowledge Bit
     When the program has set this bit to 1, it instructs the |i2c| hardware to generate an ACK signal at the appropriate times when in controller receiver, peripheral transmitter, or peripheral receiver modes.
@@ -430,6 +647,7 @@ Bit 4, TWI Stop Condition Bit
 
 Bit 3, TWI Write Collision Flag
     If a program writes to the data register while the TWI Interrupt Flag (bit 7) is 0, a data collision will occur, and this bit will become 1.
+    If you only use controller transmitter mode *and* you always use a busy-wait loop that blocks the program while the TWI Interrupt Flag is 0, then the TWI Write Collision Flag should never become 1.
 
 Bit 2, TWI Enable Bit
     This bit must be a 1 at all times for the |i2c| hardware to work, and the function initially sets it to 1;
@@ -458,7 +676,7 @@ Table 21-3 of the |microcontrollerReference|_ specifies what the status bits sho
 
 The pseudocode for this sequence is:
 
-.. code-block:: pascal
+..  code-block:: pascal
     :linenos:
 
     (* assume variable i2c is a reference to a cowpi_i2c_t structure *)
@@ -512,12 +730,12 @@ The pseudocode for this sequence is:
     :lineno-start: 33
 
             (* send the stop bit by writing a 1 to bit 4 of i2c.control *)
-        i2c->control := bitwise_or(control_bits, (1 << 4))
+    i2c->control := bitwise_or(control_bits, (1 << 4))
             (* unlike the START, address, and data transmissions, the STOP transmission
                does not set the TWINT bit when finished, but we shouldn't start another
                transmission while the STOP transmission is in-progress -- so we shall
                delay at least (8 bits / 100,000 bits per second = 80 microseconds) *)
-        timed_wait(80 microseconds or longer)
+    timed_wait(80 microseconds or longer)
 
 ..  TIP::
     The ``for each`` expression in the pseudocode should be understood to be the mathematical :math:`\forall` operator.
@@ -879,7 +1097,7 @@ Creating a pointer to TIMER0's memory-mapped registers is as simple as:
 Having creating that pointer, you can access the registers using the :struct:`cowpi_timer8bit_t`\ 's fields.
 
 ..  _tableATmega328pTIMER0registers:
-..  flat-table:: TIMER0's registers. Adapted from |microcontrollerReference|, §14.9.
+..  flat-table:: TIMER0's registers. Adapted from |microcontrollerReference|_, §14.9.
     :header-rows: 1
     :align: center
 
@@ -953,7 +1171,7 @@ Polling the counter value is a notional use case, but configuring an interrupt w
 Assigning a value, such as 0, to the counter would be a mechanism to reset its counter to a known value.
 
 Among the bits in the ``control`` field (the ``TCCR0A`` & ``TCCR0B`` registers), most can be left as 0.
-If you believe that you need to set custom "Force Output Compare" or "Compare Output Mode" bits, then consult the |microcontrollerReference|, Section 14.9.
+If you believe that you need to set custom "Force Output Compare" or "Compare Output Mode" bits, then consult the |microcontrollerReference|_, Section 14.9.
 Under typical Cow Pi usage, you should only need to set the "Waveform Generation Mode" and "Clock Select" bits.
 
 Using the prescaler that you determined above, you should assign the ``CS00``, ``CS01``, and ``CS02`` bits using :numref:`tableATmega328pTIMER0clockSelect`.
@@ -1107,7 +1325,7 @@ Having creating that pointer, you can access the registers using the :struct:`co
 
 The two comparison values, which you can set, are continuously compared to the timer's counter value.
 A comparison match can be used to generate an output compare interrupt (``TIMER1_COMPA_vect`` or ``TIMER1_COMPB_vect``).
-Input capture is beyond the scope of typical Cow Pi usage; see the |microcontrollerReference|, Section 15.6, for discussion of the input capture unit.
+Input capture is beyond the scope of typical Cow Pi usage; see the |microcontrollerReference|_, Section 15.6, for discussion of the input capture unit.
 The timer's counter value can be read from or written to by your program. Polling the counter value is a notional use case, but configuring an interrupt would be more appropriate.
 Assigning a value, such as 0, to the counter would be a mechanism to reset its counter to a known value.
 
@@ -1175,7 +1393,7 @@ Creating a pointer to TIMER0's memory-mapped registers is as simple as:
 Having creating that pointer, you can access the registers using the :struct:`cowpi_timer8bit_t`\ 's fields.
 
 ..  _tableATmega328pTIMER2registers:
-..  flat-table:: TIMER2's registers. Adapted from |microcontrollerReference|, §17.11.
+..  flat-table:: TIMER2's registers. Adapted from |microcontrollerReference|_, §17.11.
     :header-rows: 1
     :align: center
 
@@ -1250,7 +1468,7 @@ Assigning a value, such as 0, to the counter would be a mechanism to reset its c
 
 
 Among the bits in the ``control`` field (the ``TCCR0A`` & ``TCCR0B`` registers), most can be left as 0.
-If you believe that you need to set custom "Force Output Compare" or "Compare Output Mode" bits, then consult the |microcontrollerReference|, Section 17.11.
+If you believe that you need to set custom "Force Output Compare" or "Compare Output Mode" bits, then consult the |microcontrollerReference|_, Section 17.11.
 Under typical Cow Pi usage, you should only need to set the "Waveform Generation Mode" and "Clock Select" bits.
 
 
@@ -1382,8 +1600,8 @@ After enabling timer interrupts, be sure to register any necessary ISRs as descr
 
 
 ..  [#terminology]
-    The ATmega328P datasheet uses the older terms: master transmitter, master receiver, slave transmitter, and slave receiver.
-    In the Cow Pi datasheet, we will use the preferred terminology recommended by the Open Source Hardware Association.
+    The ATmega328P datasheet uses the legacy terms: master output/slave input and master input/slave output; and master transmitter, master receiver, slave transmitter, and slave receiver for |i2c|.
+    In the Cow Pi datasheet, we use the terminology recommended by the Open Source Hardware Association, as we find "controller" and "peripheral" to be the best-descriptive alternatives of those that have been suggested.
 
 
 

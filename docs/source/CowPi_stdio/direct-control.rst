@@ -3,6 +3,20 @@ Functions for Direct Control of Display Modules
 
 ..  contents:: \
 
+Functions for Direct Control of Communication Protocols
+-------------------------------------------------------
+
+communication.h
+"""""""""""""""
+
+..  doxygenfile:: communication.h
+
+|
+
+----
+
+|
+
 Functions for Direct Control of MAX7219-Controlled Display Modules
 ------------------------------------------------------------------
 

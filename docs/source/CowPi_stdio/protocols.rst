@@ -15,12 +15,16 @@ By default, the hardware-based implementation is used when available.
 Four functions are available to specify which implementations you wish to use:
 
 ..  doxygenfunction:: cowpi_use_spi_bitbang
+    :no-link:
 
 ..  doxygenfunction:: cowpi_use_spi_hardware
+    :no-link:
 
 ..  doxygenfunction:: cowpi_use_i2c_bitbang
+    :no-link:
 
 ..  doxygenfunction:: cowpi_use_i2c_hardware
+    :no-link:
 
 
 No Protocol
