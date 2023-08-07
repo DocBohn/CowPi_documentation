@@ -107,7 +107,7 @@ The unidirectional nature of the scrolling text forces us to ignore left-motion 
         -   places cursor in left column
         -   places cursor in left column
         -   | next byte specifies a segment pattern;
-            | see `MAX7219 datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_, Table 6
+            | see :numref:`sevenSegmentTable` and :numref:`sevenSegmentFigure`, or see `MAX7219 datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_, Table 6
         -   | ``\b``, then clears
             | existing character
     *   -   | 7-segment display
@@ -120,7 +120,7 @@ The unidirectional nature of the scrolling text forces us to ignore left-motion 
         -   ``\n``
         -   ``\n``
         -   | next byte specifies a segment pattern;
-            | see `MAX7219 datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_, Table 6
+            | see :numref:`sevenSegmentTable` and :numref:`sevenSegmentFigure`, or see `MAX7219 datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_, Table 6
         -   ignored
 
 

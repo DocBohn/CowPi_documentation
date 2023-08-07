@@ -3,6 +3,9 @@ Output Devices
 
 Unless implementing :doc:`../expansion`, the Cow Pi circuit's output devices are simple light emitting diodes and a display module, described here.
 
+..  contents:: \
+    :depth: 4
+
 ..  _LEDs:
 
 Light Emitting Diodes (LEDs)
@@ -256,22 +259,175 @@ When the function executes the SPI Controller-Out/Peripheral-In sequence or the 
 MAX7219-driven 8-Digit/7-Segment Display
 """"""""""""""""""""""""""""""""""""""""
 
-..  TODO:: Describe MAX7219-driven 8-Digit/7-Segment Displays
+..  image:: ../CowPi_stdio/img/sevensegment.gif
 
 ..  seealso::
     :doc:`../CowPi_stdio/seven_segment`
 
+The `MAX7219 <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_ is "serial input/output common-cathode display drivers that interface microprocessors (µPs) to 7-segment numeric LED displays of up to 8 digits, bar-graph displays, or 64 individual LEDs."
+The MAX7219 receives data from the microcontroller exclusively via the SPI protocol.
+It has a 2-byte shift register (though only the lower 12 bits are used), so the microcontroller transmits two bytes between setting the chip select line low and setting it high.
+The MAX7219 expects the word to arrive most significant bit first, which means that the most significant byte needs to be the first of the two bytes that are transmitted.
+
+The MAX7219's word consists of:
+
+..  _sevenSegmentTable:
+..  flat-table:: The bits required by the MAX7219.
+    :stub-columns: 1
+    :align: center
+
+    *   -   Shift Register
+        -   Bit15
+        -   Bit14
+        -   Bit13
+        -   Bit12
+        -   Bit11
+        -   Bit10
+        -   Bit9
+        -   Bit8
+        -   Bit7
+        -   Bit6
+        -   Bit5
+        -   Bit4
+        -   Bit3
+        -   Bit2
+        -   Bit1
+        -   Bit0
+    *   -   Usage
+        -   :cspan:`3` :rspan:`1` (unused)
+        -   :cspan:`3` :rspan:`1` Address
+        -   :rspan:`1` Decimal Point
+        -   Segment A
+        -   Segment B
+        -   Segment C
+        -   Segment D
+        -   Segment E
+        -   Segment F
+        -   Segment G
+    *   -   Segment Location
+        -   Top
+        -   Upper Right
+        -   Lower Right
+        -   Bottom
+        -   Lower Left
+        -   Upper Left
+        -   Middle
+
+The rightmost (least significant) digit on the display maps to address 1,
+and the leftmost (most significant) digit on the display maps to address 8.
+Addresses 9-15 are used to control functions such as the brightness level and BCD decode mode (for these control functions, the lower 8 bits serve a different purpose than specifying digit segments).
+
+..  _sevenSegmentFigure:
+..  tikz:: 8 digit/7 segment display's digit addresses and segment identifiers
+    :align: center
+
+    \begin{tikzpicture}[x=2mm, y=2mm]
+        \draw[line width = 0.25mm, red, fill=red]
+            (0,0)           -- ++(1.5,0)    node[black] {\small A}  -- ++(1.5,0)
+            ++(.25,-.25)    -- ++(0,-1.5)   node[black] {\small B}  -- ++(0,-1.5)
+            ++(0,-.5)       -- ++(0,-1.5)   node[black] {\small C}  -- ++(0,-1.5)
+            ++(-.25,-.25)   -- ++(-1.5,0)   node[black] {\small D}  -- ++(-1.5,0)
+            ++(-.25,.25)    -- ++(0,1.5)    node[black] {\small E}  -- ++(0,1.5)
+            ++(0,.5)        -- ++(0,1.5)    node[black] {\small F}  -- ++(0,1.5)
+            ++(.25,-3.25)   -- ++(1.5,0)    node[black] {\small G}  -- ++(1.5,0)
+            ++(1,-3) circle (.25) ++(0,-.75) node[black] {\tiny DP};
+        \draw[line width = 0.25mm, red, fill=red]  (6,0) -- ++(3,0) ++(.25,-.25) -- ++(0,-3) ++(0,-.5) -- ++(0,-3) ++ (-.25,-.25) -- ++(-3,0) ++(-.25,.25) -- ++(0,3) ++(0,.5) -- ++(0,3) ++(.25,-3.25) -- ++(3,0) ++(1,-3) circle (.25);
+        \draw[line width = 0.25mm, red, fill=red] (12,0) -- ++(3,0) ++(.25,-.25) -- ++(0,-3) ++(0,-.5) -- ++(0,-3) ++ (-.25,-.25) -- ++(-3,0) ++(-.25,.25) -- ++(0,3) ++(0,.5) -- ++(0,3) ++(.25,-3.25) -- ++(3,0) ++(1,-3) circle (.25);
+        \draw[line width = 0.25mm, red, fill=red] (18,0) -- ++(3,0) ++(.25,-.25) -- ++(0,-3) ++(0,-.5) -- ++(0,-3) ++ (-.25,-.25) -- ++(-3,0) ++(-.25,.25) -- ++(0,3) ++(0,.5) -- ++(0,3) ++(.25,-3.25) -- ++(3,0) ++(1,-3) circle (.25);
+        \draw[line width = 0.25mm, red, fill=red] (24,0) -- ++(3,0) ++(.25,-.25) -- ++(0,-3) ++(0,-.5) -- ++(0,-3) ++ (-.25,-.25) -- ++(-3,0) ++(-.25,.25) -- ++(0,3) ++(0,.5) -- ++(0,3) ++(.25,-3.25) -- ++(3,0) ++(1,-3) circle (.25);
+        \draw[line width = 0.25mm, red, fill=red] (30,0) -- ++(3,0) ++(.25,-.25) -- ++(0,-3) ++(0,-.5) -- ++(0,-3) ++ (-.25,-.25) -- ++(-3,0) ++(-.25,.25) -- ++(0,3) ++(0,.5) -- ++(0,3) ++(.25,-3.25) -- ++(3,0) ++(1,-3) circle (.25);
+        \draw[line width = 0.25mm, red, fill=red] (36,0) -- ++(3,0) ++(.25,-.25) -- ++(0,-3) ++(0,-.5) -- ++(0,-3) ++ (-.25,-.25) -- ++(-3,0) ++(-.25,.25) -- ++(0,3) ++(0,.5) -- ++(0,3) ++(.25,-3.25) -- ++(3,0) ++(1,-3) circle (.25);
+        \draw[line width = 0.25mm, red, fill=red] (42,0) -- ++(3,0) ++(.25,-.25) -- ++(0,-3) ++(0,-.5) -- ++(0,-3) ++ (-.25,-.25) -- ++(-3,0) ++(-.25,.25) -- ++(0,3) ++(0,.5) -- ++(0,3) ++(.25,-3.25) -- ++(3,0) ++(1,-3) circle (.25);
+        \draw[blue] (1.75,-10) node {8} ++(6,0) node {7} ++(6,0) node {6} ++(6,0) node {5} ++(6,0) node {4} ++(6,0) node {3} ++(6,0) node {2} ++(6,0) node {1};
+        \draw[black] (-4,-9) node {\tiny MAX7219 address};
+    \end{tikzpicture}
+
+Data Byte Sequence
+''''''''''''''''''
+
+..  IMPORTANT::
+    If you are going to write code to transmit data to a display module, see the :doc:`../microcontroller` for the sequence used to transmit a data byte using SPI for your particular microcontroller.
+
+When the function executes the SPI Controller-Out/Peripheral-In sequence (see the pseudocode in the :ref:`atmega328pCOPISequence` Section), it will have two (2) data bytes to transmit: the digit's address and the segment pattern.
+
+..  code-block:: pascal
+    :lineno-start: 8
+
+            (* signal the peripheral to receive data *)
+    set_pin(select_pin, 0);
+            (* send the data that the peripheral needs *)
+    spi->data := digit_address
+    busy_wait_while(bit 7 of i2c->status = 0)
+    spi->data := segment_bit_vector
+    busy_wait_while(bit 7 of i2c->status = 0)
+    set_pin(select_pin, 1);
 
 |
 
 MAX7219-driven LED Matrix
 """""""""""""""""""""""""
 
-..  TODO:: Describe MAX7219-driven LED Matrices
-
 ..  seealso::
     :doc:`../CowPi_stdio/led_matrix`
 
+The `MAX7219 <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_ is "serial input/output common-cathode display drivers that interface microprocessors (µPs) to 7-segment numeric LED displays of up to 8 digits, bar-graph displays, or 64 individual LEDs."
+The MAX7219 receives data from the microcontroller exclusively via the SPI protocol.
+It has a 2-byte shift register (though only the lower 12 bits are used), so the microcontroller transmits two bytes between setting the chip select line low and setting it high.
+The MAX7219 expects the word to arrive most significant bit first, which means that the most significant byte needs to be the first of the two bytes that are transmitted.
+
+The MAX7219's word consists of:
+
+..  _ledMatrixTable:
+..  flat-table:: The bits required by the MAX7219.
+    :stub-columns: 1
+    :align: center
+
+    *   -   Shift Register
+        -   Bit15
+        -   Bit14
+        -   Bit13
+        -   Bit12
+        -   Bit11
+        -   Bit10
+        -   Bit9
+        -   Bit8
+        -   Bit7
+        -   Bit6
+        -   Bit5
+        -   Bit4
+        -   Bit3
+        -   Bit2
+        -   Bit1
+        -   Bit0
+    *   -   Usage
+        -   :cspan:`3` :rspan:`1` (unused)
+        -   :cspan:`3` :rspan:`1` Row or Column Address
+        -   :cspan:`7` LED pattern within that row or column
+
+Unlike the 7-segment display, the MAX7219 datasheet does not pre-define the mapping of addresses to rows (or columns) nor of bits to the specific LEDs within each row or column.
+We can safely assume, however, that whichever mapping is used, the rows or columns have sequential addresses, and the LEDs have sequential bits.
+The CowPi_stdio library provides :enum:`orientations` and :enum:`flips` parameters to account for this variation.
+Addresses 9-15 are used to control functions such as the brightness level and how many rows (or columns) are displayed (for these control functions, the lower 8 bits serve a different purpose than specifying digit segments).
+
+Data Byte Sequence
+''''''''''''''''''
+
+..  IMPORTANT::
+    If you are going to write code to transmit data to a display module, see the :doc:`../microcontroller` for the sequence used to transmit a data byte using SPI for your particular microcontroller.
+
+When the function executes the SPI Controller-Out/Peripheral-In sequence (see the pseudocode in the :ref:`atmega328pCOPISequence` Section), it will have two (2) data bytes to transmit: the row/column's address and the LED pattern.
+
+..  code-block:: pascal
+    :lineno-start: 8
+
+            (* signal the peripheral to receive data *)
+    set_pin(select_pin, 0);
+            (* send the data that the peripheral needs *)
+    spi->data := line_address
+    busy_wait_while(bit 7 of i2c->status = 0)
+    spi->data := LED_bit_vector
+    busy_wait_while(bit 7 of i2c->status = 0)
+    set_pin(select_pin, 1);
 
 |
 

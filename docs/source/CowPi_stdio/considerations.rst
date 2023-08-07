@@ -126,7 +126,7 @@ We summarize them here, and they are demonstrated in the example programs.
         -   ✅
         -   ✅
         -   | next byte specifies a segment pattern;
-            | see `MAX7219 datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_, Table 6
+            | see :numref:`sevenSegmentTable` and :numref:`sevenSegmentFigure`, or see `MAX7219 datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_, Table 6
         -   ✅
     *   -   | 7-segment display
             | (scrolling)
@@ -138,7 +138,7 @@ We summarize them here, and they are demonstrated in the example programs.
         -   ``\n``
         -   ``\n``
         -   | next byte specifies a segment pattern;
-            | see `MAX7219 datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_, Table 6
+            | see :numref:`sevenSegmentTable` and :numref:`sevenSegmentFigure`, or see `MAX7219 datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/max7219-max7221.pdf>`_, Table 6
         -   ignored
     *   -   | LED matrix display
             | (scrolling)
