@@ -3,8 +3,14 @@ VS Code with the PlatformIO Plugin
 ----------------------------------
 
 If you prefer to use VS Code, you can do so.
-If you have not already installed VS Code, then `download and install <https://code.visualstudio.com/>`_ it.
-Next, you need to `install the PlatformIO extension <https://platformio.org/install/ide?install=vscode>`_\ .
+
+..  admonition:: If you are using your personal laptop
+    :class: hint
+
+    If you have not already installed VS Code, then `download and install <https://code.visualstudio.com/>`_ it.
+
+    :\:[   ]: `Install the PlatformIO extension <https://platformio.org/install/ide?install=vscode>`_\ .
+
 You may want to take a quick look at the `parts of the PlatformIO Toolbar <https://docs.platformio.org/en/latest/integration/ide/vscode.html#platformio-toolbar>`_\.
 
 
@@ -64,6 +70,13 @@ this is PlatformIO's logo.
 ..  image:: platformIOIcon.png
 
 :\:[   ]: Click on the PlatformIO logo.
+
+..  admonition:: If you are using the Terminal Server
+    :class: hint
+
+    The first time you click on the PlatformIO logo on the Terminal Server, you will need to wait a few minutes while PlatformIO finishes its installation.
+
+    ..  image:: terminalServerPlatformIO.png
 
 After a few seconds, a PlatformIO side-window will appear.
 

@@ -33,7 +33,7 @@ and we have seen that some Windows 11 computers need their CH340 USB driver upd
 
 See :doc:`../../../troubleshooting/nano` for instructions to handle these problems.
 
-If you are unable to get your Windows 11 computer to work with your Arduino Nano, then you should consider using a lab computer or terminal server for the I/O labs since they still run Windows 10. [#toughLuck]_
+If you are unable to get your Windows 11 computer to work with your Arduino Nano, then you should consider using a lab computer or Terminal Server for the I/O labs.
 
 
 Upload a New Sketch

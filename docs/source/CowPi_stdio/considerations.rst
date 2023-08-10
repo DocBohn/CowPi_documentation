@@ -39,7 +39,6 @@ For example:
 
     - This can be overcome with compiler arguments, but it will significantly increase the size of your program (by about 1.4KB on AVR targets)
 
-
     - Floating point conversions are supported on Raspberry Pi Pico
 
 - No 64-bit integer conversions (aborts print on AVR targets; prints without converting the specifier on ARM targets)
@@ -52,7 +51,50 @@ For example:
 
 The *printf_limitations* example program demonstrates these limitations.
 
-..  TODO:: Linker arguments to enable float conversions
+Enabling Floating Point Conversions
+"""""""""""""""""""""""""""""""""""
+
+AVR Targets
+'''''''''''
+
+You can enable floating point conversions on AVR targets by passing these arguments to the linker::
+
+    -Wl,-u,vfprintf -lprintf_flt -lm
+
+-   **If using the Arduino IDE**\ , then must create a *platform.local.txt* compiler configuration file;
+    this will change the settings for *all* projects. Using your file browser or command line, navigate to:
+
+        :Windows:   *C:\\Users\\*\ ▶username◀\ *\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\*\ ▶version_number◀\ *\\*
+
+        :MacOS:     */Users/*\ ▶username◀\ */Library/Arduino15/packages/arduino/hardware/avr/*\ ▶version_number◀\ */*
+
+        :Linux:     */home/*\ ▶username◀\ */.arduino15/packages/arduino/hardware/avr/*\ ▶version_number◀\ */*
+
+        (if using an Arduino Nano Every, replace *avr* with *megaavr*)
+
+    In that directory, create the file *platform.local.txt* with this line:
+
+    ..  code-block:: ini
+
+        compiler.c.elf.extra_flags = -Wl,-u,vfprintf -lprintf_flt -lm
+
+-   **If using PlatformIO**\ , you can enable these arguments on a project-by-project basis.
+    These arguments will be ``build_flags`` in the project's *platformio.ini* file.
+    For example:
+
+    ..  code-block:: ini
+        :emphasize-lines: 5
+
+        [env:nanoatmega328new]
+        platform = atmelavr
+        board = nanoatmega328new
+        framework = arduino
+        build_flags = -Wl,-u,vfprintf -lprintf_flt -lm
+
+ARM Targets
+'''''''''''
+
+..  TODO:: Linker arguments and/or inline asm directive for ARM
 
 
 ASCII Control Characters

@@ -183,6 +183,9 @@ If the |developmentBoard| were a Nano with the old bootloader, then the upload f
     ======================================================================= 1 failed, 1 succeeded in 00:00:55.312 =======================================================================
 
 
+..  TIP::
+    If the uploads for *both* bootloaders fail, then try uploading again before attempting any other :doc:`../../../troubleshooting/nano`\ .
+
 :\:[   ]: On the PlatformIO Toolbar, click on the PlatformIO Environment selector (which currently says "Default").
 
 At the top of VS Code, you will see the environment options.

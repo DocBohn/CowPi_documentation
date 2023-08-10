@@ -15,8 +15,8 @@ Broadly speaking, you have four options:
 
 -   Using the :ref:`mk1fArduinoIDE` on your personal laptop
 -   Using :ref:`mk1eVSCodeWithPlatformIO` on your personal laptop
--   Using PlatformIO on a lab computer
--   Using PlatformIO on a terminal server
+-   Using :ref:`mk1eTerminalServer` on a Terminal Server
+-   Using PlatformIO on a lab computer (this option is not yet available)
 
 ..  TODO:: Describe lab computer & terminal server options
 
@@ -57,9 +57,31 @@ If you are satisfied with using the Arduino IDE, then proceed to :doc:`power-mk1
 
 ----
 
+..  _mk1eTerminalServer:
+
+Microsoft Terminal Server
+-------------------------
+
+:\:[   ]: Download and install the `VMWare Horizon Client <https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_horizon_clients/horizon_8>`_\ .
+
+:\:[   ]: Using the VMWare Horizon Client, connect to *cse-vmcs-01.unl.edu* and login with your ``@unl.edu`` credentials.
+
+:\:[   ]: After you log in you should have an item called “Terminal Server” that you can select.
+
+:\:[   ]: After you have reached the Terminal Server's Windows desktop, and **before you plug in your Arduino**,
+    enable USB forwarding by going to the VMWare menu and selecting *Connections* ⟶ *USB* ⟶ *Automatically connect when inserted*.
+
+    ..  image:: terminalServerUSB.png
+
+Proceed to the Section about :ref:`mk1eVSCodeWithPlatformIO`.
+
 |
 
-.. _mk1eVSCodeWithPlatformIO:
+----
+
+|
+
+..  _mk1eVSCodeWithPlatformIO:
 
 ..  include:: ide-platformio-before-creating-project.rst
 
@@ -67,8 +89,8 @@ If you are satisfied with using the Arduino IDE, then proceed to :doc:`power-mk1
 
 :\:[   ]: Unless you already know which bootloader your |developmentBoard| has, select "Arduino Nano ATmega328." After you do so, the "framework" field will auto-populate to "Arduino" (:numref:`mk1eCreatingPlatformIOProject`\ (b)).
 
-.. _mk1eCreatingPlatformIOProject:
-.. figure:: ../../../blank.png
+..  _mk1eCreatingPlatformIOProject:
+..  figure:: ../../../blank.png
 
     Selecting board and processor in the Arduino IDE.
 
@@ -98,5 +120,3 @@ If you are satisfied with using the Arduino IDE, then proceed to :doc:`power-mk1
     | https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/main.cpp
 ..  [#usbConnection]
     | You can connect the USB cable to a "wall wart" USB power supply or to a USB battery pack if you only want to provide power to the Arduino Nano, but you need to connect it to a computer to upload a new sketch to the Arduino Nano.
-..  [#toughLuck]
-    | If it makes you feel any better, when we used Altera boards for the I/O labs, Mac users had no choice but to use lab computers.

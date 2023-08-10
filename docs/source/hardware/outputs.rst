@@ -367,6 +367,8 @@ When the function executes the SPI Controller-Out/Peripheral-In sequence (see th
 MAX7219-driven LED Matrix
 """""""""""""""""""""""""
 
+..  image:: ../CowPi_stdio/img/ledmatrix.gif
+
 ..  seealso::
     :doc:`../CowPi_stdio/led_matrix`
 
@@ -406,7 +408,9 @@ The MAX7219's word consists of:
 
 Unlike the 7-segment display, the MAX7219 datasheet does not pre-define the mapping of addresses to rows (or columns) nor of bits to the specific LEDs within each row or column.
 We can safely assume, however, that whichever mapping is used, the rows or columns have sequential addresses, and the LEDs have sequential bits.
-The CowPi_stdio library provides :enum:`orientations` and :enum:`flips` parameters to account for this variation.
+The CowPi_stdio library provides :enum:`orientations` and :enum:`flips` parameters to account for this variation so that when using a FILE stream, the display appears to be comprised of columns.
+Within each apparent column, the bottommost LED corresponds to the column bit vector's most significant bit, and the uppermost LED corresponds to the column bit vector's least significant bit.
+
 Addresses 9-15 are used to control functions such as the brightness level and how many rows (or columns) are displayed (for these control functions, the lower 8 bits serve a different purpose than specifying digit segments).
 
 Data Byte Sequence
