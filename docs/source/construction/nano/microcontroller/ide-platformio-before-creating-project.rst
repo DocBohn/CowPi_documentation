@@ -2,8 +2,6 @@
 VS Code with the PlatformIO Plugin
 ----------------------------------
 
-If you prefer to use VS Code, you can do so.
-
 ..  admonition:: If you are using your personal laptop
     :class: hint
 

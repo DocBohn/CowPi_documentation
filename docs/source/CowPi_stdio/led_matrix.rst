@@ -12,6 +12,13 @@ Another "gotcha" (and this really is beyond the scope of the library) is that th
 
 ..  contents:: \
 
+..  CAUTION::
+
+    The CowPi_stdio library disables the LED Matrix display by default on the Arduino Uno and the Arduino Nano.
+    To enable Morse Code output, use the compiler argument ``-DMATRIX_FONT``.
+
+    See the Section discussion :ref:`memoryExpensiveDisplays` for more details.
+
 
 Discussion
 ----------

@@ -18,8 +18,6 @@ Broadly speaking, you have four options:
 -   Using :ref:`mk1fTerminalServer` on a Terminal Server
 -   Using PlatformIO on a lab computer (this option is not yet available)
 
-..  TODO:: Describe lab computer & terminal server options
-
 |
 
 ----

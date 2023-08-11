@@ -2,7 +2,6 @@
 Arduino IDE
 -----------
 
-The Arduino IDE is installed on the lab computers.
 If you choose to install the Arduino IDE on your personal laptop, you can download it from https://www.arduino.cc/en/software
 and follow the `installation instructions <https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing>`_.
 Alternatively, you can install a browser plugin to use the `Arduino Web Editor <https://docs.arduino.cc/arduino-cloud/getting-started/getting-started-web-editor>`_.

@@ -9,6 +9,13 @@ For displaying output, the simplicity of Morse Code is such that it can be used 
 
 ..  contents:: \
 
+..  CAUTION::
+
+    The CowPi_stdio library disables Morse Code output by default on the Arduino Uno and the Arduino Nano.
+    To enable Morse Code output, use the compiler argument ``-DMORSE_FONT``.
+
+    See the Section discussion :ref:`memoryExpensiveDisplays` for more details.
+
 Discussion
 ----------
 

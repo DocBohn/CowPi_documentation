@@ -25,9 +25,6 @@ could be changed to
 
 reducing the SRAM usage by 27 bytes and increasing the Flash Memory usage by 27 bytes.
 
-..  TODO:: Compiler arguments to enable/disable matrix & morse fonts and timer-based displays
-
-.. .. file location for Arduino IDE described here: https://support.arduino.cc/hc/en-us/articles/4415103213714-Find-sketches-libraries-board-cores-and-other-files-on-your-computer
 
 ``printf`` Limitations
 ----------------------
@@ -61,7 +58,7 @@ You can enable floating point conversions on AVR targets by passing these argume
 
     -Wl,-u,vfprintf -lprintf_flt -lm
 
--   **If using the Arduino IDE**\ , then must create a *platform.local.txt* compiler configuration file;
+-   **If using the Arduino IDE**\ , then you must create a *platform.local.txt* compiler configuration file (or edit one that is already present);
     this will change the settings for *all* projects. Using your file browser or command line, navigate to:
 
         :Windows:   *C:\\Users\\*\ ▶username◀\ *\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\*\ ▶version_number◀\ *\\*
@@ -72,7 +69,7 @@ You can enable floating point conversions on AVR targets by passing these argume
 
         (if using an Arduino Nano Every, replace *avr* with *megaavr*)
 
-    In that directory, create the file *platform.local.txt* with this line:
+    In that directory, create (or edit) the file *platform.local.txt* with this line:
 
     ..  code-block:: ini
 
@@ -226,3 +223,97 @@ Pointing Multiple File Streams to the Same Display Module
 
 ..  WARNING::
     Using more than one file stream to control one display module will result in undefined behavior.
+
+..  _memoryExpensiveDisplays:
+
+Enabling/Disabling Memory-Expensive Display Modules
+---------------------------------------------------
+
+While the CowPi_stdio library is written for run-time configuration, there are some portions that you may wish to eliminate at compile-time to reduce the memory used.
+You can do so by passing compile-time arguments that are discussed below:
+
+Matrix Font
+"""""""""""
+
+The dot matrix font defined in the library is sizable indeed.
+Removing the dot matrix font will eliminate a little over 2KB -- on AVR devices, this savings will be in flash memory;
+on ARM devices, this savings will be in RAM
+
+- ``-DNO_MATRIX_FONT`` explicitly excludes the dot matrix font and any display modules that depend upon it;
+  this is the default for the ATmega328P (Arduino Uno, Arduino Nano)
+- ``-DMATRIX_FONT`` explicitly includes the dot matrix font;
+  this is the default for all other microcontrollers
+
+Morse Code Font
+"""""""""""""""
+
+The Morse Code font defined in the library is smaller than the dot matrix font but large enough to consider excluding.
+Removing the Morse Code font will eliminate a little over 1KB -- on AVR devices, this savings will be in flash memory;
+on ARM devices, this savings will be in RAM
+
+- ``-DNO_MORSE_FONT`` explicitly excludes the Morse Code font and the Morse Code display;
+  this is the default for the ATmega328P (Arduino Uno, Arduino Nano)
+- ``-DMORSE_FONT`` explicitly includes the Morse Code font;
+  this is the default for all other microcontrollers
+
+Timed Displays
+""""""""""""""
+
+There are some displays that update based on a timer, such as the scrolling 7-segment display, the LED matrix display, and the Morse Code display.
+Passing the compiler argument ``-DNO_TIMED_DISPLAYS`` will disable these displays and will elimate 880 bytes from flash memory.
+This argument is *not* the default on any microcontrollers.
+
+Which displays are disabled
+"""""""""""""""""""""""""""
+
+- The scrolling option for the :doc:`seven_segment` is disabled when ``NO_TIMED_DISPLAYS`` is defined
+- The :doc:`led_matrix` is disabled when either ``NO_TIMED_DISPLAYS`` or ``NO_MATRIX_FONT`` is defined
+- The :doc:`morse_code` is disabled when either ``NO_TIMED_DISPLAYS`` or ``NO_MORSE_FONT`` is defined
+- All other displays are always enabled
+
+If you attempt to configure a disabled display module, then the ``FILE *`` variable that :func:`add_display_module` returns will be ``NULL``, the same as would happen for any other configuration error.
+
+..  _passingCompilerArguments:
+
+Passing Compiler Arguments
+""""""""""""""""""""""""""
+
+These examples specifically show disabling the Morse Code font and timer-based displays;
+replace the arguments shown with your intended arguments.
+
+-   **If using the Arduino IDE**\ , then you must create a *platform.local.txt* compiler configuration file (or edit one that is already present);
+    this will change the settings for *all* projects. Using your file browser or command line, navigate to:
+
+        :Windows:   *C:\\Users\\*\ ▶username◀\ *\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\*\ ▶platform◀\ *\\*\ ▶version_number◀\ *\\*
+
+        :MacOS:     */Users/*\ ▶username◀\ */Library/Arduino15/packages/arduino/hardware/*\ ▶platform◀\ */*\ ▶version_number◀\ */*
+
+        :Linux:     */home/*\ ▶username◀\ */.arduino15/packages/arduino/hardware/*\ ▶platform◀\ */*\ ▶version_number◀\ */*
+
+        Where *▶platform◀* is the specific platform for your microcontroller board:
+
+            :avr:           Arduino Nano, Arduino Uno, Arduino Mega 2560
+            :megaavr:       Arduino Nano Every
+            :samd:          Arduino Nano 33 IoT
+            :mbed_nano:     Arduino Nano 33 BLE
+            :mbed_rp2040:   Arduino Nano RP2040 Connect, Raspberry Pi Pico
+
+    In that directory, create (or edit) the file *platform.local.txt* with lines such as these:
+
+    ..  code-block:: ini
+
+        compiler.c.extra_flags = -DNO_MORSE_FONT -DNO_TIMED_DISPLAYS
+        compiler.cpp.extra_flags = -DNO_MORSE_FONT -DNO_TIMED_DISPLAYS
+
+-   **If using PlatformIO**\ , you can enable these arguments on a project-by-project basis.
+    These arguments will be ``build_flags`` in the project's *platformio.ini* file.
+    For example:
+
+    ..  code-block:: ini
+        :emphasize-lines: 5
+
+        [env:nanoatmega328new]
+        platform = atmelavr
+        board = nanoatmega328new
+        framework = arduino
+        build_flags = -DNO_MORSE_FONT -DNO_TIMED_DISPLAYS
