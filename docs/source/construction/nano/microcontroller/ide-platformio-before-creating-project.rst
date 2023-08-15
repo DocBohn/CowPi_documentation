@@ -62,7 +62,7 @@ The ``L`` LED is connected to the |developmentBoard|'s pin D13, and Arduino micr
 
 :\:[   ]: Open VS Code on the computer that your |developmentBoard| is connected to.
 
-On VS Code's left-side menu, you will see an bug head icon;
+On VS Code's left-side menu, you will see a bug head icon;
 this is PlatformIO's logo.
 
 ..  image:: platformIOIcon.png
