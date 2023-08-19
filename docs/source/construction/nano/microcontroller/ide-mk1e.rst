@@ -15,7 +15,7 @@ Broadly speaking, you have four options:
 
 -   Using the :ref:`mk1fArduinoIDE` on your personal laptop
 -   Using :ref:`mk1eVSCodeWithPlatformIO` on your personal laptop
--   Using :ref:`mk1eTerminalServer` on a Terminal Server
+-   Using VS Code with the PlatformIO Plugin on a :ref:`mk1eTerminalServer`
 -   Using PlatformIO on a lab computer (this option is not yet available)
 
 |

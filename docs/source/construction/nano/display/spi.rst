@@ -131,7 +131,7 @@ When you have finished connecting the display module, there should be the electr
                 [env]
                 lib_deps =
                   docbohn/CowPi @ ^0.6.0
-                  docbohn/CowPi_stdio @ ^0.5.1
+                  docbohn/CowPi_stdio @ ^0.6.0
                 monitor_echo = yes
 
     :\:[   ]: Compile the program and upload it to your Arduino Nano.
@@ -164,7 +164,7 @@ When you have finished connecting the display module, there should be the electr
                 [env]
                 lib_deps =
                   docbohn/CowPi @ ^0.6.0
-                  docbohn/CowPi_stdio @ ^0.5.1
+                  docbohn/CowPi_stdio @ ^0.6.0
                 monitor_echo = yes
 
     :\:[   ]: Compile the program and upload it to your Arduino Nano.
