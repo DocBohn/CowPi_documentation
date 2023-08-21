@@ -11,7 +11,7 @@ In the I/O labs, we will use a microcontroller board with some peripherals. In t
 
 ..  NOTE::
     The EE Shop has prepared “class kits” for CSCE 231;
-    your class kit costs $30.
+    your class kit costs $34.
     The EE Shop is located at C308 Scott Engineering Center and is open M-F 7am-4pm.
     You do not need an appointment.
     You may pay at the window
