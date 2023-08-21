@@ -105,7 +105,7 @@ Proceed to the Section about :ref:`mk1fVSCodeWithPlatformIO`.
 
 ..  include:: ide-platformio-after-creating-project.rst
 
-If you are satisfied with using the Arduino IDE, then proceed to :doc:`power-mk1f`.
+If you are satisfied with using VS Code with PlatformIO, then proceed to :doc:`power-mk1f`.
 
 |
 

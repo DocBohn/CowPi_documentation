@@ -7,6 +7,13 @@ Changelog
 .. .. [Unreleased]
 .. .. ============
 
+[Unreleased]
+============
+
+Added
+-----
+
+-   Instructions to assemble Cow Pi mk3c
 
 [202308]
 ========

@@ -44,9 +44,8 @@ Cow Pi mk3 boards are assembled on through-hole PCBs.
 Mark 3 designs require through-hole soldering skills.
 We placed links to the Gerber files are (or rather, will be) in the instructions;
 you can have a small number of boards produced for just a few dollars.
-The instructions for Mark 3 designs include only a couple of checkpoints to have a second set of eyes check your work -- the opportunities for errors are very few.
-Two of the checkpoints are intended to make sure you don't have to include desoldering to the set of skills you'll need.
-Most Mark 3 designs also have a checkpoint that, as with the Mark 1 designs, is there to ensure there are no electrical problems.
+The instructions for Mark 3 designs include only a few of checkpoints to have a second set of eyes check your work -- the opportunities for errors are very few.
+These checkpoints are intended to make sure you don't have to include desoldering to the set of skills you'll need.
 
 .. image:: hardware/mk3a.jpg
     :height: 3cm
@@ -54,6 +53,9 @@ Most Mark 3 designs also have a checkpoint that, as with the Mark 1 designs, is 
 .. image:: hardware/mk3b-vice.jpg
     :height: 3cm
     :alt: A blue printed circuit board designed to mount atop an Arduino Uno. The keypad is a matrix of discrete tactile switches with a "forest" of diodes to the side; while no display is currently attached, insertion points for an arbitrary display module are attached to the board.
+.. image:: hardware/mk3c.jpeg
+    :height: 3cm
+    :alt: A yellow printed circuit board with a Raspberry Pi Pico mounted upon it. The keypad is a matrix of discrete tactile switches with a "forest" of diodes to the side, and the display is an OLED graphic display.
 
 |
 
@@ -71,5 +73,6 @@ On the other hand, if you have PCBs manufactured and assembled, then you will ne
     construction/nano/mk1bcd-modification/modification.rst
     construction/nano/construction-mk1e
     construction/nano/construction-mk1f
+    construction/pico/assemble-mk3c
 
-..  TODO:: Instructions for mk3a, mk3b, mk3c
+..  TODO:: Instructions for mk3a, mk3b

@@ -61,6 +61,9 @@ Cow Pi mk3 boards are assembled on through-hole PCBs:
 .. image:: hardware/mk3b-vice.jpg
     :height: 3cm
     :alt: A blue printed circuit board designed to mount atop an Arduino Uno. The keypad is a matrix of discrete tactile switches with a "forest" of diodes to the side; while no display is currently attached, insertion points for an arbitrary display module are attached to the board.
+.. image:: hardware/mk3c.jpeg
+    :height: 3cm
+    :alt: A yellow printed circuit board with a Raspberry Pi Pico mounted upon it. The keypad is a matrix of discrete tactile switches with a "forest" of diodes to the side, and the display is an OLED graphic display.
 
 Cow Pi mk4 boards are assembled on surface-mount PCBs:
 

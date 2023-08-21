@@ -32,6 +32,8 @@ You will see a pop-up window telling you that you also need to install the CowPi
     -   If you err and select "Install Without Dependencies" then you can still install the CowPi_stdio library separately.
 
 
+..  _testCode:
+
 Load the I/O Test Code
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -64,8 +66,6 @@ we will specify their use in *platformio.ini* files, and PlatformIO will automat
 
 Proceed to :doc:`../direct-io/switches-mk1f`.
 
-
-..  _testCode:
 
 Load the I/O Test Code
 ~~~~~~~~~~~~~~~~~~~~~~
