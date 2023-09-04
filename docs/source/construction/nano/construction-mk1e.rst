@@ -9,19 +9,6 @@ These are the instructions to assemble a Cow Pi circuit using an Arduino Nano, a
 
 In the I/O labs, we will use a microcontroller board with some peripherals. In this prelab, you will assemble the hardware for the I/O labs.
 
-..  NOTE::
-    The EE Shop has prepared “class kits” for CSCE 231;
-    your class kit costs $34.
-    The EE Shop is located at C308 Scott Engineering Center and is open M-F 7am-4pm.
-    You do not need an appointment.
-    You may pay at the window
-    with cash, with a personal check, or with your NCard.
-    The EE shop does *not* accept credit cards.
-
-..  CAUTION::
-    Access in/through the Scott Engineering Center changes frequently due to construction.
-    Starting in the third week of the semester, we will attempt to maintain this page with the best access route.
-
 ----
 
 .. toctree::

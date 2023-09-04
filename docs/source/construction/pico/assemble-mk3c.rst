@@ -449,13 +449,23 @@ Attach Remaining Components
 Kit Assembly is Complete
 ========================
 
-You have now finished assembling the Cow Pi mark 3c.
-
     +--------------------------------------------+-------------------------------------------+
     | .. image:: mk3c-images/complete-front.jpg  | .. image:: mk3c-images/complete-back.jpg  |
     |    :align: center                          |    :align: center                         |
     |    :width: 90%                             |    :width: 90%                            |
     +--------------------------------------------+-------------------------------------------+
+
+You have now finished assembling the Cow Pi mark 3c.
+
+|
+
+..  _mk1cSchematic:
+..  figure:: mk3c-images/CowPi-mk3c-schematic.png
+    :alt: The schematic diagram of the Cow Pi mark 3c
+    :align: center
+    :width: 90%
+
+    The schematic diagram of the Cow Pi mark 3c.
 
 |
 

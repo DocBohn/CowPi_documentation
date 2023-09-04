@@ -20,7 +20,7 @@ In the I/O labs, we will use a microcontroller board with some peripherals. In t
 
 ..  CAUTION::
     Access in/through the Scott Engineering Center changes frequently due to construction.
-    Starting in the third week of the semester, we will attempt to maintain this page with the best access route.
+    See `the course's Piazza site <https://piazza.com/class/ll2imal4y7n5zq/post/42>`_ for the current best-known route.
 
 ----
 

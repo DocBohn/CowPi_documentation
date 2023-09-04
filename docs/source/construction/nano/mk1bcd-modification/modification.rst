@@ -8,7 +8,7 @@ If you have an older breadboard-based Cow Pi circuit, you can modify it to a cur
 
 ..  IMPORTANT::
     If you previously installed the CowPi library version 0.4.1 or earlier (*i.e.*, Spring 2023 or earlier)
-    then you will need to manually uninstall the library and re-\ :doc:`../microcontroller/libraries-mk1f`.
+    then you will need to :ref:`uninstallOldLibrary` and re-\ :doc:`../microcontroller/libraries-mk1f`.
 
     CowPi (and CowPi_stdio) library versions 0.5.0 and later will automatically update.
 
