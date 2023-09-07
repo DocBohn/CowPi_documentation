@@ -35,13 +35,16 @@ Required and Optional Components
 
 The components for a Cow Pi mk3c development board are:
 
+-   One (1) Cow Pi mk3c printed circuit board
+
+    -   `Gerber files <https://github.com/DocBohn/CowPi_hardware/blob/main/mark-3/CowPi-mk3c-gerber.zip>`_
+    -   `KiCad files <https://github.com/DocBohn/CowPi_hardware/tree/main/mark-3/CowPi-mk3c>`_
+
 -   One (1) Raspberry Pi Pico with headers
 
     -   Shown are a Raspberry Pi Pico H, which has the headers pre-attached, and an original Raspberry Pi Pico, which does not have the headers pre-attached.
         This is to illustrate the two options;
         you only need one Pico, not two.
-
--   One (1) Cow Pi mk3c printed circuit board
 
 -   Four (4) PCB "feet"
 
