@@ -64,8 +64,7 @@ Install the Libraries for PlatformIO
 You do not need to explicitly install the libraries;
 we will specify their use in *platformio.ini* files, and PlatformIO will automatically download them.
 
-Proceed to :doc:`../direct-io/switches-mk1f`.
-
+:\:[   ]: In VS Code, close your *MyBlink* project.
 
 Load the I/O Test Code
 ~~~~~~~~~~~~~~~~~~~~~~

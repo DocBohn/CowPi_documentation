@@ -16,7 +16,7 @@ Prepare to Assemble the Cow Pi mark 1f
 
 
 Not included: when you :doc:`../display/i2c`, you will briefly need a Phillips-head screwdriver.
-If you do not have one, I have placed one at the TA desk in the Student Resource Center. [#]_
+If you do not have one, I have placed one at the TA desk in the Student Resource Center. [#]_ [#]_
 
 
 ..  include:: preparation-assembling.rst
@@ -53,3 +53,4 @@ If you do not have one, I have placed one at the TA desk in the Student Resource
 
 
 ..  [#] In the past, screwdrivers that I place at the TA desk have grown feet. Don't be that person.
+..  [#] It looks like the last screwdriver that I placed at the TA desk has walked off, and I have no more cheap screwdrivers to place in the SRC. If you happen to see a screwdriver labeled "CSCE 231 -- if found, return to SRC" then please bring it to the SRC.

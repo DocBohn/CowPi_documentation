@@ -1,4 +1,4 @@
-After *io_test* has been uploaded to your |developmentBoard|, hou will see this message in your IDE's Serial Monitor:
+After *io_test* has been uploaded to your |developmentBoard|, you will see this message in your IDE's Serial Monitor:
 
 ..  code-block:: console
 
