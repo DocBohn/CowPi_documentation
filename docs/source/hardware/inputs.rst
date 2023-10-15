@@ -363,7 +363,7 @@ If the keypad is wired to the microcontroller such that four contiguous output p
     The ``for each`` expressions in the pseudocode should be understood to be the mathematical :math:`\forall` operator.
     Write a loop, or don't, based on what makes sense to you in terms of readability and ease of modification.
     We have seen successful implementations that use a loop to iterate over the columns,
-    and we have seen successful implementations that instead have four ``if`` statements.
+    and we have seen successful implementations that instead have a ``switch`` statement or four ``if`` statements.
 
 
 The delay shown in line 4 is sometimes, but not always necessary.

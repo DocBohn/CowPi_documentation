@@ -82,7 +82,7 @@ The unidirectional nature of the scrolling text forces us to ignore left-motion 
         -   ``\f``
         -   ``\r``
         -   0x1B (gcc ``\e``)
-        -   0x1F
+        -   0x7F
     *   -   ASCII
         -   bell (alarm)
         -   backspace

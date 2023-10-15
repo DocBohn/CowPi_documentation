@@ -108,7 +108,7 @@ Some of the ASCII control characters are ignored for the practical reason that t
         -   ``\f``
         -   ``\r``
         -   0x1B (gcc ``\e``)
-        -   0x1F
+        -   0x7F
     *   -   ASCII
         -   bell (alarm)
         -   backspace

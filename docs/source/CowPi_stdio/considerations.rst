@@ -118,7 +118,7 @@ We summarize them here, and they are demonstrated in the example programs.
         -   ``\f``
         -   ``\r``
         -   0x1B (gcc ``\e``)
-        -   0x1F
+        -   0x7F
     *   -   ASCII
         -   bell (alarm)
         -   backspace

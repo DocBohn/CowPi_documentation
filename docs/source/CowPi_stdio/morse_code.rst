@@ -73,7 +73,7 @@ however, many Morse Code prosigns have similar intent.
         -   ``\f``
         -   ``\r``
         -   0x1B (gcc ``\e``)
-        -   0x1F
+        -   0x7F
     *   -   ASCII
         -   bell (alarm)
         -   backspace
