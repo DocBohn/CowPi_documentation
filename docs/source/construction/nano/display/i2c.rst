@@ -118,7 +118,7 @@ When you have finished connecting the display module, there should be the electr
 
 -   If you are using the Arduino IDE:
 
-    :\:[   ]: Open the *File* ⟶ *Examples* ⟶ *CowPi_stdio* ⟶ *hd44780_lcd_character* example.
+    :\:[   ]: Open the *File* ⟶ *Examples* ⟶ *CowPi_stdio* ⟶ *hd44780_blinky* example.
 
 -   If you are using PlatformIO:
 
@@ -128,7 +128,7 @@ When you have finished connecting the display module, there should be the electr
         ..  code-block:: ini
 
             [platformio]
-            src_dir = .pio/libdeps/▶environment_name◀/CowPi_stdio/examples/hd44780_lcd_character
+            src_dir = .pio/libdeps/▶environment_name◀/CowPi_stdio/examples/hd44780_blinky
 
             [env]
             lib_deps =
