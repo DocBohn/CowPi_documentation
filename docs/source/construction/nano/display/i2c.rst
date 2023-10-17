@@ -31,10 +31,10 @@ When the display module is oriented for viewing, these header pins will be on th
 
 ..  _i2cFigureConnections:
 ..  figure:: display-connections-mk1f.jpg
-    :alt: SPI connections on at the microcontroller.
+    :alt: I2C connections on at the microcontroller.
     :width: 90.0%
 
-    SPI connections on at the microcontroller.
+    |i2c| connections on at the microcontroller.
 
 
 ..  IMPORTANT:: |unplug|
