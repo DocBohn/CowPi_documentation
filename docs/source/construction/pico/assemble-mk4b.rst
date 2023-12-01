@@ -2,7 +2,7 @@
 Cow Pi mark 4b Assembly Instructions (Raspberry Pi Pico, SSD1306 OLED graphic display via |i2c| communication)
 **************************************************************************************************************
 
-This is a minimal set of instructions but should be sufficient if you are using a fully-populated Cow~Pi mk4b.
+This is a minimal set of instructions but should be sufficient if you are using a fully-populated Cow Pi mk4b.
 A more detailed set of instructions that include other options will be available soon.
 
 ..  contents::
@@ -53,7 +53,7 @@ Final Assembly Instructions
         -   If you have PCB feet, insert them into the mounting holes.
 
         -   If you have rubber or silicone adhesive bumper pads, attach four of them on the backside of the PCB near the corner mounting holes.
-            Attach the remaining two bumper pads longitudinally center, near the edges of the PCB; you can use the through-holes that run along the edges of the Raspberry~Pi Pico as a guide.
+            Attach the remaining two bumper pads longitudinally center, near the edges of the PCB; you can use the through-holes that run along the edges of the Raspberry Pi Pico as a guide.
 
 :\:[   ]: Remove the covering from the mini-breadboard's adhesive backing
 

@@ -67,11 +67,13 @@ Cow Pi mk3 boards are assembled on through-hole PCBs:
 
 Cow Pi mk4 boards are assembled on surface-mount PCBs:
 
-.. .. mk4a
+.. image:: hardware/mk4a.jpeg
+    :height: 3cm
+    :alt: A red printed circuit board with a Raspberry Pi Pico-H mounted in an elevated position upon it. The keypad is a matrix of discrete tactile switches with adjoining diodes, and the display is an OLED graphic display.
 
 .. image:: hardware/mk4b.jpeg
     :height: 3cm
-    :alt: A red printed circuit board with a Rasberry Pi Pico mounted upon it. The keypad is a matrix of discrete tactile switches with adjoining diodes, and the display is an OLED graphic display.
+    :alt: A red printed circuit board with a Raspberry Pi Pico mounted directly upon it. The keypad is a matrix of discrete tactile switches with adjoining diodes, and the display is an OLED graphic display.
 
 
 The toggleable switches are referred to as the **left switch** and the **right switch**, and each can be positioned in the left or right position.
