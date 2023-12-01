@@ -8,6 +8,10 @@ an electronic combination lock to secure your wildly-dangerous experimental robo
 or a motion alarm to protect yourself from zombie gourds,
 using a Cow Pi development board is your best option.
 
+.. image:: cowpi-license-facts.png
+    :height: 4cm
+    :alt: Open Source Hardware Licenses: CERN-OHL-P-2.0, Apache 2.0, CC-BY-4.0
+
 .. toctree::
     :maxdepth: 2
 
