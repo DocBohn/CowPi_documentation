@@ -63,7 +63,11 @@ Cow Pi mk4 boards are assembled on surface-mount PCBs.
 If you have the PCBs manufactured and delivered to you unpopulated, then Mark 4 designs require surface-mount soldering skills.
 On the other hand, if you have PCBs manufactured and assembled, then you will need no skills and only a small degree of attention to detail.
 
-*(no image available)*
+.. .. mk4a
+
+.. image:: hardware/mk4b.jpeg
+    :height: 3cm
+    :alt: A red printed circuit board with a Rasberry Pi Pico mounted upon it. The keypad is a matrix of discrete tactile switches with adjoining diodes, and the display is an OLED graphic display.
 
 ----
 
@@ -74,5 +78,6 @@ On the other hand, if you have PCBs manufactured and assembled, then you will ne
     construction/nano/construction-mk1e
     construction/nano/construction-mk1f
     construction/pico/assemble-mk3c
+    construction/pico/assemble-mk4b
 
 ..  TODO:: Instructions for mk3a, mk3b

@@ -347,7 +347,7 @@ SPI Register Bits
     | Register Name                      | Address | Bit7  | Bit6  | Bit5  | Bit4  | Bit3  | Bit2  | Bit1  | Bit0  |
     +====================================+=========+=======+=======+=======+=======+=======+=======+=======+=======+
     | | Data Register                    |         |       |       |       |       |       |       |       |       |
-    | | TSPR                             | 0x4E    | MSB   |  ...  |  ...  |  ...  |  ...  |  ...  |  ...  | LSB   |
+    | | SPDR                             | 0x4E    | MSB   |  ...  |  ...  |  ...  |  ...  |  ...  |  ...  | LSB   |
     +------------------------------------+---------+-------+-------+-------+-------+-------+-------+-------+-------+
     | | Status Register                  |         |       |       |       |       |       |       |       |       |
     | | SPSR                             | 0x4D    | SPIF  | WCOL  | —     | —     | —     | —     | TWPS1 | SPI2X |
@@ -1033,7 +1033,7 @@ where:
     is the system clock frequency (the inverse of the clock period).
 
 comparison_value
-    is how the number of "timer" beats between interrupts.
+    is the number of "timer" beats between interrupts.
     You will notice that Normal mode's equations are a special case of those presented here, in which *comparison_value* is :math:`2^{timer\_bits}`\ .
     You will subtract one from *comparison_value* and place in one of the timer's ``compare`` registers for a comparison-based timer interrupt.
     This can be any possible value of an unsigned 16-bit integer for TIMER1, or any possible value of an unsigned 8-bit integer for TIMER0 and TIMER2.
@@ -1526,7 +1526,7 @@ To access these as memory-mapped registers, create a ``uint8_t`` pointer, and as
 
 ::
 
-       volatile uint8_t *timer_interrupt_masks = 0x6E;
+       volatile uint8_t *timer_interrupt_masks = (uint8_t *)(0x6E);
 
 This pointer can then be used as a 3-element array, indexed by the timer number.
 For example, ``timer_interrupt_masks[0]`` can be used to enable any of the TIMER0 interrupts.
@@ -1580,11 +1580,39 @@ For example, ``timer_interrupt_masks[0]`` can be used to enable any of the TIMER
         -   TOIE0
 
 For Timer Overflow interrupts, to enable ``TIMERn_OVF_vect``, set the ``TOIEn`` bit to 1.
-For Timer Comparison interrupts, to enable ``TIMER_COMPA_vect``, set the ``OCIEnA`` bit to 1;
+For Timer Comparison interrupts, to enable ``TIMERn_COMPA_vect``, set the ``OCIEnA`` bit to 1;
 to enable ``TIMERn_COMPB_vect``, set the ``OCIEnB`` bit to 1.
 For Input Capture interrupts, to enable ``TIMER1_CAPT_vect``, set the ``ICIE1`` bit.
 
 After enabling timer interrupts, be sure to register any necessary ISRs as described in the :ref:`atmega328pISRMacro` section.
+
+|
+
+----
+
+|
+
+RP2040 (Raspberry Pi Pico)
+==========================
+
+This is a temporary placeholder.
+More complete information about the RP2040's use with the CowPi library will be available soon.
+
+Input/Output Register Descriptions
+----------------------------------
+
+Structure for Memory-Mapped Input/Output
+""""""""""""""""""""""""""""""""""""""""
+
+The CowPi library provides data structures to access the memory-mapped I/O registers in a more readable form.
+Specifically, the :struct:`cowpi_ioport_rp2040_t` structure is used to communicate with peripheral devices attched to the I/O pins that do not make use of a particular communication protocol.
+
+..  doxygenstruct:: cowpi_ioport_rp2040_t
+    :project: CowPi
+    :members:
+
+Unlike AVR-based microcontrollers, ARM-based microcontrollers such as the RP2040 to not have their I/O pins organized into ports.
+A pointer to a single :struct:`cowpi_ioport_rp2040_t` structure is sufficient to read from and write to the I/O pins.
 
 |
 

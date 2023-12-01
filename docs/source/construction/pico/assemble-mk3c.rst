@@ -25,7 +25,7 @@ Prepare to Assemble the Cow Pi mark 3c
 Required and Optional Components
 --------------------------------
 
-..  _mk1cComponents:
+..  _mk3cComponents:
 ..  figure:: mk3c-images/components.jpeg
     :alt: various electronic components that are described in the accompanying text
     :align: center
@@ -100,7 +100,7 @@ Tools and Expendables
 -   *Optional* magnifying glass
 -   Adhesive tape (does not need to be electrical tape)
 -   Needle-nose pliers
--   Diagonal cutter
+-   Diagonal cutters
 
 
 ..  NOTE::
@@ -111,7 +111,7 @@ Tools and Expendables
 Attach Headers to Components
 ============================
 
-..  _mk1cAttachingHeaders:
+..  _mk3cAttachingHeaders:
 ..  figure:: mk3c-images/attaching-headers.jpeg
     :alt: The  "level converter" and the display module resting on their headers' pins; the headers have been inserted into the mini-breadboard.
     :align: center
@@ -133,7 +133,7 @@ Attach Headers to Components
 Attach the Pico's Sockets and Voltage Converter
 ===============================================
 
-..  _mk1cLowerSocketReady:
+..  _mk3cLowerSocketReady:
 ..  figure:: mk3c-images/lower-socket-ready.jpeg
     :alt: One of the 2x20 female headers is taped to the circuit board
     :align: center
@@ -150,7 +150,7 @@ Attach the Pico's Sockets and Voltage Converter
 :\:[   ]: Turn the board over and solder all 40 pins on the 2x20 female header to the board.
 
 
-..  _mk1cAligningBooster:
+..  _mk3cAligningBooster:
 ..  figure:: mk3c-images/aligning-voltage-booster.jpeg
     :alt: The "level converter" resting on the back of the circuit board near labels indicating its correct orientation
     :align: center
@@ -166,7 +166,7 @@ Attach the Pico's Sockets and Voltage Converter
 The Level Shifter's ``LV`` pin will go in the hole labeled ``3V3``, and the Level Shifter's ``HV`` pin will go in the hole labeled ``5V``.
 
 
-..  _mk1cBoosterOptions:
+..  _mk3cBoosterOptions:
 .. figure:: ../../blank.png
 
     Attaching the voltage booster
@@ -185,11 +185,11 @@ The Level Shifter's ``LV`` pin will go in the hole labeled ``3V3``, and the Leve
     |       | Voltage booster's pins piercing the cork sheet. |       | Voltage booster inserted with cork sheet.           |
     +-------+-------------------------------------------------+-------+-----------------------------------------------------+
 
-There *should* be enough clearance between the socket's pins and the underside of the Level Shifter that you do not *need* to use cork sheet to isolate them (:numref:`mk1cBoosterOptions`\ (a)).
-However, if you are a "belt and suspenders" type of person (or if there is not enough clearance) then you can use cork sheet (or other insulating material) to be sure that the socket's pins do not scratch the Level Shifter's solder resist and come into contact with copper on the Level Shifter's PCB (:numref:`mk1cBoosterOptions`\ (c)).
+There *should* be enough clearance between the socket's pins and the underside of the Level Shifter that you do not *need* to use cork sheet to isolate them (:numref:`mk3cBoosterOptions`\ (a)).
+However, if you are a "belt and suspenders" type of person (or if there is not enough clearance) then you can use cork sheet (or other insulating material) to be sure that the socket's pins do not scratch the Level Shifter's solder resist and come into contact with copper on the Level Shifter's PCB (:numref:`mk3cBoosterOptions`\ (c)).
 The only consequence of unnecessarily using cork sheet is that the PCB "feet" you will use will need to be about ⅛\ in (3\ mm) longer than they otherwise would need to be.
 
-:\:[   ]: *Optionally* pierce the cork sheet with the Level Shifter's pins (:numref:`mk1cBoosterOptions`\ (b))
+:\:[   ]: *Optionally* pierce the cork sheet with the Level Shifter's pins (:numref:`mk3cBoosterOptions`\ (b))
 
 :\:[   ]: With the Level Shifter's ``LV`` and ``HV`` pins lined up with the ``3V3`` and ``5V`` holes, respectively, insert the Level Shifter into its holes, straddling the socket's pins.
 
@@ -200,7 +200,7 @@ The only consequence of unnecessarily using cork sheet is that the PCB "feet" yo
 :\:[   ]: Tape the Level Shifter in place, turn the circuit board over, and solder the Level Shifter's pins to the circuit board.
 
 
-..  _mk1cAligningUpperSocket:
+..  _mk3cAligningUpperSocket:
 ..  figure:: mk3c-images/aligning-upper-socket.jpeg
     :alt: With both sockets inserted into the circuit board, a Raspberry Pi Pico is partially inserted into the sockets
     :align: center
@@ -216,9 +216,9 @@ You will use the Raspberry Pi Pico as a jig to assure this alignment
 
 :\:[   ]: Rest the Raspberry Pi Pico's pins in the inner set of holes in each socket.
 
-:\:[   ]: Gently press on both ends of the Raspberry Pi Pico, inserting it into the sockets *just enough* that a light tug will not remove the Pico from the sockets (:numref:`mk1cAligningUpperSocket`).
+:\:[   ]: Gently press on both ends of the Raspberry Pi Pico, inserting it into the sockets *just enough* that a light tug will not remove the Pico from the sockets (:numref:`mk3cAligningUpperSocket`).
 
-..  _mk1cAttachingUpperSocket:
+..  _mk3cAttachingUpperSocket:
 .. figure:: ../../blank.png
 
     Attaching the upper socket
@@ -231,17 +231,17 @@ You will use the Raspberry Pi Pico as a jig to assure this alignment
     |       | Tacking the upper socket in place.               |       | Both sockets are attached.                        |
     +-------+--------------------------------------------------+-------+---------------------------------------------------+
 
-:\:[   ]: Turn the circuit board over (underside up), and tack the upper socket in place by soldering its four corner pins to the circuit board (:numref:`mk1cAttachingUpperSocket`\ (a)).
+:\:[   ]: Turn the circuit board over (underside up), and tack the upper socket in place by soldering its four corner pins to the circuit board (:numref:`mk3cAttachingUpperSocket`\ (a)).
 
 :\:[   ]: Turn the circuit board over (topside up), and remove the Raspberry Pi Pico from the sockets.
 
-:\:[   ]: Turn the circuit board over (underside up), and solder the remaining pins to the circuit board (:numref:`mk1cAttachingUpperSocket`\ (b)).
+:\:[   ]: Turn the circuit board over (underside up), and solder the remaining pins to the circuit board (:numref:`mk3cAttachingUpperSocket`\ (b)).
 
 
 Attach Discrete Components
 ==========================
 
-..  _mk1cTactileSwitches:
+..  _mk3cTactileSwitches:
 ..  figure:: mk3c-images/tactile-switches.jpeg
     :alt: The nineteen tactile switches inserted into the circuit board
     :align: center
@@ -263,7 +263,7 @@ the spring tension in their prongs will hold them in place while you solder.
 :\:[   ]: Turn the circuit board over, and solder the tactile switches' pins to the circuit board.
 
 
-..  _mk1cSlideSwitches:
+..  _mk3cSlideSwitches:
 ..  figure:: mk3c-images/slide-switches.jpeg
     :alt: The two slide switches inserted into the circuit board
     :align: center
@@ -276,7 +276,7 @@ the spring tension in their prongs will hold them in place while you solder.
 :\:[   ]: Turn the circuit board over, and solder the slide switches' pins to the circuit board.
 
 
-..  _mk1cResistors:
+..  _mk3cResistors:
 ..  figure:: mk3c-images/resistors.jpeg
     :alt: A resistor with one of its leads folded over, being held with a pair of needle-nose pliers. In the background, another resistor has already been inserted into the circuit board.
     :align: center
@@ -300,7 +300,7 @@ the spring tension in their prongs will hold them in place while you solder.
 :\:[   ]: Snip the excess leads.
 
 
-..  _mk1cLED:
+..  _mk3cLED:
 ..  figure:: mk3c-images/LED.jpeg
     :alt: Fingers holding an LED next to the circuit board so that the LED's shorter lead is near a square solder pad, and the longer lead is near a round solder pad.
     :align: center
@@ -327,7 +327,7 @@ the spring tension in their prongs will hold them in place while you solder.
 :\:[   ]: Snip the excess leads.
 
 
-..  _mk1cPreparingDiodes:
+..  _mk3cPreparingDiodes:
 ..  figure:: mk3c-images/prepping-diodes.jpg
     :alt: A diode with one of its leads folded over, being held with a pair of needle-nose pliers. In the background are diodes with bent leads and other diodes without bent leads.
     :align: center
@@ -354,7 +354,7 @@ the spring tension in their prongs will hold them in place while you solder.
         Note that the symbols indicate that the cathode should go into the holes with the square solder pads.
         Notice also that each of these square solder pad have circles surrounding them, further indicating that the diode's barrel should be above this solder pad.
 
-..  _mk1cInsertingDiodes:
+..  _mk3cInsertingDiodes:
 ..  figure:: mk3c-images/inserting-diodes.jpeg
     :alt: Two diodes inserted into the circuit board. Their barrels are over the square solder pads that are surrounded by circles, with the bars on the downward ends.
     :align: center
@@ -375,7 +375,7 @@ the spring tension in their prongs will hold them in place while you solder.
 
 :\:[   ]: Two at a time, insert the remaining diodes, solder their leads to the circuit board, and snip the excess leads.
 
-..  _mk1cSolderingDiodes:
+..  _mk3cSolderingDiodes:
 ..  figure:: mk3c-images/soldering-diodes.jpeg
     :alt: Two diodes being soldered to the circuit board. Other diodes have already been attached, and a few holes are empty, waiting for other diodes.
     :align: center
@@ -387,7 +387,7 @@ the spring tension in their prongs will hold them in place while you solder.
 Attach Display Module
 =====================
 
-..  _mk1cDisplayModule:
+..  _mk3cDisplayModule:
 ..  figure:: mk3c-images/display-module.jpeg
     :alt: The display module held to the circuit board with tape
     :align: center
@@ -406,7 +406,7 @@ Attach Display Module
 Attach Remaining Components
 ===========================
 
-..  _mk1cFeetAttached:
+..  _mk3cFeetAttached:
 ..  figure:: mk3c-images/feet-attached.jpeg
     :alt: The circuit board with nylon spaces inserted into the board's mounting holes
     :align: center
@@ -419,7 +419,7 @@ Attach Remaining Components
 :\:[   ]: Insert a PCB "foot" into each of the circuit board's mounting holes.
 
 
-..  _mk1cBreadboardAttached:
+..  _mk3cBreadboardAttached:
 ..  figure:: mk3c-images/breadboard.jpeg
     :alt: The circuit board with the mini-breadboard attached
     :align: center
@@ -432,7 +432,7 @@ Attach Remaining Components
 :\:[   ]: Place the mini-breadboard in the rectangle labeled "Mini-Breadboard"
 
 
-..  _mk1cPicoInserted:
+..  _mk3cPicoInserted:
 ..  figure:: mk3c-images/pico-inserted.jpeg
     :alt: The circuit board with the Raspberry Pi Pico inserted into its sockets
     :align: center
@@ -462,7 +462,7 @@ You have now finished assembling the Cow Pi mark 3c.
 
 |
 
-..  _mk1cSchematic:
+..  _mk3cSchematic:
 ..  figure:: mk3c-images/CowPi-mk3c-schematic.png
     :alt: The schematic diagram of the Cow Pi mark 3c
     :align: center

@@ -4,8 +4,11 @@ Changelog
 
 .. .. grep TODO source/*rst source/*/*rst source/*/*/*rst source/*/*/*/*rst
 
-.. .. [Unreleased]
-.. .. ============
+[Unreleased]
+============
+
+-   Instructions to assemble Cow Pi mk4b
+-   RP2040-specific details
 
 [202309]
 ============
