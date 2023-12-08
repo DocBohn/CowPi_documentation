@@ -16,7 +16,7 @@ Prepare to Assemble the Cow Pi mark 4b
 Required and Optional Components
 --------------------------------
 
-The components for a Cow Pi mk3c development board are:
+The components for a Cow Pi mk4b development board are:
 
 -   One (1) Cow Pi mk4b printed circuit board, populated at a PCBA facility
 
@@ -24,12 +24,6 @@ The components for a Cow Pi mk3c development board are:
     -   `BOM file <https://github.com/DocBohn/CowPi_hardware/blob/main/mark-4/CowPi-mk4b-natural.csv>`_ (optimized for JLCPCB)
     -   `Pick & Place file <https://github.com/DocBohn/CowPi_hardware/blob/main/mark-4/CowPi-mk4b-natural-top-pos.csv>`_ (optimized for JLCPCB)
     -   `KiCad files <https://github.com/DocBohn/CowPi_hardware/tree/main/mark-4/CowPi-mk4b-natural>`_
-
--   One (1) Raspberry Pi Pico with headers
-
-    -   Shown are a Raspberry Pi Pico H, which has the headers pre-attached, and an original Raspberry Pi Pico, which does not have the headers pre-attached.
-        This is to illustrate the two options;
-        you only need one Pico, not two.
 
 -   Six (6) PCB "feet", or adhesive rubber or silicone "bumper pads"
 
