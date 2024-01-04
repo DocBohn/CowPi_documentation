@@ -17,7 +17,7 @@ copyright = '2021-2023, Christopher Bohn'
 author = 'Christopher Bohn'
 
 release = '2023.09'
-version = '2023.09.101'
+version = '2023.09.126'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

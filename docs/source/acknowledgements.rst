@@ -43,6 +43,14 @@ Acknowledgements
     The Raspberry Pi Pico will probably be the go-to microcontroller for future Cow Pi designs for some time,
     due to it being inexpensive, has enough pins that they don't need to serve multiple purposes for the Cow Pi, and has other attractive features for the lessons and assignments that I create.
 
+-   NXP Semiconductors
+
+    The 3.3V/5V voltage shifting circuit that is part of the Cow Pi mk4a and mk4b designs comes from `NXP Application Note AN10441 "Level shifting techniques in |i2c|-bus design" <https://web.archive.org/web/20210907180148/https://www.nxp.com/docs/en/application-note/AN10441.pdf>`_.
+
+-   The Internet Archive
+
+    The aforementioned Application Note is not currently available on the NXP website but is available in through the Internet Archive's Wayback Machine.
+
 -   The UNL Engineering Electronics Shop
 
     The College of Engineering's EE Shop has been instrumental in sourcing inexpensive components for "class kits" that allow students to assemble Cow Pi mk1 circuits

@@ -51,9 +51,8 @@ We have seen problems with Windows 11 and Arduino Nano Clones, with error messa
 
     avrdude: ser_open(): can't set com-state for "\\.\COM3"
 
-As the staff at the EE Shop has worked to troubleshoot this, there were indications that the problem was with the Arduino IDE 2.1.0;
-**if you see this problem with the Arduino IDE 2.1.1, please let us know.**
-Similarly, **if you see this problem with PlatformIO, please let us know.**
+As the staff at the EE Shop has worked to troubleshoot this, there were indications that the problem was with the Arduino IDE 2.1.0.
+If you see this problem with later versions of the IDE, try these fixes, but then consider whether the problem might be the microcontroller (:ref:`ATmega328PB`).
 
 A fix that seems to work is to install the latest CH340/341 drivers from https://oemdrivers.com/usb-ch340 :
 
@@ -90,6 +89,20 @@ Linux
 Sparkfun's `How to Install CH340 Drivers <https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/>`_ page also has instructions for installing the driver on Linux;
 however, we are not aware of any students using Linux personal laptops in this course.
 
+
+.. _ATmega328PB:
+
+ATmega328P vs ATmega328PB
+=========================
+
+It seems that some Arduino Nano clones have the ATmega328PB microcontroller instead of the specified ATmega328P.
+This difference reportedly has also caused "``can't set com-state``" errors.
+If/when this is the problem, it can be resolved by installing support for the ATmega328PB.
+
+See:
+    -   `<https://forum.arduino.cc/t/connection-problem-cant-set-com-state/1135878>`_
+
+    -   `<https://github.com/watterott/ATmega328PB-Testing>`_
 
 
 Other Uploading Issues
