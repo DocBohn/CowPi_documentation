@@ -449,8 +449,8 @@ Attach Remaining Components
 
 ----
 
-Kit Assembly is Complete
-========================
+Assembly is Complete
+====================
 
     +--------------------------------------------+-------------------------------------------+
     | .. image:: mk3c-images/complete-front.jpg  | .. image:: mk3c-images/complete-back.jpg  |
