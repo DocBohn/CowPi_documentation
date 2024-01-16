@@ -4,11 +4,19 @@ Changelog
 
 .. .. grep TODO source/*rst source/*/*rst source/*/*/*rst source/*/*/*/*rst
 
-[Unreleased]
+[202401]
 ============
+
+Added
+-----
 
 -   Instructions to assemble Cow Pi mk4b
 -   RP2040-specific details
+
+Removed
+-------
+
+-   Instructions to modify Cow Pi mk1b/c/d into Cow Pi mk1e/f
 
 [202309]
 ============

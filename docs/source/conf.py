@@ -7,17 +7,19 @@ import sys, subprocess, os
 
 subprocess.call('cd CowPi; doxygen', shell=True)
 subprocess.call('cd CowPi_stdio; doxygen', shell=True)
+subprocess.call('cd CowPi_atmega328p; doxygen', shell=True)
+subprocess.call('cd CowPi_rp2040; doxygen', shell=True)
 sys.path.append('ext/breathe/')
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Cow Pi'
-copyright = '2021-2023, Christopher Bohn'
+copyright = '2021-2024, Christopher Bohn'
 author = 'Christopher Bohn'
 
-release = '2023.09'
-version = '2023.09.127'
+release = '2024.01'
+version = '2024.01.16'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -83,7 +85,9 @@ tikz_tikzlibraries = 'shapes.geometric'
 
 breathe_projects = {
     'CowPi': 'CowPi/xml/',
-    'CowPi_stdio': 'CowPi_stdio/xml/'
+    'CowPi_stdio': 'CowPi_stdio/xml/',
+    'CowPi_atmega328p': 'CowPi_atmega328p/xml/',
+    'CowPi_rp2040': 'CowPi_rp2040/xml/'
 }
 
 breathe_default_project = 'CowPi_stdio'

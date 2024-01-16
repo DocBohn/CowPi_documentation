@@ -2,6 +2,12 @@
 Cow Pi mark 4b Assembly Instructions (Raspberry Pi Pico, SSD1306 OLED graphic display via |i2c| communication)
 **************************************************************************************************************
 
+..  image:: mk4b-images/certification-mark-US002586-stacked.png
+    :alt: OSHW Certification US002586
+    :target: https://www.oshwa.org/cert/
+    :align: right
+    :width: 25%
+
 This is a minimal set of instructions but should be sufficient if you are using a fully-populated Cow Pi mk4b.
 A more detailed set of instructions that include other options will be available soon.
 

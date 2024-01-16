@@ -76,10 +76,7 @@ On the other hand, if you have PCBs manufactured and assembled, then you will ne
 .. toctree::
     :maxdepth: 3
 
-    construction/nano/mk1bcd-modification/modification.rst
     construction/nano/construction-mk1e
     construction/nano/construction-mk1f
     construction/pico/assemble-mk3c
     construction/pico/assemble-mk4b
-
-..  TODO:: Instructions for mk3a, mk3b

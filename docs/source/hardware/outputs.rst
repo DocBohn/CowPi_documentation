@@ -256,6 +256,8 @@ When the function executes the SPI Controller-Out/Peripheral-In sequence or the 
 
 |
 
+..  _max7219digit:
+
 MAX7219-driven 8-Digit/7-Segment Display
 """"""""""""""""""""""""""""""""""""""""
 
@@ -364,6 +366,8 @@ When the function executes the SPI Controller-Out/Peripheral-In sequence (see th
 
 |
 
+..  _max7219matrix:
+
 MAX7219-driven LED Matrix
 """""""""""""""""""""""""
 
@@ -434,6 +438,8 @@ When the function executes the SPI Controller-Out/Peripheral-In sequence (see th
     set_pin(select_pin, 1);
 
 |
+
+..  _ssd1306:
 
 SSD1306-driven OLED Graphic Display
 """""""""""""""""""""""""""""""""""
