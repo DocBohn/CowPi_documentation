@@ -4,6 +4,14 @@ Changelog
 
 .. .. grep TODO source/*rst source/*/*rst source/*/*/*rst source/*/*/*/*rst
 
+[202403]
+============
+
+Changed
+-------
+
+Tweaks to improve clarity as we get ready for the Spring 2024 I/O labs
+
 [202401]
 ============
 

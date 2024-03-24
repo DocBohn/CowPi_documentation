@@ -2,7 +2,7 @@ After *io_test* has been uploaded to your |developmentBoard|, you will see this 
 
 ..  code-block:: console
 
-    CowPi library version 0.6.0
+    CowPi library version 0.7.0
     The simple I/O test will print the status of the keypad and of each
         button, switch, and LED every time there is a change.
 

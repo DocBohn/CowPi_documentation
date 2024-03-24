@@ -27,7 +27,7 @@ External Pins Input/Output
         -   0xD0000000
         -   :cspan:`1` Processor core identifier
     *   -   GPIO_IN
-        -   0xdD0000004
+        -   0xD0000004
         -   Unused
         -   Input values for GPIO pins
     *   -   GPIO_OUT
@@ -85,8 +85,8 @@ Hypothetically, if ``GP22`` were an input pin, then we could determine the pin's
 ..  code-block:: c
     :linenos:
 
-    volatile cowpi_ioport_t *ioports = (cowpi_ioport_t *)(0xD0000000);
-    uint32_t logic_level = ioports->input & (1 << 22);
+    volatile cowpi_ioport_t *ioport = (cowpi_ioport_t *)(0xD0000000);
+    uint32_t logic_level = ioport->input & (1 << 22);
 
 In the first line, we created a pointer to a |ioport|_ structure and assigned the structure's base address to ``0xD0000000``.
 Most likely, you would only need to do this once per program.
@@ -101,27 +101,27 @@ If ``logic_level`` must take on either zero or one, then you could either shift 
 ..  code-block:: c
     :lineno-start: 3
 
-    uint32_t logic_level = (ioports->input & (1 << 22)) >> (1 >> 22);
+    uint32_t logic_level = (ioport->input & (1 << 22)) >> (1 >> 22);
 
 or double-negate:
 
 ..  code-block:: c
     :lineno-start: 3
 
-    uint32_t logic_level = !!(ioports->input & (1 << 22));
+    uint32_t logic_level = !!(ioport->input & (1 << 22));
 
 On the other hand, if ``GP22`` were an output pin, then we could set the pin's logic level with C code similar to this:
 
 ..  code-block:: c
     :linenos:
 
-    volatile cowpi_ioport_t *ioports = (cowpi_ioport_t *)(0xD0000000);
+    volatile cowpi_ioport_t *ioport = (cowpi_ioport_t *)(0xD0000000);
     // to clear pin 22 to a 0:
-    ioports->output &= ~(1 << 22);
+    ioport->output &= ~(1 << 22);
     // to set pin 22 to a 1:
-    ioports->output |= 1 << 22;
+    ioport->output |= 1 << 22;
     // to toggle pin 22's value:
-    ioports->output ^= 1 << 22;
+    ioport->output ^= 1 << 22;
 
 This code uses the read/modify/write pattern:
 Obtain the existing output values for the relevant bank of pins,
@@ -134,7 +134,7 @@ a good choice would be to clear the relevant bit to 0 and then use a bitwise OR 
     :lineno-start: 3
 
     uint32_t logic_level = ... // assume logic_level is strictly 0 or 1
-    ioports->output = (ioports->output & ~(1 << 22)) | (logic_level << 22);
+    ioport->output = (ioport->output & ~(1 << 22)) | (logic_level << 22);
 
 
 Special Consideration for Concurrency
@@ -151,7 +151,7 @@ For example,
 ..  code-block:: c
     :lineno-start: 5
 
-    ioports->output |= 1 << 22;
+    ioport->output |= 1 << 22;
 
 compiles to
 
@@ -172,18 +172,18 @@ With the RP2040, concurrency is possible by two mechanisms:
 -   The official Arduino toolchain for the RP2040 is built on top of Mbed OS, which supports threading
 
 To prevent race conditions, three atomic output registers are available.
-Assigning a bit vector to one of these will atomically set one or more output pins to 1 (``ioports->atomic_set``), to 0 (``ioports->atomic_clear``), or to its/their opposite logic value(s) (``ioports->atomic_toggle``):
+Assigning a bit vector to one of these will atomically set one or more output pins to 1 (``ioport->atomic_set``), to 0 (``ioport->atomic_clear``), or to its/their opposite logic value(s) (``ioport->atomic_toggle``):
 
 ..  code-block:: c
     :linenos:
 
-    volatile cowpi_ioport_t *ioports = (cowpi_ioport_t *)(0xD0000000);
+    volatile cowpi_ioport_t *ioport = (cowpi_ioport_t *)(0xD0000000);
     // to clear pin 22 to a 0:
-    ioports->atomic_clear = 1 << 22;
+    ioport->atomic_clear = 1 << 22;
     // to set pin 22 to a 1:
-    ioports->atomic_set = 1 << 22;
+    ioport->atomic_set = 1 << 22;
     // to toggle pin 22's value:
-    ioports->atomic_toggle = 1 << 22;
+    ioport->atomic_toggle = 1 << 22;
 
 
 Mapping Input/Output Devices to I/O Port Array
@@ -1059,7 +1059,7 @@ Structure for Memory-Mapped Timer Registers
 """""""""""""""""""""""""""""""""""""""""""
 
 The CowPi library provides a data structure for the 64-bit timer, allowing access to the memory-mapped timer registers in a more readable form.
-The registers can be access by creating a to ``0x40054000``.
+The registers can be access by creating pointer a to ``0x40054000``.
 
 ..  doxygenstruct:: cowpi_timer_t
     :project: CowPi_rp2040
@@ -1145,17 +1145,22 @@ The pseudocode to obtain the full 64-bit counter is thus:
 
     The preceding pseudocode has a race condition if two processes (or threads) attempt to read the timer concurrently.
 
+..  NOTE::
+
+    The C standard does not specify the evaluation order of the sub-expressions in a bitwise-OR expression.
+    We recommend that you explicitly read the lower word first to ensure that it is, in fact, read before the upper word.
+
 Reading a 32-bit Counter
 ''''''''''''''''''''''''
 
-If you are not concerned about the possibility of overflow every :math:`71\frac{1}{2}` minutes, then you can read from ``raw_upper_word`` and `raw_lower_word``.
+If you are not concerned about the possibility of overflow every :math:`71\frac{1}{2}` minutes, then you can read from ``raw_upper_word`` and ``raw_lower_word``.
 
 If you only need a 32-bit microsecond counter, then reading from ``raw_lower_word`` will provide you with the number of microseconds since power-up, modulo :math:`2^{32}`.
 
 ..  code-block:: pascal
     :lineno-start: 5
 
-    counter_32bits = timer->raw_lower_word
+    counter_32bits = timer->raw_lower_word;
 
 A somewhat less likely scenario can make use of the ``raw_upper_word``:
 Because the lower word overflows every :math:`2^{32}` microseconds, the upper word increments approximately once every :math:`\frac{1}{20}\mathrm{day}`.

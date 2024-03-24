@@ -29,13 +29,15 @@ be sure to match the serial terminal's expectations.
     If your program calls :func:`cowpi_stdio_setup` without a serial terminal to connect to, then one of two things
     will happen, depending on which microcontroller board you are using:
 
-    - Your program may continue to run without printing anything, and will reset when a serial terminal is connected (example: Arduino Nano)
-    - Your program may block until a serial terminal is connected (example: Raspberry Pi Pico)
+    - Your program may continue to run without printing anything, and will reset when a serial terminal is connected (example: Arduino Nano).
+    - Your program may continue to run without configuring ``stdin`` and ``stdout`` (example: Raspberry Pi Pico).
+      If ``stderr`` is available, then an error message will print on ``stderr``
 
 ..  NOTE::
     The :func:`cowpi_stdio_setup` function does *not* configure the standard error file stream (``stderr``).
     You may explicitly set the ``stderr`` file stream.
     Common choices are to assign ``stderr = stdout`` or to assign ``stderr`` to a Morse Code "display" using :func:`cowpi_add_display_module`.
+    (The :func:`cowpi_setup` function assigns ``stderr`` to a Morse Code "display" if adequate memory is available.)
 
 
 Configuring a Display Module

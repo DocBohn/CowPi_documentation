@@ -45,7 +45,7 @@ Acknowledgements
 
 -   NXP Semiconductors
 
-    The 3.3V/5V voltage shifting circuit that is part of the Cow Pi mk4a and mk4b designs comes from `NXP Application Note AN10441 "Level shifting techniques in |i2c|-bus design" <https://web.archive.org/web/20210907180148/https://www.nxp.com/docs/en/application-note/AN10441.pdf>`_.
+    The 3.3V/5V voltage shifting circuit that is part of the Cow Pi mk4a and mk4b designs comes from `NXP Application Note AN10441 "Level shifting techniques in I2C-bus design" <https://web.archive.org/web/20210907180148/https://www.nxp.com/docs/en/application-note/AN10441.pdf>`_.
 
 -   The Internet Archive
 

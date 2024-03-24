@@ -109,8 +109,8 @@ Load the I/O Test Code
 
         [env]
         lib_deps =
-          docbohn/CowPi @ ^0.6.0
-          docbohn/CowPi_stdio @ ^0.6.0
+          docbohn/CowPi @ ^0.7.1
+          docbohn/CowPi_stdio @ ^0.6.1
         monitor_echo = yes
 
     This will instruct PlatformIO to use the CowPi and CowPi_stdio libraries,

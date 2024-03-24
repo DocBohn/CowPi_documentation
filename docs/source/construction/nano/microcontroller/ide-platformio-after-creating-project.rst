@@ -83,7 +83,7 @@ So long as the PlatformIO Environment is "default," PlatformIO will compile the 
      *  Terminal will be reused by tasks, press any key to close it.
 
 
-:\:[   ]: Clock on the arrow icon to upload the program to your |developmentBoard|.
+:\:[   ]: Click on the arrow icon to upload the program to your |developmentBoard|.
 
 So long as the PlatformIO Environment is "default," PlatformIO will attempt to upload the program to *both* types of Nanos.
 Since you have only one |developmentBoard| connected to your computer, one of those attempts *must* fail.

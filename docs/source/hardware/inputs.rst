@@ -346,7 +346,7 @@ If the keypad is wired to the microcontroller such that four contiguous output p
     for each row do
         row_bit_vector := 0b1111    (* set all rows to 1 *)
         row_bit_vector(row) := 0    (* except the row we're currently examining *)
-        wait at least one microcontroller clock cycle
+        wait at least one microsecond
         for each column do
             if (column_bit_vector(column) = 0) then
                 key_pressed := keys(row,column)
@@ -355,9 +355,7 @@ If the keypad is wired to the microcontroller such that four contiguous output p
 .. NOTE::
     This pseudocode will report at most one key pressed;
     it would have to be modified to report multiple keys pressed.
-
-    This software limitation is not a limitation for mark 1 Cow Pis, as mark 1 Cow Pis have a hardware limitation:
-    their keypads have no protection against shorting power to ground when two keys are pressed simultaneously.
+    (Mark 1 Cow Pis' hardware does not support multiple key presses, though mark 3 & 4 Cow Pis do.)
 
 ..  TIP::
     The ``for each`` expressions in the pseudocode should be understood to be the mathematical :math:`\forall` operator.
@@ -367,11 +365,16 @@ If the keypad is wired to the microcontroller such that four contiguous output p
 
 
 The delay shown in line 4 is sometimes, but not always necessary.
-There is a slight delay between setting a pin's output value and being able to detect the change by reading a different pin's input value.
+The construction of some Cow Pi circuits (particularly mark 1 & 2 models) results in sufficient parasitic reactance that there is a detectable delay between setting a pin's output value and being able to detect the change when reading a different pin's input value.
 Some realizations of the pseudocode attempt to read the change before it can be read reliably;
 this usually manifests as one of the keypad's columns not being readable.
-The fix is to introduce a delay of at least one clock cycle (strictly speaking, one clock cycle is more than enough, but a shorter delay is not possible).
-For our purposes, this should be managed by introducing a 1µs delay using the Arduino core library's ``delayMicroseconds()``.
+The fix is to introduce a delay.
+Often, one microcontroller clock cycle is sufficient;
+however we have (rarely) seen constructions with sufficient parasitic reactance that a delay of more than one microsecond (but less than two) is necessary.
+
+We recommend a delay of 1µs, which generally should be sufficient regardless of the particular Cow Pi model, microcontroller, and construction quality.
+If you find that 1µs is insufficient, then introduce a 2µs delay.
+*This delay should be managed with a busy-wait until at least 1µs has elapsed.*
 
 |
 

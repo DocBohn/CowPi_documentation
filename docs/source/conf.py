@@ -18,8 +18,8 @@ project = 'Cow Pi'
 copyright = '2021-2024, Christopher Bohn'
 author = 'Christopher Bohn'
 
-release = '2024.01'
-version = '2024.01.16'
+release = '2024.03'
+version = '2024.03.24'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
