@@ -302,13 +302,13 @@ Combining this information, we arrive at the mapping in :numref:`tableRP2040MapD
         -   **Bit 1**
         -   **Bit 0**
     *   -   ``input``
-        -
-        -
+        -   Right Button
+        -   Left Button
         -
         -
     *   -   ``output``
-        -   Right Button
-        -   Left Button
+        -
+        -
         -
         -
 
