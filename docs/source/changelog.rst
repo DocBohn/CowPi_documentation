@@ -4,13 +4,29 @@ Changelog
 
 .. .. grep TODO source/*rst source/*/*rst source/*/*/*rst source/*/*/*/*rst
 
+[202411]
+============
+
+Added
+-----
+
+-   Convenience functions for timer interrupts
+-   Framework-independent functions to configure pins
+
+Changed
+-------
+
+-   Modified keypad pseudocode to remove implications that the row pins must be 0..3, or that Pascal-style array indexing is a function call
+-   Renamed constants to deconflict with other libraries
+
+
 [202403]
 ============
 
 Changed
 -------
 
-Tweaks to improve clarity as we get ready for the Spring 2024 I/O labs
+-   Tweaks to improve clarity as we get ready for the Spring 2024 I/O labs
 
 [202401]
 ============

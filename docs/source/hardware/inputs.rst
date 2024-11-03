@@ -338,19 +338,34 @@ For example, if you need to return a character that corresponds to the face valu
             '*' & '0' & '\#' & 'D'
         \end{array}\right)
 
-If the keypad is wired to the microcontroller such that four contiguous output pins are connected to the rows and four contiguous input pins are connected to the columns (as is the case for the Cow Pi), then this pseudocode will scan the keypad and determine which key, if any, is pressed.
+.. If the keypad is wired to the microcontroller such that four contiguous output pins are connected to the rows and four contiguous input pins are connected to the columns (as is the case for the Cow Pi), then this pseudocode will scan the keypad and determine which key, if any, is pressed.
+..
+.. .. code-block:: pascal
+..     :linenos:
+..
+..     for each row do
+..         row_bit_vector := 0b1111    (* set all rows to 1 *)
+..         row_bit_vector(row) := 0    (* except the row we're currently examining *)
+..         wait at least one microsecond
+..         for each column do
+..             if (column_bit_vector(column) = 0) then
+..                 key_pressed := keys(row,column)
+..     row_bit_vector := 0b0000        (* set all rows to 0 to detect the next keypress *)
+
+If the keypad is wired to the microcontroller such that four output pins are connected to the rows and four input pins are connected to the columns (as is the case for the Cow Pi), then this pseudocode will scan the keypad and determine which key, if any, is pressed.
 
 .. code-block:: pascal
     :linenos:
 
-    for each row do
-        row_bit_vector := 0b1111    (* set all rows to 1 *)
-        row_bit_vector(row) := 0    (* except the row we're currently examining *)
+    for each ROW do
+        set output pin for each row to 1
+        set output pin for ROW to 0
         wait at least one microsecond
-        for each column do
-            if (column_bit_vector(column) = 0) then
-                key_pressed := keys(row,column)
-    row_bit_vector := 0b0000        (* set all rows to 0 to detect the next keypress *)
+        for each COLUMN do
+            column_bit := the value on input pin for COLUMN
+            if (column_bit = 0) then
+                key_pressed := keys(ROW,COLUMN)
+    set output pins for each row to 0       (* to detect the next keypress *)
 
 .. NOTE::
     This pseudocode will report at most one key pressed;

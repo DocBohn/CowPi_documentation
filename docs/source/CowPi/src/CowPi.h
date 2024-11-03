@@ -1,9 +1,9 @@
 /*!
  * @mainpage CowPi Library
  *
- * @version 0.6
+ * @version 0.8
  *
- * @copyright (c) 2021-23 Christopher A. Bohn
+ * @copyright (c) 2021-24 Christopher A. Bohn
  *
  * @section overview Overview
  *
@@ -65,7 +65,7 @@
  *
  ******************************************************************************/
 
-/* CowPi (c) 2021-23 Christopher A. Bohn
+/* CowPi (c) 2021-24 Christopher A. Bohn
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,10 +85,10 @@
 #include <CowPi_stdio.h>
 #include "setup/cowpi_setup.h"
 #include "boards/boards.h"
-#include "interrupts/interrupts.h"
+#include "interrupts/pin_interrupts.h"
 #include "io/cowpi_io.h"
 #include "io/debounce.h"
 
-#define COWPI_VERSION ("0.6.0")
+#define COWPI_VERSION ("0.8.2")
 
 #endif //COWPI_H

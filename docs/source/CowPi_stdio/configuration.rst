@@ -102,7 +102,7 @@ As a specific example, you might configure a 16x2 LCD character display that use
                         .height = 2
                 },
                 (cowpi_display_module_protocol_t) {
-                        .protocol = I2C
+                        .protocol = COWPI_I2C
                         .i2c_address = cowpi_discover_i2c_address(SDA, SCL)
                 }
             );

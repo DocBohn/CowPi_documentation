@@ -956,95 +956,19 @@ Interrupts
 ----------
 
 Most interrupts on the RP2040 are handled by registering specific functions as interrupt service routines (ISRs).
-In the specific case of pin-based interrupts, the ISR *can* be registered by using the |attachInterrupt|_ function if you are using the Arduino toolchain,
-or by using the ``gpio_set_irq_enabled_with_callback()`` function if you are using the Raspberry Pi Pico SDK.
-However, we very strongly recommend using the CowPi library's :func:`cowpi_register_pin_ISR` function for increased portability across microcontrollers and across toolchains.
-
-
-Sharing data with ISRs and Interrupt Handlers
-"""""""""""""""""""""""""""""""""""""""""""""
-
-Regardless of whether you create an ISR using the macro or register an interrupt handler using the :func:`cowpi_register_pin_ISR` or the ``attachInterrupt()`` function,
-data cannot be passed to the interrupt-handling code through parameters,
-and the interrupt-handling code cannot return data through a return value.
-This necessitates the use of global variables to provide data to, and obtain data from, the interrupt-handling code.
-
-Because the compiler cannot detect any definition-use pairs for these global variables –
-they are updated in one function and read in another, and no call chain exists between the two functions –
-the compiler will optimize-away these variables and the code that accesses them in the interest of reducing the program's memory footprint.
-The way to prevent this mis-optimization is to use the ``volatile`` keyword.
-
-..  IMPORTANT::
-    Any global variables that interrupt-handling code reads from and/or writes to *must* have the ``volatile`` modifier.
-
-
-Registering Pin Change Interrupt Handlers using :func:`cowpi_register_pin_ISR`
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-..  TODO:: Implement ``cowpi_register_pin_ISR()`` for RP2040
-
-The RP2040 allows for pin-based interrupts on any pin configured for digital input.
-The CowPi library's :func:`cowpi_register_pin_ISR` function abstracts away the configuration details.
-
-To handle an interrupt, first write a function, such as ``handle_buttonpress()`` or ``handle_keypress()``.
-This function must not have any parameters, and its return type must be ``void``.
-Then, in the ``setup()`` function (or in one of its helper functions), register the interrupt with this code:
-
-..  code-block:: c
-
-    cowpi_register_pin_ISR(1L << pin_number, interrupt_handler_name);
-
-or
-
-..  code-block:: c
-
-    cowpi_register_pin_ISR((1L << first_pin_number) | (1L << second_pin_number) | (1L << et_cetera), interrupt_handler_name);
-
-This will configure all of the necessary registers to call the function whenever the input value on the pin ``pin_number`` (or on the pins ``first_pin_number``, ``second_pin_number``, ..., ``et_cetera``) goes from 0 to 1 or from 1 to 0.
-The first argument is a bit vector that identifies which pin(s) are to be associated with the ISR:
-if bit *n* is a 1, then pin *n* will be associated with the ISR.
-
-As all ISRs, you want to keep your interrupt handler short.
-See the CowPi library's :ref:`pin_interrupts` example for demonstrations.
-
-
-Registering External Interrupt Handlers using ``attachInterrupt()``
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Pin-based interrupts can also be manually configured and handled through the ``ISR()`` macro.
-Just as the CowPi library's :func:`cowpi_register_pin_ISR` function abstracts away the configuration details for pin interrupts,
-so does the |attachInterrupt|_\ .
-
-To handle an interrupt, first write a function, such as ``handle_buttonpress()`` or ``handle_keypress()``.
-This function must not have any parameters, and its return type must be ``void``.
-Then, in the ``setup()`` function (or in one of its helper functions), register the interrupt with this code:
-
-..  code-block:: c
-
-    attachInterrupt(digitalPinToInterrupt(pin_number), interrupt_handler_name, mode);
-
-This will configure all of the necessary registers to call the function whenever the input value on the pin *pin_number* satisfies the *mode*.
-The *mode* is one of:
-
-LOW
-   to trigger the interrupt whenever the pin is 0
-
-RISING
-   to trigger the interrupt whenever the pin goes from 0 to 1
-
-FALLING
-   to trigger the interrupt whenever the pin goes from 1 to 0
-
-CHANGE
-   to trigger the interrupt whenever the pin rises or falls
-
-As with all ISRs, you want to keep your interrupt handler short.
+Neither the official Arduino core for the RP2040, nor MBED OS on which it is built, offer a low-level mechanism similar to AVR-libc's ``ISR()`` macro to do this.
+(The Raspberry Pi Pico SDK, and the unofficial Arduino-Pico core on which it is built, however, do.)
+Instead, in the specific case of pin-based interrupts, we normally would be expected to use the |attachInterrupt|_ function when using the Arduino toolchain,
+or the ``gpio_set_irq_enabled_with_callback()`` function when using the Raspberry Pi Pico SDK.
+However, **we very strongly recommend using the CowPi library's :func:`cowpi_register_pin_ISR` function for increased portability across microcontrollers and across toolchains.**
 
 |
 
 ----
 
 |
+
+..  _rp2040TIMERS:
 
 Timers
 ------
@@ -1181,9 +1105,8 @@ Scheduling Alarms
 
 We advise against directly accessing the alarm registers while using the official Arduino toolchain, which is based on the Mbed OS,
 as it is not clear how the Mbed OS uses the alarms.
-We recommend instead using the Mbed OS ``Ticker`` and ``Timeout`` APIs.
-
-..  TODO:: Wrap and document the `Ticker <https://os.mbed.com/docs/mbed-os/v6.16/apis/ticker.html>`_ and `Timeout <https://os.mbed.com/docs/mbed-os/v6.16/apis/timeout.html>`_ APIs.
+If you do not use CowPi functions () to manage timer interrupts, then
+we recommend instead using the Mbed OS ``Ticker`` and ``Timeout`` APIs.
 
     See also
 

@@ -9,6 +9,8 @@ subprocess.call('cd CowPi; doxygen', shell=True)
 subprocess.call('cd CowPi_stdio; doxygen', shell=True)
 subprocess.call('cd CowPi_atmega328p; doxygen', shell=True)
 subprocess.call('cd CowPi_rp2040; doxygen', shell=True)
+subprocess.call('cd CowPi_AVR; doxygen', shell=True)
+subprocess.call('cd CowPi_MBED; doxygen', shell=True)
 sys.path.append('ext/breathe/')
 
 # -- Project information -----------------------------------------------------
@@ -18,8 +20,8 @@ project = 'Cow Pi'
 copyright = '2021-2024, Christopher Bohn'
 author = 'Christopher Bohn'
 
-release = '2024.03'
-version = '2024.03.24'
+release = '2024.11'
+version = '2024.11.03'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -87,7 +89,9 @@ breathe_projects = {
     'CowPi': 'CowPi/xml/',
     'CowPi_stdio': 'CowPi_stdio/xml/',
     'CowPi_atmega328p': 'CowPi_atmega328p/xml/',
-    'CowPi_rp2040': 'CowPi_rp2040/xml/'
+    'CowPi_rp2040': 'CowPi_rp2040/xml/',
+    'CowPi_AVR': 'CowPi_AVR/xml/',
+    'CowPi_MBED': 'CowPi_MBED/xml/'
 }
 
 breathe_default_project = 'CowPi_stdio'

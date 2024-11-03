@@ -46,12 +46,12 @@ using a Cow Pi development board is your best option.
 
 .. ..    :align: right
 
-| *Cow Pi      documentation*    ©2021–23, Christopher A. Bohn, and licensed under the `CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`_ License.
+| *Cow Pi      documentation*    ©2021–24, Christopher A. Bohn, and licensed under the `CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`_ License.
 |       |cc-by|_
 | *Cow Pi      hardware designs* ©2021–23, Christopher A. Bohn, and licensed under the `CERN-OHLP v2 <https://cern.ch/cern-ohl>`_ License.
 |       |oshw|_
-| *CowPi       library*          ©2021–23, Christopher A. Bohn, and licensed under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ License.
-| *CowPi_stdio library*          ©2022–23, Christopher A. Bohn, and licensed under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ License.
+| *CowPi       library*          ©2021–24, Christopher A. Bohn, and licensed under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ License.
+| *CowPi_stdio library*          ©2022–24, Christopher A. Bohn, and licensed under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ License.
 |       |osi|_
 
 

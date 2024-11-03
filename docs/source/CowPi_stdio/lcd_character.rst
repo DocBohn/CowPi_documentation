@@ -195,7 +195,7 @@ In C, use
 ..  code-block:: c
 
     (cowpi_display_module_protocol_t) {
-            .protocol = I2C,
+            .protocol = COWPI_I2C,
             .i2c_address = cowpi_discover_i2c_address(SDA, SCL)
     }
 
@@ -204,7 +204,7 @@ to use the default pins, or
 ..  code-block:: c
 
     (cowpi_display_module_protocol_t) {
-            .protocol = I2C,
+            .protocol = COWPI_I2C,
             .data_pin = the_data_pin,
             .clock_pin = the_clock_pin,
             .i2c_address = cowpi_discover_i2c_address(the_data_pin, the_clock_pin)
@@ -230,7 +230,7 @@ In C, however, you can omit the data pin and clock pin if you use their defaults
 ..  code-block:: c
 
     (cowpi_display_module_protocol_t) {
-            .protocol = I2C,
+            .protocol = COWPI_I2C,
             .i2c_address = cowpi_discover_i2c_address(SDA, SCL),
             .adapter_mapping = ADAFRUIT
     }
@@ -240,7 +240,7 @@ or
 ..  code-block:: c
 
     (cowpi_display_module_protocol_t) {
-            .protocol = I2C,
+            .protocol = COWPI_I2C,
             .data_pin = the_data_pin,
             .clock_pin = the_clock_pin,
             .i2c_address = cowpi_discover_i2c_address(the_data_pin, the_clock_pin),
@@ -263,7 +263,7 @@ In C, use
 
 ..  code-block:: c
 
-    (cowpi_display_module_protocol_t) {.protocol = SPI, .select_pin = the_select_pin}
+    (cowpi_display_module_protocol_t) {.protocol = COWPI_SPI, .select_pin = the_select_pin}
 
 By default, the data pin and the clock pin are those used by the SPI hardware, even if you use the library’s bit-banged SPI implementation.
 If you wish to use other pins, then specify them with
@@ -277,7 +277,7 @@ in C++, or
 ..  code-block:: c
 
     (cowpi_display_module_protocol_t) {
-            .protocol = SPI,
+            .protocol = COWPI_SPI,
             .data_pin = the_data_pin,
             .clock_pin = the_clock_pin,
             .select_pin = the_select_pin
@@ -303,7 +303,7 @@ In C, however, you can omit the data pin and clock pin if you use their defaults
 ..  code-block:: c
 
     (cowpi_display_module_protocol_t) {
-            .protocol = I2C,
+            .protocol = COWPI_I2C,
             .i2c_address = cowpi_discover_i2c_address(SDA, SCL),
             .adapter_mapping = ADAFRUIT
     }
@@ -313,7 +313,7 @@ or
 ..  code-block:: c
 
     (cowpi_display_module_protocol_t) {
-            .protocol = SPI,
+            .protocol = COWPI_SPI,
             .data_pin = the_data_pin,
             .clock_pin = the_clock_pin,
             .select_pin = the_select_pin,

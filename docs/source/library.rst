@@ -14,7 +14,7 @@ CowPi Library
 - Library licensed under |LibraryLicense|_
 - Documentation licensed under |DocumentationLicense|_
 
-This documentation is for the ``CowPi`` library, v\ **0.7**\ .
+This documentation is for the ``CowPi`` library, v\ **0.8**\ .
 
 The current version is: |ArduinoBadge|_ |PlatformIOBadge|_
 
@@ -25,7 +25,8 @@ The current version is: |ArduinoBadge|_ |PlatformIOBadge|_
     CowPi/configuration
     CowPi/inputs
     CowPi/outputs
-    CowPi/interrupts
+    CowPi/pin_interrupts
+    CowPi/timer_interrupts
     CowPi/examples
 
 |

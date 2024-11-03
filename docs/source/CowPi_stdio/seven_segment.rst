@@ -153,7 +153,7 @@ to generate the appropriate :struct:`cowpi_display_module_protocol_t` variable. 
 
 ..  code-block:: c
 
-    (cowpi_display_module_protocol_t) {.protocol = SPI, .select_pin = the_select_pin}
+    (cowpi_display_module_protocol_t) {.protocol = COWPI_SPI, .select_pin = the_select_pin}
 
 By default, the data pin and the clock pin are those used by the SPI hardware, even if you use the library's bit-banged SPI implementation.
 If you wish to use other pins, then specify them with
@@ -167,7 +167,7 @@ in C++, or
 ..  code-block:: c
 
     (cowpi_display_module_protocol_t) {
-            .protocol = SPI,
+            .protocol = COWPI_SPI,
             .data_pin = the_data_pin,
             .clock_pin = the_clock_pin,
             .select_pin = the_select_pin}
@@ -213,7 +213,7 @@ In this particular case, we get away with it by waiting for the scrolling displa
                         .display_module = SEVEN_SEGMENT
                 },
                 (cowpi_display_module_protocol_t) {
-                        .protocol = SPI,
+                        .protocol = COWPI_SPI,
                         .data_pin = MOSI,
                         .clock_pin = SCK,
                         .select_pin = SS
@@ -225,7 +225,7 @@ In this particular case, we get away with it by waiting for the scrolling displa
                         .words_per_minute = 30
                 },
                 (cowpi_display_module_protocol_t) {
-                        .protocol = SPI,
+                        .protocol = COWPI_SPI,
                         .data_pin = MOSI,
                         .clock_pin = SCK,
                         .select_pin = SS

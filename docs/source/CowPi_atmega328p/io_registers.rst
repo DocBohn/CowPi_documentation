@@ -787,33 +787,18 @@ The pseudocode for this sequence is:
 Interrupts
 ----------
 
-Most interrupts on the ATmega328P are handled by creating an interrupt service routine (ISR) using AVR-libc's ``ISR()`` macro.
-Pin change interrupts can be handled either by using the ``ISR()`` macro or by using the Cow Pi library's :func:`cowpi_register_pin_ISR` function.
-External interrupts can be handled either by using the ``ISR()`` macro or by using the |attachInterrupt|_ to register an interrupt handler.
-
-
-Sharing data with ISRs and Interrupt Handlers
-"""""""""""""""""""""""""""""""""""""""""""""
-
-Regardless of whether you create an ISR using the macro or register an interrupt handler using the :func:`cowpi_register_pin_ISR` or the ``attachInterrupt()`` function,
-data cannot be passed to the interrupt-handling code through parameters,
-and the interrupt-handling code cannot return data through a return value.
-This necessitates the use of global variables to provide data to, and obtain data from, the interrupt-handling code.
-
-Because the compiler cannot detect any definition-use pairs for these global variables –
-they are updated in one function and read in another, and no call chain exists between the two functions –
-the compiler will optimize-away these variables and the code that accesses them in the interest of reducing the program's memory footprint.
-The way to prevent this mis-optimization is to use the ``volatile`` keyword.
-
-..  IMPORTANT::
-    Any global variables that interrupt-handling code reads from and/or writes to *must* have the ``volatile`` modifier.
-
+Most interrupts on the ATmega328P are handled by registering specific functions as interrupt service routines (ISRs).
+AVR-libc provides the ``ISR()`` macro to do this.
+In the specific case of pin-based interrupts, the Arduino core offers the |attachInterrupt|_ function; however, this uses the ATmega328P's external interrupts, which are limited to only two pins.
+(Pin change interrupts, usable on all digital input pins but at the bank level, requires lower-level configuration.)
+Instead of using AVR-specific or Arduino-specific mechanisms, **we very strongly recommend using the CowPi library's :func:`cowpi_register_pin_ISR` function for increased portability across microcontrollers and across toolchains.**
 
 ..  _atmega328pISRMacro:
 
 Registering Interrupt Service Routines using the ``ISR()`` Macro
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+If you need to handle an interrupt that the CowPi library does not support, you can use AVR-libc's ``ISR()`` macro.
 To create an interrupt service routine, write this code that looks like a function, outside of any other function:
 
 ..  code-block:: c
@@ -830,81 +815,13 @@ If anything more elaborate needs to happen, code in your function (or a function
 
 Any necessary configuration to establish the conditions under which the ISR will be invoked, typically through the use of memory-mapped I/O registers, will need to occur either in the ``setup()`` function or in a helper function called by ``setup()``.
 
-
-Registering Pin Change Interrupt Handlers using :func:`cowpi_register_pin_ISR`
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-The ATmega328P has two types of interrupts that are based on changes detected at the pins, *Pin Change Interrupts* and *External Interrupts*.
-
-Pin Change Interrupts are generally less flexible in that an interrupt would be fired for *any* changes,
-and when using the ``ISR()`` macro, all pins on the same I/O bank must use the same ISR.
-On the other hand, pin change interrupts are more flexible in that they can be triggered by changes on any of the digital pins.
-
-The CowPi library's :func:`cowpi_register_pin_ISR` function abstracts away the configuration details and also allows pins to have a different ISR than other pins on the same I/O bank.
-
-To handle an interrupt, first write a function, such as ``handle_buttonpress()`` or ``handle_keypress()``.
-This function must not have any parameters, and its return type must be ``void``.
-Then, in the ``setup()`` function (or in one of its helper functions), register the interrupt with this code:
-
-..  code-block:: c
-
-    cowpi_register_pin_ISR(1L << pin_number, interrupt_handler_name);
-
-or
-
-..  code-block:: c
-
-    cowpi_register_pin_ISR((1L << first_pin_number) | (1L << second_pin_number) | (1L << et_cetera), interrupt_handler_name);
-
-This will configure all of the necessary registers to call the function whenever the input value on the pin ``pin_number`` (or on the pins ``first_pin_number``, ``second_pin_number``, ..., ``et_cetera``) goes from 0 to 1 or from 1 to 0.
-The first argument is a bit vector that identifies which pin(s) are to be associated with the ISR:
-if bit *n* is a 1, then pin *n* will be associated with the ISR.
-
-..  TIP::
-    If the pin number is greater than 15, be sure to use ``1L`` instead of ``1`` to prevent truncation during the bit shift.
-
-As with ISRs registered with the macro, you want to keep your interrupt handler short.
-See the CowPi library's :ref:`pin_interrupts` example for demonstrations.
-
-
-Registering External Interrupt Handlers using ``attachInterrupt()``
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-External Interrupts can also be manually configured and handled through the ``ISR()`` macro.
-Just as the CowPi library's :func:`cowpi_register_pin_ISR` function abstracts away the configuration details for pin change interrupts,
-the |attachInterrupt|_ abstracts away the configuration details for external interrupts.
-While external interrupts on the ATmega328P are limited to only two pins (digital pins D2 & D3), their triggering conditions can be tailored.
-
-To handle an interrupt, first write a function, such as ``handle_buttonpress()`` or ``handle_keypress()``.
-This function must not have any parameters, and its return type must be ``void``.
-Then, in the ``setup()`` function (or in one of its helper functions), register the interrupt with this code:
-
-..  code-block:: c
-
-    attachInterrupt(digitalPinToInterrupt(pin_number), interrupt_handler_name, mode);
-
-This will configure all of the necessary registers to call the function whenever the input value on the pin *pin_number* satisfies the *mode*.
-The *mode* is one of:
-
-LOW
-   to trigger the interrupt whenever the pin is 0
-
-RISING
-   to trigger the interrupt whenever the pin goes from 0 to 1
-
-FALLING
-   to trigger the interrupt whenever the pin goes from 1 to 0
-
-CHANGE
-   to trigger the interrupt whenever the pin rises or falls
-
-As with ISRs registered with the macro, you want to keep your interrupt handler short.
-
 |
 
 ----
 
 |
+
+..  _atmega328pTIMERS:
 
 Timers
 ------
