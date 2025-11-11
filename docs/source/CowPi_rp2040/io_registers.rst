@@ -101,7 +101,7 @@ If ``logic_level`` must take on either zero or one, then you could either shift 
 ..  code-block:: c
     :lineno-start: 3
 
-    uint32_t logic_level = (ioport->input & (1 << 22)) >> (1 >> 22);
+    uint32_t logic_level = (ioport->input & (1 << 22)) >> 22);
 
 or double-negate:
 
